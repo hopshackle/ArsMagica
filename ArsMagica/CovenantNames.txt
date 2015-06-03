@@ -1,0 +1,7231 @@
+North Benfleet
+South Benfleet
+Witham
+Hatfield Broad Oak
+Havering-atte-Bower
+Hertford
+Woodham Ferrers
+Latchingdon
+Shellow Bowells
+Finchingfield
+Wethersfield
+Lexden
+Maldon
+Childerditch
+Margaretting
+North Ockendon
+South Ockendon
+Writtle
+Brightlingsea
+Rickling
+Terling
+Bocking
+East Mersea
+West Mersea
+Stisted
+Southchurch
+Orsett
+Laindon
+Wanstead
+Southminster
+Copford
+Wickham Bishops
+St Osyth
+Alresford
+Tendring
+Horndon on the Hill
+Belchamp Otten
+Chingford
+Lee Chapel
+Norton Mandeville
+Tillingham
+Barling
+Runwell
+Bowers Gifford
+Feering
+Kelvedon Hatch
+Moulsham
+Epping
+Debden
+Nazeing
+Upminster
+South Weald
+Bulphan
+Mucking
+Fryerning
+Ingatestone
+Broxted
+Tollesbury
+Hadstock
+Rettendon
+Strethall
+Harlow
+Latton
+Earls Colne
+Stapleford Abbotts
+Wrabness
+Lindsell
+Matching
+Dengie
+St Peters Chapel
+Takeley
+Panfield
+Barstable
+Ingrave
+Vange
+Wickford
+Hatfield Peverel
+East Horndon
+West Horndon
+North Shoebury
+Sampsons
+West Thurrock
+Lawn
+Thorrington
+Tolleshunt Knights
+Fobbing
+Black Notley
+White Notley
+Shenfield
+Blunts Hall
+Rivenhall
+Willingale
+Langenhoe
+Purleigh
+Steeple Bumpstead
+High Laver
+High Ongar
+Stanford Rivers
+Goldhanger
+Frating
+Chrishall
+Elmdon Lee
+Emanuel Wood
+Housham
+East Tilbury
+West Tilbury
+High Roding
+Hunts Hall
+Lofts
+Thaxted
+Wallbury
+Gestingthorpe
+Alphamstone
+Pebmarsh
+Twinstead
+West Bergholt
+Basildon
+Thundersley
+Rayleigh
+Canewdon
+Prittlewell
+Ashingdon
+Asheldham
+Peldon
+Berden
+Theydon Bois
+Foulton
+Mundon
+Abbess Roding
+Quendon
+Weeley
+Arkesden
+Radwinter
+Wix
+Faulkbourne
+Ryes
+Northey Island
+Stambourne
+Greensted
+Osea Island
+Stebbing
+Tilty
+Buttsbury
+Mashbury
+Ardleigh
+Bigods
+Saffron Walden
+Stow Maries
+Bentfield Bury
+Manuden
+Stansted Mountfitchet
+Bollington
+Wivenhoe
+Wormingford
+Elsenham
+Ulting
+Cold Norton
+Curling Tye Green
+Woodham Mortimer
+Messing
+Wimbish
+Michaelstow
+Ashdon
+Chickney
+Hazeleigh
+Lamarsh
+Ugley
+Dovercourt
+Helions Bumpstead
+Sheering
+Ballingdon
+Birdbrook
+Baythorne End
+Bobbingworth
+Fouchers
+Yardley
+Sturmer
+Dedham
+Mount Bures
+Jacques Hall
+Mistley
+Doddinghurst
+Colne Engaine
+Liston
+Brundon
+Chigwell
+Chiswick
+Borley
+Walthamstow
+Pinchpools
+Bonhunt
+Nevendon
+North Fambridge
+Felsted
+South Fambridge
+Pitsea
+Braintree
+Greenstead
+Titchwell
+Breckles
+Caston
+Fakenham
+Griston
+Saham Toney
+Stanhoe
+Hingham
+Stow Bedon
+Stibbard
+Thorpland
+Woodrising
+Cley next the Sea
+Pudding Norton
+Bale
+Bayfield
+Glandford
+Hunworth
+Stody
+Morston
+Sharrington
+Wighton
+Egmere
+Hindringham
+Holkham
+Houghton St Giles
+Stiffkey
+Clippesby
+Field Dalling
+Martham
+Moulton St Mary
+Ormesby St Margaret
+Woodbastwick
+Diss
+Foulsham
+Norwich
+Brandiston
+Felthorpe
+Taverham
+Blickling
+Marsham
+Felmingham
+Stratton Strawless
+Wickmere
+Runham
+Beccles
+Thorpe St Andrew
+Yarmouth
+South Acre
+Palgrave
+North Pickenham
+Sporle
+Cockley Cley
+Holme Hale
+Knettishall
+Horningtoft
+Kenninghall
+Bittering
+Bowthorpe
+Carleton Forehoe
+Mileham
+Weasenham All Saints
+Cranworth
+Crownthorpe
+Runhall
+Thuxton
+Helhoughton
+East Raynham
+Shipdham
+Aylsham
+Thursford
+Freethorpe
+Limpenhoe
+Strumpshaw
+Buckenham
+South Walsham
+Kirby Bedon
+Poringland
+Rockland St Mary
+Stoke Holy Cross
+Surlingham
+Bramerton
+Saxlingham Nethergate
+Redenhall
+Alburgh
+Starston
+East Winch
+Holme next the Sea
+South Wootton
+Old Buckenham
+Ashby
+Garboldisham
+Gasthorpe
+Quidenham
+East Beckham
+Acle
+Halvergate
+Hemblington
+Panxworth
+Ranworth
+Burgh St Margaret
+Rollesby
+Wickhampton
+Winfarthing
+Fersfield
+Gissing
+Shelfanger
+Tivetshall St Margaret
+Bressingham
+Mundham
+Sisland
+Woodton
+Sprowston
+Brundall
+Rackheath
+Wroxham
+Saxthorpe
+Belaugh
+Hevingham
+Itteringham
+Scottow
+Happisburgh
+Lessingham
+Mautby
+Earlham
+Thrigby
+Carleton Rode
+Hunstanton
+Necton
+Raveningham
+Feltwell
+Hilgay
+Methwold
+Upwell
+Weeting
+Kirtling
+Litcham
+Arminghall
+East Somerton
+Earsham
+Brockdish
+Ditchingham
+Scole
+Horstead
+Seething
+Toft Monks
+Lakenham
+Haddiscoe
+Thurlton
+Gayton Thorpe
+Snettisham
+Flitcham
+Shernborne
+Bircham Tofts
+Docking
+Cringleford
+Flordon
+Weston Longville
+Swaffham
+Costessey
+Sculthorpe
+Bawburgh
+Brandon Parva
+Honingham
+Wramplingham
+Marlingford
+Syderstone
+East Tuddenham
+Yaxham
+Briningham
+East Rudham
+Bastwick
+Gunton
+Repps
+Bawdeswell
+Beck
+Attlebridge
+Dilham
+Ludham
+Stalham
+Worstead
+Waxham
+Ashwicken
+Bawsey
+Stoke Ferry
+East Walton
+Baconsthorpe
+Rumburgh
+Catfield
+Hethersett
+Aslacton
+Morningthorpe
+Stratton St Michael
+Swanton
+Tasburgh
+Tibenham
+Anmer
+Ashwellthorpe
+Fring
+Nayland
+Kelling
+Shropham
+Snetterton
+Fundenhall
+Hedenham
+Kirby Cane
+Frenze
+Thelveton
+Horsford
+Horsham St Faith
+Kerdiston
+Lewes
+Wood Dalling
+Elsing
+Coltishall
+Corpusty
+Tuttington
+Barton Turf
+Filby
+Sco Ruston
+North Walsham
+Marham
+Denver
+West Dereham
+Downham Market
+Outwell
+Wimbotsham
+Congham
+Northwold
+Ickburgh
+Mundford
+Cranwich
+Heacham
+Rockland St Peter
+Larling
+Rockland All Saints
+Scoulton
+Banham
+Illington
+Gressenhall
+East Lexham
+Scarning
+Tittleshall
+Barnham Broom
+Welborne
+Wicklewood
+Deopham
+Mattishall
+Southburgh
+Castle Acre
+Hilborough
+Bodney
+Toftrees
+Fulmodeston
+Kettlestone
+Waterden
+Burnham Thorpe
+Barmer
+Tattersett
+Shereford
+Wiveton
+North Barsham
+Burnham Norton
+Gimingham
+Sidestrand
+Mundesley
+Northrepps
+Southrepps
+Thorpe Market
+Trunch
+Aylmerton
+Gresham
+Sustead
+Banningham
+Wolterton
+Pentney
+Lynford
+Billockby
+Thurne
+Ashby St Mary
+Carleton St Peter
+Hellington
+Alpington
+Thurton
+North Lopham
+Whissonsett
+Ingworth
+Hethel
+East Carleton
+Ketteringham
+Newton Flotman
+Tharston
+Hempnall
+Heckingham
+Burnham Deepdale
+Felbrigg
+Metton
+South Raynham
+Antingham
+Burgh next Aylsham
+Erpingham
+Smallburgh
+Bracon Ash
+Swardeston
+Wreningham
+Mulbarton
+Swainsthorpe
+Colney
+Bexwell
+Tacolneston
+Stradsett
+Beetley
+Colkirk
+North Elmham
+Saxlingham
+Brinton
+Hindolveston
+Swanton Novers
+Thornage
+Blofield
+Cockthorpe
+Guestwick
+Guist
+Helmingham
+Swafield
+Sedgeford
+Hemsby
+Mendham
+Scratby
+Gateley
+Melton Constable
+North Burlingham
+South Burlingham
+Gooderstone
+Oxborough
+Loddon
+Bintree
+Sparham
+Barton Bendish
+West Briggs
+Stow Bardolph
+Wormegay
+Terrington St Clement
+North Runcton
+West Winch
+Runcton Holme
+Southery
+Wendling
+Caistor St Edmund
+Dickleburgh
+Topcroft
+Bridgham
+Oxwick
+Broomsthorpe
+North Tuddenham
+Bergh Apton
+Brancaster
+Walsoken
+Horning
+Neatishead
+Beeston St Lawrence
+Honing
+Sloley
+Eccles on Sea
+Clenchwarton
+Beeston Regis
+Sheringham
+Stokesby
+Bircham Newton
+Swanton Morley
+Hockering
+Caistor
+Crostwick
+Lamas
+Skeyton
+Aldeby
+Crimplesham
+Wereham
+Shouldham Thorpe
+Houghton on the Hill
+Haveringland
+Carbrooke
+Godwick
+Shingham
+South Creake
+West Bilney
+Bodham
+Intwood
+Postwick
+West Beckham
+Letheringsett
+Frettenham
+Hainford
+Spixworth
+Babingley
+Dersingham
+Bessingham
+Crostwight
+East Ruston
+Boyland
+Wheatacre
+Tottenhill
+Wiggenhall St Germans
+Wellingham
+Chedgrave
+Ingoldisthorpe
+Barney
+Binham
+Sandringham
+Booton
+Tatterford
+Overstrand
+Tyby
+Hellesdon
+Oxnead
+Potter Heigham
+Reymerston
+Leziate
+Gara
+Kent
+Ospringe
+Maidstone
+Sandwich
+Throwley
+Wye
+Deal
+Farthingloe
+Guston
+Brenzett
+Hougham
+West Ripe
+Amwell
+Aylesford
+Dartford
+Faversham
+Hoddesdon
+Milton Regis
+Old Bexley
+Darenth
+East Malling
+Northfleet
+Otford
+Wrotham
+Bishopsbourne
+Boughton Street
+Charing
+Mersham
+Petham
+Pluckley
+Reculver
+Wingham
+Boughton Malherbe
+Brasted
+Eynsford
+Farningham
+Graveney
+Hollingbourne
+Leaveland
+Lyminge
+Lympne
+Newenden
+Orpington
+Old Romney
+Stowting
+Ulcombe
+East Farleigh
+Finglesham
+Lydd
+Lenham Heath
+Meopham
+East Peckham
+Saltwood
+Isle of Sheppey
+Statenborough
+Tilmanstone
+Adisham
+Chartham
+Eastry
+Godmersham
+Ickham
+Romney Marsh
+Seasalter
+Warehorne
+Borstal
+Cuxton
+Frindsbury
+Halling
+Snodland
+Southfleet
+Tonbridge
+Trottiscliffe
+Wouldham
+Horton Kirby
+Maplescombe
+Pinden
+Swanscombe
+Carry
+Chelsfield
+North Cray
+Eltham
+Foots Cray
+Ruxley
+Seal
+St Mary Cray
+St Pauls Cray
+Beckenham
+Cudham
+Keston
+Leybourne
+Ryarsh
+Burham
+Fairbourne
+Frinsted
+Hadlow
+Harrietsham
+Luddesdown
+West Peckham
+Stockbury
+Tudeley
+Chart Sutton
+Old Shelve
+Otham
+Thurnham
+Wichling
+Wormshill
+East Barming
+Boxley
+Chalk
+Teston
+Wateringbury
+Bekesbourne
+Cooling
+Henhurst
+Merston
+Oakleigh
+Patrixbourne
+Tonge
+Upchurch
+Wickhambreaux
+Barfrestone
+Elham
+Folkestone
+Nackington
+Coldred
+Woodnesborough
+Badlesmere
+Chilham
+North Eastling
+Stalisfield Green
+Swalecliffe
+Hastingleigh
+Bilsington
+Brabourne
+Denge Marsh
+Eastling
+East Langdon
+Postling
+Shalmsford Street
+Benenden
+Betteshanger
+Boswell
+West Cliffe
+Temple Ewell
+Chillenden
+Elmton
+Hemsted
+Marshborough
+Tickenhurst
+Chislet
+Fordwich
+Lenham
+Longport
+Repton
+Selling
+Sturry
+South Wilderton
+Bodsham
+Lewisham
+Atterton
+Court-at-Street
+Ruckinge
+Sellindge
+Blean
+Boughton Aluph
+Evegate
+Mereworth
+Swetton
+Westerham
+Woolwich
+Yalding
+Bosham
+South Malling
+Rotherfield
+Buxted
+Aldingbourne
+Ferring
+East Lavant
+Pagham
+Patching
+Stanmer
+Tangmere
+West Tarring
+Parham
+Selsey
+Sidlesham
+Steyning
+West Thorney
+East Wittering
+Alciston
+Bullington
+Catsfield
+Elsted
+Felpham
+West Itchenor
+East Lavington
+Penhurst
+Southease
+Bexhill
+Frankwell
+Ninfield
+Wartling
+Beddingham
+Brightling
+Eyelids
+Mountfield
+Warbleton
+Whatlington
+Chalvington
+Etchingwood
+West Firle
+Jevington
+Ripe
+Sherrington
+Tilton
+Waldron
+Willingdon
+Kitchenham
+Playden
+Selmeston
+Udimore
+Bodiam
+Ewhurst
+Heighton
+Sedlescombe
+Pevensey
+Exceat
+Wannock
+Westdean
+Alfriston
+Folkington
+Frog Firle
+Hawkridge
+South Heighton
+Rodmell
+Tarring Neville
+Hailsham
+Hankham
+Horse Eye
+Langney
+Peelings
+Balmer
+Chiddingly
+Ditchling
+Fairlight
+Fletching
+Hamsey
+Horsted Keynes
+East Grinstead
+Arundel
+Chithurst
+Cocking
+Mid Lavant
+Stedham
+Treyford
+Trotton
+Barlavington
+Bepton
+Duncton
+Graffham
+Grittenham
+Petworth
+Selham
+Stopham
+Warblington
+Birdham
+East Marden
+North Mundham
+Storrington
+West Wittering
+Angmering
+West Chiltington
+Cootham
+Goring-by-Sea
+Lyminster
+Nyetimber
+West Preston
+Pulborough
+Sullington
+Warningcamp
+Bignor
+Bilsham
+Binsted
+Climping
+Hardham
+Middleton-on-Sea
+Tortington
+Walberton
+Wepham
+Boxgrove
+Eastergate
+Halnaker
+East Hampnett
+Runcton
+Strettington
+Upwaltham
+Westhampnett
+Falmer
+Piddinghoe
+Patcham
+Aldrington
+Upper Beeding
+Fulking
+Keymer
+Kingston by Sea
+Ovingdean
+Rottingdean
+East Chiltington
+Hurst Wickham
+Hurstpierpoint
+Poynings
+Saddlescombe
+Streat
+Westmeston
+Twineham
+Annington
+Bramber
+Old Shoreham
+Wappingthorn
+Coombes
+Shermanbury
+Sompting
+Ifield
+North Lancing
+South Lancing
+Thakeham
+Iping
+Woolbeding
+Bermondsey
+Guildford
+Reigate
+Woking
+Cheam
+Dorking
+Ewell
+Fetcham
+Godalming
+Gomshall
+Kingston upon Thames
+Leatherhead
+Mortlake
+Putney
+Shere
+Tuesley
+East Horsley
+South Merstham
+Ashtead
+Banstead
+Battersea
+Chaldon
+Gatton
+Mitcham
+Peckham
+Streatham
+Tadworth
+Tatsfield
+Chertsey
+Esher
+Mickleham
+Pyrford
+Sanderstead
+Thames Ditton
+Upper Tooting
+Wandsworth
+Weybridge
+Chobham
+Coulsdon
+Effingham
+Egham
+Epsom
+Petersham
+Tooting Graveney
+Barnes
+Byfleet
+East Clandon
+Lambeth
+Limpsfield
+South Nutfield
+Oxted
+Beddington
+Bletchingley
+Chelsham
+Chevington
+Tandridge
+Woldingham
+Worplesdon
+Chessington
+Long Ditton
+East Molesey
+Tolworth
+Walton on the Hill
+Walton-on-Thames
+Woodmansterne
+Balham
+Carshalton
+West Clandon
+West Horsley
+Hurtmore
+Peper Harow
+Witley
+Camberwell
+Send
+Titsey
+Wisley
+Cosham
+Holybourne
+East Meon
+Meonstoke
+Neatham
+Odiham
+Portchester
+Selborne
+Soberton
+Wymering
+Barton Stacey
+Upper Clatford
+Lasham
+Nether Wallop
+Over Wallop
+Andover
+Basingstoke
+Breamore
+Lower Burgate
+Eyeworth
+Holdenhurst
+Hurstbourne Tarrant
+Kingsclere
+Monxton
+Quarley
+Rockbourne
+Titchfield
+Arreton
+Bathingbourne
+Faccombe
+Isle of Wight
+Kings Somborne
+Nettlestone
+Sandown
+Whippingham
+Woolverton
+Wroxall
+Old Alresford
+Beauworth
+Bishops Waltham
+Bishopstoke
+Kilmeston
+Ningwood
+Abbotstone
+Chilton Candover
+Fareham
+Meon
+West Meon
+West Tisted
+Lower Wield
+Upper Wield
+Crondall
+Chilbolton
+Chilcomb
+Freefolk
+Hurstbourne Priors
+Nursling
+Whitnal
+Alverstoke
+Bransbury
+Droxford
+Ecchinswell
+Hinton Ampner
+Martyr Worthy
+Southampton
+Wootton St Lawrence
+Brown Candover
+Leckford
+Lockerley
+Mottisfont
+East Tytherley
+West Tytherley
+Woodmancott
+Abbots Worthy
+Micheldever
+East Stratton
+West Stratton
+Abbotts Ann
+Bedhampton
+Bighton
+Lower Farringdon
+Upper Farringdon
+Havant
+Laverstoke
+Linkenholt
+North Stoneham
+Tatchbury
+Warnford
+Worting
+Lower Froyle
+Upper Froyle
+Itchen Stoke
+Liss
+Longstock
+Penton Grafton
+Romsey
+Winchfield
+Bashley
+Bosley
+Lower Bullington
+Upper Bullington
+Goodworth Clatford
+Sway
+Sydmonton
+Totton
+Wherwell
+Bickton
+Bishops Sutton
+Charford
+Penton Mewsey
+Preston Candover
+Awbridge
+Old Basing
+Chineham
+Corhampton
+Hound
+Kempshott
+Nately Scures
+Segensworth
+Sherborne St John
+Stubbington
+Tunworth
+Amport
+Boarhunt
+Bramshill
+Chawton
+East Cholderton
+Dummer
+Heckfield
+Herriard
+Litchfield
+Sherfield English
+Stratfield Turgis
+Ellisfield
+Ibsley
+Monk Sherborne
+Stanpit
+Bramshott
+North Charford
+Copnor
+Fordingbridge
+Hartley Mauditt
+Headbourne Worthy
+Mapledurwell
+Otterbourne
+Shipton Bellinger
+Sutton Scotney
+South Tidworth
+Ashe
+North Baddesley
+Fratton
+Mortimer West End
+Silchester
+Swampton
+Cliddesden
+Eastrop
+Embley
+Newton Valence
+Rowner
+Shalden
+Weston Corbett
+Dunbridge
+Foxcotte
+Itchen Abbas
+Outwick
+Stratfield Saye
+South Warnborough
+East Wellow
+Winkton
+Burghclere
+Newton Stacey
+Rhode
+Sopley
+Woodcott
+Colemore
+Crux Easton
+Empshott
+Baughurst
+Hatch Warren
+East Worldham
+Bartley
+Bramdean
+Dogmersfield
+Hartley Wespall
+Mattingley
+Enham Alamein
+Farleigh Wallop
+Upper Burgate
+Marchwood
+West Worldham
+South Baddesley
+Hordle
+Lymington
+Througham
+Walhampton
+Battramsley
+Bisterne
+Boldre
+Brockenhurst
+Buckholt
+Exbury
+Foxlease
+Gritnam
+Harbridge
+Hardley
+Milford on Sea
+Minstead
+Otterwood
+Rollstone
+Freshwater
+Carisbrooke
+Wilmingham
+Calbourne
+Chale
+Shalcombe
+Shide
+Shorwell
+Walpan
+Lower Watchingwell
+Adgestone
+Alverstone
+Black Pan
+Brading
+Branstone
+Merstone
+Roud
+Rowborough
+Shanklin
+Bagwich
+Brighstone
+Chillerton
+Mottistone
+Shalfleet
+Yafford
+Benson
+Blewbury
+Bray
+Brightwell-cum-Sotwell
+Chalgrove
+East Ilsley
+West Ilsley
+Reading
+Sutton Courtenay
+Wallingford
+Long Wittenham
+Aston Tirrold
+Caversham
+Cholsey
+Cookham
+Crowmarsh Gifford
+Ewelme
+Pyrton
+Shirburn
+Thatcham
+Waltham St Lawrence
+Lower Basildon
+Bucklebury
+Earley
+Finchampstead
+Remenham
+Shinfield
+Wantage
+Warfield
+Faringdon
+South Fawley
+East Hendred
+West Hendred
+Kingston Lisle
+Kintbury
+Lambourn
+Letcombe Regis
+Shalbourne
+Shrivenham
+Pangbourne
+Sonning
+White Waltham
+Abingdon
+Bayworth
+Beedon
+Bessels Leigh
+Chieveley
+Cumnor
+Frilford
+Marcham
+Sandford-on-Thames
+Shippon
+Sunningwell
+Tubney
+Wytham
+Appleford
+Draycott Moor
+Garford
+Goosey
+East Hanney
+Lyford
+Whistley Green
+Winkfield
+Brightwalton
+Chaddleworth
+Charney Bassett
+Curridge
+Easthampstead
+East Ginge
+West Ginge
+East Lockinge
+West Lockinge
+Pusey
+Shellingford
+Beckett
+Buscot
+Catmore
+West Challow
+Frilsham
+West Hanney
+Peasemore
+Sheffield Bottom
+Westrop Green
+Bisham
+Burghfield
+Denchworth
+Englefield
+Hartridge
+Kingston Bagpuize
+Upper Woolhampton
+Childrey
+Compton Beauchamp
+Eaton Hastings
+Enborne
+Inkpen
+North Moreton
+South Moreton
+Padworth
+Southcote
+Stanford Dingley
+Sulham
+Ufton Nervet
+Yattendon
+Ardington
+Brimpton
+East Garston
+Hatford
+Letcombe Bassett
+Whatcombe
+Purley
+Stratfield Mortimer
+Aldworth
+Aston Upthorpe
+Bagnor
+Dedworth
+East Hagbourne
+West Hagbourne
+Hampstead Norreys
+Hamstead Marshall
+Irish Hill
+Wasing
+Carswell
+Gainfield
+Hinton Waldrist
+Calne
+Cricklade
+Malmesbury
+Warminster
+Aldbourne
+Britford
+Collingbourne Ducis
+Compton Chamberlayne
+Coombe Bissett
+Corsham
+East Knoyle
+Lydiard Millicent
+Melksham
+Netheravon
+Poulshot
+Tilshead
+Winterbourne Stoke
+Wootton Rivers
+Alton Priors
+Wroughton
+Enford
+Fonthill Bishop
+Heytesbury
+Highworth
+Ogbourne St George
+East Overton
+Pewsey
+Sherston
+Upavon
+Bishops Cannings
+Charnage
+Ditchampton
+Draycot Fitz Payne
+Potterne
+Ramsbury
+Somerford Keynes
+North Tidworth
+Winterbourne Dauntsey
+Yatton Keynell
+Christian Malford
+Damerham
+Dauntsey
+Gomeldon
+Grittleton
+Idmiston
+Kington Langley
+Longbridge Deverill
+Monkton Deverill
+Winterbourne Monkton
+Bremhill
+Brinkworth
+Brokenborough
+Chelworth
+Collingbourne Kingston
+Crudwell
+Garsdon
+Kemble
+Manningford Abbots
+Long Newnton
+Ashton Keynes
+Beechingstoke
+Chilmark
+Chiseldon
+Liddington
+North Newnton
+Stanton St Bernard
+Swallowcliffe
+Tisbury
+All Cannings
+Baverstock
+Fovant
+West Knoyle
+Laverstock
+West Overton
+Ugford
+Urchfont
+Wardour
+Wylye
+Alderbury
+Brixton Deverill
+Castle Eaton
+Clyffe Pypard
+Conock
+Eysey
+Hanging Langford
+Hartham
+Horningsham
+Kingston Deverill
+Maddington
+Milston
+Upton Lovell
+West Winterslow
+Alton Barnes
+Chitterne
+Etchilhampton
+Gussage St Michael
+Heddington
+Lus Hill
+Orcheston
+Ratfyn
+Shrewton
+Stratford Tony
+Wilcot
+East Winterslow
+Bishopstrow
+Broad Blunsdon
+Bradenstoke
+Hill Deverill
+Keevil
+Lacock
+Langley Burrell
+Poole Keynes
+Porton
+Thickwood
+Tollard Royal
+East Tytherton
+Winterbourne Earls
+North Wraxall
+Berwick St James
+Calstone Wellington
+Chedglow
+Cholderton
+Hilmarton
+Lydiard Tregoze
+Newton Tony
+Rowde
+Teffont Evias
+Upton Scudamore
+Blunsdon St Andrew
+Broughton Gifford
+Clevancy
+Compton Bassett
+Fifield Bavant
+West Kennett
+Norton Bavant
+Stert
+Biddestone
+Castle Combe
+Chilton Foliat
+Colerne
+Draycot Foliat
+Whiteparish
+Broad Hinton
+Hurdcott
+Ogbourne St Andrew
+Winterbourne Bassett
+Wootton Bassett
+Beckhampton
+Codford St Peter
+Ditteridge
+Lockeridge
+Maiden Bradley
+Lower Seagry
+Upper Seagry
+Sopworth
+Uffcott
+Barford St Martin
+Clatford
+Codford St Mary
+Hullavington
+Imber
+East Kennett
+Standlynch
+Steeple Langford
+Sutton Mandeville
+Sutton Veny
+Tockenham
+Brigmerston
+Easton Grey
+Fisherton de la Mere
+Fittleton
+Fonthill Gifford
+Kellaways
+Kington St Michael
+Bemerton
+East Chisenbury
+West Chisenbury
+Homington
+Market Lavington
+Shorncote
+Stratton St Margaret
+Trow
+Winterbourne Gunner
+Yatesbury
+Zeals
+Corsley
+Coulston
+Hilperton
+Knook
+Manningford Bohune
+Monkton Farleigh
+Oaksey
+Odstock
+Bramshaw
+Figheldean
+Landford
+Manningford Bruce
+Marten
+Ogbourne Maizey
+Plaitford
+Stanton Fitzwarren
+Stitchcombe
+Tidcombe
+Draycot Cerne
+Wolfhall
+Bere Regis
+Bradpole
+Bridport
+Burton Bradstock
+Charlton Marshall
+Child Okeford
+Fordington
+Frome
+East Lulworth
+Mappowder
+Puddletown
+Shaftesbury
+Shipton Gorge
+Sutton Poyntz
+Wareham
+Wimborne Minster
+Wimborne St Giles
+Winfrith Newburgh
+Alton Pancras
+Chaldon Herring or East Chaldon
+Cranborne
+Edmondsham
+Frome St Quintin
+Hampreston
+Ibberton
+Langton Herring
+Loders
+Lyme Regis
+Melcombe
+Tarrant Gunville
+Up Cerne
+Upwey
+Witchampton
+Yetminster
+Hinton Martell
+Athelhampton
+Beaminster
+North Bowood
+South Bowood
+Bradford Abbas
+Buckham
+Chardstock
+Milborne Port
+Netherbury
+Oborne
+Rampisham
+Stalbridge
+Stalbridge Weston
+Stoke Abbott
+Thornford
+Affpuddle
+Bloxworth
+Boveridge
+Buckland Newton
+Cerne Abbas
+Coombe Keynes
+Okeford Fitzpaine
+Pentridge
+Piddletrenthide
+Radipole
+Sturminster Newton
+Tarrant Crawford
+Tarrant Keyneston
+Tarrant Monkton
+Woodyates
+Long Bredy
+Burleston
+Cattistock
+Hethfelton
+Holworth
+Kimmeridge
+Milton Abbas
+West Milton
+Minterne Parva
+Osmington
+Sydling St Nicholas
+Symondsbury
+Winterborne Whitechurch
+Winterbourne Abbas
+Woodsford
+Woolland
+Worgret
+Askerswell
+Atrim
+Cheselbourne
+Compton Abbas
+Fifehead St Quintin
+Fontmell Magna
+Hinton St Mary
+Iwerne Minster
+Melbury Abbas
+Piddlehinton
+North Poorton
+Portesham
+Purse Caundle
+Shilvinghampton
+Sixpenny Handley
+Stoke Wake
+East Stour
+West Stour
+Tarrant Hinton
+Tolpuddle
+Whitchurch Canonicorum
+Buckhorn Weston
+Dewlish
+Forston
+Godmanstone
+Higher Nyland
+Lower Nyland
+West Pulham
+West Stafford
+Tarrant Launceston
+Winterborne Stickland
+Bryanston
+Creech
+Gussage All Saints
+Hooke
+Langton Long Blandford
+Mannington
+Matravers
+Melbury Osmond
+East Morden
+Spetisbury
+Stoborough
+Studland
+Tyneham
+Up Sydling
+Uploders
+Warmwell
+Winterborne Muston
+Wool
+Burstock
+Catherston Leweston
+Charmouth
+Church Knowle
+Clifton Maybank
+Fifehead Magdalen
+South Perrott
+Stour Provost
+Stourton Caundle
+Sturminster Marshall
+Tincleton
+Toller Whelme
+Trill
+Wootton Fitzpaine
+Bradford Peverell
+Canford Magna
+Corfe Mullen
+Long Crichel
+Frome Vauchurch
+Higher Kingcombe
+Lower Kingcombe
+Kington Magna
+Lytchett Matravers
+Ranston
+Wynford Eagle
+Iwerne Courtney or Shroton
+West Chelborough
+Chilfrome
+Cruxton
+Hammoon
+East Pulham
+Dudsbury
+Fifehead Neville
+Glanvilles Wootton
+East Holton
+West Knighton
+Milton on Stour
+Silton
+Sutton Waldron
+Winterborne Houghton
+West Bexington
+East Chelborough
+East Holme
+Maiden Newton
+Melbury Bubb
+Milborne St Andrew
+Owermoigne
+Powerstock
+Stubhampton
+Toller Fratrum
+Turnworth
+Whitecliff
+Worth Matravers
+Wyndham
+Chettle
+Compton Valence
+Durweston
+Moorbath
+Mosterton
+West Parley
+Shillingstone
+Stinsford
+Stourpaine
+Tarrant Rawston
+Buckland Ripers
+West Chaldon
+Frome Whitfield
+Graston
+Puncknowle
+Quarleston
+Turners Puddle
+Chickerell
+West Orchard
+Swanage
+Thornicombe
+Winterborne Kingston
+Briantspuddle
+Pilsdon
+Higher Bockhampton
+Lower Bockhampton
+Broadwindsor
+Walditch
+Winterborne Monkton
+Axbridge
+Cheddar
+Cricket St Thomas
+Curry Rivel
+Langport
+North Petherton
+South Petherton
+Wedmore
+Bedminster
+Brompton Regis
+Bruton
+Cannington
+Carhampton
+Creech St Michael
+Crewkerne
+North Curry
+Dulverton
+Ilchester
+Langford Budville
+Monksilver
+Westowe
+Williton
+Batheaston
+Belluton
+Chewton Mendip
+Congresbury
+Corton Denham
+Hardington Mandeville
+Martock
+Mudford
+Pitney
+Queen Camel
+Stanton Drew
+West Bagborough
+Bleadon
+Bradford-on-Tone
+Chaffcombe
+Cheddon Fitzpaine
+Upper Cheddon
+Chilcompton
+Hillfarrance
+West Coker
+Lydeard St Lawrence
+Maidenbrook
+Norton Fitzwarren
+East Nynehead
+Oake
+Pitminster
+Richs Holford
+Rimpton
+Rodney Stoke
+Salisbury
+Seaborough
+Shopnoller
+Stoke St Mary
+Templecombe
+Tolland
+Backwell
+Barrow Gurney
+Bishopsworth
+Butcombe
+Claverham
+Clewer
+Culbone
+Easton-in-Gordano
+Elborough
+Farmborough
+East Harptree
+Havyatt
+Norton Malreward
+Portishead
+Saltford
+Wilmersham
+Winterhead
+Long Ashton
+Bathwick
+Compton Dando
+Englishcombe
+Freshford
+Hardington
+Portbury
+Radstock
+Rode
+Lower Swainswick
+Upper Swainswick
+Tellisford
+Twerton
+Bishops Lydeard
+Cameley
+Chard
+Combe St Nicholas
+Emborough
+Farrington Gurney
+Hallatrow
+West Harptree
+Kingsbury Episcopi
+Kingston Seymour
+Huish Episcopi
+High Littleton
+Newton St Loe
+Ston Easton
+Stony Littleton
+Upton Noble
+Wells
+Wiveliscombe
+Ash Priors
+Banwell
+Bathampton
+Bathford
+Charlcombe
+Chew Magna
+Evercreech
+Dunkerton
+Lyncombe
+Monkton Combe
+Priston
+Stanton Prior
+Wanstrow
+Woodwick
+Ashcott
+Butleigh
+Catcott
+Chilton Polden
+Compton Dundon
+Croscombe
+Dundon
+Greinton
+Lattiford
+East Lydford
+Meare
+Middlezoy
+Panborough
+Pedwell
+Podimore
+Shepton Mallet
+Stawell
+Sutton Mallet
+Woolavington
+Alhampton
+Baltonsborough
+Brent
+Ditcheat
+Doulting
+Edingworth
+Hornblotton
+Lamyatt
+Marksbury
+West Monkton
+East Pennard
+Pylle
+Tintinhull
+Wrington
+Abbas Combe
+West Camel
+Cathanger
+Chipstable
+Hamp
+Ilminster
+Isle Abbotts
+Limington
+Midelney
+Muchelney
+Puriton
+Stogumber
+Chelwood
+Combwich
+Compton Durville
+Crowcombe
+Holnicote
+Isle Brewers
+Kilmersdon
+Kingweston
+Lopen
+Loxton
+Sampford Brett
+Seavington St Mary
+Shepton Beauchamp
+Whitestaunton
+Ashbrittle
+Bickenhall
+North Bradon
+Cricket Malherbie
+Donyatt
+Hatch Beauchamp
+Montacute
+Staple Fitzpaine
+Swell
+Thornfalcon
+Thurlbear
+Babcary
+North Barrow
+South Barrow
+Carlingcott
+Charlton Adam
+East Chinnock
+Middle Chinnock
+West Chinnock
+Chiselborough
+Cloford
+Closworth
+Cucklington
+Foddington
+Keinton Mandeville
+Odcombe
+Pendomer
+North Perrott
+Shepton Montague
+Stoke Trister
+Stoney Stoke
+Sutton Montis
+Weston Bampfylde
+Yarlington
+Adber
+Chilton Trinity
+Curry Mallet
+Houndstone
+Lufton
+Marston Magna
+Otterhampton
+Pightley
+Porlock
+Poyntington
+Shearston
+Thorne Coffin
+Trent
+Yeovil
+Aisholt
+Ashway
+Chilton Trivett
+Halsway
+Kilve
+Knowle St Giles
+Pixton
+Puckington
+Radlet
+Stringston
+Higher Vexford
+Lower Vexford
+Weacombe
+Withiel
+Exford
+Barton St David
+North Brewham
+South Brewham
+Doverhay
+Downscombe
+Enmore
+Farleigh Hungerford
+Fivehead
+Holne
+Sampford Arundel
+Shipham
+Standerwick
+Stoke Pero
+Thorne St Margaret
+White Ox Mead
+Witham Friary
+Beckington
+Berkley
+Brympton DEvercy
+Cary Fitzpaine
+Charlton Mackrell
+Durston
+Halswell
+Huish Champflower
+Kittisford
+Marston Bigot
+Mudford Sock
+Penselwood
+Raddington
+Skilgate
+Sutton Bingham
+Timberscombe
+Whitelackington
+Alston Sutton
+Ansford
+Badgworth
+Bawdrip
+East Bower
+Bratton Seymour
+Brean
+Bridgwater
+Burnham-on-Sea
+Dunwear
+East Huntspill
+West Huntspill
+Pawlett
+Sparkford
+Stretcholt
+Tarnock
+Weare
+Wembdon
+Wincanton
+Worle
+Yarnfield
+Adsborough
+Aley
+Brompton Ralph
+Treborough
+Cutcombe
+Dunster
+Minehead
+North Quarme
+Stogursey
+Shurton
+Allercott
+Bathealton
+Combe Sydenham
+Holford
+Luxborough
+East Lydeard
+Poleshill
+West Quantoxhead
+Runnington
+Stocklinch St Magdalen
+Old Stowey
+Watchet
+Willett
+Beggearn Huish
+North Cheriton
+South Cheriton
+Chilton Cantelo
+Hinton Blewett
+Hinton St George
+Nunney
+East Quantoxhead
+Stowey
+Tickenham
+Wootton Courtenay
+Yeovilton
+Charlton Musgrove
+Dyche
+Marsh Mills
+Preston Bowyer
+Rapps
+Rodhuish
+Selworthy
+Spaxton
+Stawley
+Nether Stowey
+Woolmersdon
+Aldwick
+North Cadbury
+South Cadbury
+Chew Stoke
+Maperton
+Compton Pauncefoot
+Eastrip
+Goathurst
+Luckington
+Merridge
+Clatworthy Reservoir
+Chelvey
+Clevedon
+Compton Martin
+Hinton Charterhouse
+Kewstoke
+Lovington
+Milton Clevedon
+Norton St Philip
+Rodden
+Ubley
+Buckland St Mary
+Capland
+Durleigh
+Hay Street
+Huntstile
+Lilstock
+Seavington St Michael
+St Michael Church
+Wearne
+Wellisford
+Wigborough
+Withypool
+Buckland Dinham
+Claverton
+Combe Hay
+Discove
+Haselbury Plucknett
+West Lydford
+Preston Plucknett
+Sandford Orcas
+Stocklinch Ottersey
+Tadwick
+Warleigh
+Writhlington
+Axminster
+Barnstaple
+Braunton
+East Budleigh
+Exminster
+Hemyock
+Kingsteignton
+Lydford
+South Molton
+Rawridge
+Devon
+Smallridge
+North Tawton
+Totnes
+West Alvington
+Axmouth
+Blackawton
+Broadaford
+Colyton
+Diptford
+Ermington
+Fardel
+Hartland
+Kings Tamerton
+Kingskerswell
+Landinner
+Lifton
+Ludbrook
+North Molton
+Plympton
+South Tawton
+Trebeigh
+Undercleave
+Walkhampton
+Yealmpton
+Alphington
+Beaford
+High Bickington
+Bideford
+Black Torrington
+Bradstone
+Broadclyst
+Clovelly
+Colaton Raleigh
+Halwill
+Holsworthy
+Kings Nympton
+Langtree
+Morebath
+Moretonhampstead
+Northlew
+Pinhoe
+West Putford
+Shebbear
+Tawstock
+Topsham
+Ashprington
+Ashreigney
+Bishops Tawton
+Bishopsteignton
+Bratton Fleming
+Crediton
+Culmstock
+Dawlish
+Down St Mary
+Halberton
+Iddesleigh
+Ide
+Lapford
+Morchard Bishop
+Newton St Cyres
+St Marychurch
+Stoke Canon
+Winkleigh
+Ashburton
+Ashwater
+Bishops Nympton
+Bondleigh
+Bovey Tracey
+Branscombe
+Clyst Honiton
+Buckland Filleigh
+Chudleigh Knighton
+Clyst St Mary
+Dittisham
+Hamsworthy
+Hatherleigh
+Henscott
+Horwood
+Paignton
+Salcombe Regis
+Scobitor
+Talaton
+South Aller
+Higher Aylescott
+Lower Aylescott
+Stoke Rivers
+East Buckland
+Buscombe
+Coldridge
+Martinhoe
+East Middleton
+West Middleton
+Nymet Tracey
+Patchole
+Pilland
+Raleigh
+Trentishoe
+Marwood
+Warcombe
+West Anstey
+Bittadon
+Brampford Speke
+Chagford
+Lower Creedy
+Cruwys Morchard
+Nether Exe
+Farway
+Kimworthy
+Loxbeare
+Peadhill
+Sourton
+Sutcombe
+Teigncombe
+Thelbridge
+Up Exe
+East Worlington
+Coffinswell
+Liddaton
+Milton Abbot
+Petrockstowe
+Plymstock
+Polsloe
+Raddon
+Romansleigh
+Ruston
+Tavistock
+Uplyme
+Zeal Monachorum
+Abbotskerswell
+Lower Ashton
+South Brent
+Buckfast
+Cullompton
+Loosebeare
+Otterton
+Ottery St Mary
+Sidmouth
+Swimbridge
+Trusham
+Umberleigh
+Yarcombe
+Alwington
+East Anstey
+Buckland Brewer
+Bulkworthy
+Culleigh
+East Densham
+Frithelstock
+Galsworthy
+Gidleigh
+Lupridge
+Monkleigh
+East Putford
+West Raddon
+Rockbeare
+Shobrooke
+Highampton
+Cotleigh
+Alverdiscott
+Bere Ferrers
+Bolberry
+Broadhempston
+Clyst St Lawrence
+Cornwood
+Croyde
+Feniton
+Frizenham
+Modbury
+Spriddlestone
+Stockleigh English
+Meeth
+Wedfield
+Batson
+Boasley
+Bratton Clovelly
+Bridestowe
+Payhembury
+Chichacott
+Chitterley
+Honicknowle
+Plymouth
+Okehampton
+Higher Spriddlescombe
+Ashmansworthy
+Belstone
+Dunterton
+Exbourne
+Germansweek
+Higher Gorhuish
+Lower Gorhuish
+Guscott
+Heanton Satchville
+Honeychurch
+Inwardleigh
+Kigbeare
+Lashbrook
+Lewtrenchard
+Monkokehampton
+Higher Oak
+Parkham
+Sampford Courtenay
+Sedborough
+Woolladon
+Yarnscombe
+Broadnymett
+Charles
+Chawleigh
+Dolton
+Greenslade
+West Hagginton
+Heanton Punchardon
+Landcross
+Loxhore
+Nymet Rowland
+Shirwell
+Walson
+Wembworthy
+Clyst Hydon
+West Clyst
+Fursham
+Hockworthy
+Holcombe Rogus
+Ilfracombe
+Kentisbeare
+Kentisbury
+Larkbeare
+North Lobb
+Middle Marwood
+Poltimore
+Ponsford
+Ringcombe
+Whimple
+Bolham Water
+Bridford
+Clayhidon
+Cowick
+Drewsteignton
+Higher Eggbeer
+Exwick
+Hittisleigh
+Maidencombe
+Ringmore
+Spreyton
+Tedburn St Mary
+Aylesbeare
+Cheldon
+Chettiscombe
+Chevithorne
+Chulmleigh
+Creacombe
+Haccombe
+Hennock
+Manaton
+Meshaw
+Musbury
+Rackenford
+Rose Ash
+Sellake
+East Tapps
+West Tapps
+Teigngrace
+Wolborough
+Yard
+Bradaford
+Broadwoodwidger
+Clawton
+Combpyne
+Downicary
+Mary Tavy
+Offwell
+West Prawle
+Pyworthy
+Sydenham Damerel
+Tetcott
+Thrushelton
+Tillislow
+South Allington
+Bagton
+North Bovey
+Brixham
+East Charleton
+West Charleton
+Churston Ferrers
+Combe Fishacre
+Cornworthy
+Curtisknowle
+Henford
+North Huish
+South Huish
+Loddiswell
+Lupton
+South Pool
+Shiphay
+Sorley
+Thurlestone
+Blachford
+Butterford
+Chivelstone
+Down Thomas
+Eggbuckland
+Lambside
+Manadon
+Hoo Meavy
+Membland
+Mutley
+Okenbury
+East Sherford
+Staddiscombe
+Whitleigh
+East Worthele
+West Worthele
+North Buckland
+Pithill
+Shaugh Prior
+Shillingford Abbot
+Virworthy
+Woolacombe
+Awliscombe
+Bradford Tracy
+Cadeleigh
+Colebrook
+Combeinteignhead
+Countisbury
+East Ilkerton
+West Ilkerton
+East Lyn
+West Lyn
+Lynton
+Mackham
+Mildon
+Pirzwell
+North Radworthy
+Whipton
+Beaworthy
+Blagrove
+Cockington
+Combe Martin
+Dartington
+Dean Prior
+Harbourneford
+Parracombe
+Radworthy
+Rattery
+Southleigh
+Washford Pyne
+Battisford
+Berrynarbor
+Buckland Monachorum
+Challonsleigh
+Dipford
+Knowstone
+Powderham
+Sampford Spiney
+West Spurway
+Uffculme
+Woolfardisworthy
+Ayshford
+Boehill
+Broadhembury
+Stokenham
+Combe Raleigh
+Craze Lowman
+Drayford
+Goodrington
+Uplowman
+Luppitt
+Mohuns Ottery
+Stoke Fleming
+Withycombe Raleigh
+Ash Thomas
+Burlescombe
+Dodscott
+Dowland
+Gittisham
+Hampson
+Instow
+Newton Tracey
+Lower Newton
+Riddlecombe
+Woodbeare
+North Backstone
+West Backstone
+Cookbury Wick
+Flete
+Gidcott
+Halstow
+Hazard
+Lympstone
+East Manley
+Milton Damerel
+Ottery
+Sampford Peverell
+Whitnage
+East Allington
+Combe Royal
+Dunchideock
+Edginswell
+Ipplepen
+Mortehoe
+Roadway
+Southweek
+Throwleigh
+Bradworthy
+Aunk
+Clyst St George
+Dunkeswell
+Dunsdon
+Huxham
+Lank Combe
+East Ogwell
+West Ogwell
+Stockleigh Pomeroy
+Higher Tale
+Lower Tale
+Adworthy
+Berry Pomeroy
+Blackslade
+Bridgerule
+Gappah
+Heavitree
+East Panson
+Upottery
+Washfield
+Weycroft
+Yeadbury
+Aveton Gifford
+Bucks Cross
+Crockernwell
+Hemerdon
+South Hole
+Huxhill
+East Kimber
+West Kimber
+Lovacott
+Monkswell
+East Peeke
+West Peeke
+Peters Marland
+Praunsley
+Pulham
+Sigford
+Speccott
+Twigbeare
+Weare Giffard
+Winswell
+Bickleton
+Cheriton Fitzpaine
+Churchstanton
+Culm Davy
+Georgeham
+Higher Molland
+Orway
+Ossaborough
+Owlacombe
+Rifton
+Saunton
+Higher Spreacombe
+Sprytown
+Widworthy
+Brimblecombe
+Giffords Hele
+Grimpstone
+Grimpstonleigh
+South Milton
+Moreleigh
+Peter Tavy
+Tamerton Foliot
+Ugborough
+North Aller
+Delley
+Essebeare
+George Nympton
+Huntsham
+Parford
+Plymtree
+West Worlington
+Abbots Bickington
+Higher Ashton
+Doddiscombsleigh
+Greenslinch
+Hackworthy
+Holbeam
+Ideford
+Lowley
+Mullacott
+Nutcott
+Satterleigh
+Stokeinteignhead
+West Whitnole
+Columbjohn
+Crooke Burnell
+Mariansleigh
+Newton St Petrock
+East Ruckham
+West Ruckham
+Shillingford St George
+Staplehill
+Allisland
+Brexworthy
+Bulworthy
+Calverleigh
+Cheriton Bishop
+Coddiford
+Colscott
+Rousdon
+Dunsbeare
+West Heanton
+Meddon
+Natson
+Nutwell
+Wray
+Wyke Green
+Butterleigh
+Clyst William
+Dodbrooke
+Skerraton
+St James Church
+Torbryan
+Wadham
+Blisland
+Boden
+Bonyalva
+Bucklawren
+Callington
+Carnanton
+Gwithian
+Breage
+Halliggye
+Helston
+Kilkhampton
+Lizard
+Mawgan
+Pendavey
+Poundstock
+Rinsey
+St Gennys
+Treal
+Tredower
+Trelan
+Trelowarren
+Treveador
+Trewarnevas
+Truthall
+Bodmin
+Burniere
+Carworgie
+Coswarth
+Gulval
+Lower Lanherne
+Lawhitton
+Methleigh
+Padstow
+St Germans
+St Winnow
+Treliever
+Trevalga
+Truthwall
+Bossiney
+Callestick
+Crantock
+Ellenglaze
+Lancarffe
+Perranzabuloe
+Probus
+Sheviock
+St Buryan
+St Enoder
+St Keverne
+St Neot
+Higher Tolcarne
+Treknow
+Treloy
+Tremail
+Tremore
+Treninnick
+Alverton
+Fawton
+Helstone
+Hennett
+Illand
+Launceston
+Liskeard
+St Clement
+Penharget
+Rillaton
+Trenowth
+Trewirgie
+Trewornan
+Creed
+Braddock
+Calstock
+Ellbridge
+Killigorrick
+Landreyne
+Langunnett
+Lantyan
+Pillaton
+Polscoe
+Raphael
+Trefrize
+Lower Tregantle
+Tregarland
+Trehawke
+Trelawne
+Trematon
+Tremeer
+Trevelyan
+Trezance
+Bodiggo
+Downinney
+Hamatethy
+Kelynack
+Landulph
+Lanescot
+Lanreath
+Lansallos
+Ludgvan
+Otterham
+Penhallym
+Trebarwith
+Trenewan
+Trenode
+Tucoyse
+Tywardreath
+Week St Mary
+Bennacott
+Dawna
+Gurlyn
+Kilminorth
+Marhamchurch
+Penventinue
+Trebartha
+Tregamellyn
+Truro
+Trelowia
+Trelowth
+Trewall
+Wadfast
+Week Orchard
+East Balsdon
+West Balsdon
+Crackington Haven
+East Curry
+West Curry
+Dizzard
+Galowras
+Hornacott
+Lamellen
+Polyphant
+Rosecare
+Treblary
+Tredaule
+Trefreock
+Treslay
+Tresparrett
+Trevague
+Treworgie
+Boconnoc
+Bodbrane
+Bowithick
+Brea
+Cann Orchard
+Glynn
+Manely
+Thurlibeer
+Tregrill
+Treligga
+Trevillyn
+Whalesborough
+Kenwyn
+St Kew
+Draynes
+Gothers
+Halvana
+Idless
+Lesnewth
+Pelynt
+Pentewan
+Perranuthnoe
+Tolgullow
+Tregardock
+Tregeagle
+Tregole
+Trehudreth
+Trevell
+Boduel
+Dannonchapel
+Delabole
+Froxton
+Hammett
+Pengold
+Tregony
+Tregunnick
+Treroosel
+Trevillis
+Harrow on the Hill
+Fulham
+Harlesden
+St Pancras
+Willesden
+Hoxton
+Staines
+Stoke Newington
+Harmondsworth
+Shepperton
+Sunbury
+East Bedfont
+Colham Green
+Ickenham
+Kempton
+Laleham
+Westminster
+South Mimms
+Northolt
+Ruislip
+West Bedfont
+Isleworth
+Stanwell
+Chelsea
+Lisson Grove
+Tottenham
+Hitchin
+Kings Walden
+Wandon End
+Westoning
+Cottered
+Datchworth
+Kings Walden
+Hexton
+Ley Green
+Sacombe
+Shephall
+Watton at Stone
+Brent Pelham
+Much Hadham
+Meesden
+Patmore
+Throcking
+Bishops Stortford
+Aldenham
+Clothall
+Luffenhall
+Redbourn
+Rye
+Thundridge
+Ayot St Lawrence
+Bygrave
+Kelshall
+Stevenage
+Tewin
+Welwyn
+Wheathampstead
+Abbots Langley
+Codicote
+Napsbury
+Shenley
+St Albans
+St Pauls Walden
+Ardeley
+Bendish
+Caddington
+Kensworth
+Rickmansworth
+Therfield
+Aldbury
+Berkhamsted
+Boarscroft
+Brickendon
+Gubblecote
+Hemel Hempstead
+Kings Langley
+Tring
+Bengeo
+Aspenden
+Cheshunt
+Wakeley
+Ayot St Peter
+Bozen Green
+Braughing
+Chells
+Cockhampstead
+Mardleybury
+Tiscott
+Flamstead
+Hainstone
+Hertingfordbury
+Hinxworth
+Hunsdon
+Stagenhoe
+Stanstead Abbotts
+Barkway
+Old Knebworth
+Newsells
+Digswell
+Sawbridgeworth
+Cokenach
+Willian
+Blakemore
+Roxford
+Wyddial
+Meppershall
+Walkern
+Broxbourne
+Aylesbury
+Buckingham
+Biddlesden
+Ivinghoe
+Monks Risborough
+Princes Risborough
+Stoke Mandeville
+Swanbourne
+Wendover
+West Wycombe
+Amersham
+Bedgrove
+Bierton
+Chalfont St Peter
+Taplow
+Gawcott
+Lower Hartwell
+Horsenden
+Weston Turville
+Wooburn
+Aston Sandford
+Drayton Parslow
+Ilmer
+Lenborough
+North Marston
+Preston Bissett
+Saunderton
+Shalstone
+Waldridge
+Barton Hartshorn
+Chetwode
+Gayhurst
+Stewkley
+Tingewick
+Tyringham
+Worminghall
+Bow Brickhill
+East Burnham
+Clifton Reynes
+Crafton
+Emberton
+Granborough
+Lavendon
+Olney
+Sherington
+Stoke Goldington
+Bledlow
+Boveney
+Drayton Beauchamp
+Ickford
+Pitstone
+Upper Winchendon
+Wingrave
+Cheddington
+Hillesden
+Ivinghoe Aston
+Marsh Gibbon
+Mursley
+Salden
+Shenley Church End
+Wavendon
+Woughton on the Green
+Ashendon
+Chearsley
+Long Crendon
+Dorton
+Upper Pollicott
+Wotton Underwood
+Akeley
+Beachampton
+Lillingstone Dayrell
+Newton Longville
+Singleborough
+Adstock
+Caversfield
+Middle Claydon
+Hardmead
+Haversham
+Milton Keynes
+Moulsoe
+Shipton Lee
+Tetchwick
+Ellesborough
+Hoggeston
+Hollingdon
+Newport Pagnell
+Soulbury
+Stoke Poges
+Chicheley
+High Wycombe
+Iver
+Padbury
+Tickford End
+Dorney
+Edlesborough
+Marsworth
+Quarrendon
+Water Stratford
+Wraysbury
+Quainton
+Shabbington
+Waddesdon
+Aston Clinton
+Creslow
+Linslade
+Medmenham
+Eton
+Grendon Underwood
+Turweston
+Chalfont St Giles
+Charndon
+Dadford
+Farnham Royal
+Haseley
+Radclive
+Shenley Brook End
+Towersey
+Turville
+Hanslope
+Stoke Hammond
+Datchet
+Hambleden
+Steeple Claydon
+Bletchingdon
+Bloxham
+Hampton Poyle
+Adderbury
+Headington
+Kirtlington
+Launton
+Ledwell
+Wychwood Forest
+Cropredy
+Eynsham
+Shifford
+Thame
+Witney
+Brightwell Baldwin
+Deddington
+Finmere
+Fringford
+Fritwell
+Marsh Baldon
+Stanton Harcourt
+Waterstock
+Yarnton
+Barford St John
+Bladon
+Brighthampton
+Cogges
+Duns Tew
+Hensington
+South Newington
+Shipton-on-Cherwell
+Stanton St John
+Steeple Aston
+Toot Baldon
+Woodperry
+Ascott Earl
+Balscote
+Barford St Michael
+Chastleton
+Cuddesdon
+Dunthrop
+Garsington
+Lewknor
+Sandford St Martin
+Tadmarton
+Warpsgrove
+Over Worton
+Ardley
+Bodicote
+Cutteslowe
+Enstone
+Preston Crowmarsh
+Tackley
+South Weston
+Ambrosden
+Bix
+Old Chalford
+Crowell
+Emmington
+Iffley
+Lew
+Shiplake
+Mapledurham
+Rycote
+Sibford Ferris
+Stoke Lyne
+Middle Aston
+Bicester
+Elsfield
+Goring
+Hook Norton
+Kidlington
+Stonesfield
+Stratton Audley
+Wheatfield
+Asthall
+Brize Norton
+Ducklington
+Fulbrook
+Horspath
+Kencot
+Mixbury
+Rousham
+Weston-on-the-Green
+Woodeaton
+Aston Rowant
+Foscot
+Godington
+Kingston Blount
+Middleton Stoney
+Nuneham Courtenay
+Rotherfield Peppard
+Sarsden
+Steeple Barton
+Stoke Talmage
+Wolvercote
+Adwell
+Berrick Salome
+Britwell Salome
+Church Hanborough
+Cuxham
+Draycot
+Harpsden
+Heythrop
+Kingham
+Wendlebury
+Wroxton
+North Aston
+Black Bourton
+Boycott
+Broughton Poggs
+Checkendon
+Chipping Norton
+Kiddington
+Lillingstone Lovell
+Yelford
+Alvescot
+Chadlington
+Chinnor
+Claywell
+Ipsden
+Oddington
+Swinbrook
+Astrop
+Begbroke
+Bolney
+Cornwell
+Noke
+Rotherfield Greys
+Swerford
+Caldicot
+Chepstow
+Portskewett
+Rogerstone
+Bitton
+Brookthorpe
+Cheltenham
+Down Hatherley
+Harescombe
+Hartpury
+Lower Slaughter
+Upton St Leonards
+Winchcombe
+Almondsbury
+Arlingham
+Ashleworth
+Aston on Carrant
+Awre
+Berkeley
+Beverston
+Bledisloe
+Bristol
+Cam
+Coaley
+Cromhall
+Elberton
+Etloe
+Gossington
+Horfield
+Kyre
+Mangotsfield
+Natton
+Newent
+Newington Bagpath
+Nympsfield
+Ozleworth
+Pamington
+Sharpness
+Slimbridge
+Tewkesbury
+Uley
+Walton Cardiff
+Westbury-on-Severn
+Ashton under Hill
+Avening
+Boddington
+Clifford Chambers
+Fairford
+Hanley Castle
+Kemerton
+Lower Lemington
+The Mythe
+Oxenton
+Shenington
+Old Sodbury
+Stanley Pontlarge
+Stoke Orchard
+Chedworth
+Down Ampney
+Dymock
+Hempsted
+Lydney
+Tidenham
+Tockington
+Woodchester
+Bibury
+Bishops Norton
+North Cerney
+Churchdown
+Upper Coberley
+Colesbourne
+Compton Abdale
+Compton Greenfield
+Condicote
+Farmington
+Hampen
+Hucclecote
+Itchington
+Lassington
+Northleach
+Lower Oddington
+Upper Oddington
+Shipton Solers
+Stoke Bishop
+Westbury on Trym
+Bishops Cleeve
+Cassey Compton
+Cold Ashton
+Cold Aston
+Doynton
+Gaunts Earthcott
+Gotherington
+Harry Stoke
+Hilcot
+Iron Acton
+Notgrove
+Olveston
+Pegglesworth
+Pucklechurch
+Adlestrop
+Admington
+Ampney St Peter
+Barnwood
+Bledington
+Bourton-on-the-Water
+Boxwell
+Charlton Abbots
+Churcham
+Coln St Aldwyns
+Duntisbourne Abbots
+Frocester
+Hidcote Boyce
+Highnam
+Hinton on the Green
+Maugersbury
+Snowshill
+Stow-on-the-Wold
+Tuffley
+Twyning
+Windrush
+Bourton-on-the-Hill
+Coln St Dennis
+Deerhurst
+Deerhurst Walton
+Dumbleton
+Duntisbourne Leer
+Tirley
+Elmstone Hardwicke
+Hasfield
+Hidcote Bartrim
+The Leigh
+Oridge Street
+Preston on Stour
+Sutton-under-Brailes
+Upper Swell
+Todenham
+Welford-on-Avon
+Weston-on-Avon
+Wickhamford
+Willersey
+Woolaston
+Ampney St Mary
+Aston Subedge
+Chipping Campden
+Daglingworth
+Edgeworth
+Lasborough
+Longborough
+Meysey Hampton
+Minchinhampton
+Norcote
+Rodmarton
+Tarlton
+Westonbirt
+Aylworth
+Badgeworth
+Caldicott
+Culkerton
+Dyrham
+Ebrington
+Guiting Power
+Hewelsfield
+Pebworth
+Shipton Moyne
+St Briavels
+Stears
+Lower Swell
+Ullington
+Eastleach Turville
+English Bicknor
+Hailes
+Icomb Place
+Leckhampton
+Mitcheldean
+Oxenhall
+Painswick
+Quenington
+Shipton Oliffe
+Temple Guiting
+Turkdean
+Wyck Rissington
+Cerney Wick
+Charingworth
+Childswickham
+Coberley
+Dorsington
+Frampton Mansell
+Hampnett
+Harnhill
+Hazelton
+Leonard Stanley
+Siston
+Upper Slaughter
+Tetbury
+Tetbury Upton
+Wormington
+Baunton
+Brimpsfield
+Didmarton
+Duntisbourne Rouse
+Eastleach Martin
+Haresfield Court
+Upper Harford
+Moreton Valence
+Rendcomb
+Rockhampton
+Sezincote
+Stoke Gifford
+Tormarton
+Acton Turville
+Badminton
+Bagendon
+Brockworth
+Bulley
+South Cerney
+Frampton Cotterell
+Hanham
+Hatherop
+Kempsford
+Broad Marston
+Oldbury on the Hill
+Ruddle
+Salperton
+Alderley
+Ampney Crucis
+Aston Somerville
+Batsford
+Burnt Norton
+Elkstone
+Fretherne
+Hillesley
+Kings Stanley
+Miserden
+Postlip
+Saintbury
+Upper Siddington
+Tortworth
+Winstone
+Charfield
+Hawling
+Andoversford
+Ketford
+Kilcot
+Wickwar
+Yanworth
+Longney
+Rudford
+Wheatenhurst
+Bromsgrove
+Franche
+Hereford
+Kidderminster
+Birmingham
+Middlewich
+Oldington
+Ribbesford
+Suckley
+Timberhonger
+Trimpley
+Tutnall
+Worcester
+Wribbenhall
+Wythall
+Clent
+Clopton
+Cotheridge
+Fladbury
+Kempsey
+Kingswinford
+Kinver
+Stoulton
+Tardebigge
+Wick Episcopi
+Lower Wolverton
+Upper Wolverton
+Bishampton
+Blockley
+Bredon
+Bredons Norton
+Bushley
+Cutsdean
+Daylesford
+Earls Croome
+Evenlode
+Hill Croome
+Icomb
+Inkberrow
+Upper Moor
+Pendock
+Queenhill
+Redmarley DAbitot
+Rous Lench
+Tidmington
+Upton Upon Severn
+Westmancote
+Wyre Piddle
+Bredicot
+Broadwas
+Grimley
+Hallow
+Himbleton
+Hindlip
+Huddington
+Oddingley
+Overbury
+Sedgeberrow
+Spetchley
+Warndon
+White Ladies Aston
+Alvechurch
+Aston Fields
+Atch Lench
+Bengeworth
+Bockleton
+Cleeve Prior
+Cofton Hackett
+Cropthorne
+Phepson
+Salwarpe
+Tenbury Wells
+Wast Hills
+Birlingham
+Bricklehampton
+Dormston
+Martin Hussingtree
+Pensham
+Pershore
+Powick
+Upton Snodsbury
+Alderminster
+Beoley
+Broughton Hackett
+Grafton Flyford
+Nafford
+Naunton Beauchamp
+Peopleton
+North Piddle
+Severn Stoke
+Wadborough
+Abbots Morton
+Badsey
+Bevington
+Bransford
+Bretforton
+Church Lench
+Evesham
+Lenchwick
+Mathon
+Offenham
+Oldberrow
+Ombersley
+Abberley
+Acton Beauchamp
+Bayton
+Elmley Lovett
+Halesowen
+Redmarley
+Shelsley Beauchamp
+Sheriffs Lench
+Doddenham
+Edvin Loach
+Hanley
+Mamble
+Martley
+Lower Sapey
+Shell
+Shelsley Walsh
+Stanford on Teme
+Stockton on Teme
+Wychbold
+Glasshampton
+Hadzor
+Pedmore
+Selly Oak
+Old Swinford
+Belbroughton
+Lower Bentley
+Upper Bentley
+Chawson
+Cookhill
+Doverdale
+Hampton Lovett
+Upton Warren
+Chaddesley Corbett
+Feckenham
+Hillhampton
+Archenfield
+Eardisland
+Lugwardine
+Much Marcle
+Brimfield
+Dilwyn
+Gattertop
+Lye
+Middleton on the Hill
+Sarnesfield
+Wapley
+Yarpole
+Eldersfield
+Forthampton
+Luntley
+Baysham
+Burlingjobb
+Chickward
+Eardisley
+Garway
+Kilpeck
+Kings Caple
+Old Radnor
+Pontrilas
+Lower Welson
+Upper Welson
+Bishops Frome
+Didley
+Eaton Bishop
+Holme Lacy
+How Caple
+Lulham
+Madley
+Moreton Jeffries
+Preston on Wye
+Preston Wynne
+Tyberton
+Ullingswick
+Yarsop
+Bosbury
+Canon Pyon
+Colwall
+Eastnor
+Hampton Bishop
+Holmer
+Ledbury
+Moreton on Lugg
+Ross-on-Wye
+Shelwick
+Tupsley
+Upton Bishop
+Brampton Abbotts
+Bridge Sollers
+Bromyard
+Collington
+Credenhill
+Dormington
+Moccas
+Norton Canon
+Priors Frome
+Bartestree
+Dinedor
+Monnington on Wye
+Westhide
+Willersley
+Winforton
+Covenhope
+Downton on the Rock
+Harpton
+Ledicot
+Pilleth
+Shobdon
+Staunton on Arrow
+Stoke Edith
+Underley
+Bullinghope
+Castle Frome
+Halmonds Frome
+Ocle Pychard
+Putley
+Rosemaund
+Stretton Sugwas
+Weston Beggard
+Yarkhill
+Brobury
+Canon Frome
+Evesbatch
+Kings Pyon
+Lyonshall
+Mansell Gamage
+Monkhide
+Munsley
+Staunton on Wye
+Swanstone
+Tarrington
+Weobley
+Bredenbury
+Byford
+Ewyas Harold
+Marston Stannett
+Sawbury Hill
+Stanford Bishop
+Stoke Lacy
+Lower Upton
+Wolferlow
+Yazor
+Ashperton
+Aylton
+Hope Mansell
+Hopton Sollers
+Maund Bryan
+Ruardean
+Stretton Grandison
+Venns Green
+Walsopthorne
+Whitwick
+Aston Ingham
+Bredwardine
+Brinsop
+Pembridge
+Sollers Hope
+Upleadon
+Byton
+Cascob
+Clehonger
+Discoed
+Knill
+Litley
+Pontshill
+Rotherwas
+Titley
+Weston under Penyard
+Whyle
+Ailey
+Bach
+Barland
+Fownhope
+Kenchester
+Peterchurch
+Strangford
+Bunshill
+Mansell Lacy
+Stoke Bliss
+Soham
+Cheveley
+Exning
+Haslingfield
+Hinxton
+Isleham
+Woodditton
+Abington Pigotts
+Babraham
+Bassingbourn
+Fen Drayton
+Fulbourn
+Histon
+Ickleton
+Madingley
+Steeple Morden
+Balsham
+Stetchworth
+Swaffham Prior
+Westley Waterless
+West Wratting
+Hauxton
+Horningsea
+Meldreth
+Pampisford
+Teversham
+Thriplow
+Chatteris
+Cottenham
+Impington
+Melbourn
+Oakington
+Shepreth
+Stretham
+Stuntney
+Whittlesey
+Witchford
+Wilburton
+Wisbech
+Witcham
+Bourn
+Boxworth
+Elsworth
+Knapwell
+Longstowe
+Dry Drayton
+Dullingham
+Grantchester
+Guilden Morden
+Sawston
+Shingay
+Arrington
+Cherry Hinton
+Horseheath
+Ratford
+Fowlmere
+East Hatley
+Wendy
+Whittlesford
+Swavesey
+Wimpole
+Hatley St George
+Landbeach
+Longstanton
+Papworth Everard
+Swaffham Bulbeck
+Burrough Green
+Soham Mere
+Weston Colville
+Bottisham
+Eltisley
+Harlton
+Trumpington
+Kennett
+Papworth St Agnes
+Shudy Camps
+Fenstanton
+Gamlingay
+Caxton
+Snailwell
+Castle Camps
+Hildersham
+Saxon Street
+Tadlow
+Eynesbury
+Lolworth
+Huntingdon
+Alconbury
+Peterborough
+Diddington
+Keyston
+Leighton Bromswold
+Orton Waterville
+Pertenhall
+Stilton
+Abbots Ripton
+Bluntisham
+Morborne
+Spaldwick
+Brington
+Bythorn
+Hemingford Abbots
+Hemingford Grey
+Offord DArcy
+Old Weston
+Sawtry
+Steeple Gidding
+Warboys
+Yelling
+Alwalton
+Old Fletton
+Glatton
+Stanground
+Stibbington
+Water Newton
+Whittlesey Mere
+Woodston
+Buckworth
+Catworth
+Coppingford
+Folksworth
+Offord Cluny
+Alconbury Weston
+Orton Longueville
+Washingley
+Hail Weston
+Molesworth
+West Perry
+Southoe
+Leighton Buzzard
+Biscot
+Bolnhurst
+Eaton Bray
+Eversholt
+Houghton Regis
+Knotting
+Melchbourne
+Milton Bryan
+Sewell
+Stagsden
+Turvey
+Biddenham
+Goldington
+Hinwick
+Newton Bromswold
+Sharnbrook
+Tempsford
+Yelden
+Arlesey
+Barton-le-Clay
+Blunham
+Chicksands
+Cranfield
+Millow
+Pegsdon
+Shillington
+Stanwick
+Lower Stondon
+Upper Stondon
+Wyboston
+Harrowden
+Lidlington
+Odell
+Pavenham
+Stevington
+Woburn
+Campton
+Colmworth
+Marston Moretaine
+Maulden
+Lower Sundon
+Upper Sundon
+Tilbrook
+Chalgrave
+Chawston
+Eaton Socon
+Edworth
+Milton Ernest
+Thurleigh
+Channels End
+Keysoe
+Northill
+Putnoe
+Tilsworth
+Aspley Guise
+Bletsoe
+Lower Gravenhurst
+Upper Gravenhurst
+Haynes
+Higham Gobion
+Houghton Conquest
+Salph End
+Astwick
+Cople
+Roxton
+Ampthill
+Clophill
+Husborne Crawley
+Pulloxhill
+Lower Shelton
+Upper Shelton
+Silsoe
+Tingrith
+Henlow
+Steppingley
+Wymington
+Flitton
+Old Warden
+Podington
+Totternhoe
+Battlesden
+Farndish
+Flitwick
+Potsgrove
+Felmersham
+Biggleswade
+Elstow
+Harrold
+Kempston
+Wilstead
+Cockayne Hatley
+Potton
+Hockliffe
+Barrowden
+Bisbrooke
+Glaston
+Ketton
+Kings Cliffe
+Morcott
+North Luffenham
+Stoke Bruerne
+Tixover
+Arthingworth
+Blakesley
+Brigstock
+Brixworth
+Desborough
+Duddington
+Faxton
+Geddington
+Glendon
+Greens Norton
+Hardingstone
+Harlestone
+Holcot
+Kelmarsh
+Kingsthorpe
+Nassington
+Old
+Stanion
+Walgrave
+Weston Favell
+Apethorpe
+Barnwell
+Brafield-on-the-Green
+Braunston
+Finedon
+Nether Heyford
+Horn
+Passenham
+Puxley
+Roade
+Rockingham
+Stoke Albany
+Tansor
+Walton Grounds
+Weekley
+Wilbarston
+Barton Seagrave
+Burton Latimer
+Cranford St John
+Edgcote
+Hackleton
+Isham
+Preston Deanery
+Raunds
+Scaldwell
+Thrapston
+Wadenhoe
+Wellingborough
+Ailsworth
+Castor
+Chacombe
+Essendine
+Glinton
+Glympton
+Hollowell
+Longthorpe
+Lyddington
+Oundle
+Pilsgate
+Shelswell
+Snelston
+Stoke Doyle
+Stoke Dry
+Achurch
+Armston
+Cotterstock
+Irthlingborough
+Kettering
+Polebrook
+Slipton
+Tinwell
+Wittering
+Wothorpe
+Braybrooke
+Cranford St Andrew
+Deene
+East Farndon
+Hanging Houghton
+Maidwell
+Pytchley
+Sudborough
+Titchmarsh
+Warkton
+Badby
+Charwelton
+Cold Ashby
+West Haddon
+Lapley
+Litchborough
+Sawbridge
+Twywell
+Althorp
+Bugbrooke
+Church Brampton
+Cold Higham
+Cosgrove
+Creaton
+Dingley
+West Farndon
+Furtho
+East Haddon
+Haselbech
+Helmdon
+Pipewell
+Pitsford
+Sibbertoft
+Sywell
+Tiffield
+Weedon Bec
+Whilton
+Brockhall
+Chilcote
+Elkington
+Evenley
+Farthingstone
+Flore
+Glassthorpehill
+Kislingbury
+Lilbourne
+Middleton Cheney
+Muscott
+Silverstone
+Snorscomb
+Syresham
+Thrupp Grounds
+Yelvertoft
+Berkswell
+Upper Boddington
+Long Buckby
+Farthinghoe
+Grafton Regis
+Guilsborough
+Holdenby
+Irchester
+Orlingbury
+Over Whitacre
+Preston Capes
+Spratton
+Thorpe Malsor
+Ashby St Ledgers
+Lower Boddington
+Byfield
+Charlton-on-Otmoor
+Cottisford
+Eydon
+Marston St Lawrence
+Marston Trussell
+Radstone
+Thorpe Lubenham
+Woodford Halse
+Brampton Ash
+Potterspury
+Stoneton
+Sutton Bassett
+Thenford
+Weston by Welland
+Blatherwycke
+Blisworth
+Bradden
+Chelveston
+Collyweston
+Courteenhall
+Duston
+Easton Maudit
+Grafton Underwood
+Higham Ferrers
+Knuston
+Naseby
+Nobottle
+Barby
+Barnack
+Bozeat
+West Bromwich
+Churchover
+Empingham
+Paulerspury
+Teeton
+Astcote
+Cottesbrooke
+Pattishall
+Stanford on Avon
+Aston le Walls
+Aynho
+Culworth
+Chipping Warden
+Cogenhoe
+Collingtree
+Easton on the Hill
+Milton Malsor
+Moreton Pinkney
+Rothersthorpe
+Steane
+Stuchbury
+Thorpe Mandeville
+Wakerley
+Wappenham
+Weedon Lois
+Church Stowe
+Hinton-in-the-Hedges
+Whichford
+Belmesthorpe
+Chadstone
+Earls Barton
+Fotheringhay
+Harringworth
+Mears Ashby
+Ryhall
+Woodnewton
+Yardley Hastings
+Castle Ashby
+Daventry
+Moulton Park
+Tickencote
+Kirby
+Lilford
+Barrow upon Soar
+Leicester
+Broughton Astley
+Nether Broughton
+Burton Overy
+Croxton Kerrial
+Desford
+Earl Shilton
+Enderby
+Kegworth
+Kibworth Harcourt
+Knipton
+Loughborough
+Newton Harcourt
+Saddington
+Shepshed
+Sileby
+Stockerston
+Thorpe Acre
+Thurcaston
+Tur Langton
+Allexton
+Asfordby
+Barsby
+Blaston
+Carlton Curlieu
+Cranoe
+Dishley
+Frisby on the Wreake
+Gaddesby
+Gaulby
+Illston on the Hill
+Keyham
+Knossington
+West Langton
+Lubenham
+Marefield
+Seagrave
+Shangton
+Skeffington
+Smeeton Westerby
+Tilton on the Hill
+Tugby
+Wartnaby
+Wycomb
+Arnesby
+Beeby
+Buckminster
+South Croxton
+Kimcote
+Kirby Muxloe
+Leire
+Peatling Magna
+Potters Marston
+Scraptoft
+Sharnford
+Shearsby
+Sutton Cheney
+Wigston Parva
+Appleby Parva
+Aylestone
+Bilstone
+Bitteswell
+Castle Donington
+Cosby
+Fenny Drayton
+Frolesworth
+Hinckley
+Huncote
+Knaptoft
+Market Bosworth
+Sapcote
+Shenton
+Shoby
+Theddingworth
+Walton on the Wolds
+Wanlip
+Brascote
+Braunstone
+Bruntingthorpe
+Groby
+Humberstone
+Kirkby Mallory
+Newbold Verdon
+Noseley
+Peckleton
+Ratby
+Thorpe Langton
+Thurmaston
+Barlestone
+Cotesbach
+Frisby
+Oadby
+Peatling Parva
+Sheepy Parva
+Stonton Wyville
+Wymeswold
+Ashby Folville
+Congerstone
+Edmondthorpe
+Sheepy Magna
+Smockington
+Thorpe Arnold
+Twycross
+Waltham on the Wolds
+Worthington
+Wyfordby
+Barkby
+Boothorpe
+Burrough on the Hill
+Burton Lazars
+Long Clawson
+Coleorton
+Donisthorpe
+Horninghold
+Hose
+Hungarton
+Newton Burgoland
+Osgathorpe
+Redmile
+Overseal
+Swepstone
+Ashby Parva
+Dunton Bassett
+Gumley
+Husbands Bosworth
+Slawston
+Stathern
+Ab Kettleby
+Fleckney
+Goadby Marwood
+Kibworth Beauchamp
+Odstone
+Primethorpe
+Ragdale
+Ratcliffe Culey
+Ratcliffe on the Wreake
+Rearsby
+Saltby
+Scalford
+Shackerstone
+Snarestone
+Stoney Stanton
+Ashby Magna
+Old Dalby
+East Norton
+Stonesby
+Thrussington
+Billesdon
+Burton on the Wolds
+Cold Newton
+Diseworth
+Freeby
+Goadby
+Hallaton
+Kirby Bellars
+Leesthorpe
+Melton Mowbray
+Mowsley
+Queniborough
+Sewstern
+Stanton under Bardon
+Ullesthorpe
+Welby
+Catthorpe
+Cold Overton
+Donington le Heath
+Heather
+Hoby
+Kilby
+Lutterworth
+Markfield
+Prestwold
+Brooksby
+Glooston
+Hoton
+Lowesby
+Bagworth
+Blaby
+Hathern
+Ibstock
+Rotherby
+Shawell
+Bidford-on-Avon
+Lower Brailes
+Upper Brailes
+Warwick
+Kenilworth
+Pillerton Priors
+Sutton Coldfield
+Tamworth
+Wellesbourne
+Arrow
+Atherstone on Stour
+Beausale
+Birdingbury
+Bishops Tachbrook
+Clifton upon Dunsmore
+Cubbington
+Fillongley
+Flecknoe
+Grandborough
+Hampton Lucy
+Spelsbury
+Abbots Salford
+Austrey
+Bishops Itchington
+Chadshunt
+Church Lawford
+Frankton
+Harbury
+Kinwarton
+Priors Hardwick
+Quatt
+Radway
+Ufton
+Walsgrave on Sowe
+Wasperton
+Weethley
+Wixford
+Wolston
+Ansley
+Avon Dassett
+Charlecote
+Compton Verney
+Coventry
+Foleshill
+Old Milverton
+Moreton Morrell
+Myton
+Nuneaton
+Bourton on Dunsmore
+Claverdon
+Honiley
+Ilmington
+Kington Grange
+Napton on the Hill
+Preston Bagot
+Upper Shuckburgh
+Shuttington
+Snitterfield
+Wibtoft
+Wilnecote
+Arlescote
+Barnacle
+Bedworth
+Curdworth
+Fenny Compton
+Ladbroke
+Marston Jabbett
+Minworth
+Ryton-on-Dunsmore
+Tachbrook Mallory
+Weston under Wetherley
+Wolfhampcote
+Wormleighton
+Baddesley Ensor
+Barston
+Dosthill
+Marston Green
+Rugby
+Nether Whitacre
+Ashow
+Baginton
+Ettington
+Fulready
+Radford Semele
+Ratley
+Burton Hastings
+Butlers Marston
+Hillmorton
+Lapworth
+Pillerton Hersey
+Rowington
+Shrewley
+Whatcote
+Barton-on-the-Heath
+Bearley
+Bubbenhall
+Burmington
+Compton Wynyates
+Edstone
+Idlicote
+Lea Marston
+Morton Bagot
+Norton Lindsey
+Wootton Wawen
+Old Stratford
+Lower Tysoe
+Ullenhall
+Wolvey
+Ardens Grafton
+Barcheston
+Binton
+Budbrooke
+Edgbaston
+Essington
+Hunningham
+Kineton Green
+Lighthorne
+Brownsover
+Hopsford
+Long Lawford
+Monks Kirby
+Newbold on Avon
+Newnham Paddox
+Shustoke
+Spernall
+Ailstone
+Arley
+Aston Cantlow
+Bickmarsh
+Burton Dassett
+Chilvers Coton
+Dunchurch
+Haselor
+Ipsley
+Long Itchington
+Leamington Hastings
+Newbold Pacey
+Salford Priors
+Temple Grafton
+Ulverley Green
+Whitnash
+Wilmcote Manor
+Corley
+Harborough
+Lower Shuckburgh
+Alrewas
+Beffcote
+Bescot
+Congreve
+Lower Cowley
+Upper Cowley
+Trysull
+Kings Bromley
+Penkridge
+Stafford
+Tettenhall
+Wednesbury
+Wolgarston
+Worfield
+Barton-under-Needwood
+Cannock
+Clifton Campville
+Consall
+Cotwalton
+Crakemarsh
+Denstone
+Drayton Bassett
+Endon
+Enson
+Forsbrook
+Harlaston
+Lower Hatton
+Upper Hatton
+Heighley
+Hilcote
+Hopwas
+Meretown
+Millmeece
+Milwich
+Upper Musden
+Pattingham
+Penkhull
+Rocester
+Rownall
+Rudyard
+Rugeley
+Sheen
+Shelton under Harley
+Stanshope
+Uttoxeter
+Wolstanton
+Acton Trussell
+Adbaston
+Baden Hall
+Baswich
+Bednall
+Bishops Offley
+Brewood
+Chapel Chorlton
+Charnes
+Chatcull
+Coldmeece
+Coton Clanford
+Eccleshall
+Doxey
+Drointon
+Ellastone
+Fradswell
+Gerrards Bromley
+Hammerwich
+Handsacre
+Harborne
+Hill Chorlton
+Hixon
+Lichfield
+Norton Canes
+Packington
+Pipe Ridware
+Seighford
+Smethwick
+Sugnall
+Walton-on-the-Hill
+Weeford
+Yoxall
+Abbots Bromley
+Upper Arley
+Burton upon Trent
+Church Leigh
+Darlaston
+Gnosall
+Hamstall Ridware
+Meaford
+Pelsall
+Trescott
+Wednesfield
+Wolverhampton
+Almington
+Alstonefield
+Alveley
+Amerton
+Cheddleton
+Claverley
+Kingsnordley
+Knightley
+Mavesyn Ridware
+Moddershall
+High Onn
+Tixall
+Warslow
+Yarlet
+Apeton
+Cauldon
+Chebsey
+Cheswardine
+Chipnall
+Littywood
+Marchington
+High Offley
+Salt
+Lower Tean
+Upper Tean
+Tutbury
+Abbey Hulton
+Barlaston
+Bobbington
+Bramshall
+Burslem
+Dilhorne
+Gratwich
+Ingestre
+Oaken
+Ranton
+Stoke-on-Trent
+Swynnerton
+Tittensor
+Weston Coyney
+Wychnor
+Blymhill
+Brineton
+Church Eaton
+Coven
+Enville
+Gailey
+Himley
+Levedale
+Otherton
+Oxley
+Lower Penn
+Rickerscote
+Ruscote
+Sedgley
+Shareshill
+Aldridge
+Ettingshall
+Pendeford
+Seisdon
+Sibford Gower
+Audley
+Balterley
+Betley
+Bickford
+Brockton Grange
+Codsall
+Croxden
+Dimsdale
+Hanchurch
+Knutton
+Mucklestone
+Normacot
+Rodbaston
+Stramshall
+Talke
+Thorpe Constantine
+Buildwas
+Meole Brace
+Onibury
+Prees
+Shrewsbury
+Boreton
+Cleestanton
+Deuxhill
+Emstrey
+Eyton on Severn
+Much Wenlock
+Mytton
+Perkley
+Lesser Poston
+Stoke St Milborough
+Ticklerton
+Albrightlee
+Atcham
+Baschurch
+Condover
+Dinthill
+Pitchford
+Hodnet
+Lilleshall
+Morville
+Onslow
+Preston Gubbals
+Preston Montford
+Wrockwardine
+Yorton
+Alberbury
+Chirbury
+Diddlebury
+Ditton Priors
+Edgmond
+Loppington
+Lydham
+Maesbury
+Minsterley
+Montgomery
+Oswestry
+Abdon
+Acton Round
+Chetton
+Church Stretton
+Culmington
+Dudston
+Eardington
+Easthope
+Edderton
+Lower Edenhope
+Forden
+High Hatton
+Hockleton
+Marchamley
+Overs
+Quatford
+Stanton upon Hine Heath
+Stottesdon
+Trelystan
+Tugford
+Weston Madoc
+Acton Pigott
+Eaton Constantine
+Eaton Mascott
+Golding
+Halston
+Leegomery
+Maesbrook
+Rodington
+Upton Magna
+Weston Rhyn
+Wroxeter
+Acton Reynald
+Albright Hussey
+Aston Botterell
+Aston Eyre
+Clungunford
+English Frankton
+Eudon Burnell
+West Felton
+Glazeley
+Hadnall
+Middleton Scriven
+Myddle
+Shrawardine
+Strefford
+Upton Cressett
+Welshampton
+Yeaton
+Acton Burnell
+Cardeston
+Cherrington
+Pontesbury
+Rorrington
+Welbatch
+Wentnor
+Yockleton
+Choulton
+Crudgington
+Longden
+Lowe
+Marrington
+Moreton Say
+Ratlinghope
+Womerton
+Woolstaston
+Bitterley
+Corfton
+Cressage
+Higford
+Kemberton
+Middlehope
+Patton
+Plaish
+Rushbury
+Sheinton
+Shifnal
+Stanton Long
+Waters Upton
+Whixall
+Alkington
+Lower Baveney
+Burwarton
+Chelmarsh
+Cleobury Mortimer
+Cosford
+Edstaston
+Hinstock
+Isombridge
+Market Drayton
+Neenton
+Peplow
+Wall Town
+Wem
+Badger
+Beslow
+Buttery
+Eyton upon the Weald Moors
+Grinshill
+Hordley
+Howle
+Ingardine
+Upper Ledwyche
+Onneley
+Puleston
+Sambrook
+Woore
+Wykey
+Bearstone
+Clun
+Clunbury
+Clunton
+Edgton
+Hopesay
+Hopton Castle
+Lurkenhope
+Menutton
+Merrington
+Moreton Corbet
+Myndtown
+Obley
+Preston Brockhurst
+Purslow
+Sibdon Carwood
+Wigwig
+Adley Moor
+Alcaston
+Bedstone
+Bouldon
+Charlcotte
+Chelmick
+Church Preen
+Clee St Margaret
+Cold Hatton
+Ellerdine
+Felton Butler
+Holdgate
+Hope Bowdler
+Kynnersley
+Meadowley
+Upper Millichope
+Shawbury
+Calverhall
+Cantlop
+Colemere
+Ightfield
+Kinnerley
+Lee Brockhurst
+Longslow
+Pulley
+Pulverbatch
+Ruthall
+Shavington
+Spoonley
+Sutton Maddock
+Wollerton
+Wrentnall
+Acton Scott
+Cheney Longville
+Cothercott
+Farlow
+Fenemere
+Frodesley
+Leebotwood
+Leominster
+Minton
+Netley
+Rhiston
+Whittingslow
+Wotherton
+Ackhill
+Adforton
+Coreley
+Kinlet
+Milson
+Neen Savage
+Neen Sollars
+Stanage
+Tetstill
+Brampton Bryan
+Lower Edgebold
+Upper Edgebold
+Hopton Wafers
+Pedwardine
+Stanton Lacy
+Stokesay
+Wistanstow
+Bettisfield
+Bridge Trafford
+Croughton
+Guilden Sutton
+Ince
+Saighton
+Saughall
+Shotwick
+Tarvin
+Wervin
+Wybunbury
+Frodsham
+Antrobus
+Dunham-on-the-Hill
+Helsby
+Lache
+Macclesfield
+Mickle Trafford
+Pulford
+Weaverham
+Wepre
+Wimbolds Trafford
+Alsager
+Chelford
+Christleton
+Gawsworth
+Hollingworth
+Occlestone Green
+Romiley
+Sandbach
+Tilston
+Tintwistle
+Werneth
+Wimboldsley
+Worthenbury
+Broxton
+Butley
+Caldy
+Chowley
+Cranage
+Crewe
+Duckington
+Heswall
+Meols
+Peckforton
+Shocklach
+Spurstow
+Thornton Hough
+Thurstaston
+Tilstone Fearnall
+Wallasey
+Audlem
+Bredbury
+Davenham
+Tattenhall
+Hassall
+Hooton
+Landican
+Leftwich
+Noctorum
+Prenton
+Shipbrookhill
+Higher Shurlach
+Thingwall
+Barthomley
+Broomhall Green
+Buerton
+Chorlton
+Church Minshull
+Frith
+Marbury
+Minshull Vernon
+Nantwich
+Stoneley Green
+Walgherton
+Wilkesley
+Wirswall
+Worleston
+Aston juxta Mondrum
+Aston Park
+Capenhurst
+Cholmondeston
+Dutton
+Goostrey
+Handbridge
+Knutsford
+Lach Dennis
+Millington
+Lower Peover
+Over Tabley
+Higher Whitley
+Nether Alderley
+Bowdon
+Bramhall
+Buglawton
+Byley
+Church Lawton
+Congleton
+North Rode
+Thornton-le-Moor
+Trevalyn
+Alpraham
+Blacon
+Brereton
+Rostherne
+High Legh
+Lymm
+Snelson
+Tarporley
+Wettenhall
+Wheelock
+Wincham
+Alvanley
+Appleton Thorn
+Bartington
+Clotton
+Erbistock
+Golborne
+Grappenhall
+Greasby
+Gresford
+Mottram St Andrew
+Storeton
+Baguley
+Northenden
+Northwich
+Sinderland Green
+Bagillt
+Dodleston
+Golftyn
+Hawarden
+Llys Edwin
+Soughton
+Axton
+Bodfari
+Bryn Hedydd
+Brynford
+Caerwys
+Calcoed
+Cwybr
+Dyserth
+Glust
+Gwaenysgor
+Gwespyr
+Halkyn
+Mold
+Kelston
+Leeswood
+Llanelwy
+Llewerllyd
+Cilcain
+Meliden
+Mertyn
+Prestatyn
+Rhos Ithel
+Trelawnyd
+Tremeirchion
+Ysceifiog
+Ainsdale
+Southport
+Childwall
+West Derby
+Formby
+Halsall
+Hurlston
+Huyton
+Ince Blundell
+Lathom
+Litherland
+Lydiate
+Maghull
+Newton-Le-Willows
+Roby
+Sefton
+Skelmersdale
+Speke
+Toxteth
+Up Holland
+Wavertree
+Woolton
+Huncoat
+Leyland
+Manchester
+Higher Penwortham
+Lower Penwortham
+Rochdale
+Whalley
+Bonsall
+Brimington
+Dronfield
+Wingerworth
+Ible
+Matlock
+Matlock Bridge
+Snitterton
+Tansley
+Tapton
+Temple Normanton
+Old Tupton
+Unstone
+Old Whittington
+Alsop en le Dale
+Ashbourne
+Bakewell
+Barrow upon Trent
+Baslow
+Bretby
+Broadlowash
+Bubnell
+Calver
+Carsington
+Chellaston
+Coldeaton
+Conksbury
+Cromford
+Edale
+Fenny Bentley
+Flagg
+Hanson Grange
+Hassop
+Hognaston
+Kirk Ireton
+Measham
+Monyash
+Newton Solney
+Parwich
+Priestcliffe
+Rosliston
+Rowsley
+Shatton
+Smalley
+Swarkestone
+Ticknall
+Tideswell
+Walton-on-Trent
+Weston-on-Trent
+Wirksworth
+Appleby Magna
+Aston-on-Trent
+Beeley
+Charlesworth
+Chunal
+Dalbury
+Higher Dinting
+Long Eaton
+Edensor
+Eyam
+Findern
+Old Glossop
+Hadfield
+Longdendale
+Ludworth
+Mickleover
+Padfield
+Rodsley
+Shardlow
+Spondon
+Stapenhill
+Stoney Middleton
+Sutton on the Hill
+Thornsett
+Tibshelf
+Winshill
+Allestree
+Blingsby Gate
+Ednaston
+Hardstoft
+Kniveton
+Markeaton
+Sutton Scarsdale
+South Wingfield
+Atlow
+Bradbourne
+Brassington
+Croxall
+Doveridge
+Edingale
+Hartington
+Hartshorne
+Marston on Dove
+Pilsbury
+Shottle
+Tissington
+Wallstone
+Alkmonton
+Brailsford
+Church Broughton
+Houghpark
+Scropton
+Boylestone
+Breaston
+Chaddesden
+Duffield
+Eaton Dovedale
+Edlaston
+Makeney
+Osleston
+Roston
+Sedsall
+Nether Sturston
+Wyaston
+Yeaveley
+Arleston
+Birchover
+Breadsall
+Burnaston
+Kedleston
+Mugginton
+Sinfin
+Stenson
+Thulston
+Abney
+Bolsover
+Codnor
+Etwall
+Glapwell
+Heanor
+South Normanton
+Radbourne
+Shirland
+Codnor Park
+Ufton Fields
+Alvaston
+Ambaston
+Old Brampton
+Egginton
+Elvaston
+Holmesfield
+Ockbrook
+Owlcotes
+Stony Houghton
+Wadshelf
+Wessington
+Williamthorpe
+North Wingfield
+Ashover
+Ballidon
+Barlborough
+Boulton
+Clowne
+Crich
+Duckmanton
+Hathersage
+Kirk Langley
+Mosborough
+Palterton
+Pentrich
+Scarcliffe
+Stretton Hall
+Denby
+West Hallam
+Ilkeston
+Killamarsh
+Kirk Hallam
+Stanton-by-Dale
+Alfreton
+Bramley Vale
+Dore
+Foremark
+Oakthorpe
+Rowthorne
+Smisby
+Swadlincote
+Calow
+Coal Aston
+Middle Handley
+Sandiacre
+Stanton by Bridge
+Totley
+Litchurch
+Quarndon
+Granby
+Worksop
+Babworth
+Barnby Moor
+Bothamsall
+Budby
+Carburton
+Carlton-on-Trent
+Darlton
+East Drayton
+Dunham on Trent
+Eakring
+Edwinstowe
+Elkesley
+Farnsfield
+Grimston Hill
+Maplebeck
+East Markham
+Mattersey
+Ompton
+Perlethorpe
+Ragnall
+Scofton
+Thoresby
+Tiln
+Aslockton
+Bilborough
+Broxtowe
+Car Colston
+Clarborough
+Clayworth
+Flintham
+Kneeton
+South Leverton
+Misson
+Orston
+Saundby
+Scarrington
+Screveton
+Sneinton
+Thoroton
+Walkeringham
+North Wheatley
+Wiseton
+Keyworth
+East Leake
+West Leake
+Normanton on Soar
+Ruddington
+Stanton-on-the-Wolds
+Sutton Bonington
+Sutton on Trent
+Syerston
+Treswell
+Blidworth
+Bole
+Caunton
+Cropwell Bishop
+Hockerton
+Laneham
+Lowdham
+North Muskham
+South Muskham
+Norwell
+Ranskill
+West Retford
+Scaftworth
+Scrooby
+Barnby
+North Clifton
+South Clifton
+Hawton
+Kilvington
+Newark-on-Trent
+South Scarle
+Spalford
+Wigsley
+Fledborough
+Normanton on Trent
+Stokeham
+Egmanton
+Flawborough
+West Markham
+Tuxford
+Bilby
+Cuckney
+Hodsock
+Serlby
+Torworth
+Burton Joyce
+Epperstone
+Gedling
+Grassthorpe
+Harworth
+Kelham
+High Marnham
+Low Marnham
+Styrrup
+Bassingfield
+East Bridgford
+Costock
+Holme Pierrepont
+Normanton-on-the-Wolds
+Plumtree
+Rempstone
+Saxondale
+Stanford on Soar
+Willoughby-on-the-Wolds
+Wysall
+Gringley on the Hill
+Owthorpe
+Adbolton
+West Bridgford
+Colwick
+Gonalston
+Wilford
+Old Basford
+Brinsley
+Bulwell
+Chilwell
+Cossall
+Linby
+Nuthall
+Papplewick
+Strelley
+Toton
+Watnall
+Awsworth
+Barnstone
+Hucknall
+Langar
+Radcliffe on Trent
+Selston
+Wiverton
+Bulcote
+Hoveringham
+Knapthorpe
+Cropwell Butler
+Kinoulton
+Stoke Bardolph
+Bunny
+Danethorpe
+Gibsmere
+Teversal
+Widmerpool
+Cotgrave
+Edwalton
+Ossington
+Bilsthorpe
+Inkersall
+Kersall
+Kneesall
+Rufford
+Averham
+Cromwell
+Staythorpe
+Winkburn
+Bathley
+Saxilby
+Trowell
+Ratcliffe on Soar
+Market Overton
+Teigh
+Whissendine
+Osbaldwick
+Stockton on the Forest
+Coxwold
+Ainderby Steeple
+Allerston
+West Ayton
+Barton-le-Street
+Burniston
+North Cliffe
+Cloughton
+Cold Kirby
+Cowesby
+East Cowton
+High Deepdale
+Duggleby
+Easingwold
+Ebberston
+Ellerburn
+Falsgrave
+Farmanby
+Filey
+Goodmanham
+Gristhorpe
+West Harlsey
+Harswell
+Hemingbrough
+Hotham
+Hutton Buscel
+Irby
+North Kilvington
+Kingthorpe
+Kirby Sigston
+Kirby Wiske
+Knayton
+Lazenby
+Lebberston
+Levisham
+Market Weighton
+Maunby
+Moxby
+Newton-on-Rawcliffe
+Northallerton
+Nunburnholme
+North Otterington
+Romanby
+West Rounton
+Sandhutton
+Seaton Ross
+Shiptonthorpe
+Snainton
+Staintondale
+Sutton-on-the-Forest
+Thormanby
+Thornton Dale
+Thornton-le-Beans
+Thornton-le-Street
+Thorp
+Warlaby
+Warter
+Yafforth
+Allerthorpe
+Barmby Moor
+Bessingby
+Bielby
+Boynton
+Boynton Hall
+Bridlington
+Burnby
+Burton Agnes
+Burton Leonard
+Cartworth
+Clareton
+Cranswick
+Crigglestone
+Lower Cumberworth
+Dewsbury
+Earlsheaton
+Fangfoss
+Ganton
+Gransmoor
+Grindale
+Haisthorpe
+Harpham
+Hensall
+Hilderthorpe
+Horbury
+Kelleythorpe
+Kilnwick
+Kilnwick Percy
+Kirkburton
+Meltonby
+Huddersfield
+Ossett
+Pocklington
+Potter Brompton
+Sandal Magna
+Shepley
+Skerne
+Speeton
+Stansfield
+Staxton
+Thwing
+Tibthorpe
+Upperthong
+Heptonstall
+Warley
+Battersby
+Boulby
+Brearton
+Crathorne
+Cropton
+Low Dalby
+Faceby
+Ferrensby
+Fewston
+Goulton
+Guisborough
+Killinghall
+Kilton Thorpe
+Kirkleatham
+Knaresborough
+Lockton
+Loftus
+Milby
+Moorsholm
+Newton under Roseberry
+East Rounton
+Scriven
+South Stainley
+Tanton
+Thornaby-on-Tees
+Thornton Fields
+Timble
+Tollesby
+Ugthorpe
+Upsall
+Walkingham Hill
+Wrelton
+Amotherby
+Appleton Wiske
+Appleton-le-Street
+Arncliffe
+Osmotherley
+Carlton Miniott
+Kirklevington
+Coulton
+Crambe
+Flaxton
+Ganthorpe
+Griff
+East Harlsey
+Harome
+Helmsley
+Holtby
+Hutton Bonville
+Ingleby Arncliffe
+West Lilling
+Old Malton
+Myton-on-Swale
+South Otterington
+Oulston
+Raskelf
+Sand Hutton
+Scackleton
+Sheriff Hutton
+Over Silton
+Thirsk
+Welbury
+Wiganthorpe
+High Worsall
+Low Worsall
+Yarm
+Alwoodley
+Anlaby
+Bardsey
+Burton Fleming
+Burythorpe
+Low Caythorpe
+Dale Town
+Darton
+Folkton
+Fordon
+Fridaythorpe
+Goldthorpe
+North Grimston
+Hawnby
+Horsforth
+Huggate
+Kepwick
+East Keswick
+Kirby Grindalythe
+Kirby Underdale
+Old Lindley
+Lowthorpe
+Menethorpe
+West Morton
+Naburn
+Octon
+Onesacre
+Painsthorpe
+Penistone
+Priest Hutton
+Rastrick
+Rawdon
+Reighton
+Riddlesden
+Rillington
+Ruston Parva
+Scampston
+Sprotbrough
+Stillingfleet
+Old Sunderlandwick
+Thorpe Bassett
+Uncleby
+Bolsterstone
+Wharram Percy
+Wike
+Wothersome
+Yapham
+Yeadon
+Addingham
+Addlethorpe
+Aldcliffe
+Aldfield
+Allerton Mauleverer
+Arkholme
+Austwick
+Barbon
+Bardsea
+Bare
+Beamsley
+High Bentham
+Birstwith
+Bispham
+Bolton Abbey
+Bolton-le-Sands
+Branton Green
+Burton-in-Kendal
+Cantsfield
+Carnforth
+Casterton
+Catterall
+Coniston Cold
+Cononley
+Embsay
+Farnhill
+Dalton-In-Furness
+Freckleton
+Gargrave
+Garstang
+Gleaston
+Goosnargh
+Grassington
+Greenhalgh
+Gressingham
+Halton East
+Hanlith
+Hart
+Hellifield
+Hopperton
+Inskip
+Keighley
+Kildwick
+Kirkby Lonsdale
+Kirksanton
+Lancaster
+Laycock
+Lea Town
+Leathley
+Leck
+Leece
+Lytham
+Mansergh
+Minskip
+Mythop
+Oakworth
+Out Rawcliffe
+Preesall
+Ribby
+Ribchester
+Rossett Green
+Scosthrop
+Sedbergh
+Sicklinghall
+Skerton
+Low Skibeden
+Skipton
+Slyne
+Low Snaygill
+St Michaels on Wyre
+Staining
+Stalmine
+Lower Swainshead
+Thorlby
+Threshfield
+Lower Thurnham
+Torrisholme
+Treales
+Utley
+Whicham
+Whittingham
+Wilsden
+Woodplumpton
+Aldingham
+Kendal
+Dendron
+Halsham
+Patrington
+Swine
+Ulverston
+Winestead
+Aike
+Bishop Wilton
+North Cave
+Elloughton
+Everingham
+Gowthorpe
+Greenwick
+Londesborough
+North Newbald
+South Newbald
+Riccall
+Walkington
+Wetwang
+Youlthorpe
+Alne
+Ampleforth
+Husthwaite
+High Belthorpe
+Birdsall
+Brawby
+Bugthorpe
+Carlton Husthwaite
+Gate Helmsley
+Haxby
+Helperby
+Helperthorpe
+East Lutton
+West Lutton
+Low Mowthorpe
+Nawton
+Pockley
+Salton
+Stonegrave
+Tholthorpe
+Weaverthorpe
+Wide Open
+Wombleton
+Youlton
+Baildon
+Bishop Monkton
+Bishop Thornton
+Bridge Hewick
+Copt Hewick
+Earswick
+Eavestone
+Guiseley
+Hutton Conyers
+Ilkley
+Markington
+Menston
+Nidd
+Upper Poppleton
+Ripon
+Strensall
+Studley Roger
+Nether Timble
+Ulleskelf
+Warmfield
+Wilsill
+Beverley
+Bishop Burton
+Brandesburton
+Cherry Burton
+South Dalton
+Danthorpe
+Eske
+Flinton
+West Flotmanby
+Garton-on-the-Wolds
+Gembling
+Leconfield
+Molescroft
+Monkwith
+Ottringham
+Routh
+Sigglesthorne
+Skidby
+Sutton-on-Hull
+Tickton
+Wawne
+Weel
+Welwick
+Withernwick
+Asselby
+Babthorpe
+Barlby
+Barmby on the Marsh
+Brantingham
+Brantinghamthorpe
+South Cliffe
+Cotness
+Crayke
+Eastrington
+Ellerker
+Gardham
+Hive
+Holme on the Wolds
+Kilpin
+Knedlington
+Norton Conyers
+Owsthorpe
+Saltmarshe
+Scorborough
+Sessay
+Sutton Howgrave
+Yokefleet
+Egton
+Ellerby
+Flamborough
+Fylingthorpe
+Gnipe Howe
+Hemlington
+Hinderwell
+Hutton Mulgrave
+Lackenby
+South Loftus
+Mickleby
+Mulgrave Castle
+Newton Mulgrave
+Sewerby
+Sneaton
+High Stakesby
+Ugglebarnby
+Upleatham
+Beadlam
+Brotton
+Cawton
+Eston
+Fadmoor
+High Foxton
+Hutton Rudby
+Middleton-on-Leven
+Oswaldkirk
+Rudby
+Scawton
+Slingsby
+Barton-le-Willows
+Coneysthorpe
+Cornborough
+North Ferriby
+Fryton
+Upper Helmsley
+Linton-on-Ouse
+Marton-in-the-Forest
+Skewsby
+High Stittenham
+Terrington
+Thornton-le-Clay
+Whitwell-on-the-Hill
+East Cottingwith
+North Duffield
+South Duffield
+Foggathorpe
+Kirk Ella
+Laytham
+Spaldington
+Willitoft
+Bempton
+Binnington
+North Dalton
+Fraisthorpe
+Hutton Cranswick
+Rudston
+Scagglethorpe
+Sutton upon Derwent
+Thixendale
+Adel
+Arthington
+Auckley
+Austerfield
+Balby
+Barnby Dun
+Bramham
+Cookridge
+Eccup
+Hexthorpe
+Hooton Levitt
+Hooton Pagnell
+Long Sandall
+Loversall
+Newton Kyme
+Rotherham
+Sledmere
+Toulston
+Warmsworth
+Brampton en le Morthen
+Brodsworth
+Thurnscoe
+Kirk Sandall
+Pickburn
+Shafton
+Todwick
+Ulley
+Marton-le-Moor
+Cundall
+Hunsingore
+Tankersley
+Brignall
+North Cowton
+Eppleby
+Eryholme
+Forcett
+Girlington
+Hartforth
+Hutton Magna
+East Layton
+West Layton
+Manfield
+Middleton Tyas
+Scargill
+Stanwick-St-John
+Wycliffe
+Aldbrough St John
+Bolton-on-Swale
+Brompton-on-Swale
+Cleasby
+Croft-on-Tees
+Kiplin
+Kirkby Fleetham
+Morton-on-Swale
+Skeeby
+Startforth
+Thrintoft
+Cotherstone
+Danby Wiske
+Melsonby
+Hunderthwaite
+Lartington
+Lonton
+Ravensworth
+Romaldkirk
+East Appleton
+Catterick
+Colburn
+Hackforth
+Hipswell
+Killerby
+Langthorne
+Scruton
+Askrigg
+Aysgarth
+Castle Bolton
+Downholme
+Ellerton Abbey
+Grinton
+Marrick
+Thoralby
+High Thoresby
+Thornton Rust
+East Witton
+Agglethorpe
+Barden
+Bellerby
+Caldbergh
+Constable Burton
+Coverham
+Danby
+Garriston
+Harmby
+East Hauxwell
+Leyburn
+West Scrafton
+Spennithorne
+Thornton Steward
+West Witton
+Aiskew
+Bedale
+Burrill
+High Burton
+Clifton Castle
+Fearby
+Finghall
+Hutton Hang
+Masham
+Rookwith
+High Sutton
+High Ellington
+Thirn
+Thornton Watlass
+Thorp Perrow
+Carthorpe
+Middleton Quernhow
+Patrick Brompton
+West Tanfield
+Upsland
+Acaster Selby
+Ainderby Quernhow
+Askham Bryan
+Baldersby
+Burneston
+Escrick
+Exelby
+Gatenby
+Pickhill
+Sinderby
+Theakston
+East Ayton
+Kirby Misperton
+Lastingham
+Sinnington
+Spaunton
+Askwith
+Bank Newton
+Settrington
+East Heslerton
+Allerton Bywater
+Austhorpe
+Birkby Hill
+Aberford
+Garforth
+Gipton
+Headingley
+Kippax
+Ledston
+Newsam Green
+Parlington
+Saxton
+Shippen
+Sturton
+Swillington
+Thorner
+Barkston
+Birkin
+Brayton
+Burghwallis
+Campsall
+South Elmsall
+Fairburn
+Kirkby Wharfe
+South Kirkby
+Moorthorpe
+Ryther
+Skellow
+Snaith
+Thorpe Willoughby
+Whitwood
+Badsworth
+Darrington
+North Featherstone
+Ferrybridge
+Glass Houghton
+West Hardwick
+Kellington
+Womersley
+Knottingley
+Purston Jaglin
+Skelbrooke
+Thorpe Audlin
+Walden Stubbs
+Water Fryston
+Wheldale
+Dodworth
+North Elmsall
+South Hiendley
+High Hoyland
+Kexbrough
+Kinsley
+Minsthorpe
+Silkstone
+Ackton
+Cold Hiendley
+Upper Cumberworth
+Ingbirchworth
+Methley
+Monk Bretton
+Oxspring
+Roughbirchworth
+Ryhill
+Skelmanthorpe
+Old Snydale
+Thurgoland
+Thurlstone
+Almondbury
+East Ardsley
+Armley
+South Crosland
+Farnley Tyas
+Flockton
+Golcar
+Honley
+Upper Hopton
+Lepton
+Meltham
+Quarmby
+Reestones
+Thorpe on the Hill
+Batley
+Calverley
+Cleckheaton
+Drighlington
+Elland
+Farsley
+Gomersal
+Hartshead
+Hunslet
+Liversedge
+Mirfield
+Southowram
+Wibsey
+Adwick upon Dearne
+North Anston
+South Anston
+Barnburgh
+Brinsworth
+Old Denaby
+Ecclesfield
+Greasbrough
+Hellaby
+Hooton Roberts
+Mexborough
+Slade Hooton
+Thorpe Salvin
+Throapham
+Wadworth
+Wickersley
+Arksey
+Billingley
+Bolton Upon Dearne
+South Bramwith
+Cusworth
+Hampole
+Holdworth
+Kimberworth
+Kirk Bramwith
+High Melton
+West Melton
+Ughill
+Wadsley
+Wath Upon Dearne
+Wombwell
+Worrall
+Attercliffe
+Hallam
+Scawsby
+Old Byland
+South Cave
+Sancton
+Acaster Malbis
+Braithwell
+Conisbrough
+Edenthorpe
+Fishlake
+Middlethorpe
+Ravenfield
+Wilsic
+Bolton Percy
+Cowthorpe
+Old Edlington
+Steeton
+Thrybergh
+Whixley
+Bolton-by-Bowland
+Spofforth
+Dishforth
+Gisburn
+Kelbrook
+Kirkby Overblow
+Nappa
+Nesfield
+Paythorne
+Raygill Moss
+Rimington
+Studley Royal
+Thornton-in-Craven
+Wetherby
+Foston on the Wolds
+Wheldrake
+Asenby
+Crakehill
+Irton
+Skipton-on-Swale
+Burstwick
+Burton Pidsea
+Dringhoe
+Elstronwick
+Fitling
+Hilston
+Hollym
+Hornsea
+Hornsea Burton
+Kilnsea
+Mappleton
+Marfleet
+Nuthill
+Owstwick
+Owthorne
+Paull
+Paull Holme
+Long Riston
+Rolston
+Roos
+High Skirlington
+Sproatley
+Thirtleby
+Thorngumbald
+Waxholme
+Withernsea
+Aldbrough
+Beeford
+Dimlington
+Low Fosham
+North Frodingham
+Garton
+Holmpton
+Keyingham
+Lissett
+Meaux
+Nunkeeling
+Out Newton
+Rimswell
+Rysome Garth
+Arram
+Bewholme
+Old Ellerby
+Ganstead
+Langthorpe
+Oubrough
+Ulrome
+Breighton
+Camblesforth
+Gribthorpe
+Riplingham
+Wintringham
+Drax
+Gilling East
+Newton-on-Ouse
+Place Newton
+Adlingfleet
+Hunmanby
+Rawmarsh
+Wighill
+Beckwith
+Bramhope
+Brimham
+Bubwith
+Holme-on-Spalding-Moor
+North Rigton
+Bagby
+Bilbrough
+Hessay
+Kirby Knowle
+Moor Monkton
+Sutton-under-Whitestonecliffe
+Thorpefield
+Yearsley
+Beningbrough
+Boltby
+Bossall
+Brandsby
+Felixkirk
+Gillamoor
+Heslington
+Holker
+Hoveton
+Hovingham
+Hutton-le-Hole
+Kirkbymoorside
+Lealholm
+Scrayingham
+Stearsby
+Kennythorpe
+Skipwith
+Bewerley
+Copgrove
+Copmanthorpe
+Cottingley
+Cullingworth
+Lower Dunsforth
+Upper Dunsforth
+Eldwick
+Flaxby
+Hainworth
+Loftus Hill
+Newsome
+Old Thornville
+Appleton Roebuck
+Askham Richard
+Catterton
+Nun Monkton
+Nether Poppleton
+Rufforth
+Tockwith
+Burnsall
+Cattal
+Drebley
+Green Hammerton
+Hebden
+Hickleton
+Kirk Hammerton
+Silsden
+Skirpenbeck
+Swaythorpe
+Azerley
+Carlesmoor
+Grewelthorpe
+Humberton
+Kex Moor
+Kirkby Malzeard
+Weardley
+Winksley
+Armthorpe
+Darfield
+East Rigton
+Widdington
+Carnaby
+West Heslerton
+Ingleby Greenhow
+Kildale
+Ormesby
+Stokesley
+Appletreewick
+Conistone
+Dunkeswick
+Hartlington
+Kilnsey
+Leavening
+Rylstone
+Airton
+Arnford
+Bashall Eaves
+Bordley
+Bracewell
+West Bradford
+Earby
+Ellel
+Elslack
+Eshton
+Flasby
+Giggleswick
+Grindleton
+Hawkswick
+Hetton
+Heversham
+Hincaster
+Hubberholme
+Ingthorpe
+Kettlewell
+Kirkby Malham
+Levens
+Lothersdale
+East Marton
+West Marton
+Long Preston
+Radholme Laund
+Rathmell
+Scotforth
+Settle
+Slaidburn
+Stackhouse
+Starbotton
+Wigglesworth
+Winterburn
+Yealand Conyers
+Upper Hambleton
+Torksey
+Boothby Graffoe
+Braceby
+Grantham
+Evedon
+Ewerby Thorpe
+Harlaxton
+Harrowby
+Heckington
+Howell
+South Kyme
+Londonthorpe
+Quarrington
+Old Somerby
+Spittlegate
+Stoke Rochford
+Washingborough
+Wellingore
+Bassingham
+Blyton
+Brumby
+Dunholme
+Gedney
+Glentworth
+Grayingham
+Harpswell
+Heapham
+Hemswell
+Hibaldstow
+Holbeach
+Nettleham
+Pilham
+Reasby
+Redbourne
+Scunthorpe
+Skillington
+Snitterby
+Springthorpe
+Swinthorpe
+Tydd St Mary
+Whaplode
+Wickenby
+Yaddlethorpe
+Burton upon Stather
+Cadney
+Clixby
+Gayton le Wold
+Grainthorpe
+Grasby
+Grimoldby
+Habrough
+Holton le Moor
+Keelby
+North Kelsey
+South Kelsey
+Kirmington
+Manby
+Owmby
+Saltfleetby All Saints
+Searby
+North Somercotes
+Thealby
+Waddingham
+Yarburgh
+Alvingham
+West Ashby
+Coningsby
+Tumby
+Haltham
+Moorby
+Scrivelsby
+Skidbrooke
+High Toynton
+Wilksby
+Wood Enderby
+Ailby
+East Barkwith
+West Barkwith
+Beckering
+Benniworth
+Old Clee
+Cuxwold
+Healing
+Holton cum Beckering
+Lissington
+South Ormsby
+Panton
+Rigsby
+Snelland
+Stallingborough
+Sutton on Sea
+Swallow
+Tetford
+Cleethorpes
+Trusthorpe
+South Willingham
+Bicker
+Billingborough
+Billinghay
+Dowsby
+Graby
+Hainton
+Horbling
+Newton on Trent
+North Witham
+Barlings
+Blyborough
+Brattleby
+Brocklesby
+Covenham St Mary
+Spilsby
+Fotherby
+Fulstow
+Grebby
+Hundleby
+East Keal
+Langton by Wragby
+Mavis Enderby
+Raithby
+Snarford
+Baumber
+Tattershall Thorpe
+Thorpe St Peter
+Toynton All Saints
+Waddingworth
+Wispington
+Ashby by Partney
+Aylesby
+Biscathorpe
+Keddington
+Kelby
+Kirkby la Thorpe
+Orby
+West Ravendale
+Scremby
+Silk Willoughby
+Wainfleet All Saints
+Bonthorpe
+Calceby
+Fulletby
+Oxcombe
+Sloothby
+Threekingham
+North Thoresby
+Audleby
+Cleatham
+Elsham
+Glentham
+Kingerby
+Newton by Toft
+Normanby-by-Spital
+Sturton by Stow
+Willingham by Stow
+Middle Rasen
+West Rasen
+Sotby
+Southrey
+Tealby
+Aby
+Ashby cum Fenby
+Ashby Puerorum
+Bag Enderby
+Brigsley
+Laceby
+Markby
+North Owersby
+East Ravendale
+Scartho
+Sixhills
+Stewton
+Waithe
+Withcall
+Bracebridge
+Canwick
+Claypole
+Dry Doddington
+Owmby-by-Spital
+Bigby
+Bishop Norton
+Caenby
+Knaith
+Messingham
+Normanby by Stow
+North Ormsby
+Wyham
+Bitchfield
+Carlby
+Cherry Willingham
+Corby Glen
+Dunsby
+Ewerby
+Gosberton
+Gosberton Cheal
+Haconby
+Leasingham
+Lobthorpe
+Quadring
+Rippingale
+Swayfield
+Swinstead
+Folkingham
+West Halton
+Riseholme
+Scothern
+Scotter
+Scotterthorpe
+Sudbrooke
+Witham on the Hill
+Yawthorpe
+Alkborough
+High Risby
+Baston
+Belchford
+Burtoft
+Ruskington
+Cranwell
+Crowland
+Spalding
+Barnoldby le Beck
+Gate Burton
+Grainsby
+Holton le Clay
+North Killingholme
+South Killingholme
+Beelsby
+Carlton Scroop
+Hatcliffe
+Leadenham
+Spridlington
+Swinhope
+Fishtoft
+Kirkby Underwood
+Old Leake
+Pointon
+Wrangle
+Wyberton
+Burgh le Marsh
+Claxby
+Cumberworth
+Hagworthingham
+Legbourne
+Mumby
+Theddlethorpe All Saints
+Barnetby le Wold
+Belleau
+Bilsby
+Bratoft
+Brinkhill
+Claxby Pluckacre
+Claythorpe
+Dexthorpe
+Huttoft
+Irby upon Humber
+Mablethorpe
+Riby
+Salmonby
+Sutterby
+Swaby
+South Thoresby
+Tothill
+Withern
+Farforth
+Harmston
+Haugham
+Hemingby
+Kelstern
+Ketsby
+Metheringham
+Newball
+Ruckland
+Stainton by Langworth
+Tathwell
+Timberland
+Walmsgate
+Croxby
+Dunstall
+Normanby le Wold
+Otby
+Tetney
+Thoresway
+North Willingham
+Cabourne
+Cawkwell
+Donington on Bain
+Goulceby
+East Halton
+Saxby All Saints
+Scamblesby
+Scawby
+Stenigot
+Asterby
+Edlington
+Halton Holegate
+Hareby
+Miningsby
+Minting
+Sibsey
+Stickford
+Stickney
+Stixwould
+Bassingthorpe
+Long Bennington
+Boothby
+Burton-le-Coggles
+North Elkington
+Hanby
+Helpringham
+West Keal
+East Kirkby
+Obthorpe
+Pinchbeck
+Revesby
+Market Rasen
+West Torrington
+Bloxholm
+Bransby
+Buslingthorpe
+Cold Hanworth
+Eagle
+Fillingham
+Greetwell
+Aslackby
+Aubourn
+Braceborough
+Binbrook
+Hungerton
+Ludborough
+Ropsley
+Scottlethorpe
+Sempringham
+Tallington
+Wyville
+Immingham
+North Kyme
+Apley
+Covenham St Bartholomew
+South Elkington
+South Ferriby
+Legsby
+North Reston
+Aisthorpe
+Bardney
+Edenham
+Horkstow
+Keisby
+Low Langton
+Lusby
+Scampton
+Winteringham
+Candlesby
+Culverthorpe
+Hasthorpe
+Partney
+Skendleby
+Aswarby
+Boothby Pagnell
+Dembleby
+Driby
+Haceby
+Hanthorpe
+Oasby
+Osbournby
+Saleby
+Scott Willoughby
+Birthorpe
+Bonby
+Burton Pedwardine
+Ingoldsby
+Scredington
+Cammeringham
+Faldingworth
+Friesthorpe
+Thoresthorpe
+South Reston
+Spanby
+Heydour
+Swaton
+Irnham
+Creeton
+Elsthorpe
+Hawthorpe
+Stainby
+Brauncewell
+South Witham
+Hameringham
+Somersby
+Barrow upon Humber
+Skirbeck Quarter
+Tattershall
+Weelsby
+Anwick
+Castle Bytham
+Blankney
+Humby
+Flixborough
+Stubton
+Melton Ross
+Nocton
+Thornton Curtis
+Burgh on Bain
+Collow
+Fulnetby
+Rand
+East Torrington
+Frieston
+Aunsby
+Ingoldmells
+Mareham on the Hill
+Cawthorpe
+Market Stainton
+Navenby
+Willoughton
+Deeping St James
+West Deeping
+Swarby
+Authorpe
+Muckton
+Norton Disney
+Swinderby
+Freiston
+Bulby
+Sedgebrook
+Stenwith
+Welbourn
+Boultham
+North Rauceby
+South Rauceby
+Skinnand
+Althorpe
+Beltoft
+High Burnham
+Low Burnham
+Epworth
+Haxey
+Kirkby Green
+East Lound
+Owston Ferry
+Scopwick
+Surfleet
+Amcotts
+West Butterwick
+Digby
+Westborough
+Westwoodside
+South Hykeham
+Skellingthorpe
+Whisby
+Wrawby
+Friskney
+Colsterworth
+Stancil
+Louth
+South Somercotes
+Saltfleet
+Potterhanworth
+Thorpe Hesley
+Towton
+Wooldale
+West Ardsley
+Eccleshill
+Fixby
+Fulstone
+Greetland
+Hanging Heaton
+Hipperholme
+Northowram
+Thurstonland
+Appleton-le-Moors
+East Barnby
+West Barnby
+Nether Silton
+Whenby
+Bracken
+Brackenholme
+Everthorpe
+Rotsea
+Leppington
+Blythburgh
+Brome
+Easton Bavents
+Gislingham
+Hemingstone
+Darsham
+Ringsfield
+Rushmere St Andrew
+Strickland
+Worlingham
+Gisleham
+Kessingland
+Kirkley
+Lowestoft
+Mutford
+Pakefield
+Ellough
+Somerleyton
+Herringfleet
+Tostock
+Ashbocking
+Coddenham
+Darmsden
+Mendlesham
+Offton
+Sharpstone
+Occold
+Thornham Magna
+Wetheringsett
+Wickham Skeith
+Hoxne
+Marlesford
+Stoke Ash
+Weybread
+Wyverstone
+Hacheston
+Harkstead
+East Bergholt
+Chattisham
+Bungay
+Covehithe
+Icklingham
+Shadingfield
+Akenham
+Hintlesham
+Ipswich
+Bradfield Combust
+Onehouse
+Rattlesden
+Stanningfield
+Creeting St Peter
+Ash Street
+Bucklesham
+Grimston Hall
+Morston Hall
+Whatfield
+Cowlinge
+Sibton
+Thorington
+Wenhaston
+Bromeswell
+Burgh
+Capel St Andrew
+Chediston
+Halesworth
+South Cove
+Wissett
+Boulge
+Bredfield
+Charsfield
+Debach
+Kettleburgh
+Rendlesham
+Wickham Market
+Blundeston
+Cretingham
+Dallinghoo
+Brantham
+Pannington Hall
+Wherstead
+Woolverstone
+Blaxhall
+Chillesford
+Bruisyard
+Sternfield
+Benhall
+Rendham
+Cransford
+Framsden
+Framlingham
+Saxtead
+Wattisfield
+Uggeshall
+Grundisburgh
+Ilketshall St Andrew
+Mettingham
+Shipmeadow
+Sotterley
+Carlton Colville
+Elveden
+Ousden
+Buxhall
+Raydon
+Edwardstone
+Debenham
+Bedingfield
+Belstead
+Badingham
+Finningham
+Aldringham
+Kelsale
+Leiston
+Thrandeston
+Fordley
+Linstead Parva
+Dunwich
+Westleton
+Peasenhall
+Theberton
+Playford
+Stratton Hall
+Hasketon
+Kesgrave
+Aldeburgh
+Rushmere Lodge Farm
+Sudbourne
+Bawdsey
+Burch
+Hollesley
+Shottisham
+Ramsholt
+Bing
+Redlingfield
+Aspall
+Braiseworth
+Mellis
+Thornham Parva
+Fressingfield
+Rishangles
+Monewden
+Thelnetham
+Walsham Le Willows
+Tannington
+Bedfield
+Laxfield
+Stradbroke
+Chippenhall Green
+Horham
+Chickering
+Heveningham
+Bulcamp
+Yoxford
+Knodishall
+Saxmundham
+Stoven
+Baylham
+Redisham
+Flowton
+Falkenham
+Gulpher
+Hemley
+Candlet
+Levington
+Trimley St Martin
+Culpho
+Letheringham
+Thorpe Morieux
+Thurston End
+Whittingham Hall
+Brockley Hall
+Cavendish
+Willisham
+Ixworth Thorpe
+Hessett
+Kentwell Hall
+Lavenham
+Blyford
+Whepstead
+Lackford
+Nowton
+Flempton
+Fornham All Saints
+Hawstead
+Manston Hall
+Rede
+Herringswell
+Bures
+Milden
+Wetherden
+Mickfield
+Redgrave
+Fornham St Martin
+Pakenham
+Fornham St Genevieve
+Felsham
+Woolpit
+Ampton
+Gedding
+Timworth
+Rushbrooke
+Culford
+West Stow
+Hinderclay
+Coney Weston
+Stowlangtoft
+Bardwell
+Sapiston
+Assington
+Martlesham
+Swilland
+Maidenhead
+Midgham
+Buttercrambe
+Glastonbury
+Aveley
+Toppesfield
+Henham
+Stanstead
+Honnington
+Wordwell
+Hitcham
+Hill of Eaton
+Niton
+Wiggington
+Blacktoft
+Whitely
+Hundon
+Euston
+Ixworth
+Monk Soham
+Worlingworth
+Chelsworth
+Semer
+Kettlebaston
+Lindsey
+Rushbrooke Farm
+Stuston
+Benacre
+Kedington
+Poslingford
+Southwold
+Bury St Edmunds
+Seckford Hall
+Brandeston
+Burstall
+Pettaugh
+Lawshall
+Tattingstone
+Homersfield
+Syleham
+Freckenham
+Glemsford
+Hartest
+Lakenheath
+Undley
+Nedging
+Brightwell
+Kersey
+Dalham
+Denston
+Desning Hall
+Brockley Green
+Hawkedon
+Wattisham
+Barton Mills
+Cavenham
+Horringer
+Shelland
+Erwarton
+Freston
+Withersfield
+Stradishall
+Wickhambrook
+Loose Hall
+Depden
+Wrentham
+Henstead
+Polstead
+Withermarsh Green
+Stratford St Mary
+Eriswell
+Ella
+Elmsett
+Nacton
+Dagworth
+Haughley
+Beyton
+Reydon
+Wixoe
+Frostenden
+Cratfield
+Ubbeston
+Loose
+Burgate
+Churchford Hall
+Stonham Aspal
+Waldringfield
+Bildeston
+Witnesham
+Hestley Hall
+Sotherton
+Wyken Hall
+Colston Hall

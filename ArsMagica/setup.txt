@@ -1,0 +1,24 @@
+
+There should be a single hard-coded file reference - which is in hopshackle.simulation.SimProperties.java
+
+This needs to be changed to be the location of your GeneticProperties.txt file - and all other locations should be picked up from this. 
+Specifically there are two properties of specific importance:
+BaseDirectory=
+LogDirectory=
+
+These set where to look for all configuration and similar files (BaseDirectory), and where all Log files should go (LogDirectory). 
+For Ars Magica the vast majority of the other properties are irrelevant; they apply to other bits and pieces I've played with over the years.
+
+Other points to note:
+- MySQL dependency
+This is currently required (or at least, I'm unsure if anything will run without it). The schema, password and user are three properties that need to be set in GeneticProperties.txt.
+DatabaseSchema=
+DatabaseUser=
+DatabasePassword=
+All the database connection stuff is in hopshackle.simulation.ConnectionFactory if you want to change this (the SQL updates etc *should* be simple SQL, so will *probably* work fine using any compatible database connection)
+
+- RAM dependency
+The ArsMagica project grew like topsy, and it tries to retain far, far too much in RAM (basically, the entire state of Mythic Europe, including all magi, research, library texts etc...). Set your JVM settings to the max, and be ready for some Heap Out of Memory issues if you try and run all the way to 1220 or beyond.
+(This will also take a while, not least with disk i/o as it writes every single magi's action every season to log file....this can take a few minutes to catch up at the end of a run.)
+
+Finally - best of luck. This was only ever written as a personal toy, and is a very long way from being productionised. Getting it running at all will be an impressive feat.

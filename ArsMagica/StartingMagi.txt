@@ -1,0 +1,14 @@
+Name	Cr	In	Mu	Pe	Re	An	Aq	Au	Co	He	Ig	Im	Me	Te	Vi	Int	Per	Str	Sta	Prs	Com	Dex	Qik	Spec	Tribunal
+Bonisagus	100														100	5	2	0	2	0	5	0	0	MAGIC_THEORY	Rhine
+Trianoma		50			50				50				50			3	2	0	2	3	4	0	0	INTRIGUE	Rhine
+Flambeau				100							100					3	2	3	4	4	1	0	0	PENETRATION	Rome
+Tremere					100				100							3	4	2	2	2	3	0	0	LEADERSHIP	Transylvania
+Tytalus				100				100								3	4	0	4	2	2	0	0	PARMA_MAGICA	Normandy
+Verditius					100									100		3	3	0	4	0	2	0	0	ARTES_LIBERALES	Rome
+Diedne	100															3	3	0	3	0	3	0	0	CHARM	Stonehenge
+Bjornaer			100			100										2	4	0	4	5	2	0	0	MAGIC_LORE	Rhine
+Criamon		50	50									100				4	3	0	3	0	0	0	0	CONCENTRATION	Greater Alps
+Jerbiton													100			2	3	0	2	0	5	0	0	FINESSE	Greater Alps
+Merinita			100				50			50				50		4	2	0	2	0	2	0	0	FAERIE_LORE	Rhine
+Mercere		50					50			50						2	3	0	3	1	4	0	0	AREA_LORE	Rome
+Guernicus		100											100			3	4	0	2	2	3	0	0	TEACHING	Greater Alps

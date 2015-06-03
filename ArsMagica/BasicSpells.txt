@@ -1,0 +1,356 @@
+Soothe Pains of the Beast	Cr		An		20
+True Rest of the Injured Brute	Cr		An		20
+Weaver’s Trap of Webs	Cr		An		35
+Wizard’s Mount, The	Cr		An		35
+Curse of the Ravenous Swarm	Cr	Re	An		45
+Footsteps of Slippery Oil	Cr		Aq		5
+Creeping Oil	Cr		Aq		15
+Mighty Torrent of Water	Cr		Aq		20
+Deluge of Rushing and Dashing	Cr		Aq		40
+Air’s Ghostly Form	Cr		Au		5
+Chamber of Spring Breezes	Cr		Au		5
+Jupiter’s Resounding Blow	Cr		Au		10
+Stench of the Twenty Corpses	Cr		Au		10
+Wreaths of Foul Smoke	Cr		Au		10
+Broom of the Winds	Cr		Au		15
+Charge of the Angry Winds	Cr		Au		15
+Circling Winds of Protection	Cr	Re	Au		20
+Clouds of Rain and Thunder	Cr		Au		25
+Clouds of Summer Snow	Cr		Au		25
+Pull of the Skybound Winds	Cr		Au		30
+Wings of the Soaring Wind	Cr	Re	Au		30
+Incantation of Lightning, The	Cr		Au		35
+Breath of the Open Sky	Cr		Au		40
+Wrath of Whirling Winds and Water	Cr		Au		65
+Bind Wound	Cr		Co		10
+Charm Against Putrefaction	Cr		Co		10
+Chirurgeon’s Healing Touch, The	Cr		Co		20
+Gentle Touch of the Purified Body	Cr		Co		20
+Purification of the Festering Wounds	Cr		Co		20
+Restoration of the Defiled Body	Cr		Co		25
+Severed Limb Made Whole, The	Cr		Co		25
+Cheating the Reaper	Cr		Co		30
+Incantation of the Body Made Whole	Cr		Co		40
+Shadow of Life Renewed, The	Cr		Co	Me	75
+Conjure the Sturdy Vine	Cr		He		5
+Trap of the Entwining Vines	Cr		He		15
+Bridge of Wood	Cr		He		20
+Wall of Thorns	Cr		He		20
+Wall of Living Wood	Cr		He		25
+Bountiful Feast, The	Cr		He		35
+Moonbeam	Cr		Ig		3
+Palm of Flame	Cr		Ig		5
+Heat of the Searing Forge	Cr		Ig		10
+Lamp Without Flame	Cr		Ig		10
+Blade of the Virulent Flame	Cr		Ig		15
+Flash of the Scarlet Flames	Cr		Ig		15
+Pilum of Fire	Cr		Ig		20
+Arc of Fiery Ribbons	Cr		Ig		25
+Coat of Flame	Cr	Re	Ig		25
+Ball of Abysmal Flame	Cr		Ig		35
+Circle of Encompassing Flames	Cr		Ig		35
+Phantasm of the Talking Head	Cr		Im		10
+Phantasmal Animal	Cr		Im		20
+Phantasmal Fire	Cr		Im	Ig	20
+Phantasm of the Human Form	Cr		Im		25
+Haunt of the Living Ghost	Cr	In	Im		35
+Shadow of Human Life, The	Cr		Im	Me	40
+Words of the Unbroken Silence	Cr		Me		10
+Panic of the Trembling Heart	Cr		Me		15
+Rising Ire	Cr		Me		15
+Memory of the Distant Dream	Cr		Me		20
+Pains of the Perpetual Worry	Cr		Me		20
+Weight of a Thousand Hells	Cr		Me		25
+Gift of Reason	Cr		Me		35
+Seal the Earth	Cr		Te		15
+Touch of Midas	Cr		Te		20
+Wall of Protecting Stone	Cr		Te		25
+Conjuring the Mystic Tower	Cr		Te		35
+Phantom Gift, The	Cr		Vi		15
+Enigma’s Gift, The	Cr		Vi		30
+Shell of False Determinations	Cr		Vi		Gen
+Shell of Opaque Mysteries	Cr		Vi		Gen
+Image of the Beast	In		An		5
+Shiver of the Lycanthrope	In		An		10
+Opening the Tome of the Animal’s Mind	In		An		25
+Hunter’s Sense	In		An		30
+Clear Sight of the Naiad	In		Aq		5
+Subtle Taste of Poison and Purity	In		Aq		5
+Touch of the Pearls	In		Aq		5
+Call of the Rushing Waters	In		Aq		15
+Voice of the Lake	In		Aq		25
+Enchantment of the Scrying Pool	In		Aq	Im	30
+True Sight of the Air	In		Au		15
+Whispering Winds	In		Au		15
+Sailor’s Foretaste of the Morrow	In		Au		20
+Eyes of the Bat	In		Au		25
+Physician’s Eye	In		Co		5
+Revealed Flaws of Mortal Flesh	In		Co		10
+Whispers Through the Black Gate	In		Co	Me	15
+Inexorable Search, The	In		Co		20
+Eye of the Sage, The	In		Co	Im	30
+Sight of the True Form	In		Co		Gen
+Probe Nature’s Hidden Lore	In		He		4
+Hunt for the Wild Herb	In		He		5
+Intuition of the Forest	In		He		10
+Shriek of the Impending Shafts	In		He		15
+Converse with Plant and Tree	In		He		25
+Tales of the Ashes	In		Ig		5
+Shadows of the Fires Past	In		Ig		15
+Vision of Heat’s Light	In		Ig		20
+Eyes of the Flame	In		Ig		35
+Words of the Flickering Flame	In		Ig		35
+Prying Eyes	In		Im		5
+Discern Own Illusions	In		Im		15
+Ear for Distant Voices, The	In		Im		20
+Eyes of the Eagle	In		Im		25
+Summoning the Distant Image	In		Im		25
+Discern the Images of Truth and Falsehood	In		Im		Gen
+Sight of the Transparent Motive	In		Me		10
+Perception of the Conflicting Motives	In		Me		15
+Frosty Breath of the Spoken Lie	In		Me		20
+Posing the Silent Question	In		Me		20
+Thoughts Within Babble	In		Me		25
+Peering into the Mortal Mind	In		Me		30
+Probe for Pure Silver	In		Te		4
+Eyes of the Eons	In		Te		10
+Eyes of the Treacherous Terrain	In		Te		15
+Miner’s Keen Eye, The	In		Te		20
+Tracks of the Faerie Glow	In		Te		25
+Stone Tell of the Mind that Sits	In		Te		30
+Sense the Feet that Tread the Earth	In		Te		30
+Sense of Magical Power	In		Vi		2
+Scales of the Magical Weight	In		Vi		5
+Sense the Nature of Vis	In		Vi		5
+Piercing the Faerie Veil	In		Vi		20
+Sense of the Lingering Magic	In		Vi		30
+Sight of the Active Magics	In		Vi		40
+Invisible Eye Revealed, The	In		Vi		Gen
+Beast of Outlandish Size	Mu		An		15
+Doublet of Impenetrable Silk	Mu		An		15
+Growth of the Creeping Things	Mu		An		15
+Beast of Miniscule Proportions	Mu		An		20
+Beast Remade, The	Mu		An	Co	25
+Transformation of the Ravenous Beast to the Torpid Toad	Mu		An		25
+Steed of Vengeance	Mu		An		35
+Incantation of Putrid Wine	Mu		Aq		15
+Lungs of the Fish	Mu		Aq	Au	20
+Vile Water of Sterility	Mu		Aq		45
+Rain of Stones	Mu		Au	Te	20
+Talons of the Winds	Mu	Re	Au		20
+Infernal Smoke of Death	Mu		Au		40
+Fog of Confusion	Mu	Re	Au	Im	45
+Rain of Oil	Mu		Au	Aq	50
+Eyes of the Cat	Mu		Co	An	5
+Disguise of the New Visage	Mu		Co		15
+Preternatural Growth and Shrinking	Mu		Co		15
+Arm of the Infant	Mu		Co		20
+Gift of the Bear’s Fortitude	Mu		Co		25
+Shape of the Woodland Prowler	Mu		Co	An	25
+Cloak of Black Feathers	Mu		Co	An	30
+Curse of Circe	Mu		Co	An	30
+Stance of the Patient Tree	Mu		Co	He	35
+Cloak of Mist	Mu		Co	Au	40
+Transform to Water	Mu		Co	Aq	40
+Silent Vigil, The	Mu		Co	Te	45
+Mists of Change	Mu		Co	An	60
+Pass the Unyielding Portal	Mu		He		5
+Piercing Shaft of Wood	Mu	Re	He		10
+Transformation of the Thorny Staff	Mu		He		10
+Rope of Bronze	Mu		He	Te	15
+Thaumaturgical Transformation of Plants to Iron	Mu		He	Te	20
+Stir the Slumbering Tree	Mu		He	Me	25
+Curse of the Haunted Forest	Mu	Pe	He		60
+Many-Hued Conflagration, The	Mu		Ig		5
+Hornet Fire	Mu	Re	Ig		10
+Show of the Flames and Smoke	Mu		Ig		10
+Prison of Flames	Mu		Ig		20
+Trapping the Fire	Mu		Ig	Te	25
+Flames of Sculpted Ice	Mu		Ig	Aq	35
+Taste of the Spices and Herbs	Mu		Im		5
+Aura of Ennobled Presence	Mu		Im		10
+Notes of a Delightful Sound	Mu		Im		10
+Disguise of the Transformed Image	Mu		Im		15
+Image Phantom	Mu		Im		20
+Recollection of Memories Never Quite Lived	Mu		Me		4
+Mind of the Beast	Mu		Me	An	30
+Past of Another	Mu		Me		35
+Inmost Companion	Mu		Me	An	40
+Vision of the Haunting Spirits	Mu		Me	Im	40
+Crystal Dart, The	Mu	Re	Te		10
+Supple Iron and Rigid Rope	Mu		Te		10
+Object of Increased Size	Mu		Te		15
+Rock of Viscid Clay	Mu		Te		15
+Earth that Breaks No More	Mu		Te		20
+Edge of the Razor	Mu		Te		20
+Teeth of the Earth Mother	Mu		Te		35
+Mirror of Opposition (Form)	Mu		Vi		Gen
+Shroud Magic	Mu		Vi		Gen
+Sorcerer’s Fork, The	Mu		Vi		Gen
+Wizard’s Boost (Form)	Mu		Vi		Gen
+Wizard’s Communion	Mu		Vi		Gen
+Wizard’s Reach (Form)	Mu		Vi		Gen
+Decay Fur and Hide	Pe		An		10
+Agony of the Beast	Pe		An		15
+Blunt the Viper’s Fangs	Pe		An		20
+Falcon’s Hood, The	Pe		An		25
+Cripple the Howling Wolf	Pe		An		25
+Comfort of the Drenched Traveler	Pe		Aq		5
+Parching Wind	Pe		Aq		20
+Closing the Earth’s Gate	Pe		Aq		25
+Curse of the Desert	Pe		Aq		25
+Calling the Odious Drought	Pe		Aq	Au	50
+Room of Stale Air	Pe		Au		15
+Quiet the Raging Winds	Pe		Au		20
+Cloudless Sky Returned, The	Pe		Au		45
+Touch of the Goose Feather	Pe		Co		5
+Dust to Dust	Pe		Co		15
+Wound that Weeps, The	Pe		Co		15
+Invocation of Weariness	Pe		Co		20
+Bane of the Decrepit Body	Pe		Co		25
+Curse of the Leprous Flesh	Pe		Co		25
+Grip of the Choking Hand	Pe		Co		25
+Incantation of the Milky Eyes	Pe		Co		30
+Twist of the Tongue	Pe		Co		30
+Clenching Grasp of the Crushed Heart	Pe		Co		40
+Kiss of Death, The	Pe		Co		45
+Curse of the Unportended Plague	Pe		Co		55
+Curse of the Rotted Wood	Pe		He		5
+Wizard’s Autumn	Pe		He		15
+Plant’s Withering Bane	Pe		He		20
+Great Rot, The	Pe		He		25
+Treading the Ashen Path	Pe		He		30
+Gloom of Evening	Pe		Ig		10
+Winter’s Icy Touch	Pe		Ig		10
+Soothe the Raging Flames	Pe		Ig		20
+Conjuration of the Indubitable Cold	Pe		Ig		25
+Well Without Light	Pe		Ig		25
+Wizard’s Icy Grip	Pe		Ig		30
+Wizard’s Eclipse	Pe		Ig		35
+Taste of the Dulled Tongue	Pe		Im		5
+Illusion of Cool Flames	Pe		Im		10
+Invisibility of the Standing Wizard	Pe		Im		15
+Removal of the Conspicuous Sigil	Pe		Im		20
+Silence of the Smothered Sound	Pe		Im		20
+Veil of Invisibility	Pe		Im		20
+Chamber of Invisibility	Pe		Im		25
+Dispel the Phantom Image	Pe		Im		Gen
+Tip of the Tongue	Pe		Me		5
+Trust of Childlike Faith	Pe		Me		10
+Calm the Motion of the Heart	Pe		Me		15
+Enchantment of Detachment	Pe		Me		15
+Loss of But a Moment’s Memory	Pe		Me		15
+Blessing of Childlike Bliss	Pe		Me		25
+Passion’s Lost Feeling	Pe		Me		25
+Black Whisper	Pe		Me		40
+Poisoning the Will	Pe		Me		60
+Lay to Rest the Haunting Spirit	Pe		Me		Gen
+Fist of Shattering	Pe		Te		10
+Rusted Decay of Ten-Score Years	Pe		Te		10
+Pit of the Gaping Earth	Pe		Te		15
+Obliteration of the Metallic Barrier	Pe	Re	Te		20
+Stone to Falling Dust	Pe		Te		20
+End of the Mighty Castle	Pe		Te		25
+Cascade of Rocks	Pe		Te		40
+Demon’s Eternal Oblivion	Pe		Vi		Gen
+Disenchant	Pe		Vi		Gen
+Masking the Odor of Magic	Pe		Vi		Gen
+Unravelling the Fabric of (Form)	Pe		Vi		Gen
+Wind of Mundane Silence	Pe		Vi		Gen
+Circle of Beast Warding	Re		An		5
+Disguise of the Putrid Aroma	Re		An		5
+Soothe the Ferocious Bear	Re		An		10
+Panic of the Elephant’s Mouse	Re		An		15
+Viper’s Gaze	Re		An		15
+Gentle Beast, The	Re		An		25
+Mastering the Unruly Beast	Re		An		25
+Commanding the Harnessed Beast	Re		An		30
+Ward Against the Beasts of Legend	Re		An		Gen
+Cloak of the Duck’s Feathers	Re		Aq		5
+Break the Oncoming Wave	Re		Aq		10
+Breath of Winter	Re		Aq		15
+Push of the Gentle Wave	Re		Aq		15
+Bridge of Frost	Re		Aq		30
+Chaos of the Angry Waves	Re		Aq		30
+Parting the Waves	Re		Aq		30
+Waves of Drowning and Smashing	Re		Aq		30
+Ice of Drowning	Re		Aq		35
+Pull of the Watery Grave	Re		Aq		35
+Tower of Whirling Water	Re		Aq		35
+Neptune’s Wrath	Re		Aq		40
+Ward Against Faeries of the Waters	Re		Aq		Gen
+Wind at the Back	Re		Au		5
+Ward Against Rain	Re		Au		10
+Clouds of Thunderous Might	Re		Au		30
+Gathering of the Stormy Might	Re		Au		40
+Ward Against Faeries of the Air	Re		Au		Gen
+Curse of the Unruly Tongue	Re		Co		5
+Spasms of the Uncontrolled Hand	Re		Co		5
+Rise of the Feathery Body	Re		Co		10
+Despair of the Quivering Manacles	Re		Co		15
+Endurance of the Berserkers	Re		Co		15
+Gift of the Frog’s Legs	Re		Co		15
+Lifting the Dangling Puppet	Re		Co		15
+Gift of Vigor, The	Re		Co		20
+Awaken the Slumbering Corpse	Re		Co		25
+Strings of the Unwilling Marionette	Re		Co		25
+Seven-League Stride	Re		Co		30
+Leap of Homecoming, The	Re		Co		35
+Walking Corpse, The	Re		Co	Me	35
+Dance of the Staves	Re		He		5
+Repel the Wooden Shafts	Re		He		10
+Strike of the Angered Branch	Re		He		15
+Tangle of Wood and Thorns	Re		He		15
+Coils of the Entangling Plants	Re		He		20
+Lord of the Trees	Re		He		25
+Treacherous Spear, The	Re		He		25
+Twist the Living Tree	Re		He		25
+Ward Against Wood	Re		He		25
+Freeing the Striding Tree	Re		He		30
+Calling the Council of the Trees	Re	In	He		45
+Ward Against Faeries of the Wood	Re		He		Gen
+Tremulous Vault of the Torch’s Flame	Re		Ig		5
+Leap of the Fire	Re		Ig		10
+Light Shaft of the Night	Re		Ig		20
+Burst of the Sweeping Flames	Re		Ig		25
+Ward Against Heat and Flames	Re		Ig		25
+Illusion of the Shifted Image	Re		Im		10
+Wizard’s Sidestep	Re		Im		10
+Captive Voice, The	Re		Im		25
+Confusion of the Insane Vibrations	Re		Im		30
+Image from the Wizard Torn	Re	In	Im		30
+Illusion of the Misplaced Castle	Re		Im		50
+Restore the Moved Image	Re		Im		Gen
+Call to Slumber, The	Re		Me		10
+Snap of Awakening	Re		Me		10
+Confusion of the Numbed Will	Re		Me		15
+Aura of Rightful Authority	Re		Me		20
+Coerce the Spirits of the Night	Re		Me		20
+Scent of Peaceful Slumber	Re		Me		20
+Visions of the Infernal Terrors	Re		Me		30
+Enslave the Mortal Mind	Re		Me		40
+Incantation of Summoning the Dead	Re		Me		40
+Shrouded Glen, The	Re		Me		40
+Exchange of the Two Minds	Re		Me		55
+Ring of Warding Against Spirits	Re		Me		Gen
+Unseen Arm	Re		Te		5
+Trackless Step	Re		Te		10
+Wielding the Invisible Sling	Re		Te		10
+Unseen Porter, The	Re		Te		10
+Earth’s Carbuncle, The	Re	Mu	Te		15
+Hands of the Grasping Earth	Re	Mu	Te		15
+Crest of the Earth Wave	Re		Te		20
+Forgiving Earth, The	Re		Te		20
+Unyielding Earth	Re		Te		20
+Earth Shock	Re		Te		30
+Earth Split Asunder, The	Re		Te		30
+Creeping Chasm	Re		Te		35
+Hermes’ Portal	Re		Te		75
+Ward Against Faeries of the Mountain	Re		Te		Gen
+Gather the Essence of the Beast	Re		Vi		15
+Aegis of the Hearth	Re		Vi		Gen
+Circular Ward Against Demons	Re		Vi		Gen
+Maintaining the Demanding Spell	Re		Vi		Gen
+Opening the Intangible Tunnel	Re		Vi		Gen
+Suppressing the Wizard’s Handiwork	Re		Vi		Gen
+Watching Ward	Re		Vi		Gen
