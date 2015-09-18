@@ -18,7 +18,7 @@ public class Magus extends Agent implements Persistent {
 	private boolean currentlyInTwilight;
 	private boolean longevityContractOnOffer;
 	private long apprenticeshipStart;
-	protected static Name magusNamer = new Name(new File(baseDir + "\\MagusNames.txt"));
+	protected static Name magusNamer = new Name(new File(baseDir + File.separator + "MagusNames.txt"));
 	private String name;
 	private WriteSumma currentBook;
 	private InventSpell currentSpellResearch;

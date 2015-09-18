@@ -9,7 +9,7 @@ public class Covenant extends Organisation<Magus> {
 
 	private int magicAura;
 	private static String baseDir = SimProperties.getProperty("BaseDirectory", "C:\\Simulations");
-	private static Name covenantNamer = new Name(new File(baseDir + "\\CovenantNames.txt"));
+	private static Name covenantNamer = new Name(new File(baseDir + File.separator + "CovenantNames.txt"));
 	private static AgentWriter<Covenant> covenantWriter = new AgentWriter<Covenant>(new CovenantDAO());
 	private CovenantAgent covenantAgent;
 	private CovenantVisPolicy visPolicy;

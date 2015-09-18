@@ -1,6 +1,6 @@
 package hopshackle.simulation.arsmagica;
 
-import java.io.File;
+import java.io.*;
 import java.util.*;
 
 import hopshackle.simulation.*;
@@ -25,16 +25,16 @@ public class RunSimulation {
 
 	public static void main(String[] args) {
 		ArgParser options = new ArgParser(args);
-		int startYear = options.getInt("startYear", 700);
-		int yearsToRun = options.getInt("duration", 200);
-		String worldName = options.getString("name", "AM1");
-		String propertiesFile = options.getString("properties",
+		String propertiesFile = options.getString("--properties",
 						"C:\\Users\\James\\Google Drive\\Simulations\\Genomes\\GeneticProperties.txt");
 		SimProperties.setFileLocation(propertiesFile);
 
 		baseDir = SimProperties.getProperty("BaseDirectory", "C:\\");
-		World world = new World();
-		Covenant sampleCovenant = new Covenant(null, null);
+		int yearsToRun = SimProperties.getPropertyAsInteger("AM.duration", "521");
+		int startYear = SimProperties.getPropertyAsInteger("AM.startYear", "700");
+		String worldName = SimProperties.getProperty("AM.name", "AM1");
+		final World world = new World();
+		final Covenant sampleCovenant = new Covenant(null, null);
 		FastCalendar cal = new FastCalendar(startYear * 52);
 		world.setCalendar(cal, 52);
 		ActionProcessor ap = new ActionProcessor("ARS_TEST_01", false);
@@ -65,7 +65,7 @@ public class RunSimulation {
 		world.setDatabaseAccessUtility(dbu);
 
 		List<String> startingMagi = HopshackleUtilities
-				.createListFromFile(new File(baseDir + "\\StartingMagi.txt"));
+				.createListFromFile(new File(baseDir + File.separator + "StartingMagi.txt"));
 		for (int i = 1; i < startingMagi.size(); i++) {
 			// first line is field headers
 			String line = startingMagi.get(i);

@@ -199,7 +199,7 @@ public class InventSpell extends ArsMagicaAction {
 	}
 
 	private static List<Spell> loadBasicSpells() {
-		List<String> rawData = HopshackleUtilities.createListFromFile(new File(baseDir + "\\BasicSpells.txt"));
+		List<String> rawData = HopshackleUtilities.createListFromFile(new File(baseDir + File.separator + "BasicSpells.txt"));
 		List<Spell> basicSpells = new ArrayList<Spell>();
 		for (String nextLine : rawData) {
 			String[] spellDetails = nextLine.split("\t");
