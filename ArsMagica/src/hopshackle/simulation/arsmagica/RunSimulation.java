@@ -7,8 +7,6 @@ import hopshackle.simulation.*;
 
 public class RunSimulation {
 
-	private static final World world = new World();
-	private static Covenant sampleCovenant = new Covenant(null, null);
 	private static Tribunal rhine;
 	private static Tribunal rome;
 	private static Tribunal alps;
@@ -22,18 +20,27 @@ public class RunSimulation {
 	private static Tribunal lochLeglean;
 	private static Tribunal novgorod;
 	private static Tribunal levant;
-	private static String baseDir = SimProperties.getProperty("BaseDirectory", "C:\\");
+	private static String baseDir;
 	private static List<Tribunal> tribunals;
 
 	public static void main(String[] args) {
-		int startYear = 700;
-		int yearsToRun = 520;
+		ArgParser options = new ArgParser(args);
+		int startYear = options.getInt("startYear", 700);
+		int yearsToRun = options.getInt("duration", 200);
+		String worldName = options.getString("name", "AM1");
+		String propertiesFile = options.getString("properties",
+						"C:\\Users\\James\\Google Drive\\Simulations\\Genomes\\GeneticProperties.txt");
+		SimProperties.setFileLocation(propertiesFile);
+
+		baseDir = SimProperties.getProperty("BaseDirectory", "C:\\");
+		World world = new World();
+		Covenant sampleCovenant = new Covenant(null, null);
 		FastCalendar cal = new FastCalendar(startYear * 52);
 		world.setCalendar(cal, 52);
 		ActionProcessor ap = new ActionProcessor("ARS_TEST_01", false);
 		ap.setWorld(world);
 		world.setActionProcessor(ap);
-		world.setName("AM3");
+		world.setName(worldName);
 		rhine = new Tribunal("Rhine", world);
 		rome = new Tribunal("Rome", world);
 		normandy = new Tribunal("Normandy", world);
@@ -57,7 +64,8 @@ public class RunSimulation {
 		t.start();
 		world.setDatabaseAccessUtility(dbu);
 
-		List<String> startingMagi = HopshackleUtilities.createListFromFile(new File(baseDir + "\\StartingMagi.txt"));
+		List<String> startingMagi = HopshackleUtilities
+				.createListFromFile(new File(baseDir + "\\StartingMagi.txt"));
 		for (int i = 1; i < startingMagi.size(); i++) {
 			// first line is field headers
 			String line = startingMagi.get(i);
@@ -65,9 +73,10 @@ public class RunSimulation {
 			Magus founder = new Magus(world);
 			founder.setAge(30);
 			founder.setName(fields[0]);
-			for (HermeticHouse house : HermeticHouse.values())  {
+			for (HermeticHouse house : HermeticHouse.values()) {
 				String houseName = house.toString().toLowerCase();
-				houseName = houseName.substring(0, 1).toUpperCase() + houseName.substring(1);
+				houseName = houseName.substring(0, 1).toUpperCase()
+						+ houseName.substring(1);
 				if (houseName.equals(fields[0]))
 					founder.setHermeticHouse(house);
 			}
@@ -91,44 +100,75 @@ public class RunSimulation {
 					continue;
 				Arts a = null;
 				switch (artIndex) {
-				case  1: a = Arts.CREO; break;
-				case  2: a = Arts.INTELLEGO; break;
-				case  3: a = Arts.MUTO; break;
-				case  4: a = Arts.PERDO; break;
-				case  5: a = Arts.REGO; break;
-				case  6: a = Arts.ANIMAL; break;
-				case  7: a = Arts.AQUAM; break;
-				case  8: a = Arts.AURAM; break;
-				case  9: a = Arts.CORPUS; break;
-				case 10: a = Arts.HERBAM; break;
-				case 11: a = Arts.IGNEM; break;
-				case 12: a = Arts.IMAGINEM; break;
-				case 13: a = Arts.MENTEM; break;
-				case 14: a = Arts.TERRAM; break;
-				case 15: a = Arts.VIM; break;
+				case 1:
+					a = Arts.CREO;
+					break;
+				case 2:
+					a = Arts.INTELLEGO;
+					break;
+				case 3:
+					a = Arts.MUTO;
+					break;
+				case 4:
+					a = Arts.PERDO;
+					break;
+				case 5:
+					a = Arts.REGO;
+					break;
+				case 6:
+					a = Arts.ANIMAL;
+					break;
+				case 7:
+					a = Arts.AQUAM;
+					break;
+				case 8:
+					a = Arts.AURAM;
+					break;
+				case 9:
+					a = Arts.CORPUS;
+					break;
+				case 10:
+					a = Arts.HERBAM;
+					break;
+				case 11:
+					a = Arts.IGNEM;
+					break;
+				case 12:
+					a = Arts.IMAGINEM;
+					break;
+				case 13:
+					a = Arts.MENTEM;
+					break;
+				case 14:
+					a = Arts.TERRAM;
+					break;
+				case 15:
+					a = Arts.VIM;
+					break;
 				}
 				int xp = Integer.valueOf(fields[artIndex]);
 				founder.addXP(a, xp);
-				double currentPref = MagusPreferences.getResearchPreference(founder, a);
-				currentPref = Math.max(currentPref, (double)xp/50.0);
+				double currentPref = MagusPreferences.getResearchPreference(
+						founder, a);
+				currentPref = Math.max(currentPref, (double) xp / 50.0);
 				MagusPreferences.setResearchPreference(founder, a, currentPref);
 			}
 
-			for (Abilities ability : Abilities.values()) 
+			for (Abilities ability : Abilities.values())
 				if (ability.toString().equals(fields[24])) {
-					double currentPref = MagusPreferences.getResearchPreference(founder, ability);
+					double currentPref = MagusPreferences
+							.getResearchPreference(founder, ability);
 					founder.addXP(ability, 75);
-					MagusPreferences.setResearchPreference(founder, ability, Math.max(3.0, currentPref));
+					MagusPreferences.setResearchPreference(founder, ability,
+							Math.max(3.0, currentPref));
 				}
-			for (Tribunal tr : tribunals) 
+			for (Tribunal tr : tribunals)
 				if (tr.toString().equals(fields[25]))
 					founder.setTribunal(tr);
 
 			world.addAction(founder.decide());
 		}
 		ap.start();
-
-
 
 		rhine.addAccessibleLocation(normandy);
 		normandy.addAccessibleLocation(rhine);
@@ -173,26 +213,30 @@ public class RunSimulation {
 				HashMap<HermeticHouse, Integer> houseMembership = new HashMap<HermeticHouse, Integer>();
 				for (HermeticHouse h : HermeticHouse.values())
 					houseMembership.put(h, 0);
-				int totalCovenants = world.getAllChildLocationsOfType(sampleCovenant).size();
+				int totalCovenants = world.getAllChildLocationsOfType(
+						sampleCovenant).size();
 				int magi = 0, apprentices = 0;
 				for (Agent a : allAgents) {
 					if (a instanceof Magus) {
 						Magus m = (Magus) a;
-						houseMembership.put(m.getHermeticHouse(), houseMembership.get(m.getHermeticHouse())+1);
+						houseMembership.put(m.getHermeticHouse(),
+								houseMembership.get(m.getHermeticHouse()) + 1);
 						if (m.isApprentice())
 							apprentices++;
 						else
 							magi++;
 					}
 				}
-				for (HermeticHouse h : HermeticHouse.values()) 
-					h.updateApprenticeshipModifier(houseMembership.get(h), apprentices+magi);
-			
-				System.out.println(String.format("Year %d:		%d Magi, %d apprentices in %d covenants.", world.getYear(), magi, apprentices, totalCovenants));
-				
+				for (HermeticHouse h : HermeticHouse.values())
+					h.updateApprenticeshipModifier(houseMembership.get(h),
+							apprentices + magi);
+
+				System.out.println(String.format(
+						"Year %d:		%d Magi, %d apprentices in %d covenants.",
+						world.getYear(), magi, apprentices, totalCovenants));
+
 			}
 		}, 260, 260);
-
 
 		world.setScheduledTask(new TimerTask() {
 
@@ -208,18 +252,21 @@ public class RunSimulation {
 					for (HermeticHouse h : HermeticHouse.values())
 						allHouses.put(h, 0);
 					for (int i = 0; i < 50; i++) {
-						Agent potential = all.get(Dice.roll(1, all.size())-1);
+						Agent potential = all.get(Dice.roll(1, all.size()) - 1);
 						if (potential instanceof Magus) {
-							HermeticHouse h = ((Magus)potential).getHermeticHouse();
+							HermeticHouse h = ((Magus) potential)
+									.getHermeticHouse();
 							if (h != null)
-								allHouses.put(h,allHouses.get(h)+1);
+								allHouses.put(h, allHouses.get(h) + 1);
 						}
-					} 
+					}
 					HermeticHouse sponsor = null;
 					int lowestCount = 50;
 					for (HermeticHouse h : HermeticHouse.values()) {
 						int thisHouse = allHouses.get(h);
-						if (h == HermeticHouse.BONISAGUS || h == HermeticHouse.MERCERE || h == HermeticHouse.TRIANOMA)
+						if (h == HermeticHouse.BONISAGUS
+								|| h == HermeticHouse.MERCERE
+								|| h == HermeticHouse.TRIANOMA)
 							thisHouse = thisHouse * 2;
 						if (thisHouse < lowestCount) {
 							lowestCount = thisHouse;
@@ -231,7 +278,8 @@ public class RunSimulation {
 					hedgeWizard.addXP(Abilities.ARTES_LIBERALES, 30);
 					hedgeWizard.addXP(Abilities.PARMA_MAGICA, 5);
 					hedgeWizard.addXP(Abilities.MAGIC_THEORY, 5);
-					hedgeWizard.log("Is inducted into the Order of Hermes by " + sponsor);
+					hedgeWizard.log("Is inducted into the Order of Hermes by "
+							+ sponsor);
 					hedgeWizard.setHermeticHouse(sponsor);
 					for (int j = 0; j < 3; j++) {
 						hedgeWizard.addXP(Arts.random(), 50);
@@ -245,57 +293,56 @@ public class RunSimulation {
 			}
 		}, 260, 260);
 
-
 		world.setScheduledTask(new TimerTask() {
 
 			@Override
 			public void run() {
-				world.worldDeath();	
+				world.worldDeath();
 			}
 		}, yearsToRun * 52);
 
+		if (yearsToRun > 200)
+			world.setScheduledTask(new TimerTask() {
 
+				@Override
+				public void run() {
+					thebes = new Tribunal("Thebes", world);
+					hibernia = new Tribunal("Hibernia", world);
+					lochLeglean = new Tribunal("Loch Leglean", world);
 
-		world.setScheduledTask(new TimerTask() {
+					thebes.addAccessibleLocation(transylvania);
+					transylvania.addAccessibleLocation(thebes);
+					thebes.addAccessibleLocation(rome);
+					rome.addAccessibleLocation(thebes);
 
-			@Override
-			public void run() {
-				thebes = new Tribunal("Thebes", world);
-				hibernia = new Tribunal("Hibernia", world);
-				lochLeglean = new Tribunal("Loch Leglean", world);
+					hibernia.addAccessibleLocation(stonehenge);
+					stonehenge.addAccessibleLocation(hibernia);
+					hibernia.addAccessibleLocation(lochLeglean);
+					lochLeglean.addAccessibleLocation(hibernia);
 
-				thebes.addAccessibleLocation(transylvania);
-				transylvania.addAccessibleLocation(thebes);
-				thebes.addAccessibleLocation(rome);
-				rome.addAccessibleLocation(thebes);
+					lochLeglean.addAccessibleLocation(stonehenge);
+					stonehenge.addAccessibleLocation(lochLeglean);
+				}
+			}, 200 * 52);
 
-				hibernia.addAccessibleLocation(stonehenge);
-				stonehenge.addAccessibleLocation(hibernia);
-				hibernia.addAccessibleLocation(lochLeglean);
-				lochLeglean.addAccessibleLocation(hibernia);
+		if (yearsToRun > 350)
+			world.setScheduledTask(new TimerTask() {
 
-				lochLeglean.addAccessibleLocation(stonehenge);
-				stonehenge.addAccessibleLocation(lochLeglean);
-			}
-		}, 200 * 52);
+				@Override
+				public void run() {
+					levant = new Tribunal("Levant", world);
+					novgorod = new Tribunal("Novgorod", world);
 
-		world.setScheduledTask(new TimerTask() {
+					levant.addAccessibleLocation(thebes);
+					thebes.addAccessibleLocation(levant);
+					levant.addAccessibleLocation(rome);
+					rome.addAccessibleLocation(levant);
 
-			@Override
-			public void run() {
-				levant = new Tribunal("Levant", world);
-				novgorod = new Tribunal("Novgorod", world);
-
-				levant.addAccessibleLocation(thebes);
-				thebes.addAccessibleLocation(levant);
-				levant.addAccessibleLocation(rome);
-				rome.addAccessibleLocation(levant);
-
-				novgorod.addAccessibleLocation(transylvania);
-				transylvania.addAccessibleLocation(novgorod);
-				novgorod.addAccessibleLocation(thebes);
-				thebes.addAccessibleLocation(novgorod);
-			}
-		}, 350 * 52);
+					novgorod.addAccessibleLocation(transylvania);
+					transylvania.addAccessibleLocation(novgorod);
+					novgorod.addAccessibleLocation(thebes);
+					thebes.addAccessibleLocation(novgorod);
+				}
+			}, 350 * 52);
 	}
 }

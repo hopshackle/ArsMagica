@@ -179,7 +179,7 @@ public class CovenantLibraryPolicy {
 			System.out.println(e.toString());
 			System.out.println(covenant.toString());
 			for (Book b : library) {
-				String message = String.format("%s, BP: %d, TitleId: %d, Det: %.2f", b.toString(), b.getBPValue(), b.getDeterioration());
+				String message = String.format("%s, BP: %d, TitleId: %d, Det: %.2f", b.toString(), b.getBPValue(), b.getTitleId(), b.getDeterioration());
 				System.out.println(message);
 			}
 			throw new AssertionError("Problem");

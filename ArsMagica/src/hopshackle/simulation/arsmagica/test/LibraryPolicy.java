@@ -109,10 +109,10 @@ public class LibraryPolicy {
 		
 		assertEquals((long)AMU.getVisInventory(m1).get(Arts.CREO),10);
 		assertEquals((long)AMU.getVisInventory(m2).get(Arts.TERRAM),5);
-		assertEquals((long)AMU.getVisInventory(m2).get(Arts.REGO), 4);	// but m2 will then but 1 pawns of REGO for the two pawns of CREO (meeting their reserve price)
+		assertEquals((long)AMU.getVisInventory(m2).get(Arts.REGO), 3);	// but m2 will then bid 2 pawns of REGO for the two pawns of CREO (meeting their reserve price)
 		boolean foundBid = false;
 		for (BarterOffer bo : tribunal.getOffersOnMarket()) {
-			if (bo.getItem().equals(new Vis(Arts.CREO)) && bo.getBestBid() == 1.0)
+			if (bo.getItem().equals(new Vis(Arts.CREO)) && bo.getBestBid() == 2.0)
 				foundBid = true;
 		}
 		assertTrue(foundBid);
