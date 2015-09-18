@@ -195,7 +195,7 @@ public abstract class Book extends ArsMagicaItem implements ArtefactRequiringMai
 				if (retValue == 0) 
 					retValue = b1.getTitleId() - b2.getTitleId();
 				if (retValue == 0) {
-					retValue = (int)((b1.getDeterioration() - b2.getDeterioration()) * 100);
+					retValue = (int)((b1.getDeterioration() - b2.getDeterioration()) * 100 + 0.5);
 				}
 				return retValue;
 			}
