@@ -1,0 +1,10 @@
+hopshackle.simulation.dnd.genetics.BasicActionsI
+hopshackle.simulation.dnd.genetics.CareerActionsI
+hopshackle.simulation.dnd.genetics.CombatActionsI
+hopshackle.simulation.dnd.genetics.ExpertActionsI
+hopshackle.simulation.dnd.genetics.PartyJoinActionsII
+hopshackle.simulation.dnd.genetics.PartyJoinActions
+hopshackle.simulation.dnd.genetics.TradeValuationsExpert
+hopshackle.simulation.dnd.genetics.TradeValuationsAdventurer
+hopshackle.simulation.dnd.genetics.ClericSpellValuations
+hopshackle.simulation.basic.BasicActions
