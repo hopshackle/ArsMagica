@@ -1,0 +1,15 @@
+#Genetic Properties for hopshackle.simulation
+#Sat Nov 10 17:37:24 GMT 2007
+BaseDirectory=/home/James/AM
+LogDirectory=/home.James/amlogs
+ActionEnumClassFile=/home/James/AM/ActionEnums.txt
+GeneticVariableClassFile=/home/James/AM/GeneticVariables.txt
+LogUsingDate=true
+MagusUniformResearchPreferences=false
+AM.startYear=700
+AM.duration=521
+AM.name=AM1
+DatabaseSchema=arsmagica
+DatabaseUser=root
+DatabasePassword=XXX
+DatabaseHost=130.211.66.233

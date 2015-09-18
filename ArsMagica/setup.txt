@@ -1,24 +1,52 @@
 
-There should be a single hard-coded file reference - which is in hopshackle.simulation.SimProperties.java
+To run the simulation, you will need a MySQL database set up (see later), plus a few text files. The most impotant of these is a properties file that includes details of where to find all the other files. When the simulation is run, the location of the properties file needs to be provided as an argument.
 
-This needs to be changed to be the location of your GeneticProperties.txt file - and all other locations should be picked up from this. 
-Specifically there are two properties of specific importance:
-BaseDirectory=
-LogDirectory=
+A sample properties file is included in the repository, and a Linux version is below:
 
-These set where to look for all configuration and similar files (BaseDirectory), and where all Log files should go (LogDirectory). 
-For Ars Magica the vast majority of the other properties are irrelevant; they apply to other bits and pieces I've played with over the years.
+	#Genetic Properties for hopshackle.simulation
+	#Sat Nov 10 17:37:24 GMT 2007
+	BaseDirectory=/home/James/AM
+	LogDirectory=/home/James/amlogs
+	ActionEnumClassFile=/home/James/AM/ActionEnums.txt
+	GeneticVariableClassFile=/home/James/AM/GeneticVariables.txt
+	LogUsingDate=true
+	MagusUniformResearchPreferences=false
+	AM.startYear=700
+	AM.duration=521
+	AM.name=AM1
+	DatabaseSchema=arsmagica
+	DatabaseUser=root
+	DatabasePassword=XXXX
+	DatabaseHost=130.211.66.233
+	#To use the local machine as db host, use DatabaseHost=
 
-Other points to note:
-- MySQL dependency
-This is currently required (or at least, I'm unsure if anything will run without it). The schema, password and user are three properties that need to be set in GeneticProperties.txt.
-DatabaseSchema=
-DatabaseUser=
-DatabasePassword=
-All the database connection stuff is in hopshackle.simulation.ConnectionFactory if you want to change this (the SQL updates etc *should* be simple SQL, so will *probably* work fine using any compatible database connection)
+BaseDirectory is the key location to look for all configuration and similar files. LogDirectory is where to write the (very copious) log files that detail the seasonal activity of each and every Magus for the simulation run.
+The following files *must* be present in BaseDirectory (examples included in the GitHub repository):
+	CovenantNames.txt
+	MagusNames.txt
+	BasicSpells.txt
+	StartingMagi.txt
 
-- RAM dependency
-The ArsMagica project grew like topsy, and it tries to retain far, far too much in RAM (basically, the entire state of Mythic Europe, including all magi, research, library texts etc...). Set your JVM settings to the max, and be ready for some Heap Out of Memory issues if you try and run all the way to 1220 or beyond.
-(This will also take a while, not least with disk i/o as it writes every single magi's action every season to log file....this can take a few minutes to catch up at the end of a run.)
+All of these are simple ASCII text files that can be edited as you see fit. The list of spells is taken from http://www.atlas-games.com/pdf_storage/SpellIndexbyTechnique.pdf, only using those in the core rulebook. The StartingMagi.txt file initiates the founders of the Order in the starting year. Magus and CovenantNames are just lists that are picked from randomly whenever a new Magus or Covenant is created.
 
-Finally - best of luck. This was only ever written as a personal toy, and is a very long way from being productionised. Getting it running at all will be an impressive feat.
+Additionally, the two files for ActionEnums.txt and GeneticVariables.txt must be present in the locations specified in the properties file. (They're not used for Ars Magica, and I may get around to removing the dependency at some point.)
+
+MySQL dependency
+----------------
+This is currently required, so you'll need to have a running MySQL server and database schema set up. The schema, host, password and user need to be set in the properties file (the last four entries in the example above). If you're running a MySQL database locally, then use "DatabaseHost=".
+When the simulation runs it will create four database tables in the specified schema:
+	books_???
+	covenants_???
+	magi_???
+	tribunals_???
+In all cases ??? is the name of the simulation run taken from the AM.name property. The simulation provides a complete dump every 10 years of the state of the Order, so there is one entry in each table for each decade (700, 710, 720 etc.). The year from which the snapshot is taken is the currentYear field. If you want the details of what individual magi are doing on a season by season basis, then this is currently only stored in the magi-specific log files (they should be pretty human-readable) which are put into LogDirectory.
+
+All the database connection stuff is in hopshackle.simulation.ConnectionFactory if you want to change this (the SQL updates etc *should* be simple SQL, so will *probably* work fine using any compatible database connection).
+
+Running the simulation
+----------------------
+Recommended execution is:
+
+java -Xms1g -Xmx2g -jar arsMagica.jar --properties <full path and name of Properties file>
+
+This will reserve sufficient memory for the default simulation run of 520 years from 700 to 1220. Based on my runs, this can occupy up to 1.3GB of RAM at peak usage. The code will work with either Windows or Linux (not tested elsewhere), and the only difference between the two should be changes to the properties file to take account of different file separators.
