@@ -123,4 +123,12 @@ public class WriteSumma extends ArsMagicaAction {
 		return !nothingToWriteOn;
 	}
 
+	public String description() {
+		return String.format("L%d Q%d on %s", summaLvl, quality, skill.toString());
+	}
+	
+	public boolean isCovenantService() {
+		return isCovenantService;
+	}
+	
 }

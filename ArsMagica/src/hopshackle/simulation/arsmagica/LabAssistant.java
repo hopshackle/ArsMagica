@@ -16,4 +16,8 @@ public class LabAssistant extends ArsMagicaAction {
 		magus.log("Acts as Lab Assistant to " + researcher);
 		magus.addXP(Abilities.MAGIC_THEORY, 2);
 	}
+	
+	public String description() {
+		return "For " + researcher;
+	}
 }

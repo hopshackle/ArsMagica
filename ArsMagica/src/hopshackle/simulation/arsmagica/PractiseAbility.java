@@ -16,5 +16,8 @@ public class PractiseAbility extends ArsMagicaAction {
 		magus.log("Spends season practising " + abilityToPractise);
 		magus.addXP(abilityToPractise, 4);
 	}
-
+	
+	public String description() {
+		return abilityToPractise.toString();
+	}
 }

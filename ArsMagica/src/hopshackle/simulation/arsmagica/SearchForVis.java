@@ -7,6 +7,8 @@ import hopshackle.simulation.*;
 public class SearchForVis extends ArsMagicaAction {
 
 	private boolean sourceOverride;
+	private boolean isCovenantService;
+	private VisSource visSource;
 
 	public SearchForVis(Agent a) {
 		super(a);
@@ -73,7 +75,7 @@ public class SearchForVis extends ArsMagicaAction {
 
 			if (Dice.stressDieResult() >= easeFactor || sourceOverride) {
 				// permanent vis source found.
-				VisSource visSource = new VisSource(visType, visAmount, tribunal);
+				visSource = new VisSource(visType, visAmount, tribunal);
 				if (magus.getSeasonsServiceOwed() > 0)
 					covenant.addItem(visSource);
 				else
@@ -114,8 +116,10 @@ public class SearchForVis extends ArsMagicaAction {
 		magus.addXP(skillUsed, 5);
 		if (covenant != null)
 			covenant.addXP(CovenantAttributes.GROGS, -1);
-		if (magus.getSeasonsServiceOwed() > 0)
+		if (magus.getSeasonsServiceOwed() > 0) {
 			magus.doSeasonsService();
+			isCovenantService = true;
+		}
 	}
 
 	private int getVisAmount() {
@@ -126,5 +130,13 @@ public class SearchForVis extends ArsMagicaAction {
 			multiplier *= 2;
 		}
 		return (roll+1) * multiplier / 2;
+	}
+	
+	public String description() {
+		return (visSource == null) ? "None found." : visSource.toString();
+	}
+	
+	public boolean isCovenantService() {
+		return isCovenantService;
 	}
 }

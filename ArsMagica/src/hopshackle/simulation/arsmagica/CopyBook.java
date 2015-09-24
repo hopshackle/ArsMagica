@@ -71,4 +71,12 @@ public class CopyBook extends ArsMagicaAction {
 	public void delete() {
 		bookToCopy.setCurrentReader(null);
 	}
+	
+	public String description() {
+		return "Copies " + bookToCopy.toString();
+	}
+	
+	public boolean isCovenantService() {
+		return isCovenantService;
+	}
 }

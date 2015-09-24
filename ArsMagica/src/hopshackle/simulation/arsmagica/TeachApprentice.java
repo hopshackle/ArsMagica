@@ -7,6 +7,7 @@ import java.util.List;
 public class TeachApprentice extends ArsMagicaAction {
 	
 	private Magus apprentice;
+	private Learnable skillToBeTaught;
 
 	public TeachApprentice(Agent parens) {
 		super(parens);		
@@ -76,7 +77,6 @@ public class TeachApprentice extends ArsMagicaAction {
 	}
 
 	private void teachArtOrAbility() {
-		Learnable skillToBeTaught = null;
 		if (apprentice.getLevelOf(Abilities.LATIN) < 4)
 			skillToBeTaught = Abilities.LATIN;
 		else if (apprentice.getLevelOf(Abilities.ARTES_LIBERALES) < 1)
@@ -119,5 +119,9 @@ public class TeachApprentice extends ArsMagicaAction {
 	public boolean requiresApprentice() {
 		return true;
 	}
-
+	
+	public String description() {
+		return (skillToBeTaught == null) ? "Teaches Spells" : skillToBeTaught.toString();
+	}
+	
 }

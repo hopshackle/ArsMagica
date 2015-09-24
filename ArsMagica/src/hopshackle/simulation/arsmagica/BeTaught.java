@@ -11,4 +11,8 @@ public class BeTaught extends ArsMagicaAction {
 	protected void doStuff() {
 		// Nothing - covered in the teaching action
 	}
+	
+	public String description() {
+		return "";
+	}
 }

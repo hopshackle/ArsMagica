@@ -6,6 +6,8 @@ import hopshackle.simulation.Dice;
 
 public class DevelopCovenant extends ArsMagicaAction {
 
+	private CovenantAttributes attributeToRaise;
+	
 	public DevelopCovenant(Magus magus) {
 		super(magus);
 	}
@@ -26,7 +28,7 @@ public class DevelopCovenant extends ArsMagicaAction {
 			double baseValue = 1.0 / (covenant.getLevelOf(attribute) + 1.0);
 			options.put(attribute, baseValue);
 		}
-		CovenantAttributes attributeToRaise = (CovenantAttributes) MagusPreferences.getPreferenceGivenPriors(magus, options);
+		attributeToRaise = (CovenantAttributes) MagusPreferences.getPreferenceGivenPriors(magus, options);
 
 		Abilities skillToUse = null;
 
@@ -70,6 +72,14 @@ public class DevelopCovenant extends ArsMagicaAction {
 		magus.addXP(skillToUse, 2);
 		if (magus.getSeasonsServiceOwed() > 0)
 			magus.doSeasonsService();
+	}
+	
+	public String description() {
+		return "Develops " + attributeToRaise;
+	}
+	
+	public boolean isCovenantService() {
+		return true;
 	}
 
 }

@@ -56,5 +56,8 @@ public class StudyFromVis extends ArsMagicaAction {
 		
 		return true;
 	}
+	public String description() {
+		return visType.toString();
+	}
 
 }

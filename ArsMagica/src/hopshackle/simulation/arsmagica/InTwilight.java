@@ -27,4 +27,9 @@ public class InTwilight extends ArsMagicaAction {
 
 		super.doNextDecision();	// will sort out any apprentice; and take action if not in Twilight
 	}
+	
+	public String description() {
+		return "In Twilight";
+	}
+	
 }

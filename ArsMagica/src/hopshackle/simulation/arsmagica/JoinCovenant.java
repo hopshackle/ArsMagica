@@ -7,6 +7,7 @@ import hopshackle.simulation.*;
 public class JoinCovenant extends ArsMagicaAction {
 
 	private static Covenant sampleCovenant = new Covenant(null, null);
+	private Covenant joinedCovenant;
 
 	public JoinCovenant(Agent magus) {
 		super(magus);
@@ -52,6 +53,7 @@ public class JoinCovenant extends ArsMagicaAction {
 		} else {
 			magus.log("Successfully applies to new Covenant.");
 			preferredApplication.acceptApplication();
+			joinedCovenant = magus.getCovenant();
 		}
 		magus.addXP(Abilities.CHARM, 2);
 		Decider d = magus.getDecider();
@@ -59,6 +61,10 @@ public class JoinCovenant extends ArsMagicaAction {
 			BasicDecider bd = (BasicDecider) d;
 			bd.registerApplication(magus, magus.getWorld().getYear());
 		}
+	}
+	
+	public String description() {
+		return (joinedCovenant == null) ? "Fails to join any covenant" : "Joins " + joinedCovenant.toString();
 	}
 
 }

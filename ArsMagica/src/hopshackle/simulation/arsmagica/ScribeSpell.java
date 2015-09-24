@@ -5,6 +5,7 @@ import java.util.*;
 public class ScribeSpell extends ArsMagicaAction {
 
 	private boolean isCovenantService = false;
+	private List<Spell> spellsScribed = new ArrayList<Spell>();
 
 	public ScribeSpell(Magus magus) {
 		super(magus);
@@ -32,6 +33,7 @@ public class ScribeSpell extends ArsMagicaAction {
 				totalSoFar += s.getLevel();
 				LabText newText = new LabText(s, magus);
 				magus.log("Writes up Lab Text on " + s.toString());
+				spellsScribed.add(s);
 				newText.giveToRecipient(magus, isCovenantService);
 			}
 		}
@@ -56,5 +58,13 @@ public class ScribeSpell extends ArsMagicaAction {
 		}
 
 		return unscribedSpells;
+	}
+	
+	public String description() {
+		return "Scribes " + (spellsScribed.isEmpty() ? "No Spells" : spellsScribed.size() + " spells. Starting with " + spellsScribed.get(0).toString());
+	}
+	
+	public boolean isCovenantService() {
+		return isCovenantService;
 	}
 }

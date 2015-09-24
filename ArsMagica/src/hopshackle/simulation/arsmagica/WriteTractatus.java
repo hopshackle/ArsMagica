@@ -7,6 +7,7 @@ import hopshackle.simulation.*;
 public class WriteTractatus extends ArsMagicaAction {
 	
 	private boolean isCovenantService;
+	private Tractatus newBook;
 
 	public WriteTractatus(Agent m) {
 		super(m);
@@ -22,7 +23,7 @@ public class WriteTractatus extends ArsMagicaAction {
 			options.put(option,  1.0);
 		if (possibleSubjects.length > 0) {
 			Learnable subject = MagusPreferences.getPreferenceGivenPriors(magus, options);
-			Tractatus newBook = new Tractatus(subject, magus);
+			newBook = new Tractatus(subject, magus);
 			magus.log("Writes Tractatus on " + subject);
 			newBook.giveToRecipient(magus, isCovenantService);
 			if (isCovenantService)
@@ -31,4 +32,11 @@ public class WriteTractatus extends ArsMagicaAction {
 		magus.addXP(Abilities.LATIN, 2);
 	}
 
+	public String description() {
+		return newBook.toString();
+	}
+	
+	public boolean isCovenantService() {
+		return isCovenantService;
+	}
 }

@@ -2,8 +2,11 @@ package hopshackle.simulation.arsmagica;
 
 import hopshackle.simulation.*;
 
-public class ArsMagicaAction extends Action {
+public class ArsMagicaAction extends Action implements Persistent {
+	
+	private static AgentWriter<ArsMagicaAction> actionWriter = new AgentWriter<ArsMagicaAction>(new ActionDAO());
 
+	
 	protected Magus magus;
 
 	public ArsMagicaAction(Agent a) {
@@ -13,14 +16,15 @@ public class ArsMagicaAction extends Action {
 		super(a, 13 * seasons, false);
 		magus = (Magus) a;
 	}
+	public String description() {
+		return "";
+	}
 
 	@Override
 	protected void doNextDecision() {
 		if (magus.isDead())
 			return;
-		if (magus.isApprentice()) {
-//			return;	// apprentices take action as a result of their parens taking an action
-		}
+		
 		if (magus.getNextAction() == null && !magus.isInTwilight())
 			super.doNextDecision();		// make own decision unless in Twilight
 		
@@ -42,7 +46,21 @@ public class ArsMagicaAction extends Action {
 		}
 	}
 
+	@Override
+	protected void doCleanUp() {
+		super.doCleanUp();
+		actionWriter.write(this, this.getWorld().toString());
+	}
+	
 	public boolean requiresApprentice() {
+		return false;
+	}
+	@Override
+	public World getWorld() {
+		return actor.getWorld();
+	}
+	
+	public boolean isCovenantService() {
 		return false;
 	}
 }

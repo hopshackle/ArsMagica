@@ -25,4 +25,8 @@ public class ReadBook extends ArsMagicaAction {
 	protected void delete() {
 		book.setCurrentReader(null);
 	}
+	
+	public String description() {
+		return book.toString();
+	}
 }

@@ -7,6 +7,7 @@ import hopshackle.simulation.*;
 public class InventLongevityRitual extends ArsMagicaAction {
 
 	private Magus customer;
+	private int modifier;
 
 	public InventLongevityRitual(Agent a) {
 		super(a);
@@ -42,7 +43,7 @@ public class InventLongevityRitual extends ArsMagicaAction {
 				numberOfAssistants--;
 			}
 		}
-		int modifier = (int) Math.ceil(labTotal / 5.0);
+		modifier = (int) Math.ceil(labTotal / 5.0);
 		if (hasSufficientVis(subject)) {
 			for (Vis v : requirementsForRitual(subject))
 				subject.removeItem(v);
@@ -55,6 +56,7 @@ public class InventLongevityRitual extends ArsMagicaAction {
 			}
 			magus.addXP(AMU.getPreferredXPGain(Arts.CREO, Arts.CORPUS, magus), 2);
 		} else {
+			modifier = 0;
 			magus.log("Insufficient vis for Longevity Ritual");
 			if (customer != null)
 				customer.log("Insufficient vis for Longevity Rutual");
@@ -104,4 +106,9 @@ public class InventLongevityRitual extends ArsMagicaAction {
 
 		return retValue;
 	}
+	
+	public String description() {
+		return "Invents +" + modifier + " longevity ritual for " + ((customer == actor || customer == null) ? "Self" : customer.toString());
+	}
+	
 }

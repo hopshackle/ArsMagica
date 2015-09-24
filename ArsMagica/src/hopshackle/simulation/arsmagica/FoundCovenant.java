@@ -43,5 +43,9 @@ public class FoundCovenant extends ArsMagicaAction {
 		magus.setCovenant(newCovenant);
 		magus.addXP(Abilities.LEADERSHIP, 2);
 	}
+	
+	public String description() {
+		return "Founds " + newCovenant;
+	}
 
 }

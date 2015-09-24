@@ -3,6 +3,8 @@ package hopshackle.simulation.arsmagica;
 import hopshackle.simulation.*;
 
 public class SearchForApprentice extends ArsMagicaAction {
+	
+	private Magus apprentice;
 
 	public SearchForApprentice(Agent a) {
 		super(a);
@@ -22,7 +24,7 @@ public class SearchForApprentice extends ArsMagicaAction {
 		if (magus.getUniqueID() < 14) // i.e. is a founder
 			searchRoll += 6;
 		if (searchRoll >= 12) {
-			Magus apprentice = new Magus(magus.getLocation(), new BasicDecider(), magus.getWorld());
+			apprentice = new Magus(magus.getLocation(), new BasicDecider(), magus.getWorld());
 			apprentice.setAge(6 + Dice.roll(1, 10));
 			int quality = 2 + (searchRoll - 12) / 3;
 			apprentice.rollStatistics(quality);
@@ -41,5 +43,9 @@ public class SearchForApprentice extends ArsMagicaAction {
 		magus.addXP(skillUsed, 5);
 		if (covenant != null)
 			covenant.addXP(CovenantAttributes.MUNDANE_CONNECTIONS, -1);
+	}
+	
+	public String description() {
+		return (apprentice == null) ? "None found." : apprentice.toString();
 	}
 }

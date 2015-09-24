@@ -41,4 +41,12 @@ public class CopySpells extends ArsMagicaAction {
 		for (LabText spellToCopy : spellsToCopy)
 			spellToCopy.setCurrentReader(null);
 	}
+	
+	public String description() {
+		return "Copies " + spellsToCopy.size() + " spells. Starting with " + spellsToCopy.get(0).toString();
+	}
+	
+	public boolean isCovenantService() {
+		return isCovenantService;
+	}
 }

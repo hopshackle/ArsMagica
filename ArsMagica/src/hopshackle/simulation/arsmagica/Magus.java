@@ -214,14 +214,18 @@ public class Magus extends Agent implements Persistent {
 			terminateApprenticeship(true);
 		}
 
-		if (getLevelOf(Abilities.DECREPITUDE) >= 5) 
-			die("Dies of Very Old Age at " + getAge() + " (Decrepitude 5).");
-		
-		if (!isInTwilight()) {
-			libraryPolicy.run();
-			if (!longevityContractOnOffer && getLabTotal(Arts.CREO, Arts.CORPUS) > 30) {
-				int reservePrice = getInventoryOf(AMU.sampleVis).size() / 5;	// expressed as a fraction of current Vis
-				tribunal.addToMarket(new BarterOffer(this, new LongevityRitualService(this), 1, reservePrice, new VisValuationFunction(this)));
+		if (!isDead()) {
+			if (getLevelOf(Abilities.DECREPITUDE) >= 5)
+				die("Dies of Very Old Age at " + getAge() + " (Decrepitude 5).");
+
+			if (!isInTwilight()) {
+				libraryPolicy.run();
+				if (!longevityContractOnOffer && getLabTotal(Arts.CREO, Arts.CORPUS) > 30) {
+					int reservePrice = getInventoryOf(AMU.sampleVis).size() / 5; 
+					tribunal.addToMarket(new BarterOffer(this,
+							new LongevityRitualService(this), 1, reservePrice,
+							new VisValuationFunction(this)));
+				}
 			}
 		}
 	}
@@ -245,6 +249,7 @@ public class Magus extends Agent implements Persistent {
 	public void die(String reason) {
 		// Apprentice is now dealt with as part of inheritance (i.e. as for any other possessed object)
 		super.die(reason);
+		new Death(this, reason);
 
 		if (covenant != null)
 			setCovenant(null);
