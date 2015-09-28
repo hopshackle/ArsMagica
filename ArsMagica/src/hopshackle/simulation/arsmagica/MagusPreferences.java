@@ -18,8 +18,11 @@ public class MagusPreferences {
 				if (ability == Abilities.MAGIC_THEORY || ability == Abilities.PARMA_MAGICA) {
 					val = Math.max(val, generatePreference());
 				}
+				if (ability == Abilities.MAGIC_THEORY) {
+					val = Math.max(val, generatePreference());
+				}
 			}
-			if (ability == Abilities.VIS_HUNT || ability == Abilities.DECREPITUDE || ability == Abilities.WARPING)
+			if (ability == Abilities.VIS_HUNT || ability == Abilities.DECREPITUDE || ability == Abilities.WARPING || ability == Abilities.FAMILIAR_HUNT)
 				val = 0.0;
 			preferences.put(ability, val);
 		}
@@ -48,7 +51,7 @@ public class MagusPreferences {
 		for (Learnable ability : Abilities.values()) {
 			double target = base.getPreference(ability);
 			double val = getNearestTo(target, 3);
-			if (ability == Abilities.VIS_HUNT || ability == Abilities.DECREPITUDE || ability == Abilities.WARPING)
+			if (ability == Abilities.VIS_HUNT || ability == Abilities.DECREPITUDE || ability == Abilities.WARPING || ability == Abilities.FAMILIAR_HUNT)
 				val = 0.0;
 			preferences.put(ability, val);
 		}

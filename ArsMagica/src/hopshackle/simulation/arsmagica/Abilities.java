@@ -22,6 +22,7 @@ public enum Abilities implements Learnable {
 	LEADERSHIP, 
 	CHARM, 
 	VIS_HUNT,
+	FAMILIAR_HUNT,
 	INTRIGUE;
 	
 	public static Abilities random() {

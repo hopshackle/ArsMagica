@@ -27,7 +27,7 @@ public class WriteSumma extends ArsMagicaAction {
 		super(a);
 		double value = -100.0;
 		for (Learnable s : magus.getSkills().keySet()) {
-			if (s == Abilities.LATIN || s == Abilities.VIS_HUNT || s == Abilities.DECREPITUDE || s == Abilities.DECREPITUDE || s == Abilities.WARPING)
+			if (s == Abilities.LATIN || s == Abilities.VIS_HUNT || s == Abilities.FAMILIAR_HUNT|| s == Abilities.DECREPITUDE || s == Abilities.DECREPITUDE || s == Abilities.WARPING)
 				continue;
 			if (magus.getLevelOf(s) < 4)
 				continue;

@@ -37,6 +37,13 @@ public class BasicDecider extends BaseDecider {
 				retValue -= 0.005 * magus.getNumberInInventoryOf(AMU.sampleVis) ;
 			retValue += 0.05 * magus.getTribunal().getVisModifier();
 		}
+		
+		if (option == MagusActions.SEARCH_FAMILIAR) {
+			retValue = 0.20 - ((magus.getLevelOf(Abilities.WARPING)-1)^2) * 0.01 + 
+					0.05 * (magus.getLevelOf(Abilities.MAGIC_LORE) + magus.getLevelOf(Abilities.CHARM) + magus.getCommunication() + magus.getIntelligence() + magus.getMagicAura()) ;
+			if (magus.getTribunal() != null && magus.getTribunal().getVisModifier() < 0)
+				retValue += 0.05 * magus.getTribunal().getVisModifier();
+		}
 
 		if (option == MagusActions.STUDY_VIS)
 			retValue = 0.5 + 0.05 * magus.getMagicAura();

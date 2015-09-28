@@ -11,6 +11,7 @@ public class AMU {
 	public static final Tribunal sampleTribunal = new Tribunal();
 	public static final VisSource sampleVisSource = new VisSource(Arts.CREO, 1, null);
 	public static final Artefact sampleLongevityRitualService = new LongevityRitualService(null);
+	public static final Familiar sampleFamiliar = new Familiar(null);
 	public static Covenant sampleCovenant = new Covenant(null, null);
 
 	public static Learnable getPreferredXPGain(Arts technique, Arts form, Magus magus) {

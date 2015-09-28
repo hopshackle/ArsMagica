@@ -9,6 +9,7 @@ public enum MagusActions implements ActionEnum {
 	LAB_ASSISTANT,
 	SEARCH_VIS,
 	SEARCH_APPRENTICE,
+	SEARCH_FAMILIAR,
 	STUDY_VIS,
 	PRACTISE_ABILITY, 
 	DISTILL_VIS,
@@ -47,6 +48,8 @@ public enum MagusActions implements ActionEnum {
 			return new SearchForVis(magus);
 		case SEARCH_APPRENTICE:
 			return new SearchForApprentice(magus);
+		case SEARCH_FAMILIAR:
+			return new SearchForFamiliar(magus);
 		case STUDY_VIS:
 			return new StudyFromVis(magus, magus.getTypeOfVisToStudy());
 		case PRACTISE_ABILITY:
@@ -110,6 +113,8 @@ public enum MagusActions implements ActionEnum {
 			return false;	// only set up as a result of Parens' action
 		case SEARCH_VIS:
 			return !magus.isApprentice();
+		case SEARCH_FAMILIAR:
+			return !magus.isApprentice() && !magus.hasFamiliar() && !(magus.getHermeticHouse() == HermeticHouse.BJORNAER);
 		case SEARCH_APPRENTICE:
 			if (magus.hasApprentice()) return false;
 			return magus.getTotalArtLevels() >= 100;

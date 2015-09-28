@@ -394,7 +394,7 @@ public class Magus extends Agent implements Persistent {
 		});
 
 		for (Abilities a : abilities) {
-			if (a == Abilities.VIS_HUNT) continue;
+			if (a == Abilities.VIS_HUNT || a == Abilities.FAMILIAR_HUNT) continue;
 			log(skills.get(a).toString());
 		}
 
@@ -872,7 +872,7 @@ public class Magus extends Agent implements Persistent {
 				}
 				return  (item.getBPValue() * item.getDeterioration() * 2) + item.getPopularity() * 2;
 			}
-			
+
 			@Override
 			public String toString(Book temp) {
 				return temp.toString();
@@ -999,5 +999,18 @@ public class Magus extends Agent implements Persistent {
 	public HermeticHouse getHermeticHouse() {
 		return house;
 	}
+
+	public Familiar getFamiliar() {
+		List<Familiar> temp = getInventoryOf(AMU.sampleFamiliar);
+		if (temp.isEmpty()) 
+			return null;
+		else 
+			return temp.get(0);
+	}
+
+	public boolean hasFamiliar() {
+		return getFamiliar() != null;
+	}
 }
+
 
