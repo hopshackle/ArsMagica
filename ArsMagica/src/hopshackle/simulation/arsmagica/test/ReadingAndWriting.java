@@ -218,9 +218,13 @@ public class ReadingAndWriting {
 		 */
 		
 		MagusPreferences.setResearchPreference(magus, Arts.MUTO, 1.1);
-		MagusPreferences.setResearchPreference(magus, Abilities.MAGIC_THEORY, 0.5);
+		MagusPreferences.setResearchPreference(magus, Abilities.MAGIC_THEORY, 0.0);
+		assertEquals(MagusPreferences.getResearchPreference(magus, Arts.MUTO), 1.1, 0.01);
+		assertEquals(MagusPreferences.getResearchPreference(magus, Abilities.MAGIC_THEORY), 0.0, 0.01);
 		magus.addXP(Arts.MUTO, Arts.MUTO.getXPForLevel(20));	
-		magus.addXP(Abilities.MAGIC_THEORY, Abilities.MAGIC_THEORY.getXPForLevel(10)); //
+		magus.addXP(Abilities.MAGIC_THEORY, Abilities.MAGIC_THEORY.getXPForLevel(10)); 
+		assertEquals(MagusPreferences.getResearchPreference(magus, Arts.MUTO), 1.3, 0.01);
+		assertEquals(MagusPreferences.getResearchPreference(magus, Abilities.MAGIC_THEORY), 0.5, 0.01);
 		magus.setDecider(new HardCodedDecider(MagusActions.WRITE_SUMMA));
 		runActionsUntilBookFinished();
 		List<Book> books = magus.getInventoryOf(AMU.sampleBook);
@@ -273,7 +277,7 @@ public class ReadingAndWriting {
 		runActionsUntilBookFinished();
 		assertEquals(magus.getInventoryOf(AMU.sampleBook).size(),0);
 		assertEquals(cov.getLibrary().size(),1);
-		assertTrue(magus.getSeasonsServiceOwed() < 0);
+		assertTrue(magus.getSeasonsServiceOwed() < 1);
 	}
 
 	@Test

@@ -5,7 +5,7 @@ import hopshackle.simulation.*;
 public class ArsMagicaAction extends Action implements Persistent {
 	
 	private static AgentWriter<ArsMagicaAction> actionWriter = new AgentWriter<ArsMagicaAction>(new ActionDAO());
-
+	static {actionWriter.setBufferLimit(100);}
 	
 	protected Magus magus;
 

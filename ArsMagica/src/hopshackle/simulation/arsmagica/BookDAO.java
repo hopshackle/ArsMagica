@@ -44,7 +44,7 @@ public class BookDAO implements AgentDAO<Book> {
 				book.getYearWritten(),
 				book.getLevel(),
 				book.getQuality(),
-				book.getPopularity(),
+				book.getSeasonsRead(),
 				book.getDeterioration() * 100,
 				book.getLastOwner()
 				);

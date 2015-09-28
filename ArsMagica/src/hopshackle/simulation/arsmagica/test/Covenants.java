@@ -11,12 +11,11 @@ import hopshackle.simulation.arsmagica.*;
 import hopshackle.simulation.arsmagica.Tractatus;
 
 public class Covenants {
-
 	private Magus founder, cofounder;
 	private World w;
 	private Covenant covenant;
 	private Tribunal tribunal;
-	
+
 	@Before
 	public void setup() {
 		w = new World();
@@ -49,7 +48,7 @@ public class Covenants {
 
 		assertTrue(covenant.getTribunal() == founder.getTribunal());
 	}
-	
+
 	@Test
 	public void apprenticeIsNotIncludedAsFounder() {
 		Magus apprentice = new Magus(w);
@@ -157,38 +156,38 @@ public class Covenants {
 		assertEquals(covenant.getBuildPoints(), 66);
 		covenant.addItem(new Summa(Arts.CREO, 12, 8, null));
 		covenant.maintenance();
-		assertEquals(covenant.getBuildPoints(), 76);
+		assertEquals(covenant.getBuildPoints(), 75);
 		covenant.addItem(new Summa(Arts.REGO, 6, 8, null));
 		covenant.maintenance();
-		assertEquals(covenant.getBuildPoints(), 83);
+		assertEquals(covenant.getBuildPoints(), 82);
 		covenant.addItem(new Summa(Arts.CREO, 6, 8, null));
 		covenant.maintenance();
-		assertEquals(covenant.getBuildPoints(), 83);
+		assertEquals(covenant.getBuildPoints(), 82);
 		covenant.addItem(new Summa(Abilities.MAGIC_THEORY, 2, 8, null));
 		covenant.maintenance();
-		assertEquals(covenant.getBuildPoints(), 90);
+		assertEquals(covenant.getBuildPoints(), 88);
 		VisSource vis = new VisSource(Arts.CORPUS, 5, w);
 		covenant.getCovenantAgent().addItem(vis);
 		covenant.maintenance();
-		assertEquals(covenant.getBuildPoints(), 115);
+		assertEquals(covenant.getBuildPoints(), 113);
 		vis.setAnnualExtinctionRate(1.0);
 		w.setCurrentTime((long) (801 * 52));
 		vis.maintenance();
 		assertEquals(vis.getAmountPerAnnum(), 0);
 		covenant.maintenance();
-		assertEquals(covenant.getBuildPoints(), 90);
+		assertEquals(covenant.getBuildPoints(), 88);
 		LabText labText = new LabText(new Spell(Arts.REGO, Arts.AQUAM, 40, "Powerful spell", null), null);
 		covenant.addItem(labText);
 		covenant.maintenance();
-		assertEquals(covenant.getBuildPoints(), 94);
+		assertEquals(covenant.getBuildPoints(), 92);
 		LabText labText2 = new LabText(new Spell(Arts.REGO, Arts.AQUAM, 40, "Powerful spell", null), null);
 		covenant.addItem(labText2);
 		covenant.maintenance();
-		assertEquals(covenant.getBuildPoints(), 94);
+		assertEquals(covenant.getBuildPoints(), 92);
 		LabText labText3 = new LabText(new Spell(Arts.REGO, Arts.AQUAM, 40, "Powerful spell 2", null), null);
 		covenant.addItem(labText3);
 		covenant.maintenance();
-		assertEquals(covenant.getBuildPoints(), 98);
+		assertEquals(covenant.getBuildPoints(), 96);
 	}
 
 	@Test
@@ -199,11 +198,11 @@ public class Covenants {
 		libraryAdditions.add(new Summa(Arts.CREO, 5, 8, null));
 		assertEquals(covenant.calculateIncrementalBuildPointsFrom(libraryAdditions), 0);
 		libraryAdditions.add(new Summa(Arts.REGO, 12, 8, null));
-		assertEquals(covenant.calculateIncrementalBuildPointsFrom(libraryAdditions), 20);
+		assertEquals(covenant.calculateIncrementalBuildPointsFrom(libraryAdditions), 19);
 		libraryAdditions.add(new Summa(Arts.CREO, 12, 8, null));
-		assertEquals(covenant.calculateIncrementalBuildPointsFrom(libraryAdditions), 26);		// TODO: should be higher, but I only count highest points value Summa
+		assertEquals(covenant.calculateIncrementalBuildPointsFrom(libraryAdditions), 25);
 		libraryAdditions.add(new Summa(Arts.CREO, 12, 8, null));
-		assertEquals(covenant.calculateIncrementalBuildPointsFrom(libraryAdditions), 26);
+		assertEquals(covenant.calculateIncrementalBuildPointsFrom(libraryAdditions), 25);
 	}
 
 	@Test
@@ -230,7 +229,7 @@ public class Covenants {
 		application = new CovenantApplication(covenant, applicant, 6);
 		assertFalse(application.isSuccessful());
 	}
-	
+
 	@Test
 	public void buildPointsOnlyCountUniqueTractatus() {
 		Tractatus t1 = new Tractatus(Abilities.ARTES_LIBERALES, founder);
@@ -252,15 +251,15 @@ public class Covenants {
 		covenant.addItem(new Summa(Arts.CORPUS, 30, 8, null));
 		covenant.maintenance();
 		assertEquals(covenant.getLevelOf(CovenantAttributes.WEALTH), 1);
-		assertEquals(covenant.getBuildPoints(), 82);
+		assertEquals(covenant.getBuildPoints(), 81);
 
 		Magus applicant = new Magus(w);
 		CovenantApplication application = new CovenantApplication(covenant, applicant);
-		assertEquals(application.getNetValueToApplicant(), 82);
+		assertEquals(application.getNetValueToApplicant(), 81);
 		applicant.setMagicAura(2);
 		application = new CovenantApplication(covenant, applicant);
-		assertEquals(application.getNetValueToApplicant(), 52);
-		
+		assertEquals(application.getNetValueToApplicant(), 51);
+
 		List<Magus> newFounder = new ArrayList<Magus>();
 		newFounder.add(applicant);
 		Covenant newCov = new Covenant(newFounder, tribunal);
@@ -268,7 +267,7 @@ public class Covenants {
 		newCov.maintenance();
 		assertEquals(newCov.getBuildPoints(), 150);
 		application = new CovenantApplication(newCov, founder);
-		assertEquals(application.getNetValueToApplicant(), 150 - 82);
+		assertEquals(application.getNetValueToApplicant(), 150 - 81);
 	}
 
 	@Test
@@ -276,7 +275,7 @@ public class Covenants {
 		covenantIsFoundedWithCorrectMembership();
 		covenant.setAura(2);
 		covenant.addXP(CovenantAttributes.WEALTH, 50);
-		covenant.addItem(new Summa(Arts.AURAM, 18, 8, null));
+		covenant.addItem(new Summa(Arts.AURAM, 18, 9, null));
 		covenant.addItem(new VisSource(Arts.MENTEM, 7, tribunal));
 		covenant.addItem(new Tractatus(Arts.ANIMAL, founder));
 		covenant.addItem(new Tractatus(Arts.MENTEM, founder));
@@ -306,14 +305,15 @@ public class Covenants {
 		covenant.maintenance();
 		assertEquals(covenant.getBuildPoints(), 110);
 	}
-	
+
 	@Test
 	public void covenantApplicationCanBeBoostedWithVisSource() {
 		covenantIsFoundedWithCorrectMembership();
 		covenant.setAura(2);
 		covenant.addXP(CovenantAttributes.WEALTH, 20);
 		covenant.addXP(CovenantAttributes.GROGS, 35);
-		covenant.addItem(new Summa(Arts.AURAM, 10, 10, null));
+		assertEquals(covenant.calculateIncrementalBuildPointsFrom(new Summa(Arts.AURAM, 10, 11, null)), 21);
+		covenant.addItem(new Summa(Arts.AURAM, 10, 11, null));
 		covenant.addItem(new VisSource(Arts.MENTEM, 9, tribunal));
 		covenant.maintenance();
 		assertEquals(covenant.getBuildPoints(), 100);
@@ -337,7 +337,7 @@ public class Covenants {
 		covenant.maintenance();
 		assertEquals(covenant.getBuildPoints(), 110);
 	}
-	
+
 	@Test
 	public void covenantApplicationCanBeBoostedWithVis() {
 		covenantIsFoundedWithCorrectMembership();
@@ -354,7 +354,7 @@ public class Covenants {
 		assertEquals(applicant.getPawnsOf(Arts.VIM), 125);
 		assertTrue(applicant.getCovenant() == covenant);
 	}
-	
+
 	@Test
 	public void covenantApplicationUsesBooksBeforeVisAndVisSources() {
 		covenantIsFoundedWithCorrectMembership();
@@ -376,7 +376,7 @@ public class Covenants {
 		assertEquals(covenant.getLibrary().size(), 1);
 		assertEquals(covenant.getAnnualVisSupply(), 2);
 	}
-	
+
 	@Test
 	public void covenantInheritsEverythingIfMagusDiesWithoutHeirs() {
 		covenantIsFoundedWithCorrectMembership();

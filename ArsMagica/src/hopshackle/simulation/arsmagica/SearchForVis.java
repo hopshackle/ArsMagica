@@ -90,6 +90,7 @@ public class SearchForVis extends ArsMagicaAction {
 					} else {
 						double chanceOfMove = Math.pow(auraLevel - covenant.getAura(), 2) * 0.25;
 						chanceOfMove = chanceOfMove / Math.sqrt(covenant.getCurrentSize());
+						if (covenant.getCurrentSize() == 1) chanceOfMove = 1.0;
 						if (Math.random() < chanceOfMove) {
 							covenant.setAura(auraLevel);
 							magus.log("Moves covenant to new site");

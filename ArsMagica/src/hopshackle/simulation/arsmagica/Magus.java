@@ -221,7 +221,7 @@ public class Magus extends Agent implements Persistent {
 			if (!isInTwilight()) {
 				libraryPolicy.run();
 				if (!longevityContractOnOffer && getLabTotal(Arts.CREO, Arts.CORPUS) > 30) {
-					int reservePrice = getInventoryOf(AMU.sampleVis).size() / 5; 
+					int reservePrice = getInventoryOf(AMU.sampleVis).size() / 3; 
 					tribunal.addToMarket(new BarterOffer(this,
 							new LongevityRitualService(this), 1, reservePrice,
 							new VisValuationFunction(this)));
@@ -842,6 +842,10 @@ public class Magus extends Agent implements Persistent {
 				}
 				return  (item.getBPValue() * item.getDeterioration() * 2) + item.getPopularity() * 2;
 			}
+			@Override
+			public String toString(Book item) {
+				return item.toString();
+			}
 		};
 
 		List<Book> inOrder = getBestBookToCopyUsingValuationFunction(vFunction);
@@ -868,6 +872,11 @@ public class Magus extends Agent implements Persistent {
 				}
 				return  (item.getBPValue() * item.getDeterioration() * 2) + item.getPopularity() * 2;
 			}
+			
+			@Override
+			public String toString(Book temp) {
+				return temp.toString();
+			}
 		};
 
 		return getBestBookToCopyUsingValuationFunction(vFunction);
@@ -881,6 +890,10 @@ public class Magus extends Agent implements Persistent {
 				if (item.isInUse() || item instanceof LabText)
 					return 0.0;
 				return  item.getBPValue() + item.getPopularity() * 2;
+			}
+			@Override
+			public String toString(Book temp) {
+				return temp.toString();
 			}
 		};
 

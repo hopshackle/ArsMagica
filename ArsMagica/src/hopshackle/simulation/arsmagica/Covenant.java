@@ -294,7 +294,7 @@ public class Covenant extends Organisation<Magus> {
 
 	public int calculateIncrementalBuildPointsFrom(List<Book> potentialLibraryAdditions) {
 		List<Book> fullLibrary = getLibrary();
-		fullLibrary.addAll(potentialLibraryAdditions);
+		fullLibrary.addAll(potentialLibraryAdditions);	
 		int fullPoints = calculateLibraryPoints(fullLibrary);
 		int startingPoints = calculateLibraryPoints(getLibrary());
 		return fullPoints - startingPoints;
@@ -308,7 +308,7 @@ public class Covenant extends Organisation<Magus> {
 	}
 	private int calculateLibraryPoints(List<Book> library) {
 		int retValue = 0;
-		Map<Learnable, Book> highestSummaPerSubject = new HashMap<Learnable, Book>();
+		Map<Learnable, List<Book>> summasPerSubject = new HashMap<Learnable, List<Book>>();
 		Set<Spell> spellsInLibrary = new HashSet<Spell>();
 		Set<Integer> tractatusInLibrary = new HashSet<Integer>();
 		for (Book book : library) {
@@ -328,28 +328,30 @@ public class Covenant extends Organisation<Magus> {
 						continue;
 				}
 				if (book instanceof Summa) {
-					if (!highestSummaPerSubject.containsKey(bookSubject)) {
-						highestSummaPerSubject.put(bookSubject, book);
-					} else {
-						Book previousBestBook = highestSummaPerSubject.get(bookSubject);
-						int previousPointsValue = previousBestBook.getBPValue();
-						if (book.getBPValue() > previousPointsValue) {
-							retValue -= previousPointsValue;
-							highestSummaPerSubject.put(bookSubject, book);
-						} else {
-							continue;
-						}
-					}
+					List<Book> currentSummae = new ArrayList<Book>();
+					if (summasPerSubject.containsKey(bookSubject)) {
+						currentSummae = summasPerSubject.get(bookSubject);
+					} 
+					currentSummae.add(book);
+					summasPerSubject.put(bookSubject, currentSummae);
+					continue;
 				}
 			}
 			retValue += book.getBPValue();
 		}
-		for (Learnable l : highestSummaPerSubject.keySet()) {
-			int seasonsToCompleteStudy = AMU.getSeasonsToMaxFrom(l, library);
-			int level = highestSummaPerSubject.get(l).getLevel();
+		for (Learnable l : summasPerSubject.keySet()) {
+
+			List<Book> currentSummae = summasPerSubject.get(l);
+			int seasonsToCompleteStudy =  AMU.getSeasonsToMaxFrom(l, currentSummae);
+			int level = AMU.getHighestSummaFrom(l, currentSummae);
+
 			// set a baseline of Q8
-			int baselineSeasons = (int) Math.ceil(l.getXPForLevel(level) / 8.0);
-			retValue += (baselineSeasons - seasonsToCompleteStudy);
+			// int baselineSeasons = (int) Math.ceil(l.getXPForLevel(level) / 8.0);
+			// retValue += (baselineSeasons - seasonsToCompleteStudy);
+			double quality = (l.getXPForLevel(level) / (double)seasonsToCompleteStudy);
+			int multiplier = 1;
+			if (l instanceof Abilities) multiplier = 3;
+			retValue += level * level * multiplier * multiplier / 5 - seasonsToCompleteStudy;
 		}
 		return retValue;
 	}

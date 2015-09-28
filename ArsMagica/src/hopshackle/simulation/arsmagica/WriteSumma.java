@@ -27,7 +27,7 @@ public class WriteSumma extends ArsMagicaAction {
 		super(a);
 		double value = -100.0;
 		for (Learnable s : magus.getSkills().keySet()) {
-			if (s == Abilities.LATIN || s == Abilities.VIS_HUNT || s == Abilities.DECREPITUDE || s == Abilities.DECREPITUDE)
+			if (s == Abilities.LATIN || s == Abilities.VIS_HUNT || s == Abilities.DECREPITUDE || s == Abilities.DECREPITUDE || s == Abilities.WARPING)
 				continue;
 			if (magus.getLevelOf(s) < 4)
 				continue;
@@ -86,9 +86,11 @@ public class WriteSumma extends ArsMagicaAction {
 		double valueOfSumma = -100;
 		int maxLevel = skillLvl / 2;
 		int baseQuality = com + 6;
-		List<Book> currentSummae = Summa.filterRelevantSummae(magus.getAllAccessibleBooks(), skill);
+		List<Book> allBooks = magus.getAllAccessibleBooks();
+		allBooks.addAll(magus.getInventoryOnMarketOf(AMU.sampleBook));
+		List<Book> currentSummae = Summa.filterRelevantSummae(allBooks, skill);
 		int currentSeasons =  AMU.getSeasonsToMaxFrom(skill, currentSummae);
-		int startingLvl = magus.getHighestSumma(skill);
+		int startingLvl = AMU.getHighestSummaFrom(skill, currentSummae);
 		for (int proposedLevel = maxLevel; proposedLevel > 0; proposedLevel--) {
 			double proposedQuality = Math.min(baseQuality + (maxLevel - proposedLevel), baseQuality * 2);
 			int effectiveQuality = (int) Math.min(proposedQuality, skill.getXPForLevel(proposedLevel));
@@ -100,7 +102,7 @@ public class WriteSumma extends ArsMagicaAction {
 			int seasonGain = Math.max(currentSeasons - seasonsStudy, 0);
 			int extraSeasonsStudy = Math.max(seasonsStudy - currentSeasons, 0);
 			int xpGain = (int) Math.max(skill.getXPForLevel(proposedLevel)-skill.getXPForLevel(startingLvl), 0);
-			double value = 2 + (xpGain/5 - seasonsToWrite * 2 + seasonGain * 4 - extraSeasonsStudy);
+			double value = 2.0 + (xpGain/5.0 - seasonsToWrite * 2.0 + seasonGain * 4.0 - extraSeasonsStudy);
 			if (value > valueOfSumma) {
 				valueOfSumma = value;
 				summaLvl = proposedLevel;

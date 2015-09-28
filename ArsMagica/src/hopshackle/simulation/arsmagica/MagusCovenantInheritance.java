@@ -26,7 +26,7 @@ public class MagusCovenantInheritance implements InheritancePolicy {
 			Magus apprentice = deadMagus.getApprentice();
 			List<Magus> members = covenant.getCurrentMembership();
 			for (Magus sodalis : members) {
-				if (!foundNewParens && !sodalis.hasApprentice() && sodalis != deadMagus && !sodalis.isApprentice()) {
+				if (!foundNewParens && !sodalis.hasApprentice() && sodalis != deadMagus && !sodalis.isApprentice() && !sodalis.isDead()) {
 					apprentice.log("Parens dies before apprenticeship has finished");
 					sodalis.log("Inherits apprentice: " + apprentice.toString());
 					apprentice.log("New Parens is now " + sodalis.toString());

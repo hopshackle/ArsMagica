@@ -29,6 +29,7 @@ public class LabText extends Book {
 	public LabText(Spell spell, Agent author) {
 		super(learnableSpell, spell.getLevel(), 0, author);
 		this.spell = spell;
+		this.quality = spell.getLevel() * 2 / 5;
 	}
 	
 	public LabText(LabText copyOf) {
@@ -40,10 +41,10 @@ public class LabText extends Book {
 	public int getXPGainForMagus(Magus magus) {
 		return 0;
 	}
-
+	
 	@Override
 	public int getBPValue() {
-		return spell.getLevel()/5;
+		return (spell.getLevel()/5) -1;
 	}
 
 	@Override

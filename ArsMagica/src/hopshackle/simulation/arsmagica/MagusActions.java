@@ -90,7 +90,7 @@ public enum MagusActions implements ActionEnum {
 			List<Magus> others = new ArrayList<Magus>();
 			for (Agent ea : magus.getChildren()) {
 				Magus exApprentice = (Magus) ea;
-				if (!exApprentice.isApprentice() && exApprentice.getCovenant() == null)
+				if (!exApprentice.isApprentice() && exApprentice.getCovenant() == null && !exApprentice.isDead())
 					others.add(exApprentice);
 			}
 			return new FoundCovenant(magus, others);

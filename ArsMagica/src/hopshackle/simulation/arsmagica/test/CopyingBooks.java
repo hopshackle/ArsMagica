@@ -37,7 +37,7 @@ public class CopyingBooks {
 		magus.addApprentice(apprentice);
 		magus.setCovenant(covenant);
 		
-		creoBook = new Summa(Arts.CREO, 10, 10, magus);
+		creoBook = new Summa(Arts.CREO, 10, 8, magus);
 		perdoBook = new Summa(Arts.PERDO, 5, 12, magus);
 	}
 	

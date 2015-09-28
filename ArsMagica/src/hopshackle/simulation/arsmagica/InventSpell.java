@@ -251,6 +251,6 @@ public class InventSpell extends ArsMagicaAction {
 	}
 	
 	public String description() {
-		return String.format("%s%s%d %s", technique.getAbbreviation(), form.getAbbreviation(), level, spellName);
+		return String.format("%s%s%d %s %s", technique.getAbbreviation(), form.getAbbreviation(), level, spellName, (labTextUsed == null) ? "" : "[Lab Text]");
 	}
 }

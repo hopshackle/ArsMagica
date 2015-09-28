@@ -36,20 +36,27 @@ public class LongevityRitualService extends ArsMagicaItem implements ArtefactReq
 		}
 		customer = (Magus) purchaser; 
 		List<Artefact> allContracts = customer.getInventoryOf(AMU.sampleLongevityRitualService);
+		LongevityRitualService ritual = null;
 		int highest = 0;
 		for (Artefact a : allContracts) {
 			LongevityRitualService lrs = (LongevityRitualService)a;
 			if (lrs.getLabTotal() > highest) {
 				highest = lrs.getLabTotal();
+				ritual = lrs;
 			}
 		}
-		if (getLabTotal() < highest)
+		if (ritual != this)
 			return;	// just use the best one if multiple options
 		if (CrCoSpecialist.isDead()) {
 			deleteThis();
 		} else if (customer.getLongevityRitualEffect() < Math.ceil(getLabTotal() / 5.0) 
 				&& InventLongevityRitual.hasSufficientVis(customer) && !CrCoSpecialist.isInTwilight()) {
 			// i.e. only use the contract if it will be of benefit and you have the vis
+			
+			Action lastAction = customer.getExecutedActions().get(customer.getExecutedActions().size() - 1);
+			if (lastAction instanceof LabAssistant)	// bit of a hack. Magi only act as Lab Assistant on Longevity rituals
+				return;								// Hence this indicates they will receive a longevity ritual as soon as the 
+													// specialist takes their action.
 			Action n = CrCoSpecialist.getNextAction();
 			if (n instanceof LabAssistant || n instanceof InventLongevityRitual)
 				return;	// these two take priority

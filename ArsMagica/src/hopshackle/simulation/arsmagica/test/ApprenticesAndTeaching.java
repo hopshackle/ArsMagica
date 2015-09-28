@@ -143,8 +143,6 @@ public class ApprenticesAndTeaching {
 		assertEquals(w.getSeason(), 0);
 		parensAction = (ArsMagicaAction) parens.getNextAction();
 		if (!(parensAction instanceof TeachApprentice))
-			System.out.println(parensAction);
-		if (!(parensAction instanceof TeachApprentice))
 			System.out.println(parensAction + " instead of TeachApprentice");
 		assertTrue(parensAction instanceof TeachApprentice);
 		assertTrue(apprentice.getNextAction() instanceof BeTaught);

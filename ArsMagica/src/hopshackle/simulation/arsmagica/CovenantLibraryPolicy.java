@@ -38,7 +38,7 @@ public class CovenantLibraryPolicy {
 		if (tribunal == covenant.getTribunal() && yearsUntilTribunal == 2) {	// only put Books up for Sale in local tribunal
 			Set<Book> supercededBooks = getSupercededBooks(library);
 			for (Book book : supercededBooks) {
-				tribunal.addToMarket(new BarterOffer(covenant.getCovenantAgent(), book, 1, 1, null));
+				tribunal.addToMarket(new BarterOffer(covenant.getCovenantAgent(), book, 1, 1, new VisValuationFunction(covenant.getCovenantAgent())));
 				if (covenant.getFullDebug())
 					covenant.log("Puts " + book + " up for sale.");
 			}
@@ -142,7 +142,7 @@ public class CovenantLibraryPolicy {
 
 		for (Book book1 : library) {
 			for (Book book2 : library) {
-				if (book1.getClass().equals(book2.getClass()) && !(book1 == book2)) {
+				if (book1.getClass().equals(book2.getClass()) && !(book1 == book2) && !book2.isInUse()) {
 					if (book1 instanceof LabText) {
 						Spell s1 = ((LabText)book1).getSpell();
 						Spell s2 = ((LabText)book2).getSpell();

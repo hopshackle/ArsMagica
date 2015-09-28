@@ -134,7 +134,7 @@ public class BasicDecider extends BaseDecider {
 		}
 
 		if (option == MagusActions.JOIN_COVENANT) {
-			retValue = 0.30 + Math.max(0.004 * (50 - magus.getAge()), 0.0);
+			retValue = 0.30 + Math.max(0.004 * (Math.min(50, 100 - magus.getAge())), 0.0);
 			if (magus.getCovenant() != null) {
 				retValue -= Math.max(0.05, magus.getCovenant().getBuildPoints() * 0.01);
 			} else {

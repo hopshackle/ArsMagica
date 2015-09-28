@@ -8,7 +8,7 @@ import hopshackle.simulation.*;
 public abstract class Book extends ArsMagicaItem implements ArtefactRequiringMaintenance, Persistent {
 
 	private int level;
-	private int quality;
+	protected int quality;
 	private Learnable skill;
 	private int authorId;
 	private String author;
@@ -24,6 +24,8 @@ public abstract class Book extends ArsMagicaItem implements ArtefactRequiringMai
 	private World world;
 	private String lastOwner;
 
+	static {bookWriter.setBufferLimit(100);}
+	
 	public Book(Book copyOf) {
 		level = copyOf.level;
 		quality = copyOf.quality;
@@ -177,9 +179,12 @@ public abstract class Book extends ArsMagicaItem implements ArtefactRequiringMai
 	public abstract int getBPValue();
 
 	public int getPopularity() {
+		return (seasonsRead * quality) / 8;
+	}
+	public int getSeasonsRead() {
 		return seasonsRead;
 	}
-
+	
 	@Override
 	public World getWorld() {
 		return world;

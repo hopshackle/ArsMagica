@@ -129,12 +129,12 @@ public class MagusLibraryPolicy {
 				} else if (bo.getItem() instanceof LongevityRitualService) {
 					if (magus.getNumberInInventoryOf(AMU.sampleLongevityRitualService) > 0)
 						continue;
-					if (!InventLongevityRitual.hasSufficientVis(magus))
-						continue;
+		//			if (!InventLongevityRitual.hasSufficientVis(magus)) \\ Removed as the vis is not needed *now*
+		//				continue;
 					LongevityRitualService longevity = (LongevityRitualService) bo.getItem();
 					value = longevity.getLabTotal() + magus.getLevelOf(Abilities.MAGIC_THEORY) + magus.getIntelligence() - magus.getLabTotal(Arts.CREO, Arts.CORPUS);
-					value *= 0.6; // so about 3 pawns of vis per point of additional ritual
-					if (value < 1.2)
+					// so about 5 pawns of vis per point of additional ritual
+					if (value < 0.3)
 						value = 0.0;	// but set a limit given waste of season
 				} else if (bo.getItem() instanceof Vis) {
 					Arts visType = ((Vis)bo.getItem()).getType();
