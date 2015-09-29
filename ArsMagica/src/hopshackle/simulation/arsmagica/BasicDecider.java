@@ -44,6 +44,10 @@ public class BasicDecider extends BaseDecider {
 			if (magus.getTribunal() != null && magus.getTribunal().getVisModifier() < 0)
 				retValue += 0.05 * magus.getTribunal().getVisModifier();
 		}
+		
+		if (option == MagusActions.BIND_FAMILIAR) {
+			retValue = 1.0;
+		}
 
 		if (option == MagusActions.STUDY_VIS)
 			retValue = 0.5 + 0.05 * magus.getMagicAura();

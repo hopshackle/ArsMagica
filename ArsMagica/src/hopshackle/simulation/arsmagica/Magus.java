@@ -237,9 +237,12 @@ public class Magus extends Agent implements Persistent {
 	public int getLongevityModifier() {
 		// positive means beneficial
 		int base = 0;
+		int familiarBonus = 0;
+		if (hasFamiliar())
+			familiarBonus = getFamiliar().getBronze();
 		if (covenant != null)
 			base = Math.min(covenant.getLevelOf(CovenantAttributes.WEALTH), 2);
-		return base - (int) Math.ceil((getAge() - getYearsInTwilight()) / 10.0) + longevityRitual;
+		return base - (int) Math.ceil((getAge() - getYearsInTwilight()) / 10.0) + longevityRitual + familiarBonus;
 	}
 	public int getYearsSinceStartOfApprenticeship() {
 		return (int) ((world.getCurrentTime() - apprenticeshipStart) / 52);

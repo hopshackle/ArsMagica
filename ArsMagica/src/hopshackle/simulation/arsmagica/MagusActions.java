@@ -10,6 +10,7 @@ public enum MagusActions implements ActionEnum {
 	SEARCH_VIS,
 	SEARCH_APPRENTICE,
 	SEARCH_FAMILIAR,
+	BIND_FAMILIAR,
 	STUDY_VIS,
 	PRACTISE_ABILITY, 
 	DISTILL_VIS,
@@ -50,6 +51,8 @@ public enum MagusActions implements ActionEnum {
 			return new SearchForApprentice(magus);
 		case SEARCH_FAMILIAR:
 			return new SearchForFamiliar(magus);
+		case BIND_FAMILIAR:
+			return new BindFamiliar(magus);
 		case STUDY_VIS:
 			return new StudyFromVis(magus, magus.getTypeOfVisToStudy());
 		case PRACTISE_ABILITY:
@@ -115,6 +118,12 @@ public enum MagusActions implements ActionEnum {
 			return !magus.isApprentice();
 		case SEARCH_FAMILIAR:
 			return !magus.isApprentice() && !magus.hasFamiliar() && !(magus.getHermeticHouse() == HermeticHouse.BJORNAER);
+		case BIND_FAMILIAR:
+			if (magus.hasFamiliar()) {
+				Familiar f = magus.getFamiliar();
+				return f.canImproveBond(magus);
+			} else
+				return false;
 		case SEARCH_APPRENTICE:
 			if (magus.hasApprentice()) return false;
 			return magus.getTotalArtLevels() >= 100;

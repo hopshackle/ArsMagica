@@ -32,7 +32,10 @@ public class StudyFromVis extends ArsMagicaAction {
 			roll = overrideDieRoll;
 
 		if (roll == 0) {
-			boolean botched = determineBotchResults(1 + requiredPawns);
+			int familiarBenefit = 0;
+			if (magus.hasFamiliar())
+				familiarBenefit = magus.getFamiliar().getGold();
+			boolean botched = determineBotchResults(Math.max(1, 1 + requiredPawns - familiarBenefit));
 			if (botched) return;
 		}
 		
