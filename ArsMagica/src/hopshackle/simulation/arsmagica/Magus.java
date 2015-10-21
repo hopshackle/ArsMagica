@@ -10,6 +10,7 @@ public class Magus extends Agent implements Persistent {
 
 	private ArsMagicaCharacteristic strength, stamina, dexterity, quickness, intelligence, perception, presence, communication;
 	private HashMap<Learnable, Skill> skills = new HashMap<Learnable, Skill>();
+	private Map<Magus, Relationship> relationships = new HashMap<Magus, Relationship>();
 	private List<Spell> spells = new ArrayList<Spell>();
 	private static AgentWriter<Magus> magusWriter = new AgentWriter<Magus>(new MagusDAO());
 	private static MagusRetriever masterAgentRetriever = new MagusRetriever();
@@ -1014,6 +1015,18 @@ public class Magus extends Agent implements Persistent {
 
 	public boolean hasFamiliar() {
 		return getFamiliar() != null;
+	}
+	public Relationship getRelationshipWith(Magus m) {
+		if (relationships.containsKey(m))
+			return relationships.get(m);
+		return Relationship.NONE;
+	}
+	public void setRelationship(Magus m, Relationship r) {
+		log("Becomes " + r.name() + " of " + m.toString());
+		relationships.put(m, r);
+	}
+	public Map<Magus, Relationship> getRelationships() {
+		return relationships;
 	}
 }
 
