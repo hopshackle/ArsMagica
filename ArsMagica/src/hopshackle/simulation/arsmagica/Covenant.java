@@ -75,6 +75,14 @@ public class Covenant extends Organisation<Magus> {
 			covenantWriter.write(this, world.toString());
 			logStatus();
 		}
+		List<Magus> apprenti = new ArrayList<Magus>();
+		for (Magus m : getCurrentMembership()) {
+			Magus apprentice = m.getApprentice();
+			if (apprentice != null)
+				apprenti.add(apprentice);
+		}
+		new SocialMeeting(this.getCurrentMembership());
+		new SocialMeeting(apprenti);
 		if (isExtant()) {
 			if (libraryPolicy != null)
 				libraryPolicy.run();

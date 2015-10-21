@@ -69,8 +69,10 @@ public class BasicDecider extends BaseDecider {
 
 		if (option == MagusActions.DISTILL_VIS) {
 			retValue = Math.min(magus.getLabTotal(Arts.CREO, Arts.VIM) * 0.01 - magus.getPawnsOf(Arts.VIM) * 0.01, 0.35) + magus.getSeasonsServiceOwed() * 0.01;
-			if (magus.getAge() > 30 && magus.getLongevityRitualEffect() == 0)
-				retValue = Math.max((magus.getLabTotal(Arts.CREO, Arts.CORPUS) / 5.0) * 0.16, retValue);
+			if (magus.getPawnsOf(Arts.VIM) + magus.getPawnsOf(Arts.CORPUS) + magus.getPawnsOf(Arts.CREO) <= magus.getAge() / 10)
+				retValue += magus.getLabTotal(Arts.CREO, Arts.VIM) * 0.01;
+			if (magus.getAge() > 30 && magus.getLongevityRitualEffect() == 0 && magus.getPawnsOf(Arts.VIM) <= magus.getAge() / 10)
+				retValue += 0.5;
 		}
 
 		if (option == MagusActions.LONGEVITY_RITUAL) 

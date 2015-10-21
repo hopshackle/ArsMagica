@@ -172,7 +172,7 @@ public class MagusLibraryPolicy {
 		int pawnsToKeep = 5;
 		if (pawnsToKeep < currentCount) {
 			// we put it up for auction
-			int pawnsToSell = currentCount - pawnsToKeep;
+			int pawnsToSell = (currentCount - pawnsToKeep) / 2;
 			do {
 				double lotSize = Math.min(5.0, pawnsToSell);
 				pawnsToSell -= lotSize;

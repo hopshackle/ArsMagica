@@ -649,7 +649,8 @@ public class Magus extends Agent implements Persistent {
 	public Arts getTypeOfVisToStudy() {
 		// first find out what types of Vis the magus has
 		// and pick our favourite amongst those types for which we have sufficient vis
-		boolean needsLongevityRitual = getLongevityRitualEffect() == 0 || getLongevityModifier() < -2;
+		// above all we always retain sufficient for a longevity ritual in an emergency
+		boolean needsLongevityRitual =  true ; // getLongevityRitualEffect() == 0 || getLongevityModifier() < -2;
 		HashMap<Arts, Integer> vis = AMU.getVisInventory(this);
 		int magicTheory = getLevelOf(Abilities.MAGIC_THEORY);
 		Map<Learnable, Double> options = new HashMap<Learnable, Double>();
