@@ -208,7 +208,13 @@ public class Magus extends Agent implements Persistent {
 			if (getAge() > 35 && !isInTwilight()) {
 				new AgeingEvent(this).ageOneYear();
 			}
+			if (hasApprentice())  {
+				List<Magus> both = new ArrayList<Magus>();
+				both.add(this); both.add(apprentice);
+				new SocialMeeting(both, 2, 2);
+			}
 		}
+	
 
 		// Apprentice graduates if 15 years have elapsed
 		if (hasApprentice() && apprentice.getYearsSinceStartOfApprenticeship() >= 15 && apprentice.seasonsTraining >= 15) {

@@ -78,11 +78,12 @@ public class Covenant extends Organisation<Magus> {
 		List<Magus> apprenti = new ArrayList<Magus>();
 		for (Magus m : getCurrentMembership()) {
 			Magus apprentice = m.getApprentice();
-			if (apprentice != null)
+			if (apprentice != null) {
 				apprenti.add(apprentice);
+			}
 		}
-		new SocialMeeting(this.getCurrentMembership());
-		new SocialMeeting(apprenti);
+		new SocialMeeting(this.getCurrentMembership(), 0, 0);
+		new SocialMeeting(apprenti, 2, 2);
 		if (isExtant()) {
 			if (libraryPolicy != null)
 				libraryPolicy.run();

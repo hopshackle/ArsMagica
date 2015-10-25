@@ -8,15 +8,18 @@ public class InventLongevityRitual extends ArsMagicaAction {
 
 	private Magus customer;
 	private int modifier;
+	private List<Magus> labAssistants = new ArrayList<Magus>();
 
 	public InventLongevityRitual(Agent a) {
 		super(a);
 	}
 
-	public InventLongevityRitual(Magus crCoSpecialist, Magus customer) {
+	public InventLongevityRitual(Magus crCoSpecialist, Magus customer, List<Magus> assistants) {
 		// when one Magus invents a ritual for another
 		super(crCoSpecialist);
-		this.customer = customer;
+		if (crCoSpecialist != customer)
+			this.customer = customer;
+		labAssistants = assistants;
 	}
 
 	@Override
@@ -28,19 +31,9 @@ public class InventLongevityRitual extends ArsMagicaAction {
 	protected void doStuff() {
 		Magus subject = magus;
 		int labTotal = magus.getLabTotal(Arts.CREO, Arts.CORPUS);
-		if (customer != null) {
-			subject = customer;
-			labTotal = magus.getLabTotal(Arts.CREO, Arts.CORPUS, customer);
-			int numberOfAssistants = Math.max(1, magus.getLevelOf(Abilities.LEADERSHIP));
-			if (numberOfAssistants > 2 && magus.hasApprentice()) {
-				labTotal += magus.getApprentice().getIntelligence();
-				labTotal += magus.getApprentice().getLevelOf(Abilities.MAGIC_THEORY);
-				numberOfAssistants--;
-			}
-			if (numberOfAssistants > 2 && customer.hasApprentice()) {
-				labTotal += customer.getApprentice().getIntelligence();
-				labTotal += customer.getApprentice().getLevelOf(Abilities.MAGIC_THEORY);
-				numberOfAssistants--;
+		if (!labAssistants.isEmpty()) {
+			for (Magus assistant : labAssistants) {
+				labTotal += assistant.getLevelOf(Abilities.MAGIC_THEORY) + assistant.getIntelligence();
 			}
 		}
 		modifier = (int) Math.ceil(labTotal / 5.0);
@@ -48,13 +41,16 @@ public class InventLongevityRitual extends ArsMagicaAction {
 			for (Vis v : requirementsForRitual(subject))
 				subject.removeItem(v);
 			subject.setLongevityRitualEffect(modifier);
-			if (customer == null) 
+			if (customer == null)
 				magus.log("Invents a Longevity Ritual of potency " + modifier);
 			else {
-				magus.log("Invents a Longevity Ritual of potency " + modifier + " for " + customer);
-				customer.log("Receives Longevity Ritual of potency " + modifier + " from " + magus);
+				magus.log("Invents a Longevity Ritual of potency " + modifier
+						+ " for " + customer);
+				customer.log("Receives Longevity Ritual of potency " + modifier
+						+ " from " + magus);
 			}
-			magus.addXP(AMU.getPreferredXPGain(Arts.CREO, Arts.CORPUS, magus), 2);
+			magus.addXP(AMU.getPreferredXPGain(Arts.CREO, Arts.CORPUS, magus),
+					2);
 		} else {
 			modifier = 0;
 			magus.log("Insufficient vis for Longevity Ritual");
@@ -76,7 +72,8 @@ public class InventLongevityRitual extends ArsMagicaAction {
 		int pawnsSpent = 0;
 		int vim = 0, creo = 0, corpus = 0;
 		do {
-			if (vimPawns > 0 && vimPawns >= creoPawns && vimPawns >= corpusPawns) {
+			if (vimPawns > 0 && vimPawns >= creoPawns
+					&& vimPawns >= corpusPawns) {
 				vim++;
 				vimPawns--;
 				pawnsSpent++;
@@ -97,18 +94,22 @@ public class InventLongevityRitual extends ArsMagicaAction {
 			return retValue;
 		} while (pawnsRequired > pawnsSpent);
 
-		for (int i = 0; i < creo; i++) 
+		for (int i = 0; i < creo; i++)
 			retValue.add(new Vis(Arts.CREO));
-		for (int i = 0; i < corpus; i++) 
+		for (int i = 0; i < corpus; i++)
 			retValue.add(new Vis(Arts.CORPUS));
-		for (int i = 0; i < vim; i++) 
+		for (int i = 0; i < vim; i++)
 			retValue.add(new Vis(Arts.VIM));
 
 		return retValue;
 	}
-	
+
 	public String description() {
-		return "Invents +" + modifier + " longevity ritual for " + ((customer == actor || customer == null) ? "Self" : customer.toString());
+		return "Invents +"
+				+ modifier
+				+ " longevity ritual for "
+				+ ((customer == actor || customer == null) ? "Self" : customer
+						.toString());
 	}
-	
+
 }
