@@ -17,6 +17,9 @@ public class DistillVis extends ArsMagicaAction {
 		magus.log("Distills Vis in laboratory and produces " + visProduced + " pawns.");
 		if (magus.getSeasonsServiceOwed() > 0) {
 			isCovenantService = true;
+			if (magus.getCovenant() == null) {
+				System.out.println(magus.toString() + " has no covenant.");
+			}
 			for (int i = 0; i < visProduced; i++)
 				magus.getCovenant().addItem(new Vis(Arts.VIM));
 			magus.doSeasonsService();

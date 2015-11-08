@@ -98,7 +98,7 @@ public class Tribunal extends Location {
 			// sorts so that the Offers with lowest bids are first
 			@Override
 			public int compare(BarterOffer o1, BarterOffer o2) {
-				return (int)((o1.getBestBid() - o2.getBestBid()) * 1000.0);
+				return o1.getBestBid() > o2.getBestBid() ? 1 : (o1.getBestBid() == o2.getBestBid() ? 0 : -1);
 			}
 		});
 		return HopshackleUtilities.cloneList(marketOffers);

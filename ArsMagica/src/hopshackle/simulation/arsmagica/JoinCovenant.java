@@ -31,7 +31,7 @@ public class JoinCovenant extends ArsMagicaAction {
 		}
 		CovenantApplication preferredApplication = null;
 		int newCovenantScore = 0;
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 7; i++) {
 			Covenant candidate = covenants[Dice.roll(1, numberOfCovenants) -1];
 			CovenantApplication application = new CovenantApplication(candidate, magus);
 			if (application.isSuccessful() && application.getNetValueToApplicant() > newCovenantScore) {

@@ -91,7 +91,7 @@ public class RunSimulation {
 			founder.addXP(Abilities.LATIN, 75);
 			founder.addXP(Abilities.ARTES_LIBERALES, 30);
 			founder.addXP(Abilities.PARMA_MAGICA, 15);
-			founder.addXP(Abilities.MAGIC_THEORY, 15);
+			founder.addXP(Abilities.MAGIC_THEORY, 50);
 			for (int j = 0; j < 15; j++) {
 				founder.addXP(Arts.random(), 25);
 			}
@@ -277,7 +277,7 @@ public class RunSimulation {
 					hedgeWizard.addXP(Abilities.LATIN, 50);
 					hedgeWizard.addXP(Abilities.ARTES_LIBERALES, 30);
 					hedgeWizard.addXP(Abilities.PARMA_MAGICA, 5);
-					hedgeWizard.addXP(Abilities.MAGIC_THEORY, 5);
+					hedgeWizard.addXP(Abilities.MAGIC_THEORY,30);
 					hedgeWizard.log("Is inducted into the Order of Hermes by "
 							+ sponsor);
 					hedgeWizard.setHermeticHouse(sponsor);

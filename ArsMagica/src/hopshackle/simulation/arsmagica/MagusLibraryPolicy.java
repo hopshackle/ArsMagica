@@ -17,7 +17,7 @@ public class MagusLibraryPolicy {
 			// may be able to donate books to library as service
 			List<Book> library = magus.getInventoryOf(AMU.sampleBook);
 			Covenant covenant = magus.getCovenant();
-			if (!covenant.isLibraryFull()) {
+			if (covenant != null && !covenant.isLibraryFull()) {
 				// only if there is space in the library
 				List<Book> donation = new ArrayList<Book>();
 				int totalValue = 0;
@@ -91,6 +91,7 @@ public class MagusLibraryPolicy {
 
 				double value = 0.0;
 				double discountFactor = 1.0;
+				double surplus = Math.max(0, vis.size() - 10);
 				if (bo.getItem() instanceof Book) {
 					Book b = (Book) bo.getItem();
 					if (b instanceof Summa) {
@@ -127,22 +128,24 @@ public class MagusLibraryPolicy {
 					}
 					discountFactor = Math.sqrt(1.0 - b.getDeterioration());
 				} else if (bo.getItem() instanceof LongevityRitualService) {
-					if (magus.getNumberInInventoryOf(AMU.sampleLongevityRitualService) > 0)
-						continue;
-		//			if (!InventLongevityRitual.hasSufficientVis(magus)) \\ Removed as the vis is not needed *now*
-		//				continue;
+					int currentLongevityValue = magus.getLabTotal(Arts.CREO, Arts.CORPUS);
+					for (Artefact a : magus.getInventoryOf(AMU.sampleLongevityRitualService)) {
+						LongevityRitualService lrs = (LongevityRitualService) a;
+						int thisValue = lrs.getLabTotal();
+						if (thisValue > currentLongevityValue) currentLongevityValue = thisValue;
+					}
 					LongevityRitualService longevity = (LongevityRitualService) bo.getItem();
-					value = longevity.getLabTotal() + magus.getLevelOf(Abilities.MAGIC_THEORY) + magus.getIntelligence() - magus.getLabTotal(Arts.CREO, Arts.CORPUS);
-					// so about 5 pawns of vis per point of additional ritual
-					if (value < 0.3)
+					value = 2.0 * (longevity.getLabTotal() - currentLongevityValue);
+					// so about 10 pawns of vis per point of additional ritual
+					if (value < 0.3 || longevity.getMagicTheory() <= (magus.getAge() / 10) + 1)
 						value = 0.0;	// but set a limit given waste of season
 				} else if (bo.getItem() instanceof Vis) {
 					Arts visType = ((Vis)bo.getItem()).getType();
 					double amount = bo.getNumber();
 					value = MagusPreferences.getResearchPreference(magus, visType) * amount;
+					surplus = 0.0;
 				}
 				value *= discountFactor;
-				double surplus = Math.max(0, vis.size() - 10);
 				value *= (2.0 - Math.exp(-surplus / 30.0));		// if we have lots of Vis, then we can spend it like water.
 				// 0-10 pawns means no change to value
 				// 15 pawns *= 1.15
@@ -176,7 +179,7 @@ public class MagusLibraryPolicy {
 			do {
 				double lotSize = Math.min(5.0, pawnsToSell);
 				pawnsToSell -= lotSize;
-				BarterOffer lot = new BarterOffer(magus, new Vis(currentType), lotSize, pref * lotSize * 1.10, new VisValuationFunction(magus));
+				BarterOffer lot = new BarterOffer(magus, new Vis(currentType), lotSize, pref * lotSize * 1.01, new VisValuationFunction(magus));
 				magus.getTribunal().addToMarket(lot);
 			} while (pawnsToSell > 0);
 		}

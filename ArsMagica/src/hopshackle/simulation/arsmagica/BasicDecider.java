@@ -76,8 +76,11 @@ public class BasicDecider extends BaseDecider {
 		}
 
 		if (option == MagusActions.LONGEVITY_RITUAL) 
-			retValue = (magus.getLabTotal(Arts.CREO, Arts.CORPUS) / 5.0 - magus.getLongevityRitualEffect()) * 0.20;
+			if (magus.getInventoryOf(AMU.sampleLongevityRitualService).isEmpty() && magus.getLevelOf(Abilities.MAGIC_THEORY) >= magus.getAge() / 10 + 1)
+				retValue = (magus.getLabTotal(Arts.CREO, Arts.CORPUS) / 5.0 - magus.getLongevityRitualEffect()) * 0.20;
+			else retValue = 0.0;
 		// 0.20 per additional point of ritual
+		// if we have a LRS in stock, then use this (ALWAYS at least as good as a solo effort)
 
 		if (option == MagusActions.INVENT_SPELL) {
 			if (magus.isResearchingSpell()) 
@@ -150,6 +153,7 @@ public class BasicDecider extends BaseDecider {
 			retValue = 0.30 + Math.max(0.004 * (Math.min(50, 100 - magus.getAge())), 0.0);
 			if (magus.getCovenant() != null) {
 				retValue -= Math.max(0.05, magus.getCovenant().getBuildPoints() * 0.01);
+				retValue -= Math.min(0.05, CovenantApplication.getSocialModifier(magus, magus.getCovenant()) * 0.1);
 			} else {
 				retValue -= Math.pow(magus.getMagicAura(), 2) * 0.1;
 			}

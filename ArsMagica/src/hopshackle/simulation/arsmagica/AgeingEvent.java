@@ -11,6 +11,15 @@ public class AgeingEvent {
 	}
 
 	public void ageOneYear() {
+		
+		// firstly, it no longevity ritual cast, and one is known, then use it
+		if (magus.getLongevityRitualEffect() == 0 && magus.getKnownLongevityEffect() > 0 && InventLongevityRitual.hasSufficientVis(magus)) {
+			magus.log("Recasts Longevity ritual");
+			magus.setLongevityRitualEffect(magus.getKnownLongevityEffect());
+			for (Vis v : InventLongevityRitual.requirementsForRitual(magus))
+				magus.removeItem(v);
+		}
+		
 		int ageingResult = Dice.stressDieResult() - magus.getLongevityModifier();
 		
 		if (magus.getLongevityRitualEffect() > 0)

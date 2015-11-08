@@ -29,7 +29,8 @@ public class InventLongevityRitual extends ArsMagicaAction {
 
 	@Override
 	protected void doStuff() {
-		Magus subject = magus;
+		Magus subject = customer;
+		if (subject == null) subject = magus;
 		int labTotal = magus.getLabTotal(Arts.CREO, Arts.CORPUS);
 		if (!labAssistants.isEmpty()) {
 			for (Magus assistant : labAssistants) {
@@ -41,6 +42,7 @@ public class InventLongevityRitual extends ArsMagicaAction {
 			for (Vis v : requirementsForRitual(subject))
 				subject.removeItem(v);
 			subject.setLongevityRitualEffect(modifier);
+			subject.setKnownLongevityEffect(Math.max(subject.getKnownLongevityEffect(), modifier));
 			if (customer == null)
 				magus.log("Invents a Longevity Ritual of potency " + modifier);
 			else {

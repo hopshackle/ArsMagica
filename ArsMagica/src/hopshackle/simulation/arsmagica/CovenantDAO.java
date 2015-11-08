@@ -23,19 +23,20 @@ public class CovenantDAO implements AgentDAO<Covenant> {
 				" service INT		NOT NULL," +
 				" buildPoints	INT	NOT NULL, " +
 				" libraryM	FLOAT NOT NULL, " +
-				" labTextM	FLOAT NOT NULL" +
+				" labTextM	FLOAT NOT NULL, " +
+				" capacity INT	NOT NULL" +
 				");";
 	}
 
 	@Override
 	public String getTableUpdateSQL(String tableSuffix) {
 		return "INSERT INTO Covenants_" + tableSuffix + 
-				" (id,  name, tribunal, founder, founded, currentYear, aura, magi, books, annualVis, wealth, grogs, mundane, service, buildPoints, libraryM, labTextM) VALUES";
+				" (id,  name, tribunal, founder, founded, currentYear, aura, magi, books, annualVis, wealth, grogs, mundane, service, buildPoints, libraryM, labTextM, capacity) VALUES";
 	}
 
 	@Override
 	public String getValuesForAgent(Covenant covenant) {
-		return String.format(" (%d, '%s', '%s', %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %.2f, %.2f) ",  
+		return String.format(" (%d, '%s', '%s', %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %.2f, %.2f, %d) ",  
 				covenant.getUniqueID(),
 				covenant.getName(),
 				covenant.getTribunal().toString(),
@@ -52,7 +53,8 @@ public class CovenantDAO implements AgentDAO<Covenant> {
 				covenant.getServiceLevel(),
 				covenant.getBuildPoints(),
 				covenant.getNeedForLibraryMaintenance(),
-				covenant.getNeedForLabTextMaintenance()
+				covenant.getNeedForLabTextMaintenance(),
+				covenant.getCapacity()
 				);
 	}
 

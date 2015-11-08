@@ -26,7 +26,7 @@ public class Magus extends Agent implements Persistent {
 	private CopyBook currentCopyProject;
 	private int apparentAge = 35;
 	private int seasonsTraining = 0;
-	private int longevityRitual = 0;
+	private int longevityRitual = 0, knownLongevityRitual = 0;
 	private int seasonsInTwilight = 0;
 	private int[] twilightScars = new int[2];
 	private Covenant covenant;
@@ -214,7 +214,7 @@ public class Magus extends Agent implements Persistent {
 				new SocialMeeting(both, 2, 2);
 			}
 		}
-	
+
 
 		// Apprentice graduates if 15 years have elapsed
 		if (hasApprentice() && apprentice.getYearsSinceStartOfApprenticeship() >= 15 && apprentice.seasonsTraining >= 15) {
@@ -263,6 +263,11 @@ public class Magus extends Agent implements Persistent {
 
 		if (covenant != null)
 			setCovenant(null);
+
+		for (Magus m : relationships.keySet()) {
+			if (!m.isDead()) m.setRelationship(this, Relationship.NONE);
+			// reset relationships of all friends / enemies
+		}
 
 		String logFileName = toString() + " (" + (getBirth()/52) + " - " + death / 52 + ")";
 		logger.rename(logFileName);
@@ -634,6 +639,8 @@ public class Magus extends Agent implements Persistent {
 		Map<Learnable, Double> options = new HashMap<Learnable, Double>();
 		Map<Learnable, Book> bestBook = new HashMap<Learnable, Book>();
 
+		int magicTheory = getLevelOf(Abilities.MAGIC_THEORY);
+		boolean magicTheoryBoost = magicTheory <= (getAge() / 10) + 1 && magicTheory >= (getAge() / 10) - 2; 
 		for (Book book : library) {
 			if (book instanceof LabText) continue;
 			Learnable subject = book.getSubject();
@@ -643,6 +650,8 @@ public class Magus extends Agent implements Persistent {
 			double bookValue = book.getXPGainForMagus(this) / (getTotalXPIn(book.getSubject()) + 10.0);
 			if (book instanceof Summa)
 				bookValue *= 1.3;	// give preference to Summa over Tractatus
+			if (subject == Abilities.MAGIC_THEORY && magicTheoryBoost)
+				bookValue *= 5;	// to try and make Magic Theory keep up with age for longevity rituals
 			if (bookValue >  bestScore) {
 				options.put(subject, bookValue);
 				bestBook.put(subject, book);
@@ -754,6 +763,12 @@ public class Magus extends Agent implements Persistent {
 	}
 	public int getLongevityRitualEffect() {
 		return longevityRitual;
+	}
+	public void setKnownLongevityEffect(int modifier) {
+		knownLongevityRitual = modifier;
+	}
+	public int getKnownLongevityEffect() {
+		return knownLongevityRitual;
 	}
 
 	public void addTimeInTwilight(int seasons) {
@@ -1028,8 +1043,13 @@ public class Magus extends Agent implements Persistent {
 		return Relationship.NONE;
 	}
 	public void setRelationship(Magus m, Relationship r) {
-		log("Becomes " + r.name() + " of " + m.toString());
-		relationships.put(m, r);
+		if (r == Relationship.NONE) {
+			log ("Ceases to be " + getRelationshipWith(m) + " of " + m.toString());	
+			relationships.remove(m);
+		} else {
+			log("Becomes " + r.name() + " of " + m.toString());
+			relationships.put(m, r);
+		}
 	}
 	public Map<Magus, Relationship> getRelationships() {
 		return relationships;

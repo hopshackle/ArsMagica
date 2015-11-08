@@ -7,24 +7,24 @@ import java.util.List;
 import hopshackle.simulation.*;
 
 public class LongevityRitualService extends ArsMagicaItem implements ArtefactRequiringMaintenance {
-/*
- * Could amend this to be a general agreement between two Magi to assist each other.
- * The customer is the end-recipient, and responsible for triggering the service. However we leave
- * it open as to whether the customer or other Magus acts as the prime researcher - it will be whichever gives the 
- * best lab total.
- * Then we still use this for the override. This does not however provide a mechanism for multiple Magi to 
- * assist...but that is solved by amending the other Magus to be a list of other Magi! Namely, all the friends of the
- * customer.
- * Then when triggered, we determine how many Lab Assistants can be used - and the lead research Magus.
- * 
- * Or - we leave as is, and compile list of friend on the fly - yup. That's clearly better. This means:
- *  - we need to have a lrs between each pair of friends
- *  - this needs to be non-inheritable. In fact; easier to make lrs just generically non-inheritable!
- *  - lab assistants then worked out on the fly
- * 
- * At a future point we can add in a quid pro quo - being a general LabAssitant service that can be generically triggered
- * - possibly in the same way, which would require a bit of advance planning.
- */
+	/*
+	 * Could amend this to be a general agreement between two Magi to assist each other.
+	 * The customer is the end-recipient, and responsible for triggering the service. However we leave
+	 * it open as to whether the customer or other Magus acts as the prime researcher - it will be whichever gives the 
+	 * best lab total.
+	 * Then we still use this for the override. This does not however provide a mechanism for multiple Magi to 
+	 * assist...but that is solved by amending the other Magus to be a list of other Magi! Namely, all the friends of the
+	 * customer.
+	 * Then when triggered, we determine how many Lab Assistants can be used - and the lead research Magus.
+	 * 
+	 * Or - we leave as is, and compile list of friend on the fly - yup. That's clearly better. This means:
+	 *  - we need to have a lrs between each pair of friends
+	 *  - this needs to be non-inheritable. In fact; easier to make lrs just generically non-inheritable!
+	 *  - lab assistants then worked out on the fly
+	 * 
+	 * At a future point we can add in a quid pro quo - being a general LabAssitant service that can be generically triggered
+	 * - possibly in the same way, which would require a bit of advance planning.
+	 */
 	private Magus CrCoSpecialist;
 	private Magus customer;
 	boolean hasBeenPurchased = false;
@@ -39,13 +39,28 @@ public class LongevityRitualService extends ArsMagicaItem implements ArtefactReq
 		return Math.max(getLTSpec(), getLTCust());
 	}
 	private int getLTSpec() {
-		return CrCoSpecialist.getLabTotal(Arts.CREO, Arts.CORPUS, null) + customer.getLevelOf(Abilities.MAGIC_THEORY) + customer.getIntelligence();
+		if (CrCoSpecialist != null)
+			return CrCoSpecialist.getLabTotal(Arts.CREO, Arts.CORPUS, customer);
+		else
+			return 0;
 	}
 	private int getLTCust() {
-		return customer.getLabTotal(Arts.CREO, Arts.CORPUS, null) + CrCoSpecialist.getLevelOf(Abilities.MAGIC_THEORY) + CrCoSpecialist.getIntelligence();
+		if (customer != null && customer.getLevelOf(Abilities.MAGIC_THEORY) >= customer.getAge() / 10 + 1)
+			return customer.getLabTotal(Arts.CREO, Arts.CORPUS, CrCoSpecialist);
+		else return 0;
 
 	}
-	
+
+	private boolean insufficientMT() {
+		if (customer == null) {
+			return false;
+		} else {
+			int requiredLevel = (customer.getAge() / 10) + 1;
+			return (customer.getLevelOf(Abilities.MAGIC_THEORY) < requiredLevel && 
+					CrCoSpecialist.getLevelOf(Abilities.MAGIC_THEORY) < requiredLevel);
+		}
+	}
+
 	@Override
 	public void artefactMaintenance(Agent purchaser) {
 		if (!hasBeenPurchased) {
@@ -54,12 +69,15 @@ public class LongevityRitualService extends ArsMagicaItem implements ArtefactReq
 				CrCoSpecialist.setLongevityAvailability(true);
 		}
 		if (!(purchaser instanceof Magus) || purchaser == CrCoSpecialist || (customer != null && purchaser != customer)) {
-			// shouldn't now be inheritable...but just in case
 			purchaser.removeItem(this);
 			deleteThis();
 			return;
 		}
 		customer = (Magus) purchaser; 
+		if (insufficientMT()) {
+			deleteThis();
+			return;
+		}
 		List<Artefact> allContracts = customer.getInventoryOf(AMU.sampleLongevityRitualService);
 		LongevityRitualService ritual = null;
 		int highest = 0;
@@ -77,11 +95,11 @@ public class LongevityRitualService extends ArsMagicaItem implements ArtefactReq
 		} else if (customer.getLongevityRitualEffect() < Math.ceil(getLabTotal() / 5.0) 
 				&& InventLongevityRitual.hasSufficientVis(customer) && !CrCoSpecialist.isInTwilight()) {
 			// i.e. only use the contract if it will be of benefit and you have the vis
-			
+
 			Action lastAction = customer.getExecutedActions().get(customer.getExecutedActions().size() - 1);
 			if (lastAction instanceof LabAssistant)	// bit of a hack. Magi only act as Lab Assistant on Longevity rituals
 				return;								// Hence this indicates they will receive a longevity ritual as soon as the 
-													// specialist takes their action.
+			// specialist takes their action.
 			Action n = CrCoSpecialist.getNextAction();
 			if (n instanceof LabAssistant || n instanceof InventLongevityRitual)
 				return;	// these two take priority
@@ -104,7 +122,7 @@ public class LongevityRitualService extends ArsMagicaItem implements ArtefactReq
 			for (int a = 0; a < numberOfAssistants && a < labAssistants.size(); a++) {
 				Magus otherAssistant = labAssistants.get(a);
 				customer.log("Obtains assistance of " + otherAssistant + " for Longevity Ritual.");
-				LabAssistant assistanceAction = new LabAssistant(otherAssistant, CrCoSpecialist);
+				LabAssistant assistanceAction = new LabAssistant(otherAssistant, primeMagus);
 				otherAssistant.setActionOverride(assistanceAction);
 				assistantsUsed.add(otherAssistant);
 			}
@@ -123,9 +141,9 @@ public class LongevityRitualService extends ArsMagicaItem implements ArtefactReq
 		if (customer.getApprentice() != null) allAssistants.add(customer.getApprentice());
 		if (CrCoSpecialist.getApprentice() != null) allAssistants.add(CrCoSpecialist.getApprentice());
 		for (Magus r : customer.getRelationships().keySet()) {
-			if (customer.getRelationshipWith(r) == Relationship.FRIEND) {
+			if (customer.getRelationshipWith(r) == Relationship.FRIEND && !r.isInTwilight()) {
 				Action n = r.getNextAction();
-				if (n instanceof LabAssistant || n instanceof InventLongevityRitual) {
+				if (n instanceof LabAssistant || n instanceof InventLongevityRitual || customer.getApprentice() == r) {
 					// these two take priority
 				} else {
 					allAssistants.add(r);
@@ -160,5 +178,9 @@ public class LongevityRitualService extends ArsMagicaItem implements ArtefactReq
 	public boolean isInheritable() {
 		return false;
 	}
-	
+
+	public int getMagicTheory() {
+		return CrCoSpecialist.getLevelOf(Abilities.MAGIC_THEORY);
+	}
+
 }

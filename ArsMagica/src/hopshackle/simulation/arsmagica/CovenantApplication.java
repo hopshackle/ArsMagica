@@ -11,7 +11,7 @@ public class CovenantApplication {
 	private int seasonsService;
 	private double modifiedRoll, negativeValue;
 	private List<Artefact> joiningFee = new ArrayList<Artefact>();
-	
+
 	public CovenantApplication(Covenant covenant, Magus applicant) {
 		this(covenant, applicant, -99);
 	}
@@ -20,6 +20,7 @@ public class CovenantApplication {
 		this.applicant = applicant;
 		if (applicant.getCovenant() != null) {
 			negativeValue = applicant.getCovenant().getBuildPoints();
+			negativeValue += getSocialModifier(applicant, applicant.getCovenant()) * 10;
 		} else {
 			for (int i = 1; i <= applicant.getMagicAura(); i++)
 				negativeValue += i * 10;
@@ -29,13 +30,22 @@ public class CovenantApplication {
 			baseRoll = rollOverride;
 
 		int size = covenant.getCurrentSize();
-		modifiedRoll = baseRoll + applicant.getIntelligence() + applicant.getPresence() + applicant.getLevelOf(Abilities.MAGIC_THEORY) + applicant.getLevelOf(Abilities.CHARM);
+		modifiedRoll = baseRoll + applicant.getIntelligence() + applicant.getPresence() + applicant.getLevelOf(Abilities.CHARM);
 		modifiedRoll -= size;
-		modifiedRoll -= Math.max(size - covenant.getLevelOf(CovenantAttributes.WEALTH) * 2, 0);	// if not currently able to support all members in comfort
-		for (Agent m : covenant.getCurrentMembership()) {
-			if (applicant.getParens() == m) 
-				modifiedRoll += 6;
+		int availableCapacity = covenant.getCapacity() - size;
+		if (availableCapacity < 0) modifiedRoll -= 100;
+		switch (availableCapacity) {
+		case 0: modifiedRoll -= 100;
+		case 1: modifiedRoll -= 3;
+		case 2: modifiedRoll -= 2;
+		case 3: modifiedRoll -= 1;
+		case 4: modifiedRoll -= 1;
+		default:
 		}
+		modifiedRoll -= Math.max(size - covenant.getLevelOf(CovenantAttributes.WEALTH) * 2, 0);	// if not currently able to support all members in comfort
+
+		modifiedRoll += getSocialModifier(applicant, covenant);
+
 		if (covenant.getBuildPoints() < size * 50) {
 			modifiedRoll -= (size * 50 - covenant.getBuildPoints()) / 25.0;
 		}
@@ -73,12 +83,22 @@ public class CovenantApplication {
 				modifiedRoll = 9;
 			}
 		}
-		
+
 		if (modifiedRoll < 9 && modifiedRoll > 6) {
 			// can then use seasons service owed to get in
 			seasonsService = (int) ((9 - modifiedRoll) * 4);
 			modifiedRoll = 9;
 		}
+	}
+
+	public static int getSocialModifier(Magus applicant, Covenant covenant) {
+		int retValue = 0;
+		for (Agent m : covenant.getCurrentMembership()) {
+			retValue -= 5;
+			retValue += SocialMeeting.relationshipModifier(applicant, (Magus) m);
+			if (applicant.getParens() == m) retValue += 10; // was apprentice at this covenant
+		}
+		return retValue / 5;
 	}
 
 

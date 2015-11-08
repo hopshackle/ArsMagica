@@ -8,6 +8,7 @@ import java.util.*;
 public class Covenant extends Organisation<Magus> {
 
 	private int magicAura;
+	private int capacity;
 	private static String baseDir = SimProperties.getProperty("BaseDirectory", "C:\\Simulations");
 	private static Name covenantNamer = new Name(new File(baseDir + File.separator + "CovenantNames.txt"));
 	private static AgentWriter<Covenant> covenantWriter = new AgentWriter<Covenant>(new CovenantDAO());
@@ -35,8 +36,12 @@ public class Covenant extends Organisation<Magus> {
 		covenantAttributes = new HashMap<CovenantAttributes, Ability>();
 	}
 
-	public void setAura(int aura) {magicAura = aura;}
+	public void setAura(int aura) {
+		magicAura = aura;
+		capacity = Math.max(3 + (Dice.stressDieResult() + Dice.stressDieResult()) / 2 - aura, 1);
+	}
 	public int getAura() {return magicAura;}
+	public int getCapacity() {return capacity;}
 	public CovenantAgent getCovenantAgent() {return covenantAgent;}
 
 	public void addItem(Artefact newItem) {
@@ -159,7 +164,7 @@ public class Covenant extends Organisation<Magus> {
 	private void logStatus() {
 		log("");
 		log("Aura: " + getAura());
-		log("All members: ");
+		log("All members: (" + getCurrentSize() + " of " + getCapacity() + ")");
 		for (Agent member : getCurrentMembership()) {
 			String message = "\t\t" + member.toString() + "\tAge: " + member.getAge();
 			if (((Magus)member).isInTwilight()) 
@@ -357,7 +362,6 @@ public class Covenant extends Organisation<Magus> {
 			// set a baseline of Q8
 			// int baselineSeasons = (int) Math.ceil(l.getXPForLevel(level) / 8.0);
 			// retValue += (baselineSeasons - seasonsToCompleteStudy);
-			double quality = (l.getXPForLevel(level) / (double)seasonsToCompleteStudy);
 			int multiplier = 1;
 			if (l instanceof Abilities) multiplier = 3;
 			retValue += level * level * multiplier * multiplier / 5 - seasonsToCompleteStudy;
