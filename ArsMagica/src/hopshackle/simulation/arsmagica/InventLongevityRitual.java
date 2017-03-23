@@ -2,21 +2,19 @@ package hopshackle.simulation.arsmagica;
 
 import java.util.*;
 
-import hopshackle.simulation.*;
-
 public class InventLongevityRitual extends ArsMagicaAction {
 
 	private Magus customer;
 	private int modifier;
 	private List<Magus> labAssistants = new ArrayList<Magus>();
 
-	public InventLongevityRitual(Agent a) {
-		super(a);
+	public InventLongevityRitual(Magus a) {
+		super(MagusActions.LONGEVITY_RITUAL, a);
 	}
 
 	public InventLongevityRitual(Magus crCoSpecialist, Magus customer, List<Magus> assistants) {
 		// when one Magus invents a ritual for another
-		super(crCoSpecialist);
+		super(MagusActions.LONGEVITY_RITUAL, crCoSpecialist);
 		if (crCoSpecialist != customer)
 			this.customer = customer;
 		labAssistants = assistants;

@@ -20,11 +20,9 @@ public abstract class Book extends ArsMagicaItem implements ArtefactRequiringMai
 	private int seasonsRead;
 	private static AtomicInteger idFountain = new AtomicInteger(0);
 	private static AtomicInteger titleIdFountain = new AtomicInteger(0);
-	private static AgentWriter<Book> bookWriter = new AgentWriter<Book>(new BookDAO());
+	private static DatabaseWriter<Book> bookWriter = new DatabaseWriter<Book>(new BookDAO());
 	private World world;
 	private String lastOwner;
-
-	static {bookWriter.setBufferLimit(100);}
 	
 	public Book(Book copyOf) {
 		level = copyOf.level;

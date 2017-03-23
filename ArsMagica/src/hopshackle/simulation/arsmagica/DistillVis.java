@@ -1,14 +1,12 @@
 package hopshackle.simulation.arsmagica;
 
-import hopshackle.simulation.Agent;
-
 public class DistillVis extends ArsMagicaAction {
 
 	private boolean isCovenantService;
 	private int visProduced;
 	
-	public DistillVis(Agent a) {
-		super(a);
+	public DistillVis(Magus a) {
+		super(MagusActions.DISTILL_VIS, a);
 	}
 
 	protected void doStuff() {

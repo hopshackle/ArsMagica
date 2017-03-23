@@ -4,23 +4,17 @@ import java.util.*;
 
 import hopshackle.simulation.*;
 
-public class BasicDecider extends BaseDecider {
+public class BasicDecider extends BaseDecider<Magus> {
 
 	private Map<Long, Integer> recentApplications;
 
-	public BasicDecider(ArrayList<? extends ActionEnum> actions,
-			ArrayList<GeneticVariable> variables) {
-		super(actions, variables);
+	public BasicDecider() {
+		super(new LinearStateFactory<Magus>(new ArrayList<GeneticVariable<Magus>>()));
 		recentApplications = new HashMap<Long, Integer>();
 	}
 
-	public BasicDecider() {
-		this(new ArrayList<ActionEnum>(EnumSet.allOf(MagusActions.class)), null);
-	}
-
 	@Override
-	public double valueOption(ActionEnum option, Agent decidingAgent, Agent contextAgent) {
-		Magus magus = (Magus) decidingAgent;
+	public double valueOption(ActionEnum<Magus> option, Magus magus) {
 		Covenant covenant = magus.getCovenant();
 		double retValue = 0.0;
 
@@ -211,5 +205,10 @@ public class BasicDecider extends BaseDecider {
 
 	public void registerApplication(Agent applicant, int year) {
 		recentApplications.put(applicant.getUniqueID(), year);
+	}
+
+	@Override
+	public void learnFrom(ExperienceRecord<Magus> exp, double maxResult) {
+
 	}
 }

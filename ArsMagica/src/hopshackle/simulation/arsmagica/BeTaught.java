@@ -1,11 +1,9 @@
 package hopshackle.simulation.arsmagica;
 
-import hopshackle.simulation.Agent;
-
 public class BeTaught extends ArsMagicaAction {
 
-	public BeTaught(Agent magus) {
-		super(magus);
+	public BeTaught(Magus magus) {
+		super(MagusActions.BE_TAUGHT, magus);
 	}
 	
 	protected void doStuff() {

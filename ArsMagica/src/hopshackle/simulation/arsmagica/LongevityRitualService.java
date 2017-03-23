@@ -113,6 +113,8 @@ public class LongevityRitualService extends ArsMagicaItem implements ArtefactReq
 				assistant = CrCoSpecialist;
 			}
 
+			// TODO: Chunk of old code below needs to be rewritten with new action plan system
+			/*
 			LabAssistant assistAction = new LabAssistant(assistant, primeMagus);
 			assistant.setActionOverride(assistAction);
 			int numberOfAssistants = Math.max(1, primeMagus.getLevelOf(Abilities.LEADERSHIP));
@@ -130,6 +132,8 @@ public class LongevityRitualService extends ArsMagicaItem implements ArtefactReq
 			primeMagus.setActionOverride(action);
 			if (CrCoSpecialist.getRelationshipWith(customer) != Relationship.FRIEND)
 				deleteThis();
+				*/
+			
 		}
 		else {
 			// leave to use for later...can even be inherited

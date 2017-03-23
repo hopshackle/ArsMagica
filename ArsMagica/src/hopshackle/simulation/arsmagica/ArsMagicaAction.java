@@ -2,18 +2,17 @@ package hopshackle.simulation.arsmagica;
 
 import hopshackle.simulation.*;
 
-public class ArsMagicaAction extends Action implements Persistent {
+public class ArsMagicaAction extends Action<Magus> implements Persistent {
 	
-	private static AgentWriter<ArsMagicaAction> actionWriter = new AgentWriter<ArsMagicaAction>(new ActionDAO());
-	static {actionWriter.setBufferLimit(100);}
+	private static DatabaseWriter<ArsMagicaAction> actionWriter = new DatabaseWriter<ArsMagicaAction>(new ActionDAO());
 	
 	protected Magus magus;
 
-	public ArsMagicaAction(Agent a) {
-		this(a, 1);
+	public ArsMagicaAction(ActionEnum<Magus> type, Magus a) {
+		this(type, a, 1);
 	}
-	public ArsMagicaAction(Agent a, int seasons) {
-		super(a, 13 * seasons, false);
+	public ArsMagicaAction(ActionEnum<Magus> type, Magus a, int seasons) {
+		super(type, a, 13 * seasons, false);
 		magus = (Magus) a;
 	}
 	public String description() {
@@ -29,17 +28,16 @@ public class ArsMagicaAction extends Action implements Persistent {
 			super.doNextDecision();		// make own decision unless in Twilight
 		
 		if (magus.hasApprentice()) {
-			Agent apprentice = magus.getApprentice();
+			Magus apprentice = magus.getApprentice();
 			// and now decide how that impacts the apprentice
 			ArsMagicaAction nextAction = (ArsMagicaAction) magus.getNextAction();
 			if (nextAction != null && nextAction.requiresApprentice()) {
-				Action nextApprenticeAction = null;
+				Action<Magus> nextApprenticeAction = null;
 				if (nextAction instanceof TeachApprentice)
 					nextApprenticeAction = new BeTaught(apprentice);
 				else 
 					nextApprenticeAction = new LabAssistant(apprentice, magus);
-				
-				apprentice.setActionOverride(nextApprenticeAction);
+				// TODO: Need to rework how we co-ordinate between Parens and Apprentice from scratch
 			} else {
 	//			apprentice.addAction(apprentice.decide());
 			}

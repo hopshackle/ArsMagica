@@ -8,8 +8,8 @@ public class StudyFromVis extends ArsMagicaAction {
 	private int overrideDieRoll, overrideBotchLevel;
 	private boolean override = false;
 	
-	public StudyFromVis(Agent a, Arts visType) {
-		super(a);
+	public StudyFromVis(Magus a, Arts visType) {
+		super(MagusActions.STUDY_VIS, a);
 		this.visType = visType;
 	}
 	

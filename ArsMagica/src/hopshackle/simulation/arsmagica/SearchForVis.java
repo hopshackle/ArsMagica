@@ -10,8 +10,8 @@ public class SearchForVis extends ArsMagicaAction {
 	private boolean isCovenantService;
 	private VisSource visSource;
 
-	public SearchForVis(Agent a) {
-		super(a);
+	public SearchForVis(Magus a) {
+		super(MagusActions.SEARCH_VIS, a);
 	}
 
 	public void setResultAsVisSource(boolean findSource) {

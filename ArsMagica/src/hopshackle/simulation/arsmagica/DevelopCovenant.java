@@ -9,7 +9,7 @@ public class DevelopCovenant extends ArsMagicaAction {
 	private CovenantAttributes attributeToRaise;
 	
 	public DevelopCovenant(Magus magus) {
-		super(magus);
+		super(MagusActions.DEVELOP_COVENANT, magus);
 	}
 
 	@Override

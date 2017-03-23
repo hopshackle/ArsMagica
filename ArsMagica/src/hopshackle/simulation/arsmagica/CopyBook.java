@@ -7,7 +7,7 @@ public class CopyBook extends ArsMagicaAction {
 	private boolean isCovenantService;
 
 	public CopyBook(Magus magus) {
-		super(magus);
+		super(MagusActions.COPY_BOOK, magus);
 		if (magus.isApprentice())
 			bookToCopy = magus.getBestBookToCopy();
 		else 
@@ -18,7 +18,7 @@ public class CopyBook extends ArsMagicaAction {
 	}
 
 	public CopyBook(CopyBook project) {
-		super(project.getActor());
+		super(MagusActions.COPY_BOOK, project.getActor());
 		this.pointsSoFar = project.pointsSoFar;
 		this.bookToCopy = project.bookToCopy;
 		if (bookToCopy.getCurrentReader() == null)

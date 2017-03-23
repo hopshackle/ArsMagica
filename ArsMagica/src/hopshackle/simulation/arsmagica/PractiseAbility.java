@@ -1,13 +1,11 @@
 package hopshackle.simulation.arsmagica;
 
-import hopshackle.simulation.*;
-
 public class PractiseAbility extends ArsMagicaAction {
 	
 	private Abilities abilityToPractise;
 	
-	public PractiseAbility(Agent a, Abilities ability) {
-		super(a);
+	public PractiseAbility(Magus a, Abilities ability) {
+		super(MagusActions.PRACTISE_ABILITY, a);
 		abilityToPractise = ability;
 	}
 	

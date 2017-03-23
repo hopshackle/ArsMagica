@@ -1,9 +1,8 @@
 package hopshackle.simulation.arsmagica;
 
-import hopshackle.simulation.AgentDAO;
-import hopshackle.simulation.World;
+import hopshackle.simulation.*;
 
-public class ActionDAO implements AgentDAO<ArsMagicaAction> {
+public class ActionDAO implements DAO<ArsMagicaAction> {
 
 	@Override
 	public String getTableCreationSQL(String tableSuffix) {
@@ -27,7 +26,7 @@ public class ActionDAO implements AgentDAO<ArsMagicaAction> {
 	}
 
 	@Override
-	public String getValuesForAgent(ArsMagicaAction action) {
+	public String getValues(ArsMagicaAction action) {
 		World w = action.getWorld();
 		Magus m = (Magus) action.getActor();
 		return String.format(" (%d, %d, %d, '%s', '%s', %d, %d, %b, %b) ",  

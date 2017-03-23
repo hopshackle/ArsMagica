@@ -6,8 +6,8 @@ public class SearchForApprentice extends ArsMagicaAction {
 	
 	private Magus apprentice;
 
-	public SearchForApprentice(Agent a) {
-		super(a);
+	public SearchForApprentice(Magus a) {
+		super(MagusActions.SEARCH_APPRENTICE, a);
 	}
 
 	@Override

@@ -1,13 +1,11 @@
 package hopshackle.simulation.arsmagica;
 
-import hopshackle.simulation.Agent;
-
 public class LabAssistant extends ArsMagicaAction {
 
-	private Agent researcher;
+	private Magus researcher;
 	
-	public LabAssistant(Agent assistant, Agent researcher) {
-		super(assistant);
+	public LabAssistant(Magus assistant, Magus researcher) {
+		super(MagusActions.LAB_ASSISTANT, assistant);
 		this.researcher = researcher;
 	}
 	

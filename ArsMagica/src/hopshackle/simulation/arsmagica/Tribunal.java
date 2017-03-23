@@ -11,7 +11,7 @@ public class Tribunal extends Location {
 	private int populationLevel;
 	private double recentApprentices;
 	private int extantVisSources;
-	private static AgentWriter<Tribunal> tribunalWriter = new AgentWriter<Tribunal>(new TribunalDAO());
+	private static DatabaseWriter<Tribunal> tribunalWriter = new DatabaseWriter<Tribunal>(new TribunalDAO());
 	private List<BarterOffer> marketOffers;
 	private int lastTribunal;
 	private int totalBookSales;

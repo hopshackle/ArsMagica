@@ -1,13 +1,12 @@
 package hopshackle.simulation.arsmagica;
 
-import hopshackle.simulation.Agent;
-import hopshackle.simulation.Dice;
+import hopshackle.simulation.*;
 
 public class SearchForFamiliar extends ArsMagicaAction {
 
 	private boolean override;
-	public SearchForFamiliar(Agent a) {
-		super(a);
+	public SearchForFamiliar(Magus a) {
+		super(MagusActions.SEARCH_FAMILIAR, a);
 	}
 
 	public void setResultAsFamiliar(boolean findSource) {

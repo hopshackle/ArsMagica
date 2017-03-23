@@ -11,7 +11,7 @@ public class Covenant extends Organisation<Magus> {
 	private int capacity;
 	private static String baseDir = SimProperties.getProperty("BaseDirectory", "C:\\Simulations");
 	private static Name covenantNamer = new Name(new File(baseDir + File.separator + "CovenantNames.txt"));
-	private static AgentWriter<Covenant> covenantWriter = new AgentWriter<Covenant>(new CovenantDAO());
+	private static DatabaseWriter<Covenant> covenantWriter = new DatabaseWriter<Covenant>(new CovenantDAO());
 	private CovenantAgent covenantAgent;
 	private CovenantVisPolicy visPolicy;
 	private CovenantLibraryPolicy libraryPolicy;
@@ -30,7 +30,6 @@ public class Covenant extends Organisation<Magus> {
 		visPolicy = new CovenantVisPolicy(this);
 		libraryPolicy = new CovenantLibraryPolicy(this);
 		servicePolicy = new CovenantServicePolicy(this);
-		covenantWriter.setBufferLimit(50);
 		if (trib != null) 
 			trib.log("Covenant of " + getName() + " founded.");
 		covenantAttributes = new HashMap<CovenantAttributes, Ability>();

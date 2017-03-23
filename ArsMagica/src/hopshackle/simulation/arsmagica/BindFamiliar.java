@@ -2,11 +2,10 @@ package hopshackle.simulation.arsmagica;
 
 import java.util.Map;
 
-import hopshackle.simulation.*;
 public class BindFamiliar extends ArsMagicaAction {
 
-	public BindFamiliar(Agent a) {
-		super(a);
+	public BindFamiliar(Magus a) {
+		super(MagusActions.BIND_FAMILIAR, a);
 	}
 
 	@Override

@@ -4,10 +4,14 @@ import java.util.*;
 
 import hopshackle.simulation.*;
 
-public class MagusCovenantInheritance implements InheritancePolicy {
+public class MagusCovenantInheritance extends Policy<Magus> {
+
+	public MagusCovenantInheritance() {
+		super("inheritance");
+	}
 
 	@Override
-	public <T extends Agent> void bequeathEstate(T testator) {
+	public void apply(Magus testator) {
 
 		Magus deadMagus = (Magus) testator;
 		Covenant covenant = deadMagus.getCovenant();

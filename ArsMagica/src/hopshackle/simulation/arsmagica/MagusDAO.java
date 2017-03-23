@@ -4,7 +4,7 @@ import java.util.List;
 
 import hopshackle.simulation.*;
 
-public class MagusDAO implements AgentDAO<Magus> {
+public class MagusDAO implements DAO<Magus> {
 
 	@Override
 	public String getTableCreationSQL(String tableSuffix) {
@@ -78,7 +78,7 @@ public class MagusDAO implements AgentDAO<Magus> {
 	}
 
 	@Override
-	public String getValuesForAgent(Magus agent) {
+	public String getValues(Magus agent) {
 		World w = agent.getWorld();
 		List<Agent> apprentices = agent.getChildren();
 		StringBuffer apprenticeIds = Agent.convertToStringVersionOfIDs(apprentices);

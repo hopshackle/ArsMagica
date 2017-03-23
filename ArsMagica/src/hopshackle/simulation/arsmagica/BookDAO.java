@@ -2,7 +2,7 @@ package hopshackle.simulation.arsmagica;
 
 import hopshackle.simulation.*;
 
-public class BookDAO implements AgentDAO<Book> {
+public class BookDAO implements DAO<Book> {
 	@Override
 	public String getTableCreationSQL(String tableSuffix) {
 		return  "CREATE TABLE IF NOT EXISTS Books_" + tableSuffix +
@@ -28,7 +28,7 @@ public class BookDAO implements AgentDAO<Book> {
 	}
 
 	@Override
-	public String getValuesForAgent(Book book) {
+	public String getValues(Book book) {
 		
 		String bookName = book.toString().substring(0, book.toString().indexOf("Written by"));
 		if (bookName.length() > 80)

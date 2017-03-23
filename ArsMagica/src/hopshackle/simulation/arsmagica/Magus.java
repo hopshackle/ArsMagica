@@ -4,7 +4,6 @@ import java.io.File;
 import java.util.*;
 
 import hopshackle.simulation.*;
-import hopshackle.simulation.dnd.Attribute;
 
 public class Magus extends Agent implements Persistent {
 
@@ -12,7 +11,7 @@ public class Magus extends Agent implements Persistent {
 	private HashMap<Learnable, Skill> skills = new HashMap<Learnable, Skill>();
 	private Map<Magus, Relationship> relationships = new HashMap<Magus, Relationship>();
 	private List<Spell> spells = new ArrayList<Spell>();
-	private static AgentWriter<Magus> magusWriter = new AgentWriter<Magus>(new MagusDAO());
+	private static DatabaseWriter<Magus> magusWriter = new DatabaseWriter<Magus>(new MagusDAO());
 	private static MagusRetriever masterAgentRetriever = new MagusRetriever();
 	private int lastHarvest, magicAura;
 	private Magus apprentice, parens;
@@ -40,7 +39,7 @@ public class Magus extends Agent implements Persistent {
 	private MagusPreferences researchGoals;
 	private boolean uniformResearchPreferences = SimProperties.getProperty("MagusUniformResearchPreferences", "false").equals("true");
 
-	public Magus(Location l, BaseDecider d, World world) {
+	public Magus(Location l, BaseDecider<Magus> d, World world) {
 		super(l, d, world);
 		name = magusNamer.getName();
 
@@ -52,10 +51,9 @@ public class Magus extends Agent implements Persistent {
 
 		rollStatistics(2);
 
-		setInheritancePolicy(new MagusApprenticeInheritance());
+		setPolicy(new MagusApprenticeInheritance());
 		this.setDebugLocal(true);
 		log(this.toString());
-		magusWriter.setBufferLimit(100);
 		agentRetriever = masterAgentRetriever;
 		researchGoals = new MagusPreferences(uniformResearchPreferences);
 	}
@@ -259,7 +257,6 @@ public class Magus extends Agent implements Persistent {
 	public void die(String reason) {
 		// Apprentice is now dealt with as part of inheritance (i.e. as for any other possessed object)
 		super.die(reason);
-		new Death(this, reason);
 
 		if (covenant != null)
 			setCovenant(null);
@@ -297,13 +294,9 @@ public class Magus extends Agent implements Persistent {
 			apprentice.getParens().apprentice = null;
 		apprentice.setApprenticeOf(this);
 		children.add(apprentice.getUniqueID());
-		for (Action a : HopshackleUtilities.cloneList(actionQueue)) {
-			if (a instanceof SearchForApprentice) {
-				removeAction(a);	// so that we cancel any plans to find an apprentice
-				if (getNextAction() == null)
-					addAction(decide());
-			}
-		}
+		// TODO: Removed code that checked old action queue for SearchForApprentice
+		// To be reviewed. I'm hoping that the new .start() and .run() on actions may resolve this
+		// or else we'll cover it in .maintenance() when forward plans are reviewed for relevance
 	}
 	private void setApprenticeOf(Magus parens) {
 		if (parens == null)
@@ -348,9 +341,7 @@ public class Magus extends Agent implements Persistent {
 		// If we have an unexecuted action, then when this runs, we'll trigger an independent set of choices
 		// If action queue is empty, we need to do this now (as we cannot rely on parens to do it for us)
 		parens = null;
-		if (actionQueue.isEmpty()) {
-			addAction(decide());
-		}
+		// TODO: Review what we should actually do here given the new action plan
 	}
 
 	public Tribunal getFavouredTribunal() {
@@ -443,13 +434,11 @@ public class Magus extends Agent implements Persistent {
 
 	@Override
 	public double getScore() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public double getMaxScore() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
@@ -810,7 +799,7 @@ public class Magus extends Agent implements Persistent {
 		if (covenant != null) {
 			covenant.memberLeaves(this);
 			log("No longer a member of " + covenant);
-			setInheritancePolicy(new MagusApprenticeInheritance());
+			setPolicy(new MagusApprenticeInheritance());
 		}
 		covenant = newCovenant;
 		if (covenant != null) {
@@ -819,7 +808,7 @@ public class Magus extends Agent implements Persistent {
 			setLocation(covenant);
 		}
 		if (covenant != null && Math.random() > 0.5) {
-			setInheritancePolicy(new MagusCovenantInheritance());
+			setPolicy(new MagusCovenantInheritance());
 			log("Sets covenant as sole heir");
 		}
 	}

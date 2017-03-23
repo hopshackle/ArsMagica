@@ -41,7 +41,7 @@ public class InventingSpellsAndLabTexts {
 
 	@Test
 	public void inventingASpellDoesSoOverANumberOfSeasons() {
-		magus.setDecider(new HardCodedDecider(MagusActions.INVENT_SPELL));
+		magus.setDecider(new HardCodedDecider<Magus>(MagusActions.INVENT_SPELL));
 		magus.addAction(magus.decide());
 		assertFalse(magus.isResearchingSpell());
 		int totalSpellLevels = 0;

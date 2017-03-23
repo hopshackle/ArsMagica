@@ -8,7 +8,7 @@ public class ScribeSpell extends ArsMagicaAction {
 	private List<Spell> spellsScribed = new ArrayList<Spell>();
 
 	public ScribeSpell(Magus magus) {
-		super(magus);
+		super(MagusActions.SCRIBE_SPELL, magus);
 		if (magus.getSeasonsServiceOwed() > 0)
 			isCovenantService = true;
 	}

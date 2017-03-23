@@ -1,13 +1,11 @@
 package hopshackle.simulation.arsmagica;
 
-import hopshackle.simulation.*;
-
 public class ReadBook extends ArsMagicaAction {
 
 	private Book book;
 	
-	public ReadBook(Agent a, Book book) {
-		super(a);
+	public ReadBook(Magus a, Book book) {
+		super(MagusActions.READ_BOOK, a);
 		this.book = book;
 		this.book.setCurrentReader(magus);
 	}

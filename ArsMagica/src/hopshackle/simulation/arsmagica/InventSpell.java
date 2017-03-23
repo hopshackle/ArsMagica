@@ -18,8 +18,8 @@ public class InventSpell extends ArsMagicaAction {
 	private boolean standardSpell;
 	private LabText labTextUsed = null;
 
-	public InventSpell(Agent a) {
-		super(a);
+	public InventSpell(Magus a) {
+		super(MagusActions.INVENT_SPELL, a);
 		int iterations = 0;
 		boolean hasTriedOneNewSpell = false;
 		List<LabText> labTexts = getAllUnknownSpellsWithAccessibleLabTexts();
@@ -92,8 +92,8 @@ public class InventSpell extends ArsMagicaAction {
 		return true;
 	}
 
-	public InventSpell(Agent a, InventSpell researchProject) {
-		super(a);
+	public InventSpell(Magus a, InventSpell researchProject) {
+		super(MagusActions.INVENT_SPELL, a);
 		technique = researchProject.technique;
 		form = researchProject.form;
 		requisiteForm = researchProject.requisiteForm;

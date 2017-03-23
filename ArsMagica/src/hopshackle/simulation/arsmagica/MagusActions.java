@@ -4,7 +4,7 @@ import java.util.*;
 
 import hopshackle.simulation.*;
 
-public enum MagusActions implements ActionEnum {
+public enum MagusActions implements ActionEnum<Magus> {
 
 	LAB_ASSISTANT,
 	SEARCH_VIS,
@@ -26,7 +26,8 @@ public enum MagusActions implements ActionEnum {
 	BE_TAUGHT,
 	FOUND_COVENANT,
 	JOIN_COVENANT,
-	DEVELOP_COVENANT;
+	DEVELOP_COVENANT,
+	TWILIGHT;
 
 	@Override
 	public String getChromosomeDesc() {
@@ -34,14 +35,7 @@ public enum MagusActions implements ActionEnum {
 	}
 
 	@Override
-	public Action getAction(Agent a) {
-		return getAction(a, a);
-	}
-
-	@Override
-	public Action getAction(Agent a1, Agent a2) {
-		if (!(a1 instanceof Magus)) return null;
-		Magus magus = (Magus) a1;
+	public ArsMagicaAction getAction(Magus magus) {
 		switch (this) {
 		case LAB_ASSISTANT:
 			return new LabAssistant(magus, magus.getParens());
@@ -104,13 +98,14 @@ public enum MagusActions implements ActionEnum {
 			return new JoinCovenant(magus);
 		case DEVELOP_COVENANT:
 			return new DevelopCovenant(magus);
+		case TWILIGHT:
+			return new InTwilight(magus, 1);
 		}
 		return null;
 	}
 
 	@Override
-	public boolean isChooseable(Agent a) {
-		Magus magus = (Magus) a;
+	public boolean isChooseable(Magus magus) {
 		switch (this) {
 		case LAB_ASSISTANT:
 			return false;	// only set up as a result of Parens' action
@@ -200,6 +195,8 @@ public enum MagusActions implements ActionEnum {
 			return (!magus.isApprentice());
 		case DEVELOP_COVENANT:
 			return (magus.getCovenant() != null);
+		case TWILIGHT:
+			return false;
 		}
 		return false;
 

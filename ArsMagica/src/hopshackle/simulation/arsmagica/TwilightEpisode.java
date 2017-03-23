@@ -57,8 +57,9 @@ public class TwilightEpisode {
 		}
 		
 		if (seasons > 0) {
-			magus.purgeActions();
-			magus.addAction(new InTwilight(magus, seasons));
+	//		magus.purgeActions();
+	//		magus.addAction(new InTwilight(magus, seasons));
+			// TODO: Rewrite this for new action plan
 			// No ageing or vis collection whilst in Twilight
 		}
 		

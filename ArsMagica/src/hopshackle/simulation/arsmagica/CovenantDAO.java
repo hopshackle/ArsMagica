@@ -1,8 +1,8 @@
 package hopshackle.simulation.arsmagica;
 
-import hopshackle.simulation.AgentDAO;
+import hopshackle.simulation.*;
 
-public class CovenantDAO implements AgentDAO<Covenant> {
+public class CovenantDAO implements DAO<Covenant> {
 
 	@Override
 	public String getTableCreationSQL(String tableSuffix) {
@@ -35,7 +35,7 @@ public class CovenantDAO implements AgentDAO<Covenant> {
 	}
 
 	@Override
-	public String getValuesForAgent(Covenant covenant) {
+	public String getValues(Covenant covenant) {
 		return String.format(" (%d, '%s', '%s', %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %.2f, %.2f, %d) ",  
 				covenant.getUniqueID(),
 				covenant.getName(),

@@ -77,15 +77,15 @@ public class ApprenticesAndTeaching {
 	@Test
 	public void whenParensTakesNonApprenticeActionApprenticeTakesTheirOwnAction() {
 		parens.addApprentice(apprentice);
-		parens.setDecider(new HardCodedDecider(MagusActions.SEARCH_VIS));
-		apprentice.setDecider(new HardCodedDecider(MagusActions.PRACTISE_ABILITY));
+		parens.setDecider(new HardCodedDecider<Magus>(MagusActions.SEARCH_VIS));
+		apprentice.setDecider(new HardCodedDecider<Magus>(MagusActions.PRACTISE_ABILITY));
 		ArsMagicaAction parensAction = new SearchForVis(parens);
 		parensAction.run();
 		
 		parensAction = (ArsMagicaAction) parens.getNextAction();
 		assertFalse(parensAction.requiresApprentice());
 		
-		Action apprenticeAction = apprentice.getNextAction();
+		Action<?> apprenticeAction = apprentice.getNextAction();
 		assertTrue(apprenticeAction == null);
 		
 		apprentice.decide().run();
@@ -249,7 +249,7 @@ public class ApprenticesAndTeaching {
 		parens.addApprentice(apprentice);
 		parens.addItem(new Summa(Arts.CREO, 5, 15, null));
 		assertTrue(apprentice.getBestBookToRead() != null);
-		apprentice.setDecider(new HardCodedDecider(MagusActions.READ_BOOK));
+		apprentice.setDecider(new HardCodedDecider<Magus>(MagusActions.READ_BOOK));
 		Action action = apprentice.decide();
 		assertTrue(action instanceof ReadBook);
 		action.run();

@@ -1,7 +1,5 @@
 package hopshackle.simulation.arsmagica;
 
-import java.util.ArrayList;
-
 import hopshackle.simulation.*;
 
 public class JoinCovenant extends ArsMagicaAction {
@@ -9,8 +7,8 @@ public class JoinCovenant extends ArsMagicaAction {
 	private static Covenant sampleCovenant = new Covenant(null, null);
 	private Covenant joinedCovenant;
 
-	public JoinCovenant(Agent magus) {
-		super(magus);
+	public JoinCovenant(Magus magus) {
+		super(MagusActions.JOIN_COVENANT, magus);
 	}
 
 	@Override
@@ -48,7 +46,7 @@ public class JoinCovenant extends ArsMagicaAction {
 				magus.setTribunal(next);
 			} else if (magus.getCovenant() == null && Dice.roll(2, 100) < magus.getAge() && magus.getMagicAura() > 0) {
 				magus.log("So decides to found a new one.");
-				magus.addAction(new FoundCovenant(magus, new ArrayList<Magus>()));
+				// TODO: Need to put logic here to actually create Foundcovenant action in plan
 			}
 		} else {
 			magus.log("Successfully applies to new Covenant.");
@@ -56,7 +54,7 @@ public class JoinCovenant extends ArsMagicaAction {
 			joinedCovenant = magus.getCovenant();
 		}
 		magus.addXP(Abilities.CHARM, 2);
-		Decider d = magus.getDecider();
+		Decider<?> d = magus.getDecider();
 		if (d instanceof BasicDecider) {	// a truly horrendous hack for decider to keep track of covenant applications
 			BasicDecider bd = (BasicDecider) d;
 			bd.registerApplication(magus, magus.getWorld().getYear());

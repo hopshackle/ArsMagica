@@ -1,13 +1,11 @@
 package hopshackle.simulation.arsmagica;
 
-import hopshackle.simulation.*;
-
 public class InTwilight extends ArsMagicaAction {
 
 	private int seasons;
 
-	public InTwilight(Agent a, int seasons) {
-		super(a, 1);
+	public InTwilight(Magus a, int seasons) {
+		super(MagusActions.TWILIGHT, a, 1);
 		this.seasons = seasons;
 		magus.setInTwilight(true);
 	}
@@ -17,14 +15,11 @@ public class InTwilight extends ArsMagicaAction {
 		magus.addTimeInTwilight(1);
 		if (seasons <= 1)
 			magus.setInTwilight(false);
-
 	}
 
 	@Override
 	protected void doNextDecision() {
-		if (magus.isInTwilight())
-			magus.addAction(new InTwilight(magus, seasons-1));
-
+		// TODO: If intwilight, then may need to do something here
 		super.doNextDecision();	// will sort out any apprentice; and take action if not in Twilight
 	}
 	

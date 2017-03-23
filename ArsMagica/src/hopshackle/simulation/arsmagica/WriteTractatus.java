@@ -2,15 +2,13 @@ package hopshackle.simulation.arsmagica;
 
 import java.util.*;
 
-import hopshackle.simulation.*;
-
 public class WriteTractatus extends ArsMagicaAction {
 	
 	private boolean isCovenantService;
 	private Tractatus newBook;
 
-	public WriteTractatus(Agent m) {
-		super(m);
+	public WriteTractatus(Magus m) {
+		super(MagusActions.WRITE_TRACTATUS, m);
 		if (magus.getSeasonsServiceOwed() > 0) 
 			isCovenantService = true;
 	}

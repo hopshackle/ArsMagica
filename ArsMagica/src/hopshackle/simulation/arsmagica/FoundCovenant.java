@@ -10,7 +10,7 @@ public class FoundCovenant extends ArsMagicaAction {
 	private Covenant newCovenant;
 
 	public FoundCovenant(Magus founder, List<Magus> otherMembers) {
-		super(founder);
+		super(MagusActions.FOUND_COVENANT, founder);
 		allFounders = HopshackleUtilities.cloneList(otherMembers);
 		allFounders.add(0, founder);
 		if (allFounders.size() < 1) {
@@ -23,13 +23,11 @@ public class FoundCovenant extends ArsMagicaAction {
 		}
 		newCovenant = new Covenant(allFounders, founder.getTribunal());
 		newCovenant.setAura(magus.getMagicAura());
-		for (Agent m : otherMembers) {
-			m.setActionOverride(new FoundCovenant(m, newCovenant));
-		}
+		// TODO: Remove actionOverride - should now be dealt with via actionPlan
 	}
 	
-	public FoundCovenant(Agent coFounder, Covenant covenant) {
-		super(coFounder);
+	public FoundCovenant(Magus coFounder, Covenant covenant) {
+		super(MagusActions.FOUND_COVENANT, coFounder);
 		newCovenant = covenant;
 	}
 

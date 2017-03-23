@@ -9,8 +9,8 @@ public class TeachApprentice extends ArsMagicaAction {
 	private Magus apprentice;
 	private Learnable skillToBeTaught;
 
-	public TeachApprentice(Agent parens) {
-		super(parens);		
+	public TeachApprentice(Magus parens) {
+		super(MagusActions.TEACH_APPRENTICE, parens);		
 	}
 
 	@Override

@@ -8,7 +8,7 @@ public class CopySpells extends ArsMagicaAction {
 	private List<LabText> spellsToCopy;
 
 	public CopySpells(Magus magus) {
-		super(magus);
+		super(MagusActions.COPY_SPELLS, magus);
 		List<Book> toCopy = magus.getBestSpellsToCopy();
 		int totalLevelsLeft = magus.getLevelOf(Abilities.SCRIBE) * 60;
 		for (Book b : toCopy) {

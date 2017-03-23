@@ -380,7 +380,7 @@ public class Covenants {
 	@Test
 	public void covenantInheritsEverythingIfMagusDiesWithoutHeirs() {
 		covenantIsFoundedWithCorrectMembership();
-		founder.setInheritancePolicy(new MagusApprenticeInheritance());
+		founder.setPolicy(new MagusApprenticeInheritance());
 		founder.addItem(new Summa(Arts.CREO, 5, 15, founder));
 		founder.addVis(Arts.CREO, 10);
 		founder.addItem(new VisSource(Arts.CREO, 5, tribunal));

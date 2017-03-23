@@ -4,7 +4,7 @@ import java.util.*;
 
 import hopshackle.simulation.*;
 
-public class TribunalDAO implements AgentDAO<Tribunal> {
+public class TribunalDAO implements DAO<Tribunal> {
 
 	@Override
 	public String getTableCreationSQL(String tableSuffix) {
@@ -29,7 +29,7 @@ public class TribunalDAO implements AgentDAO<Tribunal> {
 	}
 
 	@Override
-	public String getValuesForAgent(Tribunal tribunal) {
+	public String getValues(Tribunal tribunal) {
 		List<Agent> allMagi = tribunal.getAgents();
 		int totalMagi = 0, totalApprenti = 0;
 		for (Agent a : allMagi) {

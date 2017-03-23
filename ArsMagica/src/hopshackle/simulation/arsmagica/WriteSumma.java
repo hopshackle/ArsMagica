@@ -14,8 +14,8 @@ public class WriteSumma extends ArsMagicaAction {
 	private boolean nothingToWriteOn;
 
 
-	public WriteSumma(Agent a, Learnable skill) {
-		super(a);
+	public WriteSumma(Magus a, Learnable skill) {
+		super(MagusActions.WRITE_SUMMA, a);
 		this.skill = skill;
 		double valueOfSumma = calculateOptimalValues(skill);
 		if (valueOfSumma < 0.0)
@@ -23,8 +23,8 @@ public class WriteSumma extends ArsMagicaAction {
 		if (magus.getSeasonsServiceOwed() > 0)
 			isCovenantService = true;
 	}
-	public WriteSumma(Agent a) {
-		super(a);
+	public WriteSumma(Magus a) {
+		super(MagusActions.WRITE_SUMMA, a);
 		double value = -100.0;
 		for (Learnable s : magus.getSkills().keySet()) {
 			if (s == Abilities.LATIN || s == Abilities.VIS_HUNT || s == Abilities.FAMILIAR_HUNT|| s == Abilities.DECREPITUDE || s == Abilities.DECREPITUDE || s == Abilities.WARPING)
@@ -48,7 +48,7 @@ public class WriteSumma extends ArsMagicaAction {
 	}
 
 	public WriteSumma(WriteSumma currentProject) {
-		super(currentProject.getActor());
+		super(MagusActions.WRITE_SUMMA, currentProject.getActor());
 		skill = currentProject.skill;
 		summaLvl = currentProject.summaLvl;
 		quality = currentProject.quality;
