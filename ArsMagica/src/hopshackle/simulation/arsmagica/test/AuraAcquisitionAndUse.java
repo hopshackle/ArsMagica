@@ -26,7 +26,7 @@ public class AuraAcquisitionAndUse {
 	public void useBetterAuraIfFound() {
 		assertEquals(magus.getMagicAura(), 0);
 		SearchForVis search = new SearchForVis(magus);
-		search.run();
+		addStartAndRunAction(search);
 		assertTrue(magus.getMagicAura() > 0);
 	}
 	
@@ -34,7 +34,7 @@ public class AuraAcquisitionAndUse {
 	public void doNotUseAuraIfInferiorToCurrentOne() {
 		magus.setMagicAura(12);
 		SearchForVis search = new SearchForVis(magus);
-		search.run();
+		addStartAndRunAction(search);
 		assertEquals(magus.getMagicAura(), 12);
 	}
 	
@@ -48,8 +48,14 @@ public class AuraAcquisitionAndUse {
 		int expected = (20 + intelligence + 2) / 10;
 		assertTrue(MagusActions.DISTILL_VIS.isChooseable(magus));
 		DistillVis distillation = new DistillVis(magus);
-		distillation.run();
+		addStartAndRunAction(distillation);
 		assertEquals(magus.getPawnsOf(Arts.VIM), expected);
+	}
+	
+	private void addStartAndRunAction(ArsMagicaAction a) {
+		a.addToAllPlans();
+		a.start();
+		a.run();
 	}
 
 }

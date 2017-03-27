@@ -60,7 +60,7 @@ public class Tribunals {
 	
 	@Test
 	public void tribunalMarketAcceptsOffers() {
-		BarterOffer bo = new BarterOffer(magus2, new VisSource(Arts.CREO, 1, tribunal), 1, 1, null);
+		BarterOffer bo = new BarterOffer(magus2, new VisSource(Arts.CREO, 1, tribunal), 1, 1, new VisValuationFunction(magus2));
 		assertTrue(tribunal.getOffersOnMarket().isEmpty());
 		tribunal.addToMarket(bo);
 		assertEquals(tribunal.getOffersOnMarket().size(), 1);
@@ -68,7 +68,7 @@ public class Tribunals {
 		Book unwantedBook = new Summa(Arts.AQUAM, 5, 15, null);
 		magus2.addItem(unwantedBook);
 		assertEquals(magus2.getInventoryOf(AMU.sampleBook).size(), 1);
-		BarterOffer bo2 = new BarterOffer(magus2, unwantedBook, 1, 1, null);
+		BarterOffer bo2 = new BarterOffer(magus2, unwantedBook, 1, 1, new VisValuationFunction(magus2));
 		assertEquals(magus2.getInventoryOf(AMU.sampleBook).size(), 0);
 		tribunal.addToMarket(bo2);
 		assertEquals(tribunal.getOffersOnMarket().size(), 2);

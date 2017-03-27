@@ -75,7 +75,7 @@ public class TractatusTest {
 		temp.setCommunication(0);
 		Tractatus tract = new Tractatus(Arts.PERDO, temp);
 		magus.addItem(tract);
-		new ReadBook(magus, tract).run();
+		addStartAndRunAction(new ReadBook(magus, tract));
 		assertEquals(magus.getTotalXPIn(Arts.PERDO), 6);
 		assertTrue(magus.hasReadTractatus(tract.getTitleId()));
 	}
@@ -83,9 +83,14 @@ public class TractatusTest {
 	@Test
 	public void writingATractatus() {
 		mayWriteTractatusWhenLevelIsAtMinimum();
-		new WriteTractatus(magus).run();
+		addStartAndRunAction(new WriteTractatus(magus));
 		assertEquals(magus.getInventoryOf(AMU.sampleBook).size(), 1);
 		
 	}
 
+	private void addStartAndRunAction(ArsMagicaAction a) {
+		a.addToAllPlans();
+		a.start();
+		a.run();
+	}
 }

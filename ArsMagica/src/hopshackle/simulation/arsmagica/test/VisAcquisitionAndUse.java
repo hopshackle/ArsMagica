@@ -135,6 +135,7 @@ public class VisAcquisitionAndUse {
 	public void botchAddsWarpingPointsAndNoXPInArt() {
 		magus.setMagicAura(2);
 		magus.addVis(Arts.HERBAM, 5);
+		magus.addXP(Abilities.MAGIC_THEORY, 200);
 		magus.setDecider(new HardCodedDecider<Magus>(MagusActions.STUDY_VIS));
 		StudyFromVis study = new StudyFromVis(magus, Arts.HERBAM);
 		study.setDieRoll(0, 1);
@@ -151,6 +152,7 @@ public class VisAcquisitionAndUse {
 		assertEquals(magus.getTotalXPIn(Arts.HERBAM), 0);
 		assertEquals(magus.getPawnsOf(Arts.HERBAM), 3);
 
+		assertTrue(magus.getNextAction() instanceof StudyFromVis);
 		study = (StudyFromVis) magus.getNextAction();
 		study.setDieRoll(0, 0);
 		runNextAction(magus);

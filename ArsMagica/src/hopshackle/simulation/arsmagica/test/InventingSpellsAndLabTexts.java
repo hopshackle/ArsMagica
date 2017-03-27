@@ -54,7 +54,7 @@ public class InventingSpellsAndLabTexts {
 				Action<?> nextAction = magus.getNextAction();
 				seasons++;
 				assertTrue(nextAction instanceof InventSpell);
-				nextAction.run();
+				runNextAction(magus);
 				if (magus.isResearchingSpell()) {
 					assertEquals(magus.getTotalSpellLevels(), totalSpellLevels);
 					assertEquals(magus.getSpells().size(), numberOfSpells);
@@ -100,7 +100,7 @@ public class InventingSpellsAndLabTexts {
 		magus.decide();
 		Action<?> nextAction = magus.getNextAction();
 		assertTrue(nextAction instanceof ScribeSpell);
-		nextAction.run();
+		runNextAction(magus);
 
 		List<Book> library = magus.getInventoryOf(AMU.sampleBook);
 		List<LabText> labTexts = LabText.extractAllLabTextsFrom(library);
@@ -116,7 +116,7 @@ public class InventingSpellsAndLabTexts {
 
 		nextAction = magus.getNextAction();
 		assertTrue(nextAction instanceof ScribeSpell);
-		nextAction.run();
+		runNextAction(magus);
 		library = magus.getInventoryOf(AMU.sampleBook);
 		labTexts = LabText.extractAllLabTextsFrom(library);
 		assertEquals(labTexts.size(), 7);
@@ -142,7 +142,7 @@ public class InventingSpellsAndLabTexts {
 		magus.decide();
 
 		for (int i = 0; i < 24; i++) {
-			magus.getNextAction().run();
+			runNextAction(magus);
 		}
 
 		List<Spell> allSpells = magus.getSpells();
@@ -161,5 +161,10 @@ public class InventingSpellsAndLabTexts {
 		assertTrue(spellsFromText < 5);
 	}
 
+	private void runNextAction(Magus m) {
+		Action<?> a = m.getActionPlan().getNextAction();
+		a.start();
+		a.run();
+	}
 
 }

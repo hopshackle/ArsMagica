@@ -49,7 +49,7 @@ public class ReadingAndWriting {
 		assertFalse(MagusActions.WRITE_SUMMA.isChooseable(magus));
 		magus.addXP(Arts.AQUAM, 500);
 		assertTrue(MagusActions.WRITE_SUMMA.isChooseable(magus));
-		new WriteSumma(magus, Arts.AQUAM).run();
+		addStartAndRunAction(new WriteSumma(magus, Arts.AQUAM));
 		assertTrue(MagusActions.WRITE_SUMMA.isChooseable(magus));
 		assertTrue(magus.isWritingBook());
 
@@ -141,11 +141,12 @@ public class ReadingAndWriting {
 		 *  L6 Q11			-2				 0				0					 0					 0
 		 *  L5 Q12			-2				 0				0					 0					 0
 		 */
-		Action<?> action = magus.decide();
+		Action<?> action = magus.getNextAction();
 		assertTrue(action instanceof SearchForVis);
 
 		magus.removeItem(bookWritten);
 		magus.setCommunication(3);
+		magus.purgeActions(true);
 		
 		/* 
 		 * 					Writing Time	xp Gain		Reduction Study		Increase Study		Total
@@ -193,6 +194,7 @@ public class ReadingAndWriting {
 		magus.removeItem(bookWritten);
 
 		magus.addXP(Arts.MUTO, Arts.MUTO.getXPForLevel(30) - Arts.MUTO.getXPForLevel(20));	// lvl 26		
+		magus.purgeActions(true);
 		runActionsUntilBookFinished();
 		books = magus.getInventoryOf(AMU.sampleBook);
 		assertEquals(books.size(), 1);
@@ -265,7 +267,8 @@ public class ReadingAndWriting {
 	public void bookGoesToMasterIfApprentice() {
 		assertEquals(magus.getInventoryOf(AMU.sampleBook).size(),0);
 		apprentice.setDecider(new HardCodedDecider<Magus>(MagusActions.WRITE_TRACTATUS));
-		apprentice.decide().run();
+		apprentice.decide();
+		runNextAction(apprentice);
 		assertEquals(magus.getInventoryOf(AMU.sampleBook).size(),1);
 		assertEquals(apprentice.getInventoryOf(AMU.sampleBook).size(),0);
 	}
@@ -324,21 +327,21 @@ public class ReadingAndWriting {
 		assertFalse(philosophySumma.isInUse());
 		magus.setDecider(new HardCodedDecider<Magus>(MagusActions.READ_BOOK));
 		apprentice.setDecider(new HardCodedDecider<Magus>(MagusActions.PRACTISE_ABILITY));	// otherwise apprentice reads the Philosophy book
-		Action<?> firstAction = magus.decide();
-		firstAction.run();
+		magus.decide();
+		runNextAction(magus);
 		assertTrue(creoSumma.isInUse());	// still reading
 		assertFalse(philosophySumma.isInUse());
 		assertEquals(magus.getTotalXPIn(Arts.CREO), 10);
-		magus.getNextAction().run();
+		runNextAction(magus);
 		assertFalse(creoSumma.isInUse());	// has finished reading for the moment
 		assertTrue(philosophySumma.isInUse());
 		assertEquals(magus.getTotalXPIn(Arts.CREO), 20);
-		magus.getNextAction().run();
+		runNextAction(magus);
 		assertTrue(creoSumma.isInUse());
 		assertFalse(philosophySumma.isInUse());
 		assertEquals(magus.getTotalXPIn(Arts.CREO), 20);
 		assertEquals(magus.getTotalXPIn(Abilities.PHILOSOPHIAE), 8);
-		magus.getNextAction().run();
+		runNextAction(magus);
 		assertEquals(magus.getTotalXPIn(Arts.CREO), 28);
 		assertEquals(magus.getTotalXPIn(Abilities.PHILOSOPHIAE), 8);
 	}
@@ -349,21 +352,35 @@ public class ReadingAndWriting {
 		magus.addItem(creoSumma);
 
 		magus.setDecider(new HardCodedDecider<Magus>(MagusActions.READ_BOOK));
-		magus.decide().run();
+		magus.decide();
+		runNextAction(magus);
 		assertTrue(creoSumma.isInUse());
+		magus.setDecider(new HardCodedDecider<Magus>(MagusActions.DISTILL_VIS));
 		magus.getActionPlan().purgeActions(true);
 		assertFalse(creoSumma.isInUse());
 	}
 
 	private void runActionsUntilBookFinished() {
-		Action<?> action = magus.decide();
+		if (magus.getNextAction() == null) magus.decide();
+		Action<?> action = magus.getNextAction();
 		Action<?> originalAction = action;
 		do {
 			assertTrue(action instanceof WriteSumma);
 			assertTrue(action.equals(originalAction));
-			action.run();
+			runNextAction(magus);
 			action = magus.getNextAction();
 		} while (magus.isWritingBook() && magus.getCurrentBookProject().equals(originalAction));
 		magus.getActionPlan().purgeActions(true);
+	}
+	
+	private void addStartAndRunAction(ArsMagicaAction a) {
+		a.addToAllPlans();
+		a.start();
+		a.run();
+	}
+	private void runNextAction(Magus m) {
+		Action<?> a = m.getActionPlan().getNextAction();
+		a.start();
+		a.run();
 	}
 }
