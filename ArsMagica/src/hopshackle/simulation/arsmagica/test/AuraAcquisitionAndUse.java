@@ -2,6 +2,8 @@ package hopshackle.simulation.arsmagica.test;
 
 import static org.junit.Assert.*;
 
+import java.util.*;
+
 import org.junit.*;
 
 import hopshackle.simulation.*;
@@ -14,7 +16,7 @@ public class AuraAcquisitionAndUse {
 	
 	@Before
 	public void setup() {
-		world = new World();
+		world = new World(new SimpleWorldLogic<Magus>(new ArrayList<ActionEnum<Magus>>(EnumSet.allOf(MagusActions.class))));
 		Tribunal tribunal = new Tribunal("Test", world);
 		tribunal.setVisLevel(200);
 		magus = new Magus(world);

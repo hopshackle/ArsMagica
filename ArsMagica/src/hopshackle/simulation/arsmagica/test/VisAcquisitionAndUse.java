@@ -2,6 +2,8 @@ package hopshackle.simulation.arsmagica.test;
 
 import static org.junit.Assert.*;
 
+import java.util.*;
+
 import org.junit.*;
 
 import hopshackle.simulation.*;
@@ -16,7 +18,7 @@ public class VisAcquisitionAndUse {
 	@Before
 	public void setUp() {
 		SimProperties.setProperty("MagusUniformResearchPreferences", "true");
-		World world = new World();
+		World world = new World(new SimpleWorldLogic<Magus>(new ArrayList<ActionEnum<Magus>>(EnumSet.allOf(MagusActions.class))));
 		magus = new Magus(world);
 		magus.addXP(Abilities.MAGIC_THEORY, 15);
 		creoVis = new Vis(Arts.CREO);
@@ -55,30 +57,31 @@ public class VisAcquisitionAndUse {
 	@Test
 	public void StudyingFromVisUsesItUpAndIncreasesArtTakingMagicAuraIntoAccount() {
 		magus.addVis(Arts.CREO, 10);
+		magus.setDecider(new HardCodedDecider<Magus>(MagusActions.STUDY_VIS));
 		assertEquals(magus.getPawnsOf(Arts.CREO), 10);
 		assertEquals(magus.getLevelOf(Arts.CREO), 0);
 		StudyFromVis studyCreo = new StudyFromVis(magus, Arts.CREO);
 		studyCreo.setDieRoll(6);
-		studyCreo.run();
+		addStartAndRunAction(studyCreo);
 		assertEquals(magus.getPawnsOf(Arts.CREO), 9);
 		assertEquals(magus.getLevelOf(Arts.CREO), 3);
 
 		magus.setMagicAura(2);
-		studyCreo = new StudyFromVis(magus, Arts.CREO);
+		studyCreo = (StudyFromVis) magus.getNextAction();
 		studyCreo.setDieRoll(7);
-		studyCreo.run();
+		runNextAction(magus);
 		assertEquals(magus.getPawnsOf(Arts.CREO), 8);
 		assertEquals(magus.getLevelOf(Arts.CREO), 5);
 		magus.setMagicAura(0);
 
-		studyCreo = new StudyFromVis(magus, Arts.CREO);
+		studyCreo = (StudyFromVis) magus.getNextAction();
 		studyCreo.setDieRoll(9);
-		studyCreo.run();
+		runNextAction(magus);
 		assertEquals(magus.getPawnsOf(Arts.CREO), 7);
 		assertEquals(magus.getLevelOf(Arts.CREO), 6);
 
-		studyCreo = new StudyFromVis(magus, Arts.CREO);
-		studyCreo.run();
+		studyCreo = (StudyFromVis) magus.getNextAction();
+		runNextAction(magus);
 		assertEquals(magus.getPawnsOf(Arts.CREO), 5);
 	}
 
@@ -95,7 +98,7 @@ public class VisAcquisitionAndUse {
 		magus.addVis(Arts.REGO, 1);
 		assertTrue(magus.getTypeOfVisToStudy() == Arts.REGO);
 	}
-	
+
 	@Test
 	public void choiceOfVisTakesResearchPreferencesIntoAccount() {
 		MagusPreferences.setResearchPreference(magus, Arts.MUTO, 0.6);
@@ -108,7 +111,7 @@ public class VisAcquisitionAndUse {
 
 		magus.addXP(Arts.CREO, 5);
 		assertTrue(magus.getTypeOfVisToStudy() == Arts.MUTO);
-		
+
 		magus.addXP(Arts.MUTO, 10);
 		assertTrue(magus.getTypeOfVisToStudy() == Arts.CREO);
 	}
@@ -116,7 +119,7 @@ public class VisAcquisitionAndUse {
 	@Test
 	public void SearchingForVisProvidesVisAndVisSource() {
 		SearchForVis search = new SearchForVis(magus);
-		search.run();
+		addStartAndRunAction(search);
 		assertEquals(magus.getNumberInInventoryOf(sampleVisSource), 1);
 
 		int pawnsOfVis = magus.getNumberInInventoryOf(creoVis);
@@ -132,20 +135,25 @@ public class VisAcquisitionAndUse {
 	public void botchAddsWarpingPointsAndNoXPInArt() {
 		magus.setMagicAura(2);
 		magus.addVis(Arts.HERBAM, 5);
+		magus.setDecider(new HardCodedDecider<Magus>(MagusActions.STUDY_VIS));
 		StudyFromVis study = new StudyFromVis(magus, Arts.HERBAM);
 		study.setDieRoll(0, 1);
-		study.run();
+		addStartAndRunAction(study);
 		assertEquals(magus.getTotalXPIn(Abilities.WARPING), 1);
 		assertEquals(magus.getTotalXPIn(Arts.HERBAM), 0);
 		assertEquals(magus.getPawnsOf(Arts.HERBAM), 4);
+
+		study = (StudyFromVis) magus.getNextAction();
 		study.setDieRoll(0, 2);
-		study.run();
+		runNextAction(magus);
 		int warpingPoints = magus.getTotalXPIn(Abilities.WARPING);
 		assertTrue(warpingPoints >= 3);
 		assertEquals(magus.getTotalXPIn(Arts.HERBAM), 0);
 		assertEquals(magus.getPawnsOf(Arts.HERBAM), 3);
+
+		study = (StudyFromVis) magus.getNextAction();
 		study.setDieRoll(0, 0);
-		study.run();
+		runNextAction(magus);
 		assertEquals(magus.getTotalXPIn(Abilities.WARPING), warpingPoints);
 		assertEquals(magus.getTotalXPIn(Arts.HERBAM), 2);
 		assertEquals(magus.getPawnsOf(Arts.HERBAM), 2);
@@ -155,11 +163,18 @@ public class VisAcquisitionAndUse {
 	@Test
 	public void twilightMayOccurOnADoubleBotch() {
 		magus.setStamina(2);	// to offset double botch, and give 50:50 chance of avoiding twilight
-		magus.addVis(Arts.HERBAM, 50);
+		magus.addVis(Arts.HERBAM, 300);
+		magus.addXP(Abilities.MAGIC_THEORY, 300);
+		magus.setDecider(new HardCodedDecider<Magus>(MagusActions.STUDY_VIS));
 		StudyFromVis study = new StudyFromVis(magus, Arts.HERBAM);
+		study.addToAllPlans();
 		for (int i = 0; i < 20; i++) {
-			study.setDieRoll(0, 2);
-			study.run();
+			Action<?> nextAction = magus.getNextAction();
+			if (nextAction instanceof StudyFromVis) {
+				study = (StudyFromVis) magus.getNextAction();
+				study.setDieRoll(0, 2);
+			}
+			runNextAction(magus);
 			magus.addXP(Abilities.WARPING, -10);
 		}
 		int twilightScars = magus.getTwilightScars(true) + magus.getTwilightScars(false);
@@ -175,7 +190,7 @@ public class VisAcquisitionAndUse {
 		magus.addXP(Abilities.WARPING, Abilities.WARPING.getXPForLevel(10));
 		StudyFromVis study = new StudyFromVis(magus, Arts.HERBAM);
 		study.setDieRoll(0, 2);
-		study.run();
+		addStartAndRunAction(study);
 		assertTrue(magus.isDead());
 	}
 
@@ -188,9 +203,9 @@ public class VisAcquisitionAndUse {
 		magus.addXP(Abilities.WARPING, Abilities.WARPING.getXPForLevel(7));
 		StudyFromVis study = new StudyFromVis(magus, Arts.HERBAM);
 		study.setDieRoll(0, 2);
-		study.run();
+		addStartAndRunAction(study);
 		assertFalse(magus.isDead());
-		assertEquals(magus.getActionQueue().size(), 1);
+		assertEquals(magus.getActionPlan().timeToEndOfQueue(), 13);
 		assertTrue(magus.getNextAction() instanceof InTwilight);
 	}
 
@@ -222,6 +237,17 @@ public class VisAcquisitionAndUse {
 		assertEquals(TwilightEpisode.getTwilightComprehensionModifier(magus), 2);
 		magus.addXP(Abilities.WARPING, 5);
 		assertEquals(TwilightEpisode.getTwilightComprehensionModifier(magus), 1);
+	}
+
+	private void addStartAndRunAction(ArsMagicaAction a) {
+		a.addToAllPlans();
+		a.start();
+		a.run();
+	}
+	private void runNextAction(Magus m) {
+		Action<?> a = m.getActionPlan().getNextAction();
+		a.start();
+		a.run();
 	}
 
 }

@@ -31,7 +31,6 @@ public class CovenantApplication {
 
 		int size = covenant.getCurrentSize();
 		modifiedRoll = baseRoll + applicant.getIntelligence() + applicant.getPresence() + applicant.getLevelOf(Abilities.CHARM);
-		modifiedRoll -= size;
 		int availableCapacity = covenant.getCapacity() - size;
 		if (availableCapacity < 0) modifiedRoll -= 100;
 		switch (availableCapacity) {
@@ -53,7 +52,7 @@ public class CovenantApplication {
 		if (modifiedRoll < 9) {
 			// consider bonuses
 			List<Book> personalBooks = applicant.getInventoryOf(AMU.sampleBook);
-			int bookValueToCovenant = covenant.calculateIncrementalBuildPointsFrom(personalBooks);
+			int bookValueToCovenant = covenant.calculateIncrementalLibraryPointsFrom(personalBooks);
 			if (bookValueToCovenant > 0) {
 				joiningFee.addAll(personalBooks);
 				modifiedRoll += bookValueToCovenant / 3.0;

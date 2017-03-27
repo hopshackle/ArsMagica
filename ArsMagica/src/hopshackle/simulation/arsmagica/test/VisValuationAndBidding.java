@@ -19,7 +19,7 @@ public class VisValuationAndBidding {
 	@Before
 	public void setUp() throws Exception {
 		SimProperties.setProperty("MagusUniformResearchPreferences", "true");
-		world = new World();
+		world = new World(new SimpleWorldLogic<Magus>(new ArrayList<ActionEnum<Magus>>(EnumSet.allOf(MagusActions.class))));
 		world.setCalendar(new FastCalendar(800 * 52));
 		tribunal = new Tribunal("test", world);
 		world.setCurrentTime(806l*52l + 26l);

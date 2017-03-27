@@ -8,11 +8,12 @@ public class AMU {
 
 	public static final Vis sampleVis = new Vis(Arts.VIM);
 	public static final Book sampleBook = new Summa(Arts.CREO, 0, 0, null);
-	public static final Tribunal sampleTribunal = new Tribunal();
+	public static final World sampleWorld =  new World(new SimpleWorldLogic<Magus>(new ArrayList<ActionEnum<Magus>>(EnumSet.allOf(MagusActions.class))));
+	public static final Tribunal sampleTribunal = new Tribunal("AMU", sampleWorld);
 	public static final VisSource sampleVisSource = new VisSource(Arts.CREO, 1, null);
 	public static final Artefact sampleLongevityRitualService = new LongevityRitualService(null);
 	public static final Familiar sampleFamiliar = new Familiar(null);
-	public static Covenant sampleCovenant = new Covenant(null, null);
+	public static Covenant sampleCovenant = new Covenant(null, sampleTribunal);
 
 	public static Learnable getPreferredXPGain(Arts technique, Arts form, Magus magus) {
 		double techniqueLvl = magus.getLevelOf(technique);

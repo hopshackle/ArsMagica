@@ -18,8 +18,22 @@ public class InventSpell extends ArsMagicaAction {
 	private boolean standardSpell;
 	private LabText labTextUsed = null;
 
+	public InventSpell(Magus a, InventSpell researchProject) {
+		super(MagusActions.INVENT_SPELL, a);
+		if (a.hasApprentice()) optionalActors.add(a.getApprentice());
+		technique = researchProject.technique;
+		form = researchProject.form;
+		requisiteForm = researchProject.requisiteForm;
+		requisiteTechnique = researchProject.requisiteTechnique;
+		level = researchProject.level;
+		labTotal = magus.getLabTotal(technique, form);
+		spellName = researchProject.spellName;
+		pointsAccumulatedSoFar = researchProject.pointsAccumulatedSoFar;
+	}
+	
 	public InventSpell(Magus a) {
 		super(MagusActions.INVENT_SPELL, a);
+		if (a.hasApprentice()) optionalActors.add(a.getApprentice());
 		int iterations = 0;
 		boolean hasTriedOneNewSpell = false;
 		List<LabText> labTexts = getAllUnknownSpellsWithAccessibleLabTexts();
@@ -91,24 +105,7 @@ public class InventSpell extends ArsMagicaAction {
 		}
 		return true;
 	}
-
-	public InventSpell(Magus a, InventSpell researchProject) {
-		super(MagusActions.INVENT_SPELL, a);
-		technique = researchProject.technique;
-		form = researchProject.form;
-		requisiteForm = researchProject.requisiteForm;
-		requisiteTechnique = researchProject.requisiteTechnique;
-		level = researchProject.level;
-		labTotal = magus.getLabTotal(technique, form);
-		spellName = researchProject.spellName;
-		pointsAccumulatedSoFar = researchProject.pointsAccumulatedSoFar;
-	}
-
-	@Override
-	public boolean requiresApprentice() {
-		return true;
-	}
-
+	
 	@Override
 	public void doStuff() {
 		if (level == 0) return;
@@ -132,7 +129,10 @@ public class InventSpell extends ArsMagicaAction {
 			magus.log(logMessage);
 			magus.setCurrentSpellResearch(null);
 		}
-		magus.addXP(AMU.getPreferredXPGain(technique, form, magus), 2);
+		exposureXPForParticipants(technique, form, 2);
+		for (Magus labAssistant : optionalActors) {
+			labAssistant.log("Assists " + magus + " with spell invention: " + spellName);
+		}
 	}
 
 	private void determineLevel(List<LabText> labTexts) {

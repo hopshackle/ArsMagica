@@ -2,7 +2,7 @@ package hopshackle.simulation.arsmagica.test;
 
 import static org.junit.Assert.*;
 
-import java.util.List;
+import java.util.*;
 
 import org.junit.*;
 
@@ -16,7 +16,7 @@ public class InventingSpellsAndLabTexts {
 
 	@Before
 	public void setup() {
-		w = new World();
+		w = new World(new SimpleWorldLogic<Magus>(new ArrayList<ActionEnum<Magus>>(EnumSet.allOf(MagusActions.class))));
 		new Tribunal("test", w);
 		magus = new Magus(w);
 		magus.setMagicAura(5);
@@ -42,7 +42,7 @@ public class InventingSpellsAndLabTexts {
 	@Test
 	public void inventingASpellDoesSoOverANumberOfSeasons() {
 		magus.setDecider(new HardCodedDecider<Magus>(MagusActions.INVENT_SPELL));
-		magus.addAction(magus.decide());
+		magus.decide();
 		assertFalse(magus.isResearchingSpell());
 		int totalSpellLevels = 0;
 		int numberOfSpells = 0;
@@ -51,7 +51,7 @@ public class InventingSpellsAndLabTexts {
 		for (int i = 0; i < 10; i++) {
 			hasInventedSpell = false;
 			do {
-				Action nextAction = magus.getNextAction();
+				Action<?> nextAction = magus.getNextAction();
 				seasons++;
 				assertTrue(nextAction instanceof InventSpell);
 				nextAction.run();
@@ -96,9 +96,9 @@ public class InventingSpellsAndLabTexts {
 		// Total of 130 levels, of which 80 are scribeable
 		assertEquals(ScribeSpell.getAllUnscribedSpellsKnown(magus).size(), 7);
 
-		magus.setDecider(new HardCodedDecider(MagusActions.SCRIBE_SPELL));
-		magus.addAction(magus.decide());
-		Action nextAction = magus.getNextAction();
+		magus.setDecider(new HardCodedDecider<Magus>(MagusActions.SCRIBE_SPELL));
+		magus.decide();
+		Action<?> nextAction = magus.getNextAction();
 		assertTrue(nextAction instanceof ScribeSpell);
 		nextAction.run();
 
@@ -138,8 +138,8 @@ public class InventingSpellsAndLabTexts {
 		for (int i = 0; i < 7; i++) {
 			magus.addItem(new LabText(spellsWithText[i], null));
 		}
-		magus.setDecider(new HardCodedDecider(MagusActions.INVENT_SPELL));
-		magus.addAction(magus.decide());
+		magus.setDecider(new HardCodedDecider<Magus>(MagusActions.INVENT_SPELL));
+		magus.decide();
 
 		for (int i = 0; i < 24; i++) {
 			magus.getNextAction().run();

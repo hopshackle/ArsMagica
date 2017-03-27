@@ -39,14 +39,14 @@ public class LongevityRitualService extends ArsMagicaItem implements ArtefactReq
 		return Math.max(getLTSpec(), getLTCust());
 	}
 	private int getLTSpec() {
-		if (CrCoSpecialist != null)
-			return CrCoSpecialist.getLabTotal(Arts.CREO, Arts.CORPUS, customer);
+		if (CrCoSpecialist != null && customer != null)
+			return CrCoSpecialist.getLabTotal(Arts.CREO, Arts.CORPUS, HopshackleUtilities.listFromInstances(customer, customer.getApprentice()));
 		else
 			return 0;
 	}
 	private int getLTCust() {
 		if (customer != null && customer.getLevelOf(Abilities.MAGIC_THEORY) >= customer.getAge() / 10 + 1)
-			return customer.getLabTotal(Arts.CREO, Arts.CORPUS, CrCoSpecialist);
+			return customer.getLabTotal(Arts.CREO, Arts.CORPUS, HopshackleUtilities.listFromInstances(CrCoSpecialist, CrCoSpecialist.getApprentice()));
 		else return 0;
 
 	}
@@ -96,44 +96,30 @@ public class LongevityRitualService extends ArsMagicaItem implements ArtefactReq
 				&& InventLongevityRitual.hasSufficientVis(customer) && !CrCoSpecialist.isInTwilight()) {
 			// i.e. only use the contract if it will be of benefit and you have the vis
 
-			Action lastAction = customer.getExecutedActions().get(customer.getExecutedActions().size() - 1);
-			if (lastAction instanceof LabAssistant)	// bit of a hack. Magi only act as Lab Assistant on Longevity rituals
-				return;								// Hence this indicates they will receive a longevity ritual as soon as the 
-			// specialist takes their action.
-			Action n = CrCoSpecialist.getNextAction();
-			if (n instanceof LabAssistant || n instanceof InventLongevityRitual)
-				return;	// these two take priority
-			n = customer.getNextAction();
-			if (n instanceof LabAssistant || n instanceof InventLongevityRitual)
-				return;	// these two take priority
+			if (customer.getActionPlan().contains(MagusActions.LONGEVITY_RITUAL)) 
+				return;		// already scheduled
+
 			Magus primeMagus = CrCoSpecialist;
-			Magus assistant = customer;
-			if (getLTCust() > getLTSpec()) {
-				primeMagus = customer;
-				assistant = CrCoSpecialist;
-			}
 
 			// TODO: Chunk of old code below needs to be rewritten with new action plan system
-			/*
-			LabAssistant assistAction = new LabAssistant(assistant, primeMagus);
-			assistant.setActionOverride(assistAction);
-			int numberOfAssistants = Math.max(1, primeMagus.getLevelOf(Abilities.LEADERSHIP));
+
+			int numberOfAssistants = primeMagus.getLevelOf(Abilities.LEADERSHIP) + 1;	// assume Leadership is always specialised in lab work
 			List<Magus> labAssistants = getBestAvailableAssistants();
 			List<Magus> assistantsUsed = new ArrayList<Magus>();
-			assistantsUsed.add(assistant);
+			if (getLTCust() > getLTSpec()) {
+				primeMagus = customer;
+				assistantsUsed.add(CrCoSpecialist);
+			}
 			for (int a = 0; a < numberOfAssistants && a < labAssistants.size(); a++) {
 				Magus otherAssistant = labAssistants.get(a);
 				customer.log("Obtains assistance of " + otherAssistant + " for Longevity Ritual.");
-				LabAssistant assistanceAction = new LabAssistant(otherAssistant, primeMagus);
-				otherAssistant.setActionOverride(assistanceAction);
 				assistantsUsed.add(otherAssistant);
 			}
-			InventLongevityRitual action = new InventLongevityRitual(primeMagus, customer, assistantsUsed);
-			primeMagus.setActionOverride(action);
+
+			InventLongevityRitual action = new InventLongevityRitual(primeMagus, customer, assistantsUsed, 0);
+			action.addToAllPlans();
 			if (CrCoSpecialist.getRelationshipWith(customer) != Relationship.FRIEND)
 				deleteThis();
-				*/
-			
 		}
 		else {
 			// leave to use for later...can even be inherited
@@ -145,13 +131,8 @@ public class LongevityRitualService extends ArsMagicaItem implements ArtefactReq
 		if (customer.getApprentice() != null) allAssistants.add(customer.getApprentice());
 		if (CrCoSpecialist.getApprentice() != null) allAssistants.add(CrCoSpecialist.getApprentice());
 		for (Magus r : customer.getRelationships().keySet()) {
-			if (customer.getRelationshipWith(r) == Relationship.FRIEND && !r.isInTwilight()) {
-				Action n = r.getNextAction();
-				if (n instanceof LabAssistant || n instanceof InventLongevityRitual || customer.getApprentice() == r) {
-					// these two take priority
-				} else {
-					allAssistants.add(r);
-				}
+			if (customer.getRelationshipWith(r) == Relationship.FRIEND && !r.isInTwilight() && !r.isApprentice()) {
+				allAssistants.add(r);
 			}
 		}
 		allAssistants.sort(new Comparator<Magus>() {

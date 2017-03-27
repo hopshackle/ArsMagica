@@ -19,7 +19,7 @@ public class LibraryPolicy {
 	@Before
 	public void setup() {
 		SimProperties.setProperty("MagusUniformResearchPreferences", "true");
-		world = new World();
+		world = new World(new SimpleWorldLogic<Magus>(new ArrayList<ActionEnum<Magus>>(EnumSet.allOf(MagusActions.class))));
 		world.setCalendar(new FastCalendar(800 * 52));
 		tribunal = new Tribunal("Base", world);
 		tribunal.maintenance();	// sets nest Tribunal for 807
@@ -100,19 +100,19 @@ public class LibraryPolicy {
 		// and m2 should keep 4 pawns of TERRAM vis for experimentation
 		
 		// We then say that the first 5 pawns of any type is kept for spending
-		// and the remainder is then put up for auction
+		// and half of the remainder (rounded down) is then put up for auction
 		
-		// so we expect m1 to put up 2 pawns CREO for auction
-		// and m2 to put up 5 pawns of REGO, and 0 pawns of TERRAM
+		// so we expect m1 to put up 1 pawns CREO for auction
+		// and m2 to put up 2 pawns of REGO, and 0 pawns of TERRAM
 		m1.maintenance();
 		m2.maintenance();
 		
-		assertEquals((long)AMU.getVisInventory(m1).get(Arts.CREO),10);
-		assertEquals((long)AMU.getVisInventory(m2).get(Arts.TERRAM),5);
-		assertEquals((long)AMU.getVisInventory(m2).get(Arts.REGO), 3);	// but m2 will then bid 2 pawns of REGO for the two pawns of CREO (meeting their reserve price)
+		assertEquals((long)AMU.getVisInventory(m1).get(Arts.CREO), 11);
+		assertEquals((long)AMU.getVisInventory(m2).get(Arts.TERRAM), 5);
+		assertEquals((long)AMU.getVisInventory(m2).get(Arts.REGO), 7);	// but m2 will then bid one pawn of REGO for the one pawns of CREO (meeting their reserve price)
 		boolean foundBid = false;
 		for (BarterOffer bo : tribunal.getOffersOnMarket()) {
-			if (bo.getItem().equals(new Vis(Arts.CREO)) && bo.getBestBid() == 2.0)
+			if (bo.getItem().equals(new Vis(Arts.CREO)) && bo.getBestBid() == 1.0)
 				foundBid = true;
 		}
 		assertTrue(foundBid);
@@ -219,6 +219,7 @@ public class LibraryPolicy {
 	public void surplusBooksDonatedToCovenantInLieuOfCovenantService() {
 		Magus m1 = founders.get(0);
 		Summa creoSumma = new Summa(Arts.CREO, 10, 10, null);
+		assertEquals(covenant.calculateIncrementalLibraryPointsFrom(creoSumma), 14);
 		m1.addItem(creoSumma);
 		m1.setSeasonsServiceOwed(2);
 		assertEquals(m1.getInventoryOf(AMU.sampleBook).size(), 1);
@@ -227,7 +228,7 @@ public class LibraryPolicy {
 		assertTrue(m1.getCovenant() != null);
 		m1.maintenance();
 		assertEquals(m1.getInventoryOf(AMU.sampleBook).size(), 0);
-		assertEquals(m1.getSeasonsServiceOwed(), 0);
+		assertEquals(m1.getSeasonsServiceOwed(), 1);
 		assertEquals(covenant.getLibrary().size(), 1);
 	}
 

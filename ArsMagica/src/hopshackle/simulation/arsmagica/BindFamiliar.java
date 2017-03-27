@@ -6,6 +6,7 @@ public class BindFamiliar extends ArsMagicaAction {
 
 	public BindFamiliar(Magus a) {
 		super(MagusActions.BIND_FAMILIAR, a);
+		if (a.hasApprentice()) optionalActors.add(a.getApprentice());
 	}
 
 	@Override
@@ -78,7 +79,10 @@ public class BindFamiliar extends ArsMagicaAction {
 		f.setBronze(newBronze);
 		f.setGold(newGold);
 		magus.log("Upgrades familar to " + f.toString());
-		magus.addXP(AMU.getPreferredXPGain(f.getTechnique(), f.getForm(), magus), 2);
+		exposureXPForParticipants(f.getTechnique(), f.getForm(), 2);
+		for (Magus assistant : optionalActors) {
+			assistant.log("Lab assistant to " + magus + " to create familiar bond");
+		}
 	}
 	
 }

@@ -13,16 +13,13 @@ public class CopyBook extends ArsMagicaAction {
 		else 
 			bookToCopy = magus.getBestDisintegratingBookToCopy();
 		magus.setCurrentCopyProject(this);
-		bookToCopy.setCurrentReader(magus);
-		isCovenantService = magus.getSeasonsServiceOwed() > 0;
+
 	}
 
 	public CopyBook(CopyBook project) {
 		super(MagusActions.COPY_BOOK, project.getActor());
 		this.pointsSoFar = project.pointsSoFar;
 		this.bookToCopy = project.bookToCopy;
-		if (bookToCopy.getCurrentReader() == null)
-			bookToCopy.setCurrentReader(magus);
 		magus.setCurrentCopyProject(this);
 		this.isCovenantService = project.isCovenantService;
 	}
@@ -31,12 +28,20 @@ public class CopyBook extends ArsMagicaAction {
 		return bookToCopy;
 	}
 
+	@Override
+	public void initialisation() {
+		if (bookToCopy.isInUse() && bookToCopy.getCurrentReader() != magus) {
+			magus.log("Cannot copy " + bookToCopy + " because it is in use by " + bookToCopy.getCurrentReader());
+			cancel();
+		} else {
+			bookToCopy.setCurrentReader(magus);
+			isCovenantService = magus.getSeasonsServiceOwed() > 0;
+		}
+	}
+
+	@Override
 	public void doStuff() {
 		int pointsInSeason = magus.getLevelOf(Abilities.SCRIBE) + 6;
-		if (bookToCopy.getCurrentReader() != magus) {
-			pointsInSeason = 0;
-			magus.log("Unable to work on Copying as book is in use.");
-		}
 		pointsSoFar += pointsInSeason;
 		bookToCopy.isCopiedBy(magus);
 		if (pointsSoFar == pointsInSeason && pointsSoFar < bookToCopy.getLevel())
@@ -71,11 +76,11 @@ public class CopyBook extends ArsMagicaAction {
 	public void delete() {
 		bookToCopy.setCurrentReader(null);
 	}
-	
+
 	public String description() {
 		return "Copies " + bookToCopy.toString();
 	}
-	
+
 	public boolean isCovenantService() {
 		return isCovenantService;
 	}

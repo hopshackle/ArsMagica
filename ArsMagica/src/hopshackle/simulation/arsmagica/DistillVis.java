@@ -7,6 +7,7 @@ public class DistillVis extends ArsMagicaAction {
 	
 	public DistillVis(Magus a) {
 		super(MagusActions.DISTILL_VIS, a);
+		if (a.hasApprentice()) optionalActors.add(a.getApprentice());
 	}
 
 	protected void doStuff() {
@@ -24,14 +25,9 @@ public class DistillVis extends ArsMagicaAction {
 		} else 
 			magus.addVis(Arts.VIM, visProduced);
 
-		magus.addXP(AMU.getPreferredXPGain(Arts.CREO, Arts.VIM, magus), 2);
+		exposureXPForParticipants(Arts.CREO, Arts.VIM, 2);
 	}
 
-	@Override
-	public boolean requiresApprentice() {
-		return true;
-	}
-	
 	public String description() {
 		return "Distills " + visProduced + " pawns of Vis";
 	}

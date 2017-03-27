@@ -5,12 +5,13 @@ import hopshackle.simulation.*;
 import java.util.List;
 
 public class TeachApprentice extends ArsMagicaAction {
-	
+
 	private Magus apprentice;
 	private Learnable skillToBeTaught;
 
-	public TeachApprentice(Magus parens) {
-		super(MagusActions.TEACH_APPRENTICE, parens);		
+	public TeachApprentice(Magus parens, Magus apprentice) {
+		super(MagusActions.TEACH_APPRENTICE, parens);
+		mandatoryActors.add(apprentice);
 	}
 
 	@Override
@@ -23,10 +24,10 @@ public class TeachApprentice extends ArsMagicaAction {
 		} else {
 			teachArtOrAbility();
 		}
-		
+
 		apprentice.incrementSeasonsTraining();
 		magus.addXP(Abilities.TEACHING, 2);
-		
+
 	}
 
 	private void teachSpells() {
@@ -36,7 +37,7 @@ public class TeachApprentice extends ArsMagicaAction {
 		// if spellLevels learnt so far, plus this one are still under or equal to the best lab total then learn spell
 		// else try again
 		// after three consecutive attempts to find a teachable spell, stop
-		
+
 		List<Spell> spellsAvailable = magus.getSpells();
 		for (Spell s : magus.getSpells()) {
 			int apprenticeLabTotal = apprentice.getLabTotal(s.getTechnique(), s.getForm()) + magus.getMagicAura();
@@ -45,12 +46,12 @@ public class TeachApprentice extends ArsMagicaAction {
 			if (apprentice.getSpells().contains(s))
 				spellsAvailable.remove(s);	// already known
 		}
-		
+
 		if (spellsAvailable.size() < 2) {	// not enough options to be worthwhile
 			teachArtOrAbility();
 			return;
 		}
-		
+
 		int failedAttempts = 0;
 		int totalSpellLevelsTaught = 0;
 		int numberOfSpells = spellsAvailable.size();
@@ -97,10 +98,10 @@ public class TeachApprentice extends ArsMagicaAction {
 				}
 			}
 		}
-		
+
 		if (apprentice.getYearsSinceStartOfApprenticeship() == 14 && magus.getLevelOf(Abilities.PARMA_MAGICA) > 0)
 			skillToBeTaught = Abilities.PARMA_MAGICA;
-		
+
 		if (skillToBeTaught != null) {
 			int xp = magus.getCommunication() + magus.getLevelOf(Abilities.TEACHING) + 9;
 			int currentXP = apprentice.getTotalXPIn(skillToBeTaught);
@@ -115,13 +116,9 @@ public class TeachApprentice extends ArsMagicaAction {
 		}
 	}
 
-	@Override
-	public boolean requiresApprentice() {
-		return true;
-	}
-	
 	public String description() {
-		return (skillToBeTaught == null) ? "Teaches Spells" : skillToBeTaught.toString();
+		String retValue = (skillToBeTaught == null) ? "Teaches Spells" : skillToBeTaught.toString();
+		return magus + " " + retValue + " to " + apprentice;
 	}
-	
+
 }

@@ -19,8 +19,12 @@ public class InTwilight extends ArsMagicaAction {
 
 	@Override
 	protected void doNextDecision() {
-		// TODO: If intwilight, then may need to do something here
-		super.doNextDecision();	// will sort out any apprentice; and take action if not in Twilight
+		if (seasons > 1) {
+			InTwilight nextSeason = new InTwilight(magus, seasons - 1);
+			nextSeason.addToAllPlans();
+		} else {
+			super.doNextDecision();
+		}
 	}
 	
 	public String description() {

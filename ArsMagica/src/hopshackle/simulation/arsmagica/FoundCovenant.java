@@ -1,49 +1,37 @@
 package hopshackle.simulation.arsmagica;
 
-import hopshackle.simulation.*;
+import hopshackle.simulation.Dice;
 
-import java.util.List;
+import java.util.*;
 
 public class FoundCovenant extends ArsMagicaAction {
 	
-	private List<Magus> allFounders;
 	private Covenant newCovenant;
-
-	public FoundCovenant(Magus founder, List<Magus> otherMembers) {
-		super(MagusActions.FOUND_COVENANT, founder);
-		allFounders = HopshackleUtilities.cloneList(otherMembers);
-		allFounders.add(0, founder);
-		if (allFounders.size() < 1) {
+	
+	public FoundCovenant(List<Magus> founders) {
+		super(MagusActions.FOUND_COVENANT, founders, new ArrayList<Magus>(), 0, 1);
+		if (founders.size() < 1) {
 			logger.severe("No founders for Covenant");
 			return;
 		}
-		if (founder == null) {
-			logger.severe("No founder for covenant");
-			return;
-		}
-		newCovenant = new Covenant(allFounders, founder.getTribunal());
-		newCovenant.setAura(magus.getMagicAura());
-		// TODO: Remove actionOverride - should now be dealt with via actionPlan
-	}
-	
-	public FoundCovenant(Magus coFounder, Covenant covenant) {
-		super(MagusActions.FOUND_COVENANT, coFounder);
-		newCovenant = covenant;
 	}
 
 	@Override
 	protected void doStuff() {
-		if (allFounders != null) {
-			magus.log("Founds " + newCovenant.toString());
-		} else {
-			magus.log("Co-founds " + newCovenant.toString());
+		newCovenant = new Covenant(mandatoryActors, magus.getTribunal());
+		int capacity = Math.max(3 + (Dice.stressDieResult() + Dice.stressDieResult()) / 2 - magus.getMagicAura(), 1);
+		newCovenant.setAuraAndCapacity(magus.getMagicAura(), capacity);
+		String verb = "Co-founds ";
+		if (mandatoryActors.size() < 2) verb = "Founds ";
+		for (Magus m : mandatoryActors) {
+			m.log(verb + newCovenant.toString());
+			m.setCovenant(newCovenant);
+			m.addXP(Abilities.LEADERSHIP, 2);
 		}
-		magus.setCovenant(newCovenant);
-		magus.addXP(Abilities.LEADERSHIP, 2);
 	}
 	
 	public String description() {
-		return "Founds " + newCovenant;
+		return newCovenant + " founded";
 	}
 
 }

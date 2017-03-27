@@ -38,13 +38,15 @@ public class Magus extends Agent implements Persistent {
 	private Map<Learnable, Integer> tractatusWritten = new HashMap<Learnable, Integer>();
 	private MagusPreferences researchGoals;
 	private boolean uniformResearchPreferences = SimProperties.getProperty("MagusUniformResearchPreferences", "false").equals("true");
-
+	private static Policy<Action<Magus>> defaultActionPolicy = new MagusActionPolicy();
+	
 	public Magus(Location l, BaseDecider<Magus> d, World world) {
 		super(l, d, world);
 		name = magusNamer.getName();
 
 		// need to decide on Tribunal
-		Tribunal[] allTribunals = world.getAllChildLocationsOfType(AMU.sampleTribunal).toArray(new Tribunal[1]);
+		Set<Tribunal> tSet = world.getAllChildLocationsOfType(AMU.sampleTribunal);
+		Tribunal[] allTribunals = tSet.toArray(new Tribunal[1]);
 		int roll = Dice.roll(1, allTribunals.length) - 1;
 		setTribunal(allTribunals[roll]);
 		log("Moves to Tribunal of " + tribunal);
@@ -52,6 +54,7 @@ public class Magus extends Agent implements Persistent {
 		rollStatistics(2);
 
 		setPolicy(new MagusApprenticeInheritance());
+		setPolicy(defaultActionPolicy);
 		this.setDebugLocal(true);
 		log(this.toString());
 		agentRetriever = masterAgentRetriever;
@@ -206,13 +209,7 @@ public class Magus extends Agent implements Persistent {
 			if (getAge() > 35 && !isInTwilight()) {
 				new AgeingEvent(this).ageOneYear();
 			}
-			if (hasApprentice())  {
-				List<Magus> both = new ArrayList<Magus>();
-				both.add(this); both.add(apprentice);
-				new SocialMeeting(both, 2, 2);
-			}
 		}
-
 
 		// Apprentice graduates if 15 years have elapsed
 		if (hasApprentice() && apprentice.getYearsSinceStartOfApprenticeship() >= 15 && apprentice.seasonsTraining >= 15) {
@@ -230,6 +227,11 @@ public class Magus extends Agent implements Persistent {
 					tribunal.addToMarket(new BarterOffer(this,
 							new LongevityRitualService(this), 1, reservePrice,
 							new VisValuationFunction(this)));
+				}
+				if (hasApprentice())  {
+					List<Magus> both = new ArrayList<Magus>();
+					both.add(this); both.add(apprentice);
+					new SocialMeeting(both, 2, 2);
 				}
 			}
 		}
@@ -338,10 +340,9 @@ public class Magus extends Agent implements Persistent {
 				setTribunal(trib);
 		}
 
-		// If we have an unexecuted action, then when this runs, we'll trigger an independent set of choices
-		// If action queue is empty, we need to do this now (as we cannot rely on parens to do it for us)
 		parens = null;
-		// TODO: Review what we should actually do here given the new action plan
+		getActionPlan().purgeActions(false);		// remove any future plans, and make new decision if needed
+															// but do not cancel any executing actions
 	}
 
 	public Tribunal getFavouredTribunal() {
@@ -443,12 +444,15 @@ public class Magus extends Agent implements Persistent {
 	}
 
 	public int getLabTotal(Arts technique, Arts form) {
-		return getLabTotal(technique, form, apprentice);
+		List<Magus> defaultAssistants = new ArrayList<Magus>();
+		if (hasApprentice()) defaultAssistants.add(apprentice);
+		return getLabTotal(technique, form, defaultAssistants);
 	}
 
-	public int getLabTotal(Arts technique, Arts form, Magus assistant) {
+	public int getLabTotal(Arts technique, Arts form, List<Magus> assistants) {
+		if (hasApprentice() && getLevelOf(Abilities.LEADERSHIP) >= assistants.size() && !assistants.contains(apprentice)) assistants.add(apprentice);
 		int labTotal = getLevelOf(technique) + getLevelOf(form) + getMagicAura() + getIntelligence() + getLevelOf(Abilities.MAGIC_THEORY);
-		if (assistant != null)
+		for (Magus assistant : assistants)
 			labTotal += assistant.getIntelligence() + assistant.getLevelOf(Abilities.MAGIC_THEORY);
 		return labTotal;
 	}
@@ -806,6 +810,8 @@ public class Magus extends Agent implements Persistent {
 			covenant.newMember(this);
 			log("Joins " + covenant);
 			setLocation(covenant);
+			if (hasApprentice())
+				apprentice.setLocation(covenant);
 		}
 		if (covenant != null && Math.random() > 0.5) {
 			setPolicy(new MagusCovenantInheritance());

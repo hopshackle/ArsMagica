@@ -1,7 +1,9 @@
 package hopshackle.simulation.arsmagica.test;
 
 import static org.junit.Assert.*;
+
 import org.junit.*;
+
 import java.util.*;
 
 import hopshackle.simulation.*;
@@ -17,7 +19,7 @@ public class ReadingAndWriting {
 	@Before
 	public void setup() {
 		SimProperties.setProperty("MagusUniformResearchPreferences", "true");
-		world = new World();
+		world = new World(new SimpleWorldLogic<Magus>(new ArrayList<ActionEnum<Magus>>(EnumSet.allOf(MagusActions.class))));
 		Tribunal trib = new Tribunal("test", world);
 		cov = new Covenant(null, trib);
 		magus = new Magus(world);
@@ -74,7 +76,7 @@ public class ReadingAndWriting {
 		magus.addXP(Arts.ANIMAL, Arts.MUTO.getXPForLevel(16));	
 		magus.addXP(Arts.VIM, Arts.MUTO.getXPForLevel(26));	
 		assertEquals(magus.getTotalXPIn(Abilities.LATIN), 75);
-		magus.setDecider(new HardCodedDecider(MagusActions.WRITE_SUMMA));
+		magus.setDecider(new HardCodedDecider<Magus>(MagusActions.WRITE_SUMMA));
 		runActionsUntilBookFinished();
 		List<Book> books = magus.getInventoryOf(AMU.sampleBook);
 		assertEquals(books.size(), 1);
@@ -90,7 +92,7 @@ public class ReadingAndWriting {
 		magus.addXP(Arts.ANIMAL, Arts.MUTO.getXPForLevel(16));	
 		magus.addXP(Arts.VIM, Arts.MUTO.getXPForLevel(24));	
 		magus.addItem(new Summa(Arts.VIM, 7, 15, null));
-		magus.setDecider(new HardCodedDecider(MagusActions.WRITE_SUMMA));
+		magus.setDecider(new HardCodedDecider<Magus>(MagusActions.WRITE_SUMMA));
 		runActionsUntilBookFinished();
 		List<Book> books = magus.getInventoryOf(AMU.sampleBook);
 		assertEquals(books.size(), 2);
@@ -101,11 +103,11 @@ public class ReadingAndWriting {
 	
 	@Test
 	public void WriteSummaDoesNotDuplicateExistingBook() {
-		magus.setDecider(new HardCodedDecider(MagusActions.WRITE_SUMMA));
+		magus.setDecider(new HardCodedDecider<Magus>(MagusActions.WRITE_SUMMA));
 		magus.addXP(Arts.VIM, 66);	// lvl 11
 		magus.addItem(new Summa(Arts.VIM, 5, 15, null));
 		// Should now not be worth writing a book
-		Action action = magus.decide();
+		Action<?> action = magus.decide();
 		assertTrue(action instanceof SearchForVis);
 	}
 
@@ -122,7 +124,7 @@ public class ReadingAndWriting {
 		 *  L6 Q11			-2				 4				0					-2					 2
 		 *  L5 Q12			-2				 3				0					-2					 1
 		 */
-		magus.setDecider(new HardCodedDecider(MagusActions.WRITE_SUMMA));
+		magus.setDecider(new HardCodedDecider<Magus>(MagusActions.WRITE_SUMMA));
 		runActionsUntilBookFinished();
 		List<Book> books = magus.getInventoryOf(AMU.sampleBook);
 		assertEquals(books.size(), 1);
@@ -139,7 +141,7 @@ public class ReadingAndWriting {
 		 *  L6 Q11			-2				 0				0					 0					 0
 		 *  L5 Q12			-2				 0				0					 0					 0
 		 */
-		Action action = magus.decide();
+		Action<?> action = magus.decide();
 		assertTrue(action instanceof SearchForVis);
 
 		magus.removeItem(bookWritten);
@@ -182,7 +184,7 @@ public class ReadingAndWriting {
 	public void AbilitiesAreValuedAtTwiceArtBasedOnLevel() {
 		magus.addXP(Arts.MUTO, Arts.MUTO.getXPForLevel(20));
 		magus.addXP(Abilities.MAGIC_THEORY, Abilities.MAGIC_THEORY.getXPForLevel(10)); 
-		magus.setDecider(new HardCodedDecider(MagusActions.WRITE_SUMMA));
+		magus.setDecider(new HardCodedDecider<Magus>(MagusActions.WRITE_SUMMA));
 		runActionsUntilBookFinished();
 		List<Book> books = magus.getInventoryOf(AMU.sampleBook);
 		assertEquals(books.size(), 1);
@@ -225,7 +227,7 @@ public class ReadingAndWriting {
 		magus.addXP(Abilities.MAGIC_THEORY, Abilities.MAGIC_THEORY.getXPForLevel(10)); 
 		assertEquals(MagusPreferences.getResearchPreference(magus, Arts.MUTO), 1.3, 0.01);
 		assertEquals(MagusPreferences.getResearchPreference(magus, Abilities.MAGIC_THEORY), 0.5, 0.01);
-		magus.setDecider(new HardCodedDecider(MagusActions.WRITE_SUMMA));
+		magus.setDecider(new HardCodedDecider<Magus>(MagusActions.WRITE_SUMMA));
 		runActionsUntilBookFinished();
 		List<Book> books = magus.getInventoryOf(AMU.sampleBook);
 		assertEquals(books.size(), 1);
@@ -262,7 +264,7 @@ public class ReadingAndWriting {
 	@Test
 	public void bookGoesToMasterIfApprentice() {
 		assertEquals(magus.getInventoryOf(AMU.sampleBook).size(),0);
-		apprentice.setDecider(new HardCodedDecider(MagusActions.WRITE_TRACTATUS));
+		apprentice.setDecider(new HardCodedDecider<Magus>(MagusActions.WRITE_TRACTATUS));
 		apprentice.decide().run();
 		assertEquals(magus.getInventoryOf(AMU.sampleBook).size(),1);
 		assertEquals(apprentice.getInventoryOf(AMU.sampleBook).size(),0);
@@ -273,7 +275,7 @@ public class ReadingAndWriting {
 		magus.addXP(Arts.IGNEM, 300);
 		assertEquals(magus.getInventoryOf(AMU.sampleBook).size(),0);
 		magus.setSeasonsServiceOwed(1);
-		magus.setDecider(new HardCodedDecider(MagusActions.WRITE_SUMMA));
+		magus.setDecider(new HardCodedDecider<Magus>(MagusActions.WRITE_SUMMA));
 		runActionsUntilBookFinished();
 		assertEquals(magus.getInventoryOf(AMU.sampleBook).size(),0);
 		assertEquals(cov.getLibrary().size(),1);
@@ -320,9 +322,9 @@ public class ReadingAndWriting {
 		magus.addItem(philosophySumma);
 		assertFalse(creoSumma.isInUse());
 		assertFalse(philosophySumma.isInUse());
-		magus.setDecider(new HardCodedDecider(MagusActions.READ_BOOK));
-		apprentice.setDecider(new HardCodedDecider(MagusActions.PRACTISE_ABILITY));	// otherwise apprentice reads the Philosophy book
-		Action firstAction = magus.decide();
+		magus.setDecider(new HardCodedDecider<Magus>(MagusActions.READ_BOOK));
+		apprentice.setDecider(new HardCodedDecider<Magus>(MagusActions.PRACTISE_ABILITY));	// otherwise apprentice reads the Philosophy book
+		Action<?> firstAction = magus.decide();
 		firstAction.run();
 		assertTrue(creoSumma.isInUse());	// still reading
 		assertFalse(philosophySumma.isInUse());
@@ -346,22 +348,22 @@ public class ReadingAndWriting {
 		Book creoSumma = new Summa(Arts.CREO, 10, 10, null);
 		magus.addItem(creoSumma);
 
-		magus.setDecider(new HardCodedDecider(MagusActions.READ_BOOK));
+		magus.setDecider(new HardCodedDecider<Magus>(MagusActions.READ_BOOK));
 		magus.decide().run();
 		assertTrue(creoSumma.isInUse());
-		magus.purgeActions();
+		magus.getActionPlan().purgeActions(true);
 		assertFalse(creoSumma.isInUse());
 	}
 
 	private void runActionsUntilBookFinished() {
-		Action action = magus.decide();
-		Action originalAction = action;
+		Action<?> action = magus.decide();
+		Action<?> originalAction = action;
 		do {
 			assertTrue(action instanceof WriteSumma);
 			assertTrue(action.equals(originalAction));
 			action.run();
 			action = magus.getNextAction();
 		} while (magus.isWritingBook() && magus.getCurrentBookProject().equals(originalAction));
-		magus.purgeActions();
+		magus.getActionPlan().purgeActions(true);
 	}
 }

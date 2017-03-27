@@ -35,9 +35,9 @@ public class Covenant extends Organisation<Magus> {
 		covenantAttributes = new HashMap<CovenantAttributes, Ability>();
 	}
 
-	public void setAura(int aura) {
+	public void setAuraAndCapacity(int aura, int cap) {
 		magicAura = aura;
-		capacity = Math.max(3 + (Dice.stressDieResult() + Dice.stressDieResult()) / 2 - aura, 1);
+		capacity = cap;
 	}
 	public int getAura() {return magicAura;}
 	public int getCapacity() {return capacity;}
@@ -305,7 +305,7 @@ public class Covenant extends Organisation<Magus> {
 		}
 	}
 
-	public int calculateIncrementalBuildPointsFrom(List<Book> potentialLibraryAdditions) {
+	public int calculateIncrementalLibraryPointsFrom(List<Book> potentialLibraryAdditions) {
 		List<Book> fullLibrary = getLibrary();
 		fullLibrary.addAll(potentialLibraryAdditions);	
 		int fullPoints = calculateLibraryPoints(fullLibrary);
@@ -313,11 +313,10 @@ public class Covenant extends Organisation<Magus> {
 		return fullPoints - startingPoints;
 	}
 
-
-	public int calculateIncrementalBuildPointsFrom(Book b) {
+	public int calculateIncrementalLibraryPointsFrom(Book b) {
 		List<Book> books = new ArrayList<Book>();
 		books.add(b);
-		return calculateIncrementalBuildPointsFrom(books);
+		return calculateIncrementalLibraryPointsFrom(books);
 	}
 	private int calculateLibraryPoints(List<Book> library) {
 		int retValue = 0;

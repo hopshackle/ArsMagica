@@ -4,11 +4,14 @@ import hopshackle.simulation.*;
 
 public class JoinCovenant extends ArsMagicaAction {
 
-	private static Covenant sampleCovenant = new Covenant(null, null);
 	private Covenant joinedCovenant;
 
 	public JoinCovenant(Magus magus) {
 		super(MagusActions.JOIN_COVENANT, magus);
+	}
+
+	public JoinCovenant(Magus magus, int offset) {
+		super(MagusActions.JOIN_COVENANT, magus, offset, 1);
 	}
 
 	@Override
@@ -19,7 +22,7 @@ public class JoinCovenant extends ArsMagicaAction {
 		// for the moment a Join roll is stress die + Prs + Charm + Magic Theory + Int - covenant size
 		// we'll make this independent of anything else for the moment (but come back and change this later)
 
-		Covenant[] covenants = magus.getTribunal().getAllChildLocationsOfType(sampleCovenant).toArray(new Covenant[1]);
+		Covenant[] covenants = magus.getTribunal().getAllChildLocationsOfType(AMU.sampleCovenant).toArray(new Covenant[1]);
 
 		int numberOfCovenants = covenants.length;
 		if (covenants[0] == null) {

@@ -53,7 +53,7 @@ public class SocialMeeting {
 			break;
 		case NONE:
 		}
-		if (m1.getHermeticHouse() == m2.getHermeticHouse())
+		if (m1.getHermeticHouse() != null && m1.getHermeticHouse() == m2.getHermeticHouse())
 			modifier += 2;
 		modifier += commonSocialCircle(m1, m2);
 		return modifier;

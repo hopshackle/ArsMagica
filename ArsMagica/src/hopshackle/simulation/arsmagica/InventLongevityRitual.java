@@ -1,62 +1,70 @@
 package hopshackle.simulation.arsmagica;
 
+import hopshackle.simulation.HopshackleUtilities;
+
 import java.util.*;
 
 public class InventLongevityRitual extends ArsMagicaAction {
 
 	private Magus customer;
 	private int modifier;
-	private List<Magus> labAssistants = new ArrayList<Magus>();
 
 	public InventLongevityRitual(Magus a) {
 		super(MagusActions.LONGEVITY_RITUAL, a);
+		if (a.hasApprentice()) optionalActors.add(a.getApprentice());
 	}
 
-	public InventLongevityRitual(Magus crCoSpecialist, Magus customer, List<Magus> assistants) {
+	public InventLongevityRitual(Magus crCoSpecialist, Magus customer, List<Magus> assistants, int offset) {
 		// when one Magus invents a ritual for another
-		super(MagusActions.LONGEVITY_RITUAL, crCoSpecialist);
+		super(MagusActions.LONGEVITY_RITUAL, 
+				HopshackleUtilities.listFromInstances(crCoSpecialist, customer), 
+				assistants, offset, 1);
 		if (crCoSpecialist != customer)
 			this.customer = customer;
-		labAssistants = assistants;
 	}
 
 	@Override
-	public boolean requiresApprentice() {
-		return true;
+	protected void initialisation() {
+		Magus subject = customer;
+		if (subject == null) subject = magus;
+		if (hasSufficientVis(subject)) {
+			for (Vis v : requirementsForRitual(subject))
+				subject.removeItem(v);
+		} else {
+			magus.log("Insufficient vis for Longevity Ritual");
+			if (customer != null)
+				customer.log("Insufficient vis for Longevity Rutual");
+			cancel();	// if insufficient vis, then shoudl still be time for participant to do something else instead
+		}
 	}
 
 	@Override
 	protected void doStuff() {
 		Magus subject = customer;
 		if (subject == null) subject = magus;
-		int labTotal = magus.getLabTotal(Arts.CREO, Arts.CORPUS);
-		if (!labAssistants.isEmpty()) {
-			for (Magus assistant : labAssistants) {
-				labTotal += assistant.getLevelOf(Abilities.MAGIC_THEORY) + assistant.getIntelligence();
-			}
-		}
+		List<Magus> allAssistants = getAllConfirmedParticipants();
+		allAssistants.remove(magus);
+		int labTotal = magus.getLabTotal(Arts.CREO, Arts.CORPUS, allAssistants);
 		modifier = (int) Math.ceil(labTotal / 5.0);
-		if (hasSufficientVis(subject)) {
-			for (Vis v : requirementsForRitual(subject))
-				subject.removeItem(v);
-			subject.setLongevityRitualEffect(modifier);
-			subject.setKnownLongevityEffect(Math.max(subject.getKnownLongevityEffect(), modifier));
-			if (customer == null)
-				magus.log("Invents a Longevity Ritual of potency " + modifier);
-			else {
-				magus.log("Invents a Longevity Ritual of potency " + modifier
-						+ " for " + customer);
-				customer.log("Receives Longevity Ritual of potency " + modifier
-						+ " from " + magus);
+		subject.setLongevityRitualEffect(modifier);
+		subject.setKnownLongevityEffect(Math.max(subject.getKnownLongevityEffect(), modifier));
+		if (customer == null) {
+			magus.log("Invents a Longevity Ritual of potency " + modifier);
+			for (Magus assistant : allAssistants) {
+				assistant.log("Lab assistant in creation of longevity ritual by " + magus);
 			}
-			magus.addXP(AMU.getPreferredXPGain(Arts.CREO, Arts.CORPUS, magus),
-					2);
-		} else {
-			modifier = 0;
-			magus.log("Insufficient vis for Longevity Ritual");
-			if (customer != null)
-				customer.log("Insufficient vis for Longevity Rutual");
 		}
+		else {
+			magus.log("Invents a Longevity Ritual of potency " + modifier
+					+ " for " + customer);
+			customer.log("Receives Longevity Ritual of potency " + modifier
+					+ " from " + magus);
+			allAssistants.remove(customer);
+			for (Magus assistant : allAssistants) {
+				assistant.log("Lab assistant in creation of longevity ritual for " + customer + " by " + magus);
+			}
+		}
+		exposureXPForParticipants(Arts.CREO, Arts.CORPUS, 2);
 	}
 
 	public static boolean hasSufficientVis(Magus subject) {
@@ -105,7 +113,7 @@ public class InventLongevityRitual extends ArsMagicaAction {
 	}
 
 	public String description() {
-		return "Invents +"
+		return magus + " invents +"
 				+ modifier
 				+ " longevity ritual for "
 				+ ((customer == actor || customer == null) ? "Self" : customer

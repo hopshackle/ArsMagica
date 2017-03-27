@@ -1,7 +1,11 @@
 package hopshackle.simulation.arsmagica.test;
 
 import static org.junit.Assert.*;
+
+import java.util.*;
+
 import org.junit.*;
+
 import hopshackle.simulation.*;
 import hopshackle.simulation.arsmagica.*;
 
@@ -12,7 +16,7 @@ public class TractatusTest {
 	
 	@Before
 	public void setup() {
-		w = new World();
+		w = new World(new SimpleWorldLogic<Magus>(new ArrayList<ActionEnum<Magus>>(EnumSet.allOf(MagusActions.class))));
 		new Tribunal("Test", w);
 		magus = new Magus(w);
 		magus.setCommunication(1);

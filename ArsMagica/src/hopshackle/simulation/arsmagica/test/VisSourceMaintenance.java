@@ -2,7 +2,7 @@ package hopshackle.simulation.arsmagica.test;
 
 import static org.junit.Assert.*;
 
-import java.util.List;
+import java.util.*;
 
 import org.junit.*;
 
@@ -18,7 +18,7 @@ public class VisSourceMaintenance {
 	
 	@Before
 	public void setup() {
-		world = new World();
+		world = new World(new SimpleWorldLogic<Magus>(new ArrayList<ActionEnum<Magus>>(EnumSet.allOf(MagusActions.class))));
 		new Tribunal("Test", world);
 		world.setCalendar(new FastCalendar(800 * 52));
 		magus = new Magus(world);

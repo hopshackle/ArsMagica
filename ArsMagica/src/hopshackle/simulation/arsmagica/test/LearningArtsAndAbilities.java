@@ -1,6 +1,9 @@
 package hopshackle.simulation.arsmagica.test;
 
 import static org.junit.Assert.*;
+
+import java.util.*;
+
 import org.junit.*;
 
 import hopshackle.simulation.*;
@@ -13,7 +16,7 @@ public class LearningArtsAndAbilities {
 	
 	@Before
 	public void setUp() {
-		World w = new World();
+		World w = new World(new SimpleWorldLogic<Magus>(new ArrayList<ActionEnum<Magus>>(EnumSet.allOf(MagusActions.class))));
 		magus = new Magus(w);
 		magus.setTribunal(new Tribunal("test", w));
 	}
@@ -97,10 +100,17 @@ public class LearningArtsAndAbilities {
 	
 	@Test
 	public void PractiseAnAbility() {
+		magus.getActionPlan().addAction(new PractiseAbility(magus, Abilities.MAGIC_THEORY));
 		assertEquals(magus.getLevelOf(Abilities.MAGIC_THEORY), 0);
-		new PractiseAbility(magus, Abilities.MAGIC_THEORY).run();
+		runNextAction(magus);
 		assertEquals(magus.getLevelOf(Abilities.MAGIC_THEORY), 0);
 		assertEquals(magus.getTotalXPIn(Abilities.MAGIC_THEORY), 4);
+	}
+	
+	private void runNextAction(Magus m) {
+		Action<?> a = m.getActionPlan().getNextAction();
+		a.start();
+		a.run();
 	}
 
 

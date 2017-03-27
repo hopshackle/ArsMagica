@@ -17,7 +17,7 @@ public class Tribunals {
 	
 	@Before
 	public void setup() {
-		world = new World();
+		world = new World(new SimpleWorldLogic<Magus>(new ArrayList<ActionEnum<Magus>>(EnumSet.allOf(MagusActions.class))));
 		world.setCalendar(new FastCalendar(800 * 52));
 		tribunal = new Tribunal("Test", world);
 		magus1 = new Magus(world);

@@ -3,7 +3,7 @@ package hopshackle.simulation.arsmagica;
 import java.util.*;
 
 public class WriteTractatus extends ArsMagicaAction {
-	
+
 	private boolean isCovenantService;
 	private Tractatus newBook;
 
@@ -31,9 +31,11 @@ public class WriteTractatus extends ArsMagicaAction {
 	}
 
 	public String description() {
-		return newBook.toString();
+		if (newBook == null)
+			return magus + " writes Tractatus";
+		return magus + " writes " + newBook;
 	}
-	
+
 	public boolean isCovenantService() {
 		return isCovenantService;
 	}

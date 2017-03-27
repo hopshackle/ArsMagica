@@ -1,6 +1,9 @@
 package hopshackle.simulation.arsmagica.test;
 
 import static org.junit.Assert.*;
+
+import java.util.*;
+
 import org.junit.*;
 
 import hopshackle.simulation.*;
@@ -8,12 +11,12 @@ import hopshackle.simulation.arsmagica.*;
 
 public class SeasonsAndDates {
 	
-	private Agent magus1, magus2;
+	private Magus magus1, magus2;
 	private World w;
 	
 	@Before
 	public void setup() {
-		w = new World();
+		w = new World(new SimpleWorldLogic<Magus>(new ArrayList<ActionEnum<Magus>>(EnumSet.allOf(MagusActions.class))));
 		new Tribunal("test", w);
 		w.setCalendar(new FastCalendar(0));
 		magus1 = new Magus(w);
@@ -41,30 +44,36 @@ public class SeasonsAndDates {
 	}
 	
 	@Test
-	public void actionOverrideWorksWithEmptyQueue() {
-		magus1.addAction(new InTwilight(magus1, 1));
-		assertEquals(magus1.getNextAction().getStartTime(), 13);
+	public void startAndEndQueueTimes() {
+		magus1.getActionPlan().addAction(new InTwilight(magus1, 1));
+		assertEquals(magus1.getNextAction().getStartTime(), 0);
 		assertTrue(magus2.getNextAction() == null);
 		w.setCurrentTime((long) (13));
 		
-		magus2.setActionOverride(new SearchForVis(magus2));
-		assertEquals(magus1.getNextAction().getStartTime(), 13);
-		assertEquals(magus2.getNextAction().getStartTime(), 26);
+		magus2.getActionPlan().addAction(new SearchForVis(magus2));
+		assertEquals(magus1.getNextAction().getStartTime(), 0);
+		assertEquals(magus2.getNextAction().getStartTime(), 13);
 		
-		magus1.setActionOverride(new JoinCovenant(magus1));
-		assertEquals(magus1.getNextAction().getStartTime(), 13);
-		assertEquals(magus2.getNextAction().getStartTime(), 26);
+		magus1.getActionPlan().addAction(new JoinCovenant(magus1, 1));
+		assertEquals(magus1.getNextAction().getStartTime(), 0);
+		assertEquals(magus2.getNextAction().getStartTime(), 13);
+		assertEquals(magus1.getActionPlan().timeToNextActionStarts(), -13);
+		assertEquals(magus1.getActionPlan().timeToEndOfQueue(), 26);
+		assertEquals(magus2.getActionPlan().timeToNextActionStarts(), 0);
+		assertEquals(magus2.getActionPlan().timeToEndOfQueue(), 13);
 		assertTrue(magus2.getNextAction() instanceof SearchForVis);
 		assertTrue(magus1.getNextAction() instanceof InTwilight);
 		
+		magus1.getNextAction().start();
+		w.setCurrentTime((long) (26));
 		magus1.getNextAction().run();
 		assertEquals(magus1.getNextAction().getStartTime(), 26);
-		assertEquals(magus2.getNextAction().getStartTime(), 26);
+		assertEquals(magus2.getNextAction().getStartTime(), 13);
 		assertTrue(magus2.getNextAction() instanceof SearchForVis);
 		assertTrue(magus1.getNextAction() instanceof JoinCovenant);
 		
-		assertEquals(magus1.getActionQueue().size(),1);
-		assertEquals(magus2.getActionQueue().size(),1);
+		assertEquals(magus1.getActionPlan().timeToEndOfQueue(), 13);
+		assertEquals(magus2.getActionPlan().timeToEndOfQueue(), 0);
 	}
 	
 }

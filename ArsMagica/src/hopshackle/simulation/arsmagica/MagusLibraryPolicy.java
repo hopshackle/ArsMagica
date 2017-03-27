@@ -22,7 +22,7 @@ public class MagusLibraryPolicy {
 				List<Book> donation = new ArrayList<Book>();
 				int totalValue = 0;
 				for (Book b : library) {
-					int value = covenant.calculateIncrementalBuildPointsFrom(b);
+					int value = covenant.calculateIncrementalLibraryPointsFrom(b);
 					if (value > 0) {
 						donation.add(b);
 						totalValue += value;

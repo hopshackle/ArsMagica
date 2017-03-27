@@ -2,6 +2,8 @@ package hopshackle.simulation.arsmagica.test;
 
 import static org.junit.Assert.*;
 
+import java.util.*;
+
 import org.junit.*;
 
 import hopshackle.simulation.*;
@@ -16,7 +18,7 @@ public class BasicMagusActionChooseability {
 
 	@Before
 	public void setUp() {
-		World w = new World();
+		World w = new World(new SimpleWorldLogic<Magus>(new ArrayList<ActionEnum<Magus>>(EnumSet.allOf(MagusActions.class))));
 		Tribunal t = new Tribunal("test", w);
 		cov = new Covenant(null, t);
 		magus = new Magus(w);

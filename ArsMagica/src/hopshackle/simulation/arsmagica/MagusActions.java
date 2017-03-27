@@ -6,7 +6,6 @@ import hopshackle.simulation.*;
 
 public enum MagusActions implements ActionEnum<Magus> {
 
-	LAB_ASSISTANT,
 	SEARCH_VIS,
 	SEARCH_APPRENTICE,
 	SEARCH_FAMILIAR,
@@ -23,7 +22,6 @@ public enum MagusActions implements ActionEnum<Magus> {
 	READ_BOOK,
 	COPY_BOOK,
 	TEACH_APPRENTICE,
-	BE_TAUGHT,
 	FOUND_COVENANT,
 	JOIN_COVENANT,
 	DEVELOP_COVENANT,
@@ -37,8 +35,6 @@ public enum MagusActions implements ActionEnum<Magus> {
 	@Override
 	public ArsMagicaAction getAction(Magus magus) {
 		switch (this) {
-		case LAB_ASSISTANT:
-			return new LabAssistant(magus, magus.getParens());
 		case SEARCH_VIS:
 			return new SearchForVis(magus);
 		case SEARCH_APPRENTICE:
@@ -83,17 +79,17 @@ public enum MagusActions implements ActionEnum<Magus> {
 				return new CopyBook(magus.getCurrentCopyProject());
 			return new CopyBook(magus);
 		case TEACH_APPRENTICE:
-			return new TeachApprentice(magus);
-		case BE_TAUGHT:
-			return new BeTaught(magus);
+			if (!magus.hasApprentice()) return new SearchForApprentice(magus);
+			return new TeachApprentice(magus, magus.getApprentice());
 		case FOUND_COVENANT:
-			List<Magus> others = new ArrayList<Magus>();
+			List<Magus> founders = new ArrayList<Magus>();
+			founders.add(magus);
 			for (Agent ea : magus.getChildren()) {
 				Magus exApprentice = (Magus) ea;
 				if (!exApprentice.isApprentice() && exApprentice.getCovenant() == null && !exApprentice.isDead())
-					others.add(exApprentice);
+					founders.add(exApprentice);
 			}
-			return new FoundCovenant(magus, others);
+			return new FoundCovenant(founders);
 		case JOIN_COVENANT:
 			return new JoinCovenant(magus);
 		case DEVELOP_COVENANT:
@@ -107,8 +103,6 @@ public enum MagusActions implements ActionEnum<Magus> {
 	@Override
 	public boolean isChooseable(Magus magus) {
 		switch (this) {
-		case LAB_ASSISTANT:
-			return false;	// only set up as a result of Parens' action
 		case SEARCH_VIS:
 			return !magus.isApprentice();
 		case SEARCH_FAMILIAR:
@@ -185,8 +179,6 @@ public enum MagusActions implements ActionEnum<Magus> {
 			return (magus.isApprentice() && magus.getBestBookToCopy() != null);
 		case TEACH_APPRENTICE:
 			return magus.hasApprentice();
-		case BE_TAUGHT:
-			return false;	// only used as a result of Parens' action
 		case FOUND_COVENANT:
 			if (magus.getCovenant() == null && !magus.isApprentice())
 				return true;

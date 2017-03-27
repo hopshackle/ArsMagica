@@ -54,7 +54,7 @@ public class CovenantLibraryPolicy {
 					return;
 				if (bo.getItem() instanceof Book) {
 					Book b = (Book) bo.getItem();
-					int value = covenant.calculateIncrementalBuildPointsFrom(b) * 2;
+					int value = covenant.calculateIncrementalLibraryPointsFrom(b) * 2;
 
 					BarterBid possibleBid = getMostEffectiveBidThatWillWin(bo, value, visStores);
 
