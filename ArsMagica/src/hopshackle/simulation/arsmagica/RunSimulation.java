@@ -33,8 +33,7 @@ public class RunSimulation {
 		int yearsToRun = SimProperties.getPropertyAsInteger("AM.duration", "521");
 		int startYear = SimProperties.getPropertyAsInteger("AM.startYear", "700");
 		String worldName = SimProperties.getProperty("AM.name", "AM1");
-		final World world = new World();
-		final Covenant sampleCovenant = new Covenant(null, null);
+		final World world = new World(new SimpleWorldLogic<Magus>(new ArrayList<ActionEnum<Magus>>(EnumSet.allOf(MagusActions.class))));
 		FastCalendar cal = new FastCalendar(startYear * 52);
 		world.setCalendar(cal, 52);
 		ActionProcessor ap = new ActionProcessor("ARS_TEST_01", false);
@@ -166,7 +165,8 @@ public class RunSimulation {
 				if (tr.toString().equals(fields[25]))
 					founder.setTribunal(tr);
 
-			world.addAction(founder.decide());
+			founder.decide();
+			world.addAction(founder.getNextAction());
 		}
 		ap.start();
 
@@ -214,7 +214,7 @@ public class RunSimulation {
 				for (HermeticHouse h : HermeticHouse.values())
 					houseMembership.put(h, 0);
 				int totalCovenants = world.getAllChildLocationsOfType(
-						sampleCovenant).size();
+						AMU.sampleCovenant).size();
 				int magi = 0, apprentices = 0;
 				for (Agent a : allAgents) {
 					if (a instanceof Magus) {
@@ -243,7 +243,7 @@ public class RunSimulation {
 			@Override
 			public void run() {
 				int allAgents = world.getAgents().size();
-				int totalCovenants = world.getAllChildLocationsOfType(sampleCovenant).size();
+				int totalCovenants = world.getAllChildLocationsOfType(AMU.sampleCovenant).size();
 				int magi = allAgents - totalCovenants;
 				if (magi < (world.getYear() - 500) / 2) {
 					Magus hedgeWizard = new Magus(world);
