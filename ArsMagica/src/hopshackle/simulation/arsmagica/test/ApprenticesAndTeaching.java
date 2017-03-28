@@ -107,6 +107,7 @@ public class ApprenticesAndTeaching {
 		assertFalse(nextApprenticeAction == apprentice.getNextAction());
 	}
 
+
 	@Test
 	public void whenParensTakesLabActionApprenticeTakesAssistParensAction() {
 		parens.addApprentice(apprentice);
