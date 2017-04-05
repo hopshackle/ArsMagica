@@ -16,7 +16,7 @@ public class CopyingBooks {
 	private World world;
 	private Covenant covenant;
 	private Tribunal tribunal;
-	private Book creoBook, perdoBook;
+	private Book creoBook;
 
 	@Before
 	public void setup() {
@@ -40,7 +40,6 @@ public class CopyingBooks {
 		magus.setCovenant(covenant);
 		
 		creoBook = new Summa(Arts.CREO, 10, 8, magus);
-		perdoBook = new Summa(Arts.PERDO, 5, 12, magus);
 	}
 	
 	@Test
@@ -74,6 +73,7 @@ public class CopyingBooks {
 		magus.removeItem(bookToRemove);
 		assertEquals(magus.getInventoryOf(AMU.sampleBook).size(), 0);
 		assertEquals(apprentice.getInventoryOf(AMU.sampleBook).size(), 0);
+		apprentice.purgeActions(true);
 		CopyBook cb = new CopyBook(apprentice);
 		cb.addToAllPlans();
 		cb.start();
@@ -99,9 +99,12 @@ public class CopyingBooks {
 		magus.removeItem(bookToRemove);
 		assertEquals(magus.getInventoryOf(AMU.sampleBook).size(), 0);
 		assertEquals(apprentice.getInventoryOf(AMU.sampleBook).size(), 0);
+		apprentice.purgeActions(true);
 		CopyBook cb = new CopyBook(apprentice);
 		cb.addToAllPlans();
+		assertFalse(cb.isDeleted());
 		assertFalse(creoBook.isInUse());
+		assertTrue(cb.getBookBeingCopied() == creoBook);
 		cb.start();
 		assertTrue(creoBook.isInUse());
 		cb.run();
@@ -127,6 +130,7 @@ public class CopyingBooks {
 	
 		creoBook.setCurrentReader(null);
 		apprentice.getActionPlan().purgeActions(true);
+		apprentice.decide();
 		next = apprentice.getNextAction();
 		assertFalse(next == null);
 		assertTrue(next instanceof CopyBook);

@@ -71,19 +71,19 @@ public class ApprenticesAndTeaching {
 
 	@Test
 	public void whenParensTakesNonApprenticeActionApprenticeTakesTheirOwnAction() {
+		apprentice.setDecider(new HardCodedDecider<Magus>(MagusActions.PRACTISE_ABILITY));
 		parens.addApprentice(apprentice);
 		parens.setDecider(new HardCodedDecider<Magus>(MagusActions.SEARCH_VIS));
-		apprentice.setDecider(new HardCodedDecider<Magus>(MagusActions.PRACTISE_ABILITY));
-		ArsMagicaAction parensAction = new SearchForVis(parens);
-		addStartAndRunAction(parensAction);
+		parens.decide();
+		runNextAction(parens);
 		
-		parensAction = (ArsMagicaAction) parens.getNextAction();
+		ArsMagicaAction parensAction = (ArsMagicaAction) parens.getNextAction();
 		assertTrue(parensAction.getType() == MagusActions.SEARCH_VIS);
 		
 		ArsMagicaAction apprenticeAction = (ArsMagicaAction) apprentice.getNextAction();
-		assertTrue(apprenticeAction == null);
+		assertTrue(apprenticeAction != null);
 		
-		addStartAndRunAction((ArsMagicaAction) apprentice.decide());		// runs apprentice action
+		runNextAction(apprentice);
 		apprenticeAction = (ArsMagicaAction) apprentice.getNextAction();
 		assertTrue(apprenticeAction instanceof PractiseAbility);	// as there are no other ones in this context doable by an apprentice
 
@@ -148,21 +148,28 @@ public class ApprenticesAndTeaching {
 	}
 
 	@Test
-	public void eachWinterSeasonParensTakesTeachApprenticeAction() {
+	public void eachYearParensTakesTeachApprenticeActionFirst() {
 		parens.addApprentice(apprentice);
-		ArsMagicaAction parensAction = new SearchForVis(parens);
-		addStartAndRunAction(parensAction);
-		// calendar starts at Winter
-		assertEquals(w.getSeason(), 0);
-		parensAction = (ArsMagicaAction) parens.getNextAction();
+		parens.decide();
+		ArsMagicaAction parensAction = (ArsMagicaAction) parens.getNextAction();
 		if (!(parensAction instanceof TeachApprentice))
 			System.out.println(parensAction + " instead of TeachApprentice");
 		assertTrue(parensAction instanceof TeachApprentice);
 		assertTrue(apprentice.getNextAction() == parensAction);
+		
+		runNextAction(parens);
+		parensAction = (ArsMagicaAction) parens.getNextAction();
+		assertFalse(parensAction instanceof TeachApprentice);
+		w.setCurrentTime((long) (801 * 52));
+		
+		runNextAction(parens);
+		parensAction = (ArsMagicaAction) parens.getNextAction();
+		assertTrue(parensAction instanceof TeachApprentice);
 	}
 
 	@Test
 	public void afterFifteenYearsApprenticeBecomeMagusAndTakesOwnActionsIndependently() {
+		parens.setDecider(new HardCodedDecider<Magus>(MagusActions.DISTILL_VIS));
 		parens.addApprentice(apprentice);
 		provide15SeasonsOfTraining(parens);
 		w.setCurrentTime((long) (815 * 52 - 2)); // i.e. two weeks short of 15 years
@@ -170,8 +177,8 @@ public class ApprenticesAndTeaching {
 		assertTrue(parens.hasApprentice());
 		assertTrue(apprentice.isApprentice());
 		w.setCurrentTime((long) (815 * 52 + 1)); // i.e. one week long of 15 years
-		parens.getActionPlan().purgeActions(true);
-		parens.maintenance();
+		parens.decide();
+		runNextAction(parens);
 		assertFalse(parens.hasApprentice());
 		assertFalse(apprentice.isApprentice());
 		
@@ -181,6 +188,7 @@ public class ApprenticesAndTeaching {
 
 		ArsMagicaAction parensAction = (ArsMagicaAction) parens.getNextAction();
 		assertFalse(parensAction == null);
+		assertTrue(parensAction != apprenticeAction);
 		runNextAction(parens);
 		assertEquals(parens.getActionPlan().timeToEndOfQueue(), 13); 	// next action queued
 		assertEquals(apprentice.getActionPlan().timeToEndOfQueue(), 13); // no impact on apprentice
@@ -267,11 +275,10 @@ public class ApprenticesAndTeaching {
 		apprentice.addXP(Abilities.ARTES_LIBERALES, 5);
 		assertEquals(apprentice.getLevelOf(Arts.CREO), 0);
 		assertTrue(apprentice.getBestBookToRead() == null);
-		parens.addApprentice(apprentice);
 		parens.addItem(new Summa(Arts.CREO, 5, 15, null));
-		assertTrue(apprentice.getBestBookToRead() != null);
 		apprentice.setDecider(new HardCodedDecider<Magus>(MagusActions.READ_BOOK));
-		ArsMagicaAction action = (ArsMagicaAction) apprentice.decide();
+		parens.addApprentice(apprentice);
+		ArsMagicaAction action = (ArsMagicaAction) apprentice.getNextAction();
 		assertTrue(action instanceof ReadBook);
 		addStartAndRunAction(action);
 		assertEquals(apprentice.getLevelOf(Arts.CREO), 5);
@@ -308,25 +315,27 @@ public class ApprenticesAndTeaching {
 	@Test
 	public void ifParensGoesIntoTwilightThenApprenticeCarriesOnTakingActions() {
 		parens.addApprentice(apprentice);
-		assertEquals(apprentice.getActionPlan().timeToEndOfQueue(), 0);
+		Action<?> apprenticeAction = apprentice.getNextAction();
+		assertEquals(apprentice.getActionPlan().timeToEndOfQueue(), 13);
 		assertEquals(parens.getActionPlan().timeToEndOfQueue(), 0);
 		ArsMagicaAction twilight = new InTwilight(parens, 4);
 		assertEquals(parens.getActionPlan().timeToEndOfQueue(), 0);
 		parens.getActionPlan().addAction(twilight);
 		assertEquals(parens.getActionPlan().timeToEndOfQueue(), 13);
-		assertEquals(apprentice.getActionPlan().timeToEndOfQueue(), 0);
+		assertEquals(apprentice.getActionPlan().timeToEndOfQueue(), 13);
 		runNextAction(parens);
 		assertTrue(apprentice.isApprentice());
 		assertEquals(parens.getActionPlan().timeToEndOfQueue(), 13);
-		assertEquals(apprentice.getActionPlan().timeToEndOfQueue(), 0);
+		assertTrue(apprentice.getNextAction() == apprenticeAction);
 		assertTrue(parens.isInTwilight());
-		assertEquals(apprentice.getActionPlan().timeToEndOfQueue(), 0);
-		apprentice.decide();
 		runNextAction(apprentice);
 		assertEquals(apprentice.getActionPlan().timeToEndOfQueue(), 13);
+		assertFalse(apprentice.getNextAction() == apprenticeAction);
+		apprenticeAction = apprentice.getNextAction();
 		runNextAction(parens);
 		assertTrue(parens.isInTwilight());
-		assertEquals(apprentice.getActionPlan().timeToEndOfQueue(), 13);
+		assertTrue(apprentice.getNextAction() == apprenticeAction);
+
 	}
 	
 	
@@ -342,6 +351,8 @@ public class ApprenticesAndTeaching {
 	
 	private void provide15SeasonsOfTraining(Magus parens) {
 		Decider<Magus> oldDecider = parens.getDecider();
+		Magus currentApprentice = parens.getApprentice();
+		assertEquals(currentApprentice.getSeasonsTraining(), 0);
 		parens.setDecider(new HardCodedDecider<Magus>(MagusActions.TEACH_APPRENTICE));
 		parens.getActionPlan().purgeActions(true);
 		parens.decide();
@@ -349,6 +360,7 @@ public class ApprenticesAndTeaching {
 			assertTrue(parens.hasApprentice());
 			runNextAction(parens);
 		}
+		assertEquals(currentApprentice.getSeasonsTraining(), 15);
 		parens.setDecider(oldDecider);
 		parens.getActionPlan().purgeActions(true);
 	}

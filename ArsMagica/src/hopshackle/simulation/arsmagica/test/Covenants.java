@@ -57,7 +57,7 @@ public class Covenants {
 		Action<?> action = MagusActions.FOUND_COVENANT.getAction(founder);
 		action.addToAllPlans();
 		apprenticeAction = apprentice.getNextAction();
-		assertTrue(apprenticeAction == null);
+		assertFalse(apprenticeAction instanceof FoundCovenant);
 		runNextAction(founder);
 		covenant = founder.getCovenant();
 		assertEquals(covenant.getCurrentSize(), 1);

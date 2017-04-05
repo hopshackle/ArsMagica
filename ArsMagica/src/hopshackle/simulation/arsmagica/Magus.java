@@ -228,11 +228,6 @@ public class Magus extends Agent implements Persistent {
 							new LongevityRitualService(this), 1, reservePrice,
 							new VisValuationFunction(this)));
 				}
-				if (hasApprentice())  {
-					List<Magus> both = new ArrayList<Magus>();
-					both.add(this); both.add(apprentice);
-					new SocialMeeting(both, 2, 2);
-				}
 			}
 		}
 	}
@@ -296,9 +291,7 @@ public class Magus extends Agent implements Persistent {
 			apprentice.getParens().apprentice = null;
 		apprentice.setApprenticeOf(this);
 		children.add(apprentice.getUniqueID());
-		// TODO: Removed code that checked old action queue for SearchForApprentice
-		// To be reviewed. I'm hoping that the new .start() and .run() on actions may resolve this
-		// or else we'll cover it in .maintenance() when forward plans are reviewed for relevance
+		apprentice.decide();
 	}
 	private void setApprenticeOf(Magus parens) {
 		if (parens == null)
@@ -343,6 +336,7 @@ public class Magus extends Agent implements Persistent {
 		parens = null;
 		getActionPlan().purgeActions(false);		// remove any future plans, and make new decision if needed
 															// but do not cancel any executing actions
+		decide();
 	}
 
 	public Tribunal getFavouredTribunal() {
@@ -1048,6 +1042,9 @@ public class Magus extends Agent implements Persistent {
 	}
 	public Map<Magus, Relationship> getRelationships() {
 		return relationships;
+	}
+	public int getSeasonsTraining() {
+		return seasonsTraining;
 	}
 }
 

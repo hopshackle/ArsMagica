@@ -108,7 +108,7 @@ public class ReadingAndWriting {
 		magus.addItem(new Summa(Arts.VIM, 5, 15, null));
 		// Should now not be worth writing a book
 		Action<?> action = magus.decide();
-		assertTrue(action instanceof SearchForVis);
+		assertTrue(action instanceof WriteTractatus);
 	}
 
 	@Test
@@ -142,7 +142,7 @@ public class ReadingAndWriting {
 		 *  L5 Q12			-2				 0				0					 0					 0
 		 */
 		Action<?> action = magus.getNextAction();
-		assertTrue(action instanceof SearchForVis);
+		assertTrue(action instanceof WriteTractatus);
 
 		magus.removeItem(bookWritten);
 		magus.setCommunication(3);
@@ -267,6 +267,7 @@ public class ReadingAndWriting {
 	public void bookGoesToMasterIfApprentice() {
 		assertEquals(magus.getInventoryOf(AMU.sampleBook).size(),0);
 		apprentice.setDecider(new HardCodedDecider<Magus>(MagusActions.WRITE_TRACTATUS));
+		apprentice.purgeActions(true);
 		apprentice.decide();
 		runNextAction(apprentice);
 		assertEquals(magus.getInventoryOf(AMU.sampleBook).size(),1);
@@ -371,6 +372,7 @@ public class ReadingAndWriting {
 			action = magus.getNextAction();
 		} while (magus.isWritingBook() && magus.getCurrentBookProject().equals(originalAction));
 		magus.getActionPlan().purgeActions(true);
+		magus.decide();
 	}
 	
 	private void addStartAndRunAction(ArsMagicaAction a) {

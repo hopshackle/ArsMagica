@@ -48,7 +48,10 @@ public class BasicDecider extends BaseDecider<Magus> {
 
 		if (option == MagusActions.TEACH_APPRENTICE) {
 			retValue = 0.1;
-			if (magus.getWorld().getSeason() == 0 ||  magus.getApprentice().getYearsSinceStartOfApprenticeship() > 15)
+			Magus apprentice = magus.getApprentice();
+			if (apprentice == null) return 0.0;
+			if (apprentice.getSeasonsTraining() <= apprentice.getYearsSinceStartOfApprenticeship() &&
+					apprentice.getSeasonsTraining() < 15)
 				retValue = 2.0;
 		}
 

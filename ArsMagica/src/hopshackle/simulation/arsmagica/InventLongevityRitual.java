@@ -27,6 +27,11 @@ public class InventLongevityRitual extends ArsMagicaAction {
 	protected void initialisation() {
 		Magus subject = customer;
 		if (subject == null) subject = magus;
+		int requiredMT = (customer.getAge() / 10) + 1;
+		if (magus.getLevelOf(Abilities.MAGIC_THEORY) < requiredMT) {
+			magus.log("Insufficient Magic Theory for Longevity Ritual");
+			cancel();
+		}
 		if (hasSufficientVis(subject)) {
 			for (Vis v : requirementsForRitual(subject))
 				subject.removeItem(v);
@@ -73,7 +78,7 @@ public class InventLongevityRitual extends ArsMagicaAction {
 
 	public static List<Vis> requirementsForRitual(Magus visPayer) {
 		List<Vis> retValue = new ArrayList<Vis>();
-		int pawnsRequired = (int) Math.ceil(visPayer.getAge() / 10.0);
+		int pawnsRequired = (int) Math.ceil(visPayer.getAge() / 5.0);
 		int creoPawns = visPayer.getPawnsOf(Arts.CREO);
 		int vimPawns = visPayer.getPawnsOf(Arts.VIM);
 		int corpusPawns = visPayer.getPawnsOf(Arts.CORPUS);

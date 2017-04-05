@@ -4,6 +4,8 @@ import hopshackle.simulation.*;
 
 public class MagusActionPolicy extends Policy<Action<Magus>> {
 
+	private BasicDecider decider = new BasicDecider();
+	
 	public MagusActionPolicy() {
 		super("action");
 	}
@@ -25,7 +27,7 @@ public class MagusActionPolicy extends Policy<Action<Magus>> {
 				if (ritual.isOptionalParticipant(magus)) return 10.0;
 			}
 		}
-		// otherwise first come, first served
+		// otherwise use default value
 		return 0.0;
 	}
 

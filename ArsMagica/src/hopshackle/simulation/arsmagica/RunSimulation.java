@@ -30,8 +30,8 @@ public class RunSimulation {
 		SimProperties.setFileLocation(propertiesFile);
 
 		baseDir = SimProperties.getProperty("BaseDirectory", "C:\\");
-		int yearsToRun = SimProperties.getPropertyAsInteger("AM.duration", "521");
-		int startYear = SimProperties.getPropertyAsInteger("AM.startYear", "700");
+		int yearsToRun = SimProperties.getPropertyAsInteger("AMDuration", "521");
+		int startYear = SimProperties.getPropertyAsInteger("AMStartYear", "700");
 		String worldName = SimProperties.getProperty("AM.name", "AM1");
 		final World world = new World(new SimpleWorldLogic<Magus>(new ArrayList<ActionEnum<Magus>>(EnumSet.allOf(MagusActions.class))));
 		FastCalendar cal = new FastCalendar(startYear * 52);
@@ -166,7 +166,6 @@ public class RunSimulation {
 					founder.setTribunal(tr);
 
 			founder.decide();
-			world.addAction(founder.getNextAction());
 		}
 		ap.start();
 

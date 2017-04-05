@@ -66,14 +66,14 @@ public enum MagusActions implements ActionEnum<Magus> {
 			WriteSumma toWrite = new WriteSumma(magus);
 			if (toWrite.isWorthwhile())
 				return toWrite;
-			return new SearchForVis(magus);
+			return new WriteTractatus(magus);
 		case WRITE_TRACTATUS:
 			return new WriteTractatus(magus);
 		case READ_BOOK:
 			Book bookToRead = magus.getBestBookToRead();
 			if (bookToRead != null)
 				return new ReadBook(magus, bookToRead);
-			return new SearchForVis(magus);
+			return new CopyBook(magus);
 		case COPY_BOOK:
 			if (magus.isCopyingBook()) 
 				return new CopyBook(magus.getCurrentCopyProject());
@@ -128,6 +128,9 @@ public enum MagusActions implements ActionEnum<Magus> {
 			return true;
 		case LONGEVITY_RITUAL:
 			if (magus.getAge() > 30) {
+				int requiredMT = (magus.getAge() / 10) + 1;
+				if (magus.getLevelOf(Abilities.MAGIC_THEORY) < requiredMT)
+					return false;
 				int bonus = (int) (magus.getLabTotal(Arts.CREO, Arts.CORPUS) / 5.0);
 				if (magus.getLongevityRitualEffect() == 0 || bonus > magus.getLongevityRitualEffect() + 2) 
 					if (InventLongevityRitual.hasSufficientVis(magus))
@@ -194,7 +197,7 @@ public enum MagusActions implements ActionEnum<Magus> {
 
 	}
 
-	@SuppressWarnings("rawtypes")
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public Enum getEnum() {
 		return this;

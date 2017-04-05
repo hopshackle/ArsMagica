@@ -34,7 +34,13 @@ public class ArsMagicaAction extends Action<Magus> implements Persistent {
 	@Override
 	protected void doCleanUp() {
 		super.doCleanUp();
-		actionWriter.write(this, this.getWorld().toString());
+		if (!isDeleted()) {
+			List<Magus> allParticipants = new ArrayList<Magus>();
+			allParticipants.addAll(mandatoryActors);
+			allParticipants.addAll(optionalActors);
+			new SocialMeeting(allParticipants, 0, 0);
+			actionWriter.write(this, this.getWorld().toString());
+		}
 	}
 
 	@Override

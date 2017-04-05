@@ -92,7 +92,7 @@ public class LongevityRitualService extends ArsMagicaItem implements ArtefactReq
 			return;	// just use the best one if multiple options
 		if (CrCoSpecialist.isDead()) {
 			deleteThis();
-		} else if (customer.getLongevityRitualEffect() < Math.ceil(getLabTotal() / 5.0) 
+		} else if (customer.getLongevityRitualEffect() < Math.floor(getLabTotal() / 5.0) 
 				&& InventLongevityRitual.hasSufficientVis(customer) && !CrCoSpecialist.isInTwilight()) {
 			// i.e. only use the contract if it will be of benefit and you have the vis
 
@@ -100,10 +100,9 @@ public class LongevityRitualService extends ArsMagicaItem implements ArtefactReq
 				return;		// already scheduled
 
 			Magus primeMagus = CrCoSpecialist;
-
-			// TODO: Chunk of old code below needs to be rewritten with new action plan system
-
-			int numberOfAssistants = primeMagus.getLevelOf(Abilities.LEADERSHIP) + 1;	// assume Leadership is always specialised in lab work
+			
+			int numberOfAssistants = primeMagus.getLevelOf(Abilities.LEADERSHIP);	// assume Leadership is always specialised in lab work
+																					// one assistant is always the customer
 			List<Magus> labAssistants = getBestAvailableAssistants();
 			List<Magus> assistantsUsed = new ArrayList<Magus>();
 			if (getLTCust() > getLTSpec()) {
@@ -116,9 +115,14 @@ public class LongevityRitualService extends ArsMagicaItem implements ArtefactReq
 				assistantsUsed.add(otherAssistant);
 			}
 
-			InventLongevityRitual action = new InventLongevityRitual(primeMagus, customer, assistantsUsed, 0);
+			List<Magus> coreMagi = new ArrayList<Magus>();
+			coreMagi.add(customer);
+			coreMagi.add(primeMagus);
+			int offsetSeasons = ActionPlan.getNextAvailableSlot(coreMagi) / 13;
+			
+			InventLongevityRitual action = new InventLongevityRitual(primeMagus, customer, assistantsUsed, offsetSeasons);
 			action.addToAllPlans();
-			if (CrCoSpecialist.getRelationshipWith(customer) != Relationship.FRIEND)
+			if (!action.isDeleted() && CrCoSpecialist.getRelationshipWith(customer) != Relationship.FRIEND)
 				deleteThis();
 		}
 		else {
