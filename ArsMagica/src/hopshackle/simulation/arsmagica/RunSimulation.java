@@ -219,7 +219,7 @@ public class RunSimulation {
 					if (a instanceof Magus) {
 						Magus m = (Magus) a;
 						houseMembership.put(m.getHermeticHouse(),
-								houseMembership.get(m.getHermeticHouse()) + 1);
+								houseMembership.getOrDefault(m.getHermeticHouse(), 0) + 1);
 						if (m.isApprentice())
 							apprentices++;
 						else
