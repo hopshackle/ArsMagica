@@ -1,9 +1,8 @@
 package hopshackle.simulation.arsmagica;
 
-import hopshackle.simulation.Dice;
+import hopshackle.simulation.*;
 
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class SocialMeeting {
 
@@ -61,8 +60,8 @@ public class SocialMeeting {
 
 	public static int commonSocialCircle(Magus m1, Magus m2) {
 		double retValue = 0;
-		Map<Magus, Relationship> r1 = m1.getRelationships();
-		for (Magus contact : r1.keySet()) {
+		Map<Agent, Relationship> r1 = m1.getRelationships();
+		for (Agent contact : r1.keySet()) {
 			switch (r1.get(contact)) {
 			case FRIEND:
 				switch (m2.getRelationshipWith(contact)) {

@@ -84,5 +84,9 @@ public class BindFamiliar extends ArsMagicaAction {
 			assistant.log("Lab assistant to " + magus + " to create familiar bond");
 		}
 	}
-	
+
+	@Override
+	public String description() {
+		return magus.getFamiliar().toString();
+	}
 }

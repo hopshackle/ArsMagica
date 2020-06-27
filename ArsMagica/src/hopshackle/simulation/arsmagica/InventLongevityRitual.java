@@ -118,9 +118,9 @@ public class InventLongevityRitual extends ArsMagicaAction {
 	}
 
 	public String description() {
-		return magus + " invents +"
+		return "Modifier of "
 				+ modifier
-				+ " longevity ritual for "
+				+ " for "
 				+ ((customer == actor || customer == null) ? "Self" : customer
 						.toString());
 	}

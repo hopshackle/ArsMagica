@@ -30,7 +30,7 @@ public class TribunalDAO implements DAO<Tribunal> {
 
 	@Override
 	public String getValues(Tribunal tribunal) {
-		List<Agent> allMagi = tribunal.getAgents();
+		List<Agent> allMagi = tribunal.getAgentsIncludingChildLocations();
 		int totalMagi = 0, totalApprenti = 0;
 		for (Agent a : allMagi) {
 			if (a instanceof Magus) {

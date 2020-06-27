@@ -28,11 +28,6 @@ public enum MagusActions implements ActionEnum<Magus> {
 	TWILIGHT;
 
 	@Override
-	public String getChromosomeDesc() {
-		return "ARS";
-	}
-
-	@Override
 	public ArsMagicaAction getAction(Magus magus) {
 		switch (this) {
 		case SEARCH_VIS:

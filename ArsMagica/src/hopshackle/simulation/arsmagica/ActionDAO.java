@@ -11,7 +11,7 @@ public class ActionDAO implements DAO<ArsMagicaAction> {
 				" year	 		INT		NOT NULL, "	+
 				" season		INT		NOT NULL, " +
 				" action 		VARCHAR(25)		NOT NULL, "	+
-				" description	VARCHAR(100)		NOT NULL, " +
+				" description	VARCHAR(200)		NOT NULL, " +
 				" covenant		INT		NOT NULL, " +
 				" age			INT		NOT NULL, " + 
 				" apprentice 	BOOLEAN 	NOT NULL, " + 
@@ -28,7 +28,7 @@ public class ActionDAO implements DAO<ArsMagicaAction> {
 	@Override
 	public String getValues(ArsMagicaAction action) {
 		World w = action.getWorld();
-		Magus m = (Magus) action.getActor();
+		Magus m = action.getActor();
 		return String.format(" (%d, %d, %d, '%s', '%s', %d, %d, %b, %b) ",  
 				m.getUniqueID(),
 				w.getYear(),

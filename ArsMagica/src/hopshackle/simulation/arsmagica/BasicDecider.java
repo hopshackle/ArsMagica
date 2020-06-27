@@ -4,13 +4,13 @@ import java.util.*;
 
 import hopshackle.simulation.*;
 
-public class BasicDecider extends BaseDecider<Magus> {
+public class BasicDecider extends BaseAgentDecider<Magus> {
 
 	private Map<Long, Integer> recentApplications;
 
 	public BasicDecider() {
-		super(new LinearStateFactory<Magus>(new ArrayList<GeneticVariable<Magus>>()));
-		recentApplications = new HashMap<Long, Integer>();
+		super(new LinearStateFactory<>(new ArrayList<>()));
+		recentApplications = new HashMap<>();
 	}
 
 	@Override

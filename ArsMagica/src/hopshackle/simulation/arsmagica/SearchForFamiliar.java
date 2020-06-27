@@ -13,9 +13,11 @@ public class SearchForFamiliar extends ArsMagicaAction {
 		override = findSource;
 	}
 
+	private int successLevel = 0;
+
 	@Override
 	protected void doStuff() {
-		magus.log("Spends season seaching for Familiar");
+		magus.log("Spends season searching for Familiar");
 
 		Learnable skillUsed = Abilities.MAGIC_LORE;
 		Tribunal tribunal = magus.getTribunal();
@@ -33,6 +35,7 @@ public class SearchForFamiliar extends ArsMagicaAction {
 		} else {
 			magus.addXP(Abilities.FAMILIAR_HUNT, -magus.getTotalXPIn(Abilities.FAMILIAR_HUNT));
 			magus.log("Finds potential familiar");
+			successLevel = 1;
 
 			skillUsed = Abilities.CHARM;
 			easeFactor = 9 - magus.getLevelOf(Abilities.CHARM) - magus.getCommunication() - magus.getMagicAura() - 
@@ -44,6 +47,7 @@ public class SearchForFamiliar extends ArsMagicaAction {
 				Familiar f = new Familiar(magus);
 				magus.log("Gains a " + f);
 				magus.addItem(f);
+				successLevel = 2;
 			} else {
 				magus.log("And fails to persuade it to become one");
 			}
@@ -54,4 +58,17 @@ public class SearchForFamiliar extends ArsMagicaAction {
 			covenant.addXP(CovenantAttributes.GROGS, -1);
 	}
 
+	@Override
+	public String description() {
+		switch (successLevel) {
+			case 0:
+				return "Unsuccessful";
+			case 1:
+				return "Familiar found, but not convinced";
+			case 2:
+				return "Familiar found and persuaded. " + magus.getFamiliar().toString();
+			default:
+				return "Unknown";
+		}
+	}
 }

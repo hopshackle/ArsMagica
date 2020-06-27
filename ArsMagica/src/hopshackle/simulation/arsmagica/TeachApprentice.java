@@ -118,7 +118,7 @@ public class TeachApprentice extends ArsMagicaAction {
 
 	public String description() {
 		String retValue = (skillToBeTaught == null) ? "Teaches Spells" : skillToBeTaught.toString();
-		return magus + " " + retValue + " to " + apprentice;
+		return retValue + " to " + apprentice;
 	}
 
 }

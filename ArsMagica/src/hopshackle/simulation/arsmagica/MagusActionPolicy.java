@@ -4,8 +4,6 @@ import hopshackle.simulation.*;
 
 public class MagusActionPolicy extends Policy<Action<Magus>> {
 
-	private BasicDecider decider = new BasicDecider();
-	
 	public MagusActionPolicy() {
 		super("action");
 	}

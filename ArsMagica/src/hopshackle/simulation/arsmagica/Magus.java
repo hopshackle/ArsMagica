@@ -9,9 +9,8 @@ public class Magus extends Agent implements Persistent {
 
 	private ArsMagicaCharacteristic strength, stamina, dexterity, quickness, intelligence, perception, presence, communication;
 	private HashMap<Learnable, Skill> skills = new HashMap<Learnable, Skill>();
-	private Map<Magus, Relationship> relationships = new HashMap<Magus, Relationship>();
+	private Map<Agent, Relationship> relationships = new HashMap<>();
 	private List<Spell> spells = new ArrayList<Spell>();
-	private static DatabaseWriter<Magus> magusWriter = new DatabaseWriter<Magus>(new MagusDAO());
 	private static MagusRetriever masterAgentRetriever = new MagusRetriever();
 	private int lastHarvest, magicAura;
 	private Magus apprentice, parens;
@@ -204,7 +203,8 @@ public class Magus extends Agent implements Persistent {
 			if (world.getYear() % 10 == 0 && !isDead() && !isApprentice()) {
 				if (!isInTwilight())
 					logStats();
-				magusWriter.write(this, world.toString());
+				DatabaseWriter<Magus> magusWriter = world.getDBWriter(Magus.class);
+				if (magusWriter != null) magusWriter.write(this, world.toString());
 			}
 			if (getAge() > 35 && !isInTwilight()) {
 				new AgeingEvent(this).ageOneYear();
@@ -257,11 +257,6 @@ public class Magus extends Agent implements Persistent {
 
 		if (covenant != null)
 			setCovenant(null);
-
-		for (Magus m : relationships.keySet()) {
-			if (!m.isDead()) m.setRelationship(this, Relationship.NONE);
-			// reset relationships of all friends / enemies
-		}
 
 		String logFileName = toString() + " (" + (getBirth()/52) + " - " + death / 52 + ")";
 		logger.rename(logFileName);
@@ -501,7 +496,7 @@ public class Magus extends Agent implements Persistent {
 		if (parents.isEmpty())
 			return null;	
 		// else we always regard the parens as the magus with whom apprenticeship is terminated
-		return (Magus) Agent.getAgent(parents.get(parents.size()-1), agentRetriever, world);
+		return (Magus) AgentArchive.getAgent(parents.get(parents.size()-1), agentRetriever, world);
 	}
 	public String getName() {
 		return name;
@@ -1031,16 +1026,8 @@ public class Magus extends Agent implements Persistent {
 			return relationships.get(m);
 		return Relationship.NONE;
 	}
-	public void setRelationship(Magus m, Relationship r) {
-		if (r == Relationship.NONE) {
-			log ("Ceases to be " + getRelationshipWith(m) + " of " + m.toString());	
-			relationships.remove(m);
-		} else {
-			log("Becomes " + r.name() + " of " + m.toString());
-			relationships.put(m, r);
-		}
-	}
-	public Map<Magus, Relationship> getRelationships() {
+
+	public Map<Agent, Relationship> getRelationships() {
 		return relationships;
 	}
 	public int getSeasonsTraining() {

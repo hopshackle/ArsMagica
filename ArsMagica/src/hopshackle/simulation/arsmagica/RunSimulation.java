@@ -33,7 +33,7 @@ public class RunSimulation {
 		int yearsToRun = SimProperties.getPropertyAsInteger("AMDuration", "521");
 		int startYear = SimProperties.getPropertyAsInteger("AMStartYear", "700");
 		String worldName = SimProperties.getProperty("AM.name", "AM1");
-		final World world = new World(new SimpleWorldLogic<Magus>(new ArrayList<ActionEnum<Magus>>(EnumSet.allOf(MagusActions.class))));
+		final World world = new World(new SimpleWorldLogic<>(new ArrayList<>(EnumSet.allOf(MagusActions.class))));
 		FastCalendar cal = new FastCalendar(startYear * 52);
 		world.setCalendar(cal, 52);
 		ActionProcessor ap = new ActionProcessor("ARS_TEST_01", false);
@@ -62,6 +62,12 @@ public class RunSimulation {
 		Thread t = new Thread(dbu);
 		t.start();
 		world.setDatabaseAccessUtility(dbu);
+		world.registerDatabaseWriter(Magus.class, new DatabaseWriter<>(new MagusDAO(), dbu));
+		world.registerDatabaseWriter(ArsMagicaAction.class, new DatabaseWriter<>(new ActionDAO(), dbu));
+		world.registerDatabaseWriter(Covenant.class, new DatabaseWriter<>(new CovenantDAO(), dbu));
+		world.registerDatabaseWriter(Tribunal.class, new DatabaseWriter<>(new TribunalDAO(), dbu));
+		world.registerDatabaseWriter(Book.class, new DatabaseWriter<>(new BookDAO(), dbu));
+		AgentArchive.switchOn(true);
 
 		List<String> startingMagi = HopshackleUtilities
 				.createListFromFile(new File(baseDir + File.separator + "StartingMagi.txt"));
@@ -208,7 +214,7 @@ public class RunSimulation {
 
 			@Override
 			public void run() {
-				List<Agent> allAgents = world.getAgents();
+				List<Agent> allAgents = world.getAgentsIncludingChildLocations();
 				HashMap<HermeticHouse, Integer> houseMembership = new HashMap<HermeticHouse, Integer>();
 				for (HermeticHouse h : HermeticHouse.values())
 					houseMembership.put(h, 0);
@@ -241,12 +247,12 @@ public class RunSimulation {
 
 			@Override
 			public void run() {
-				int allAgents = world.getAgents().size();
+				int allAgents = world.getAgentsIncludingChildLocations().size();
 				int totalCovenants = world.getAllChildLocationsOfType(AMU.sampleCovenant).size();
 				int magi = allAgents - totalCovenants;
 				if (magi < (world.getYear() - 500) / 2) {
 					Magus hedgeWizard = new Magus(world);
-					List<Agent> all = world.getAgents();
+					List<Agent> all = world.getAgentsIncludingChildLocations();
 					HashMap<HermeticHouse, Integer> allHouses = new HashMap<HermeticHouse, Integer>();
 					for (HermeticHouse h : HermeticHouse.values())
 						allHouses.put(h, 0);
@@ -293,10 +299,10 @@ public class RunSimulation {
 		}, 260, 260);
 
 		world.setScheduledTask(new TimerTask() {
-
 			@Override
 			public void run() {
 				world.worldDeath();
+				dbu.addUpdate("EXIT");
 			}
 		}, yearsToRun * 52);
 

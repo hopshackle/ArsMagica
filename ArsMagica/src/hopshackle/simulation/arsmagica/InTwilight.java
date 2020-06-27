@@ -18,7 +18,7 @@ public class InTwilight extends ArsMagicaAction {
 	}
 
 	@Override
-	protected void doNextDecision() {
+	public void doNextDecision() {
 		if (seasons > 1) {
 			InTwilight nextSeason = new InTwilight(magus, seasons - 1);
 			nextSeason.addToAllPlans();
