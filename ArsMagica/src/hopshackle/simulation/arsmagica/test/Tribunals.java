@@ -27,7 +27,6 @@ public class Tribunals {
 	@Test
 	public void visLevelModifierWorksAsExpected() {
 		tribunal.setVisLevel(21);
-		world.setCurrentTime((long) (800 * 52 + 26));	// to ensure maintenance doesn't cause any of the vis sources to expire
 		assertEquals(tribunal.getVisModifier(), 4);
 		for (int i = 0; i < 17; i++) {
 			new VisSource(Arts.CREO, 1, tribunal);

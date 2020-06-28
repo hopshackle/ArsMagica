@@ -306,7 +306,7 @@ public class Covenants {
 		assertEquals(applicant.getInventoryOf(AMU.sampleBook).size(), 1);
 		assertEquals(application.getNetValueToApplicant(), 100);
 		application.acceptApplication();
-		assertTrue(applicant.getCovenant() == covenant);
+		assertSame(applicant.getCovenant(), covenant);
 		assertEquals(applicant.getInventoryOf(AMU.sampleBook).size(), 0);
 		covenant.maintenance();
 		assertEquals(covenant.getBuildPoints(), 107);
@@ -364,7 +364,7 @@ public class Covenants {
 		CovenantApplication application = new CovenantApplication(covenant, applicant, 7);	
 		// therefore 75 pawns of Vis needed (15 pawns per missing point)
 		assertTrue(application.isSuccessful());
-		assertTrue(applicant.getCovenant() == null);
+		assertNull(applicant.getCovenant());
 		application.acceptApplication();
 		assertEquals(applicant.getPawnsOf(Arts.VIM), 125);
 		assertTrue(applicant.getCovenant() == covenant);

@@ -58,10 +58,11 @@ public class AgeingAndDecrepitude {
 
 	@Test
 	public void ageingModifierIncludesLongevityRitualCorrectly() {
+		magus.addXP(Abilities.MAGIC_THEORY, 105); // MT:6
 		assertEquals(magus.getAge(), 0);
 		assertEquals(magus.getLongevityModifier(), 0);
 		ArsMagicaAction a = new FoundCovenant(HopshackleUtilities.listFromInstance(magus));
-		magus.setDecider(new HardCodedDecider<Magus>(MagusActions.LONGEVITY_RITUAL));
+		magus.setDecider(new HardCodedDecider<>(MagusActions.LONGEVITY_RITUAL));
 		addStartAndRunAction(a);
 		Covenant covenant = magus.getCovenant();
 		covenant.addXP(CovenantAttributes.WEALTH, 5);
@@ -79,18 +80,21 @@ public class AgeingAndDecrepitude {
 		magus.addVis(Arts.VIM, 13);
 		
 		runNextAction(magus);
-		assertEquals(magus.getPawnsOf(Arts.VIM), 7);
-		assertEquals(magus.getLongevityModifier(), -1);
-		magus.addXP(Abilities.MAGIC_THEORY, 30);
+		assertEquals(magus.getPawnsOf(Arts.VIM), 2); // age 51, so 11 pawns needed
+		// Lab Total = 19 (CrCo = 5 + 5, Int +1, Aura +2 MT +6
+		assertEquals(magus.getLongevityModifier(), 0);  // -6 from age, +4 from Longevity, +2 from wealth
 
+		magus.addXP(Abilities.MAGIC_THEORY, (35 + 40));
+		magus.addVis(Arts.VIM, 11);
 		runNextAction(magus);
-		assertEquals(magus.getPawnsOf(Arts.VIM), 1);
-		assertEquals(magus.getLongevityModifier(), 0);
+		assertEquals(magus.getPawnsOf(Arts.VIM), 2);
+		assertEquals(magus.getLongevityModifier(), +1);
 	}
 
 	@Test
-	public void longevityRitualChooseableOnlyIfNoneCurrentlyInPlace() {
+	public void longevityRitualChooseableOnlyIfMagicTheoryAndVisAvailable() {
 		magus.setAge(33);
+		assertEquals(magus.getAge(), 33);
 		magus.addXP(Arts.CREO, 15);
 		magus.addXP(Arts.CORPUS, 15);
 		magus.setIntelligence(1);
@@ -98,7 +102,12 @@ public class AgeingAndDecrepitude {
 		assertEquals(magus.getLabTotal(Arts.CREO, Arts.CORPUS), 13);
 		assertFalse(MagusActions.LONGEVITY_RITUAL.isChooseable(magus));
 		magus.setAge(34);
+		assertEquals(magus.getAge(), 34);
 		assertFalse(MagusActions.LONGEVITY_RITUAL.isChooseable(magus));
+		// and now magic theory
+		magus.addXP(Abilities.MAGIC_THEORY, 105); // MT:6
+		assertFalse(MagusActions.LONGEVITY_RITUAL.isChooseable(magus));
+		assertEquals(magus.getLabTotal(Arts.CREO, Arts.CORPUS), 19);
 		// now add vis
 		magus.addVis(Arts.VIM, 10);
 		assertTrue(MagusActions.LONGEVITY_RITUAL.isChooseable(magus));
@@ -110,9 +119,9 @@ public class AgeingAndDecrepitude {
 	public void longevityRitualRequiresSufficientVis() {
 		magus.setAge(29);
 		assertFalse(InventLongevityRitual.hasSufficientVis(magus));
-		magus.addVis(Arts.CORPUS, 1);
+		magus.addVis(Arts.CORPUS, 5);
 		assertFalse(InventLongevityRitual.hasSufficientVis(magus));
-		magus.addVis(Arts.CREO, 2);
+		magus.addVis(Arts.CREO, 1);
 		assertTrue(InventLongevityRitual.hasSufficientVis(magus));
 	}
 
@@ -124,6 +133,7 @@ public class AgeingAndDecrepitude {
 
 	@Test
 	public void longevityRitualUsesUpVisCorrectly() {
+		magus.addXP(Abilities.MAGIC_THEORY, 105); // MT:6
 		magus.setAge(29);
 		magus.addXP(Arts.CREO, 15);
 		magus.addXP(Arts.CORPUS, 15);
@@ -134,9 +144,9 @@ public class AgeingAndDecrepitude {
 		magus.addVis(Arts.VIM, 3);
 		InventLongevityRitual ritual = new InventLongevityRitual(magus);
 		addStartAndRunAction(ritual);
-		assertEquals(magus.getPawnsOf(Arts.CREO), 2);
-		assertEquals(magus.getPawnsOf(Arts.CORPUS), 1);
-		assertEquals(magus.getPawnsOf(Arts.VIM), 1);
+		assertEquals(magus.getPawnsOf(Arts.CREO), 1);
+		assertEquals(magus.getPawnsOf(Arts.CORPUS), 0);
+		assertEquals(magus.getPawnsOf(Arts.VIM), 0);
 	}
 
 	@Test

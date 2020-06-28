@@ -729,7 +729,7 @@ public class Magus extends Agent implements Persistent {
 	@Override
 	public void setAge(int newAge) {
 		int yearsDifference = newAge - getAge();
-		super.setAge(super.getAge() + yearsDifference * 52);
+		addAge(yearsDifference);
 	}
 	@Override
 	public void addAge(int change) {

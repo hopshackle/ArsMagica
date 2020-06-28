@@ -23,8 +23,8 @@ public class LibraryPolicy {
 		world.setCalendar(new FastCalendar(800 * 52));
 		tribunal = new Tribunal("Base", world);
 		tribunal.maintenance();	// sets nest Tribunal for 807
-		world.setCurrentTime((long) (806 * 52 + 26));
-		founders = new ArrayList<Magus>();
+		world.setCurrentTime((long) (805 * 52 + 26)); // current year is 805
+		founders = new ArrayList<>();
 		for (int i = 0; i < 2; i ++) 
 			founders.add(new Magus(world));
 
@@ -46,12 +46,13 @@ public class LibraryPolicy {
 		Book redundantBook = new Summa(Arts.CREO, 5, 10, null);
 		covenant.addItem(redundantBook);
 		assertEquals(covenant.getLibrary().size(), 3);
-		world.setCurrentTime((long) (805*52));	// two years before next tribunal
+		assertEquals(world.getYear(), 805);
+		assertEquals(covenant.getTribunal().getDateOfNextTribunal(), 807);
 		covenant.maintenance();
 		assertEquals(covenant.getLibrary().size(), 2);
 
 		assertEquals(tribunal.getOffersOnMarket().size(), 1);
-		assertTrue(tribunal.getOffersOnMarket().get(0).getItem().equals(redundantBook));
+		assertEquals(tribunal.getOffersOnMarket().get(0).getItem(), redundantBook);
 
 		Book nonSupercedingBook = new Summa(Abilities.ARTES_LIBERALES, 4, 7, null);
 		covenant.addItem(nonSupercedingBook);
@@ -64,7 +65,7 @@ public class LibraryPolicy {
 		assertEquals(covenant.getLibrary().size(), 3);
 
 		assertEquals(tribunal.getOffersOnMarket().size(), 2);
-		assertTrue(tribunal.getOffersOnMarket().get(1).getItem().equals(book2));
+		assertEquals(tribunal.getOffersOnMarket().get(1).getItem(), book2);
 	}
 
 	@Test
@@ -85,10 +86,10 @@ public class LibraryPolicy {
 	}
 	
 	@Test
-	public void surplusVisIsPutOnMarket() {
+	public void surplusVisIsPutOnMarketAndBidOn() {
 		Magus m1 = founders.get(0);
 		Magus m2 = founders.get(1);
-		m1.addVis(Arts.CREO, 12);
+		m1.addVis(Arts.CREO, 17);
 		m2.addVis(Arts.TERRAM, 5);
 		m2.addVis(Arts.REGO, 10);
 		m1.setAge(50);
@@ -96,7 +97,7 @@ public class LibraryPolicy {
 		MagusPreferences.setResearchPreference(m1, Arts.CREO, 0.5);
 		
 		m2.addXP(Arts.TERRAM, Arts.TERRAM.getXPForLevel(10));
-		// so m1 should keep 5 pawns of CREO for Longevity ritual
+		// so m1 should keep 10 pawns of CREO for Longevity ritual
 		// and m2 should keep 4 pawns of TERRAM vis for experimentation
 		
 		// We then say that the first 5 pawns of any type is kept for spending
@@ -107,9 +108,9 @@ public class LibraryPolicy {
 		m1.maintenance();
 		m2.maintenance();
 		
-		assertEquals((long)AMU.getVisInventory(m1).get(Arts.CREO), 11);
-		assertEquals((long)AMU.getVisInventory(m2).get(Arts.TERRAM), 5);
-		assertEquals((long)AMU.getVisInventory(m2).get(Arts.REGO), 7);	// but m2 will then bid one pawn of REGO for the one pawns of CREO (meeting their reserve price)
+		assertEquals((long)AMU.getVisInventory(m1).get(Arts.CREO), 16); // so none put onto market
+		assertEquals((long)AMU.getVisInventory(m2).get(Arts.TERRAM), 5); // ditto
+		assertEquals((long)AMU.getVisInventory(m2).get(Arts.REGO), 7);  // 2 on market, and 1 to bid for Creo
 		boolean foundBid = false;
 		for (BarterOffer bo : tribunal.getOffersOnMarket()) {
 			if (bo.getItem().equals(new Vis(Arts.CREO)) && bo.getBestBid() == 1.0)
@@ -122,7 +123,7 @@ public class LibraryPolicy {
 	public void sameVisIsNotUsedForTwoDifferentBids() {
 		Magus m1 = founders.get(0);
 		Magus m2 = founders.get(1);
-		m1.addVis(Arts.CREO, 10);
+		m1.addVis(Arts.CREO, 15);
 		m1.setAge(50);
 		MagusPreferences.setResearchPreference(m1, Arts.CREO, 0.5);
 		
@@ -132,8 +133,8 @@ public class LibraryPolicy {
 		tribunal.addToMarket(bo2);
 		
 		m1.maintenance();
-		// m1 should have five pawns of CREO to spend, so should have one left (plus the five from reserve for Longevity ritual)
-		assertEquals((long)AMU.getVisInventory(m1).get(Arts.CREO), 6);
+		// m1 should have five pawns of CREO to spend, so should have one left (plus the ten from reserve for Longevity ritual)
+		assertEquals((long)AMU.getVisInventory(m1).get(Arts.CREO), 11);
 		assertEquals(tribunal.getOffersOnMarket().get(0).getBestBid(), 2.0, 0.01);
 	}
 	

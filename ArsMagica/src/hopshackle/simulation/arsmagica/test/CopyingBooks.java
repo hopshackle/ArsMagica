@@ -104,35 +104,35 @@ public class CopyingBooks {
 		cb.addToAllPlans();
 		assertFalse(cb.isDeleted());
 		assertFalse(creoBook.isInUse());
-		assertTrue(cb.getBookBeingCopied() == creoBook);
+		assertSame(cb.getBookBeingCopied(), creoBook);
 		cb.start();
 		assertTrue(creoBook.isInUse());
 		cb.run();
 		assertEquals(magus.getInventoryOf(AMU.sampleBook).size(), 0);
 		assertEquals(apprentice.getInventoryOf(AMU.sampleBook).size(), 0);
 		assertFalse(creoBook.isInUse());
-		magus.setDecider(new HardCodedDecider<Magus>(MagusActions.TEACH_APPRENTICE));
+		magus.setDecider(new HardCodedDecider<>(MagusActions.TEACH_APPRENTICE));
 		magus.decide();
 		Action<?> next = apprentice.getNextAction();
 		assertTrue(next instanceof TeachApprentice);	
 		assertFalse(creoBook.isInUse());
 		runNextAction(magus);
 		assertFalse(creoBook.isInUse());
-		assertTrue(apprentice.getCurrentCopyProject() != null);
+		assertNotNull(apprentice.getCurrentCopyProject());
 		creoBook.setCurrentReader(magus);
-		magus.setDecider(new HardCodedDecider<Magus>(MagusActions.PRACTISE_ABILITY));
-		assertTrue(apprentice.getCurrentCopyProject() != null);
+		magus.setDecider(new HardCodedDecider<>(MagusActions.PRACTISE_ABILITY));
+		assertNotNull(apprentice.getCurrentCopyProject());
 		runNextAction(magus);
 		
 		next = apprentice.getNextAction();
-		assertFalse(next == null);
+		assertNotNull(next);
 		assertFalse(next instanceof CopyBook);		
 	
 		creoBook.setCurrentReader(null);
 		apprentice.getActionPlan().purgeActions(true);
 		apprentice.decide();
 		next = apprentice.getNextAction();
-		assertFalse(next == null);
+		assertNotNull(next);
 		assertTrue(next instanceof CopyBook);
 		
 		runNextAction(apprentice);

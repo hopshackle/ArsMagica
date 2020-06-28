@@ -72,7 +72,7 @@ public class CovenantApplication {
 
 		if (modifiedRoll < 9) {
 			List<Vis> vis = applicant.getInventoryOf(AMU.sampleVis);
-			double totalVis = (double) vis.size();
+			double totalVis = vis.size();
 			int requiredPawns = (int) Math.ceil((9.0 - modifiedRoll) * 15.0);
 			if (totalVis >= requiredPawns) {
 				for (int i = 0; i < requiredPawns; i++) {

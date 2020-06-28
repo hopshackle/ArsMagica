@@ -9,6 +9,10 @@ public class InventLongevityRitual extends ArsMagicaAction {
 	private Magus customer;
 	private int modifier;
 
+	public static int requiredMagicTheory(int ageOfRecipient) {
+		return (int) Math.ceil(Math.ceil(ageOfRecipient / 5.0) / 2.0);
+	}
+
 	public InventLongevityRitual(Magus a) {
 		super(MagusActions.LONGEVITY_RITUAL, a);
 		if (a.hasApprentice()) optionalActors.add(a.getApprentice());
@@ -27,10 +31,11 @@ public class InventLongevityRitual extends ArsMagicaAction {
 	protected void initialisation() {
 		Magus subject = customer;
 		if (subject == null) subject = magus;
-		int requiredMT = (subject.getAge() / 10) + 1;
-		if (magus.getLevelOf(Abilities.MAGIC_THEORY) < requiredMT) {
+
+		if (magus.getLevelOf(Abilities.MAGIC_THEORY) < requiredMagicTheory(subject.getAge())) {
 			magus.log("Insufficient Magic Theory for Longevity Ritual");
 			cancel();
+			return;
 		}
 		if (hasSufficientVis(subject)) {
 			for (Vis v : requirementsForRitual(subject))

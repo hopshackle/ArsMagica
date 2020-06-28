@@ -32,6 +32,7 @@ public class ApprenticesAndTeaching {
 		parens.setPerception(3);
 		apprentice = new Magus(w);
 		parens.addXP(Abilities.MAGIC_THEORY, 75);
+		AgentArchive.switchOn(true);
 	}
 	
 	
@@ -221,7 +222,11 @@ public class ApprenticesAndTeaching {
 		provide15SeasonsOfTraining(parens);
 		Magus apprenticeOfApprentice = new Magus(w);
 		earlierApprentice1.addApprentice(apprenticeOfApprentice);
-		
+
+		assertFalse(earlierApprentice1.isApprentice());
+		assertFalse(earlierApprentice2.isApprentice());
+		assertFalse(earlierApprentice3.isApprentice());
+
 		parens.addVis(Arts.REGO, 12);
 		parens.addApprentice(apprentice);
 		assertEquals(parens.getPawnsOf(Arts.REGO), 12);

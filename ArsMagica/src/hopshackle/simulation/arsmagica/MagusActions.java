@@ -123,8 +123,7 @@ public enum MagusActions implements ActionEnum<Magus> {
 			return true;
 		case LONGEVITY_RITUAL:
 			if (magus.getAge() > 30) {
-				int requiredMT = (magus.getAge() / 10) + 1;
-				if (magus.getLevelOf(Abilities.MAGIC_THEORY) < requiredMT)
+				if (magus.getLevelOf(Abilities.MAGIC_THEORY) < InventLongevityRitual.requiredMagicTheory(magus.getAge()))
 					return false;
 				int bonus = (int) (magus.getLabTotal(Arts.CREO, Arts.CORPUS) / 5.0);
 				if (magus.getLongevityRitualEffect() == 0 || bonus > magus.getLongevityRitualEffect() + 2) 

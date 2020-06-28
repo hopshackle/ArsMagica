@@ -6,7 +6,6 @@ import hopshackle.simulation.*;
 
 public class SearchForVis extends ArsMagicaAction {
 
-    private boolean sourceOverride;
     private boolean isCovenantService;
     private VisSource visSource;
     private Arts visType;
@@ -16,16 +15,12 @@ public class SearchForVis extends ArsMagicaAction {
         super(MagusActions.SEARCH_VIS, a);
     }
 
-    public void setResultAsVisSource(boolean findSource) {
-        sourceOverride = findSource;
-    }
-
     @Override
     protected void doStuff() {
         magus.log("Spends season seaching for Vis");
         Abilities skillUsed = Abilities.MAGIC_LORE;
         int roll = Dice.roll(1, 10);
-        if (roll > 4 && roll < 6)
+        if (roll > 5 && roll < 7)
             skillUsed = Abilities.FAERIE_LORE;
         if (roll == 7)
             skillUsed = Abilities.PHILOSOPHIAE;
@@ -75,7 +70,7 @@ public class SearchForVis extends ArsMagicaAction {
                 magus.addVis(visType, pawnsFound);
             }
 
-            if (Dice.stressDieResult() >= easeFactor || sourceOverride) {
+            if (Dice.stressDieResult() >= easeFactor) {
                 // permanent vis source found.
                 visSource = new VisSource(visType, pawnsFound / 2, tribunal);
                 if (magus.getSeasonsServiceOwed() > 0)
