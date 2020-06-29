@@ -66,10 +66,12 @@ public class BasicDecider extends BaseAgentDecider<Magus> {
 
 		if (option == MagusActions.DISTILL_VIS) {
 			retValue = Math.min(magus.getLabTotal(Arts.CREO, Arts.VIM) * 0.01 - magus.getPawnsOf(Arts.VIM) * 0.01, 0.35) + magus.getSeasonsServiceOwed() * 0.01;
-			if (magus.getPawnsOf(Arts.VIM) + magus.getPawnsOf(Arts.CORPUS) + magus.getPawnsOf(Arts.CREO) <= magus.getAge() / 10)
+			if (!InventLongevityRitual.meetsVisRequirements(magus)) {
 				retValue += magus.getLabTotal(Arts.CREO, Arts.VIM) * 0.01;
-			if (magus.getAge() > 30 && magus.getLongevityRitualEffect() == 0 && magus.getPawnsOf(Arts.VIM) <= magus.getAge() / 10)
-				retValue += 0.5;
+				if (magus.getAge() > 30 && magus.getLongevityRitualEffect() == 0)
+					retValue += 0.5;
+			}
+
 		}
 
 		if (option == MagusActions.LONGEVITY_RITUAL) 
@@ -83,7 +85,7 @@ public class BasicDecider extends BaseAgentDecider<Magus> {
 			if (magus.isResearchingSpell()) 
 				retValue = 0.8;
 			else {
-				retValue = (magus.getTotalXPInArts() / Math.max(magus.getTotalSpellLevels(), 20)) * 0.08;
+				retValue = (magus.getTotalXPInArts() / Math.max(magus.getTotalSpellLevels(), 20.0)) * 0.08;
 			}
 		}
 
