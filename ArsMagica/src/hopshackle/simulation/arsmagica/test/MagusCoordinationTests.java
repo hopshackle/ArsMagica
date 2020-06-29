@@ -104,16 +104,17 @@ public class MagusCoordinationTests {
 	public void longevityRitualCancelledOnStartDueToInsufficientVisCausesRedecision() {
 		buyer.maintenance();
 		Action<?> nextAction = buyer.getNextAction();
-		assertTrue(nextAction.getType() == MagusActions.LONGEVITY_RITUAL);
+		assertSame(nextAction.getType(), MagusActions.LONGEVITY_RITUAL);
 		buyer.removeVis(Arts.CREO, 18);
 		nextAction.start();
 		assertTrue(nextAction.isDeleted());
+		nextAction.run();
 		nextAction = buyer.getNextAction();
-		assertTrue(nextAction != null);
+		assertNotNull(nextAction);
 		assertFalse(nextAction instanceof InventLongevityRitual);
-		assertTrue(seller.getNextAction() != nextAction);
-		assertTrue(seller.getNextAction() != null);
-		assertTrue(seller.getNextAction() != buyer.getNextAction());
+		assertNotSame(seller.getNextAction(), nextAction);
+		assertNotNull(seller.getNextAction());
+		assertNotSame(seller.getNextAction(), buyer.getNextAction());
 		assertEquals(buyer.getActionPlan().timeToEndOfQueue(), 13);
 		assertEquals(seller.getActionPlan().timeToEndOfQueue(), 13);
 	}

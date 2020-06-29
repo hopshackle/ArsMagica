@@ -87,6 +87,6 @@ public class BindFamiliar extends ArsMagicaAction {
 
 	@Override
 	public String description() {
-		return magus.getFamiliar().toString();
+		return magus.getFamiliar() == null ? "" : magus.getFamiliar().toString();
 	}
 }

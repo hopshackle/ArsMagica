@@ -53,16 +53,6 @@ public class LongevityRitualService extends ArsMagicaItem implements ArtefactReq
 
     }
 
-    private boolean insufficientMT() {
-        if (customer == null) {
-            return false;
-        } else {
-            int requiredLevel = (customer.getAge() / 10) + 1;
-            return (customer.getLevelOf(Abilities.MAGIC_THEORY) < requiredLevel &&
-                    CrCoSpecialist.getLevelOf(Abilities.MAGIC_THEORY) < requiredLevel);
-        }
-    }
-
     @Override
     public void artefactMaintenance(Agent purchaser) {
         if (!hasBeenPurchased) {
@@ -76,10 +66,7 @@ public class LongevityRitualService extends ArsMagicaItem implements ArtefactReq
             return;
         }
         customer = (Magus) purchaser;
-        if (insufficientMT()) {
-            deleteThis();
-            return;
-        }
+
         List<Artefact> allContracts = customer.getInventoryOf(AMU.sampleLongevityRitualService);
         LongevityRitualService ritual = null;
         int highest = 0;
@@ -95,7 +82,7 @@ public class LongevityRitualService extends ArsMagicaItem implements ArtefactReq
         if (CrCoSpecialist.isDead()) {
             deleteThis();
         } else if (customer.getLongevityRitualEffect() < Math.floor(getLabTotal() / 5.0)
-                && InventLongevityRitual.hasSufficientVis(customer) && !CrCoSpecialist.isInTwilight()) {
+                && InventLongevityRitual.meetsRequirements(customer, CrCoSpecialist)) {
             // i.e. only use the contract if it will be of benefit and you have the vis
 
             if (customer.getActionPlan().contains(MagusActions.LONGEVITY_RITUAL))

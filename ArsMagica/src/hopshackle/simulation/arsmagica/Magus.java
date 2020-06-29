@@ -9,7 +9,6 @@ public class Magus extends Agent implements Persistent {
 
 	private ArsMagicaCharacteristic strength, stamina, dexterity, quickness, intelligence, perception, presence, communication;
 	private HashMap<Learnable, Skill> skills = new HashMap<Learnable, Skill>();
-	private Map<Agent, Relationship> relationships = new HashMap<>();
 	private List<Spell> spells = new ArrayList<Spell>();
 	private static MagusRetriever masterAgentRetriever = new MagusRetriever();
 	private int lastHarvest, magicAura;
@@ -1021,15 +1020,7 @@ public class Magus extends Agent implements Persistent {
 	public boolean hasFamiliar() {
 		return getFamiliar() != null;
 	}
-	public Relationship getRelationshipWith(Magus m) {
-		if (relationships.containsKey(m))
-			return relationships.get(m);
-		return Relationship.NONE;
-	}
 
-	public Map<Agent, Relationship> getRelationships() {
-		return relationships;
-	}
 	public int getSeasonsTraining() {
 		return seasonsTraining;
 	}

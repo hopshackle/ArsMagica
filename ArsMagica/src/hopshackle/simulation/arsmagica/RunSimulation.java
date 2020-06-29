@@ -85,9 +85,9 @@ public class RunSimulation {
 				if (houseName.equals(fields[0]))
 					founder.setHermeticHouse(house);
 			}
-			founder.setIntelligence(Integer.valueOf(fields[16]));
-			founder.setPerception(Integer.valueOf(fields[17]));
-			founder.setStrength(Integer.valueOf(fields[18]));
+			founder.setIntelligence(Integer.parseInt(fields[16]));
+			founder.setPerception(Integer.parseInt(fields[17]));
+			founder.setStrength(Integer.parseInt(fields[18]));
 			founder.setStamina(Integer.valueOf(fields[19]));
 			founder.setPresence(Integer.valueOf(fields[20]));
 			founder.setCommunication(Integer.valueOf(fields[21]));
@@ -96,7 +96,9 @@ public class RunSimulation {
 			founder.addXP(Abilities.LATIN, 75);
 			founder.addXP(Abilities.ARTES_LIBERALES, 30);
 			founder.addXP(Abilities.PARMA_MAGICA, 15);
-			founder.addXP(Abilities.MAGIC_THEORY, 50);
+			founder.addXP(Abilities.MAGIC_THEORY, 75);
+			founder.setLongevityRitualEffect(5);
+			founder.setKnownLongevityEffect(5);
 			for (int j = 0; j < 15; j++) {
 				founder.addXP(Arts.random(), 25);
 			}

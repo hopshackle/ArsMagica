@@ -10,7 +10,7 @@ public class MagusDAO implements DAO<Magus> {
 	public String getTableCreationSQL(String tableSuffix) {
 		return  "CREATE TABLE IF NOT EXISTS Magi_" + tableSuffix +
 		" ( id 		INT			NOT NULL,"		+
-		" name 		VARCHAR(70)		NOT NULL, "	+
+		" name 		VARCHAR(100)		NOT NULL, "	+
 		" parensName	VARCHAR(50)		NOT NULL, " +
 		" tribunal		VARCHAR(50)		NOT NULL, " +
 		" age		INT			NOT NULL,"		+

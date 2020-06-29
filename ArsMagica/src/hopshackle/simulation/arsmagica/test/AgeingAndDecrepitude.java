@@ -11,16 +11,20 @@ import hopshackle.simulation.arsmagica.*;
 
 public class AgeingAndDecrepitude {
 
-	private Magus magus;
+	private Magus magus, caster;
 	private World w;
 	private AgeingEvent ae;
 
 	@Before
 	public void setup() {
-		w = new World(new SimpleWorldLogic<Magus>(new ArrayList<ActionEnum<Magus>>(EnumSet.allOf(MagusActions.class))));
+		w = new World(new SimpleWorldLogic<>(new ArrayList<>(EnumSet.allOf(MagusActions.class))));
 		new Tribunal("test", w);
 		w.setCalendar(new FastCalendar(0));
 		magus = new Magus(w);
+		caster = new Magus(w);
+		caster.setIntelligence(1);
+		magus.setIntelligence(1);
+		magus.setMagicAura(2);
 		ae = new AgeingEvent(magus);
 	}
 
@@ -75,7 +79,6 @@ public class AgeingAndDecrepitude {
 		assertEquals(magus.getLongevityModifier(), -4);
 		magus.addXP(Arts.CREO, 15);
 		magus.addXP(Arts.CORPUS, 15);
-		magus.setIntelligence(1);
 		covenant.setAuraAndCapacity(2, 10);
 		magus.addVis(Arts.VIM, 13);
 		
@@ -97,8 +100,6 @@ public class AgeingAndDecrepitude {
 		assertEquals(magus.getAge(), 33);
 		magus.addXP(Arts.CREO, 15);
 		magus.addXP(Arts.CORPUS, 15);
-		magus.setIntelligence(1);
-		magus.setMagicAura(2);
 		assertEquals(magus.getLabTotal(Arts.CREO, Arts.CORPUS), 13);
 		assertFalse(MagusActions.LONGEVITY_RITUAL.isChooseable(magus));
 		magus.setAge(34);
@@ -118,18 +119,69 @@ public class AgeingAndDecrepitude {
 	@Test
 	public void longevityRitualRequiresSufficientVis() {
 		magus.setAge(29);
-		assertFalse(InventLongevityRitual.hasSufficientVis(magus));
+		magus.addXP(Abilities.MAGIC_THEORY, 75);
+		assertFalse(InventLongevityRitual.meetsRequirements(magus, magus));
 		magus.addVis(Arts.CORPUS, 5);
-		assertFalse(InventLongevityRitual.hasSufficientVis(magus));
+		assertFalse(InventLongevityRitual.meetsRequirements(magus, magus));
 		magus.addVis(Arts.CREO, 1);
-		assertTrue(InventLongevityRitual.hasSufficientVis(magus));
+		assertTrue(InventLongevityRitual.meetsRequirements(magus, magus));
 	}
 
 	@Test
-	public void longevityRitualServiceIsFoundInInventory() {
-		magus.addItem(new LongevityRitualService(magus));
+	public void longevityRitualServiceTriggersIfRequirementsMet() {
+		magus.setAge(50);
+		LongevityRitualService lrs = new LongevityRitualService(caster);
+		magus.addItem(lrs);
 		assertEquals(magus.getNumberInInventoryOf(AMU.sampleLongevityRitualService), 1);
+		caster.addXP(Abilities.MAGIC_THEORY, 75); // level 5
+		magus.addVis(Arts.CREO, 10);
+		assertEquals(magus.getLongevityRitualEffect(),0);
+		assertTrue(InventLongevityRitual.meetsRequirements(magus, caster));
+		lrs.artefactMaintenance(magus);
+
+		Action a = magus.getActionPlan().getNextAction();
+		assertEquals(a.getType(), MagusActions.LONGEVITY_RITUAL);
+		a.start();
+		a.run();
+		assertEquals(magus.getLongevityRitualEffect(), 2);  // MT=5, Int = 1 + 1, Aura = 2; LabTotal = 9
+		assertEquals(magus.getNumberInInventoryOf(lrs), 0);
 	}
+
+	@Test
+	public void longevityRitualServiceMaintenanceOnlyTriggersIfVisRequirementsMet() {
+		magus.setAge(50);
+		magus.addItem(new LongevityRitualService(caster));
+		caster.addXP(Abilities.MAGIC_THEORY, 75); // level 5
+		caster.addVis(Arts.CREO, 20);
+		assertEquals(magus.getLongevityRitualEffect(),0);
+		magus.maintenance();
+		assertNull(magus.getActionPlan().getNextAction());
+	}
+
+	@Test
+	public void longevityRitualServiceMaintenanceOnlyTriggersIfMagicTheoryRequirementsMet() {
+		magus.setAge(50);
+		magus.addItem(new LongevityRitualService(caster));
+		caster.addXP(Abilities.MAGIC_THEORY, 70); // level 4
+		magus.addVis(Arts.CREO, 10);
+		assertEquals(magus.getLongevityRitualEffect(),0);
+		magus.maintenance();
+		assertNull(magus.getActionPlan().getNextAction());
+	}
+
+	@Test
+	public void longevityRitualServiceMaintenanceOnlyTriggersIfWouldImproveCurrentRitual() {
+		magus.setAge(50);
+		magus.setLongevityRitualEffect(2);
+		magus.addItem(new LongevityRitualService(caster));
+		caster.addXP(Abilities.MAGIC_THEORY, 75); // level 5
+		magus.addVis(Arts.CREO, 10);
+		assertEquals(magus.getLongevityRitualEffect(),2);
+		magus.maintenance();
+		assertNull(magus.getActionPlan().getNextAction());
+		assertEquals(magus.getLongevityRitualEffect(),2);
+	}
+
 
 	@Test
 	public void longevityRitualUsesUpVisCorrectly() {
@@ -137,8 +189,6 @@ public class AgeingAndDecrepitude {
 		magus.setAge(29);
 		magus.addXP(Arts.CREO, 15);
 		magus.addXP(Arts.CORPUS, 15);
-		magus.setIntelligence(1);
-		magus.setMagicAura(2);
 		magus.addVis(Arts.CREO, 3);
 		magus.addVis(Arts.CORPUS, 1);
 		magus.addVis(Arts.VIM, 3);
@@ -153,8 +203,6 @@ public class AgeingAndDecrepitude {
 	public void longevityRitualExpiresAfterAgeingCrisis() {
 		magus.addXP(Arts.CREO, 15);
 		magus.addXP(Arts.CORPUS, 15);
-		magus.setIntelligence(1);
-		magus.setMagicAura(2);
 		magus.addVis(Arts.VIM, 3);
 		addStartAndRunAction(new InventLongevityRitual(magus));
 		assertEquals(magus.getLongevityRitualEffect(), 3);
