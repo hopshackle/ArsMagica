@@ -88,11 +88,11 @@ public class RunSimulation {
 			founder.setIntelligence(Integer.parseInt(fields[16]));
 			founder.setPerception(Integer.parseInt(fields[17]));
 			founder.setStrength(Integer.parseInt(fields[18]));
-			founder.setStamina(Integer.valueOf(fields[19]));
-			founder.setPresence(Integer.valueOf(fields[20]));
-			founder.setCommunication(Integer.valueOf(fields[21]));
-			founder.setDexterity(Integer.valueOf(fields[22]));
-			founder.setQuickness(Integer.valueOf(fields[23]));
+			founder.setStamina(Integer.parseInt(fields[19]));
+			founder.setPresence(Integer.parseInt(fields[20]));
+			founder.setCommunication(Integer.parseInt(fields[21]));
+			founder.setDexterity(Integer.parseInt(fields[22]));
+			founder.setQuickness(Integer.parseInt(fields[23]));
 			founder.addXP(Abilities.LATIN, 75);
 			founder.addXP(Abilities.ARTES_LIBERALES, 30);
 			founder.addXP(Abilities.PARMA_MAGICA, 15);
@@ -153,7 +153,7 @@ public class RunSimulation {
 					a = Arts.VIM;
 					break;
 				}
-				int xp = Integer.valueOf(fields[artIndex]);
+				int xp = Integer.parseInt(fields[artIndex]);
 				founder.addXP(a, xp);
 				double currentPref = MagusPreferences.getResearchPreference(
 						founder, a);

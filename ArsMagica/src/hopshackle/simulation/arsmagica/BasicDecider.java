@@ -92,15 +92,21 @@ public class BasicDecider extends BaseAgentDecider<Magus> {
 		if (option == MagusActions.WRITE_SUMMA) {
 			if (magus.isWritingBook())
 				retValue = 0.8;
-			else {
-				Learnable subject = magus.getHighestArt();
-				retValue = magus.getLevelOf(subject) / 2 - magus.getHighestSumma(subject);
-				if (subject instanceof Abilities)
-					retValue *= 5;
-				retValue += magus.getCommunication();
-				if (covenant != null && !covenant.isLibraryFull())
-					retValue += magus.getSeasonsServiceOwed();
-				retValue *= 0.05;
+			else if (Dice.roll(1, 10) == 1){
+				// a bit of a hack to only consider this 10% of the time, to avoid computation
+				double bestScore = 0.0;
+				for (Learnable skill : WriteSumma.skillsOnWhichSummaCouldBeWritten(magus)) {
+					double score = WriteSumma.calculateValue(skill, magus).getValue0();
+					if (score > bestScore)
+						bestScore = score;
+				}
+				retValue = bestScore;
+				if (retValue > 0.0) {
+					retValue += magus.getCommunication();
+					if (covenant != null && !covenant.isLibraryFull())
+						retValue += magus.getSeasonsServiceOwed();
+					retValue *= 0.05;
+				}
 			}
 		}
 
