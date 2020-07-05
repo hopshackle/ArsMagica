@@ -32,11 +32,11 @@ public class RunSimulation {
 		baseDir = SimProperties.getProperty("BaseDirectory", "C:\\");
 		int yearsToRun = SimProperties.getPropertyAsInteger("AMDuration", "521");
 		int startYear = SimProperties.getPropertyAsInteger("AMStartYear", "700");
-		String worldName = SimProperties.getProperty("AM.name", "AM1");
+		String worldName = SimProperties.getProperty("AMName", "AM1");
 		final World world = new World(new SimpleWorldLogic<>(new ArrayList<>(EnumSet.allOf(MagusActions.class))));
 		FastCalendar cal = new FastCalendar(startYear * 52);
 		world.setCalendar(cal, 52);
-		ActionProcessor ap = new ActionProcessor("ARS_TEST_01", false);
+		ActionProcessor ap = new ActionProcessor(worldName, false);
 		ap.setWorld(world);
 		world.setActionProcessor(ap);
 		world.setName(worldName);
@@ -48,7 +48,7 @@ public class RunSimulation {
 		stonehenge = new Tribunal("Stonehenge", world);
 		provencal = new Tribunal("Provencal", world);
 		iberia = new Tribunal("Iberia", world);
-		tribunals = new ArrayList<Tribunal>();
+		tribunals = new ArrayList<>();
 		tribunals.add(rhine);
 		tribunals.add(rome);
 		tribunals.add(alps);
@@ -239,8 +239,8 @@ public class RunSimulation {
 							apprentices + magi);
 
 				System.out.println(String.format(
-						"Year %d:		%d Magi, %d apprentices in %d covenants.",
-						world.getYear(), magi, apprentices, totalCovenants));
+						"Year %d:		%d Magi, %d apprentices in %d covenants (%tT)",
+						world.getYear(), magi, apprentices, totalCovenants, System.currentTimeMillis()));
 
 			}
 		}, 260, 260);

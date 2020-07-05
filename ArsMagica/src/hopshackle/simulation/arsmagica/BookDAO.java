@@ -9,7 +9,7 @@ public class BookDAO implements DAO<Book> {
 				" (id 		INT		NOT NULL, "	+
 				" titleId 		INT		NOT NULL, "	+
 				" subject 		VARCHAR(20)		NOT NULL, "	+
-				" title			VARCHAR(80)		NOT NULL, " +
+				" title			VARCHAR(100)		NOT NULL, " +
 				" author	INT		NOT NULL," 	+
 				" currentYear	INT		NOT NULL, "	+
 				" yearWritten		INT		NOT NULL,"		+
@@ -17,7 +17,7 @@ public class BookDAO implements DAO<Book> {
 				" quality		INT		NOT NULL,"		+
 				" popularity	INT		NOT NULL,"		+
 				" deterioration	INT		NOT NULL,"		+
-				" lastOwner		VARCHAR(70)	NOT NULL"	+
+				" lastOwner		VARCHAR(100)	NOT NULL"	+
 				");";
 	}
 

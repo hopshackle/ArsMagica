@@ -20,7 +20,7 @@ public class CopyingBooks {
 
 	@Before
 	public void setup() {
-		world = new World(new SimpleWorldLogic<Magus>(new ArrayList<ActionEnum<Magus>>(EnumSet.allOf(MagusActions.class))));
+		world = new World(new SimpleWorldLogic<>(new ArrayList<>(EnumSet.allOf(MagusActions.class))));
 		tribunal = new Tribunal("test", world);
 		magus = new Magus(world);
 		apprentice = new Magus(world);
@@ -80,7 +80,7 @@ public class CopyingBooks {
 		cb.run();
 		assertEquals(magus.getInventoryOf(AMU.sampleBook).size(), 0);
 		assertEquals(apprentice.getInventoryOf(AMU.sampleBook).size(), 0);
-		magus.setDecider(new HardCodedDecider<Magus>(MagusActions.PRACTISE_ABILITY));
+		magus.setDecider(new HardCodedDecider<>(MagusActions.PRACTISE_ABILITY));
 		magus.decide();
 		runNextAction(magus);
 		Action<?> next = apprentice.getNextAction();
@@ -91,7 +91,23 @@ public class CopyingBooks {
 		assertEquals(magus.getInventoryOf(AMU.sampleBook).get(0).getTitleId(), creoBook.getTitleId());
 		assertTrue(apprentice.getCurrentCopyProject() == null);
 	}
-	
+
+	@Test
+	public void doNotCopyABookWithAnotherGoodCopyAlreadyAvailableInCovenantLibrary() {
+		covenant.addItem(creoBook);
+		for (int i = 0; i < 20; i ++) {
+			creoBook.isReadBy(magus);
+		}
+		assertFalse(MagusActions.COPY_BOOK.isChooseable(magus));
+		magus.setSeasonsServiceOwed(1);
+		assertFalse(MagusActions.COPY_BOOK.isChooseable(magus));
+		creoBook.increaseDeterioration(200);
+		assertTrue(MagusActions.COPY_BOOK.isChooseable(magus));
+
+		covenant.addItem(creoBook.createCopy());
+		assertFalse(MagusActions.COPY_BOOK.isChooseable(magus));
+	}
+
 	@Test
 	public void copyingABookWithASeasonPauseReleasesBookForReading() {
 		copyBookIsChooseableIfApprenticeAndDecentBookAvailable();

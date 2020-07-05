@@ -110,7 +110,7 @@ public enum MagusActions implements ActionEnum<Magus> {
                     return false;
             case SEARCH_APPRENTICE:
                 if (magus.hasApprentice()) return false;
-                return magus.getTotalArtLevels() >= 100 && magus.getWorld().getAgentsIncludingChildLocations().stream().filter(a -> a instanceof Magus).count() < 1000;
+                return magus.getTotalArtLevels() >= 100;
             case STUDY_VIS:
                 Arts artToStudy = magus.getTypeOfVisToStudy();
                 if (artToStudy == null) return false;
@@ -122,9 +122,9 @@ public enum MagusActions implements ActionEnum<Magus> {
                 if (magus.getLabTotal(Arts.CREO, Arts.VIM) < 10) return false;
                 return true;
             case LONGEVITY_RITUAL:
-                if (magus.getAge() > 30) {
+                if (magus.getAge() >= 30) {
                     int bonus = (int) (magus.getLabTotal(Arts.CREO, Arts.CORPUS) / 5.0);
-                    if (magus.getLongevityRitualEffect() == 0 || bonus > magus.getLongevityRitualEffect() + 2)
+                    if (magus.getLongevityRitualEffect() == 0 || bonus >= magus.getLongevityRitualEffect() + 2)
                         if (InventLongevityRitual.meetsRequirements(magus, magus))
                             return true;    // need to ensure can create an effect giving a result better than +2
                 }

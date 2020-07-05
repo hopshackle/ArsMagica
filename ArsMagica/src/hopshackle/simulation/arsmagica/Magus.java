@@ -936,19 +936,19 @@ public class Magus extends Agent implements Persistent {
     }
 
     public Book getBestDisintegratingBookToCopy() {
-        ValuationFunction<Book> vFunction = new ValuationFunction<Book>() {
+        ValuationFunction<Book> vFunction = new ValuationFunction<>() {
 
             @Override
             public double getValue(Book item) {
                 if (item.isInUse() || item instanceof LabText)
                     return 0.0;
-                if (item.getDeterioration() < 0.6)
+                if (item.getDeterioration() < 0.6 || item.getPopularity() < 10)
                     return 0.0;
                 for (Book b : getAllAccessibleBooksNotInUse()) {
                     if (b.getDeterioration() < 0.3 && b.getTitleId() == item.getTitleId())
                         return 0.0;        // i.e. we already have another good copy
                 }
-                return (item.getBPValue() * item.getDeterioration() * 2) + item.getPopularity() * 2;
+                return item.getBPValue() * item.getDeterioration()  * item.getPopularity();
             }
 
             @Override
@@ -964,7 +964,7 @@ public class Magus extends Agent implements Persistent {
     }
 
     public List<Book> getBestSpellsToCopy() {
-        ValuationFunction<Book> vFunction = new ValuationFunction<Book>() {
+        ValuationFunction<Book> vFunction = new ValuationFunction<>() {
 
             @Override
             public double getValue(Book temp) {
@@ -992,7 +992,7 @@ public class Magus extends Agent implements Persistent {
     }
 
     public Book getBestBookToCopy() {
-        ValuationFunction<Book> vFunction = new ValuationFunction<Book>() {
+        ValuationFunction<Book> vFunction = new ValuationFunction<>() {
 
             @Override
             public double getValue(Book item) {
@@ -1017,12 +1017,9 @@ public class Magus extends Agent implements Persistent {
         if (getLevelOf(Abilities.LATIN) < 4) return null;
         if (getLevelOf(Abilities.ARTES_LIBERALES) < 1) return null;
         List<Book> library = getAllAccessibleBooksNotInUse();
-        List<Book> personalBooks = new ArrayList<Book>();
-        if (isApprentice())
-            personalBooks = getParens().getInventoryOf(AMU.sampleBook);
-        else
-            personalBooks = getInventoryOf(AMU.sampleBook);
-
+        List<Book> personalBooks = isApprentice() ?
+                getParens().getInventoryOf(AMU.sampleBook) :
+                getInventoryOf(AMU.sampleBook);
 
         List<Book> toRemove = new ArrayList<Book>();
         for (Book potential : library) {
@@ -1035,7 +1032,6 @@ public class Magus extends Agent implements Persistent {
                 if (own.getSubject() == potential.getSubject())
                     if (own.getLevel() >= potential.getLevel())
                         notUseful = true;
-                ;
             }
             if (notUseful)
                 toRemove.add(potential);
@@ -1045,13 +1041,7 @@ public class Magus extends Agent implements Persistent {
         }
 
         library.removeAll(toRemove);
-        Collections.sort(library, new Comparator<Book>() {
-
-            @Override
-            public int compare(Book o1, Book o2) {
-                return (int) (100.0 * (valuer.getValue(o2) - valuer.getValue(o1)));
-            }
-        });
+        library.sort((o1, o2) -> (int) (100.0 * (valuer.getValue(o2) - valuer.getValue(o1))));
 
         return library;
     }

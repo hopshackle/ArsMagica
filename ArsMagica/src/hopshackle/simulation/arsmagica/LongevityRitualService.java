@@ -128,16 +128,12 @@ public class LongevityRitualService extends ArsMagicaItem implements ArtefactReq
                 allAssistants.add(m);
             }
         }
-        allAssistants.sort(new Comparator<Magus>() {
-
-            @Override
-            public int compare(Magus o1, Magus o2) {
-                // positive if first > second provides ordering
-                // Hence, since we want high value early in the ordering, we reverse this
-                int score1 = o1.getLevelOf(Abilities.MAGIC_THEORY) + o1.getIntelligence();
-                int score2 = o2.getLevelOf(Abilities.MAGIC_THEORY) + o2.getIntelligence();
-                return score2 - score1;
-            }
+        allAssistants.sort((o1, o2) -> {
+            // positive if first > second provides ordering
+            // Hence, since we want high value early in the ordering, we reverse this
+            int score1 = o1.getLevelOf(Abilities.MAGIC_THEORY) + o1.getIntelligence();
+            int score2 = o2.getLevelOf(Abilities.MAGIC_THEORY) + o2.getIntelligence();
+            return score2 - score1;
         });
         return allAssistants;
     }

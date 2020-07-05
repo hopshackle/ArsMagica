@@ -62,7 +62,7 @@ public class MagusBaseDecider extends BaseAgentDecider<Magus> {
                 retValue += 0.05 * magus.getTribunal().getApprenticeModifier();
             if (magus.getUniqueID() < 14)
                 retValue += 0.20;
-            retValue -= Math.max(0.0, (magus.getWorld().getAgentsIncludingChildLocations().stream().filter(a -> a instanceof Magus).count() - 800) / 400.0);
+            retValue += magus.getHermeticHouse().getApprenticeshipModifier() * 0.05;
         }
 
         if (option == MagusActions.DISTILL_VIS) {

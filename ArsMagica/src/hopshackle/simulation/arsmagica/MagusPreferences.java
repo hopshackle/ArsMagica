@@ -124,6 +124,10 @@ public class MagusPreferences {
 
     public static double getResearchPreference(Magus magus, Learnable target) {
         MagusPreferences pref = magus.getResearchGoals();
+        if (pref == null || target == null) {
+            System.out.println("No preference for " + target);
+            return 0.0;
+        }
         double level = magus.getLevelOf(target);
         return pref.getPreference(target) + level * 0.01 * (double) target.getMultiplier();
     }
