@@ -29,7 +29,8 @@ public class Tribunals {
 		tribunal.setVisLevel(21);
 		assertEquals(tribunal.getVisModifier(), 4);
 		for (int i = 0; i < 17; i++) {
-			new VisSource(Arts.CREO, 1, tribunal);
+			VisSource source = new VisSource(Arts.CREO, 1, tribunal);
+			source.changeOwnership(magus1);
 		}
 		tribunal.maintenance();
 		assertEquals(tribunal.getVisModifier(), 0);

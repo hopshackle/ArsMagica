@@ -24,7 +24,7 @@ public class SearchForApprentice extends ArsMagicaAction {
 		if (magus.getUniqueID() < 14) // i.e. is a founder
 			searchRoll += 6;
 		if (searchRoll >= 12) {
-			apprentice = new Magus(magus.getLocation(), new BasicDecider(), magus.getWorld());
+			apprentice = new Magus(magus.getLocation(), new MagusBaseDecider(), magus.getWorld());
 			apprentice.setAge(6 + Dice.roll(1, 10));
 			int quality = 2 + (searchRoll - 12) / 3;
 			apprentice.rollStatistics(quality);

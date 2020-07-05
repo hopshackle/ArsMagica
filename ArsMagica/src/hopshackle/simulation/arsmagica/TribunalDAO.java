@@ -17,6 +17,7 @@ public class TribunalDAO implements DAO<Tribunal> {
 				" visMod		INT	NOT NULL," 		+
 				" apprenticeMod		INT	NOT NULL,"		+
 				" bookSales		INT	NOT NULL,"	+
+				" longevityRitualSales	INT NOT NULL," +
 				" visSources	INT	NOT NULL,"	+
 				" visSupply		INT	NOT NULL"	+
 				");";
@@ -25,7 +26,7 @@ public class TribunalDAO implements DAO<Tribunal> {
 	@Override
 	public String getTableUpdateSQL(String tableSuffix) {
 		return "INSERT INTO Tribunals_" + tableSuffix + 
-				" (name, currentYear, covenants, magi, apprentices, visMod, apprenticeMod, bookSales, visSources, visSupply) VALUES";
+				" (name, currentYear, covenants, magi, apprentices, visMod, apprenticeMod, bookSales, longevityRitualSales, visSources, visSupply) VALUES";
 	}
 
 	@Override
@@ -47,7 +48,7 @@ public class TribunalDAO implements DAO<Tribunal> {
 			totalVisSupply += vs.getAmountPerAnnum();
 		}
 		
-		return String.format(" ('%s', %d, %d, %d, %d, %d, %d, %d, %d, %s) ",  
+		return String.format(" ('%s', %d, %d, %d, %d, %d, %d, %d, %d, %d, %s) ",
 				tribunal.toString(),
 				tribunal.getWorld().getYear(),
 				tribunal.getAllChildLocationsOfType(AMU.sampleCovenant).size(),
@@ -56,6 +57,7 @@ public class TribunalDAO implements DAO<Tribunal> {
 				tribunal.getVisModifier(),
 				tribunal.getApprenticeModifier(),
 				tribunal.getTotalBookSales(),
+				tribunal.getTotalLongevitySales(),
 				visSources.size(),
 				totalVisSupply
 				);

@@ -58,8 +58,8 @@ public class JoinCovenant extends ArsMagicaAction {
 		}
 		magus.addXP(Abilities.CHARM, 2);
 		Decider<?> d = magus.getDecider();
-		if (d instanceof BasicDecider) {	// a truly horrendous hack for decider to keep track of covenant applications
-			BasicDecider bd = (BasicDecider) d;
+		if (d instanceof MagusBaseDecider) {	// a truly horrendous hack for decider to keep track of covenant applications
+			MagusBaseDecider bd = (MagusBaseDecider) d;
 			bd.registerApplication(magus, magus.getWorld().getYear());
 		}
 	}

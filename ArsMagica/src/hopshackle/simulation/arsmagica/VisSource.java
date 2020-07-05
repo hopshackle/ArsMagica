@@ -36,7 +36,7 @@ public class VisSource extends Location implements ArtefactRequiringMaintenance 
 	@Override
 	public void maintenance() {
 		// Location maintenance once per year
-		if (Math.random() < extinctionRate || (claimant != null && claimant.isDead())) {
+		if (Math.random() < extinctionRate || claimant == null || claimant.isDead()) {
 			amountPerAnnum = 0;
 			this.setParentLocation(null);
 		}

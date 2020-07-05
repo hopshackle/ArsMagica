@@ -40,14 +40,14 @@ public class LongevityRitualService extends ArsMagicaItem implements ArtefactReq
     }
 
     private int getLTSpec() {
-        if (CrCoSpecialist != null && customer != null)
+        if (customer != null)
             return CrCoSpecialist.getLabTotal(Arts.CREO, Arts.CORPUS, HopshackleUtilities.listFromInstances(customer, customer.getApprentice()));
         else
-            return 0;
+            return CrCoSpecialist.getLabTotal(Arts.CREO, Arts.CORPUS);
     }
 
     private int getLTCust() {
-        if (customer != null && customer.getLevelOf(Abilities.MAGIC_THEORY) >= customer.getAge() / 10 + 1)
+        if (customer != null && InventLongevityRitual.meetsRequirements(customer, customer))
             return customer.getLabTotal(Arts.CREO, Arts.CORPUS, HopshackleUtilities.listFromInstances(CrCoSpecialist, CrCoSpecialist.getApprentice()));
         else return 0;
 
@@ -83,7 +83,7 @@ public class LongevityRitualService extends ArsMagicaItem implements ArtefactReq
             deleteThis();
         } else if (customer.getLongevityRitualEffect() < Math.floor(getLabTotal() / 5.0)
                 && InventLongevityRitual.meetsRequirements(customer, CrCoSpecialist)) {
-            // i.e. only use the contract if it will be of benefit and you have the vis
+//             i.e. only use the contract if it will be of benefit and you have the vis
 
             if (customer.getActionPlan().contains(MagusActions.LONGEVITY_RITUAL))
                 return;        // already scheduled

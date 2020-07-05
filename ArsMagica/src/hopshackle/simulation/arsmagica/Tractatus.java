@@ -37,7 +37,7 @@ public class Tractatus extends Book {
 	public String toString() {
 		return String.format("Tractatus %d on %s - Q%d. Written by %s in %d %s", 
 				cardinalNumber, 
-				getSubject().toString(), 
+				getSubject() == null ? "NULL" : getSubject().toString(),
 				getQuality(), 
 				getAuthor(), 
 				getYearWritten(), 

@@ -68,7 +68,7 @@ public class MagusApprenticeInheritance extends SimpleInheritance<Magus> {
 
 	private void bequeathVisSources(Magus testator) {
 		List<Agent> heirs = getInheritorsInOrder(testator);
-		List<VisSource> visSources = testator.getInventoryOf(new VisSource(Arts.CORPUS, 1, null));
+		List<VisSource> visSources = testator.getInventoryOf(AMU.sampleVisSource);
 		distributeArtefactsToHeirs(testator, visSources, heirs);
 	}
 

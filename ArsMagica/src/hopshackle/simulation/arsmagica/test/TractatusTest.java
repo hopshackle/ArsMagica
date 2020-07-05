@@ -36,6 +36,52 @@ public class TractatusTest {
 		assertTrue(MagusActions.WRITE_TRACTATUS.isChooseable(magus));
 		assertEquals(magus.getPossibleTractactusSubjects().size(), 1);
 		assertTrue(magus.getPossibleTractactusSubjects().contains(Arts.CREO));
+
+		new Tractatus(Arts.CREO, magus);
+		magus.addXP(Arts.CREO, 15);
+		assertFalse(MagusActions.WRITE_TRACTATUS.isChooseable(magus));
+		assertTrue(magus.getPossibleTractactusSubjects().isEmpty());
+
+		magus.addXP(Arts.CREO, 15);
+		assertFalse(MagusActions.WRITE_TRACTATUS.isChooseable(magus));
+		assertTrue(magus.getPossibleTractactusSubjects().isEmpty());
+
+		magus.addXP(Arts.CREO, 10);
+		assertTrue(MagusActions.WRITE_TRACTATUS.isChooseable(magus));
+		assertTrue(magus.getPossibleTractactusSubjects().contains(Arts.CREO));
+	}
+
+	@Test
+	public void mayNotWriteTractatusWhenLevelIsBelowMinimum() {
+		magus.addXP(Abilities.LATIN, 75);
+		magus.addXP(Abilities.ARTES_LIBERALES, 5);
+		assertFalse(MagusActions.WRITE_TRACTATUS.isChooseable(magus));
+		assertTrue(magus.getPossibleTractactusSubjects().isEmpty());
+
+		magus.addXP(Arts.CREO, 14);
+		assertFalse(MagusActions.WRITE_TRACTATUS.isChooseable(magus));
+		assertEquals(magus.getPossibleTractactusSubjects().size(), 0);
+		assertTrue(magus.getPossibleTractactusSubjects().isEmpty());
+	}
+
+	@Test
+	public void tractatusMinimumForAbilities() {
+		magus.addXP(Abilities.LATIN, 75);
+		magus.addXP(Abilities.ARTES_LIBERALES, 5);
+		assertFalse(MagusActions.WRITE_TRACTATUS.isChooseable(magus));
+		assertTrue(magus.getPossibleTractactusSubjects().isEmpty());
+
+		magus.addXP(Abilities.MAGIC_THEORY, 14);
+		assertFalse(MagusActions.WRITE_TRACTATUS.isChooseable(magus));
+		assertTrue(magus.getPossibleTractactusSubjects().isEmpty());
+
+		magus.addXP(Abilities.MAGIC_THEORY, 10);
+		assertTrue(MagusActions.WRITE_TRACTATUS.isChooseable(magus));
+		assertTrue(magus.getPossibleTractactusSubjects().contains(Abilities.MAGIC_THEORY));
+
+		new Tractatus(Abilities.MAGIC_THEORY, magus);
+		assertFalse(MagusActions.WRITE_TRACTATUS.isChooseable(magus));
+		assertTrue(magus.getPossibleTractactusSubjects().isEmpty());
 	}
 	
 	@Test

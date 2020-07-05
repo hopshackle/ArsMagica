@@ -26,6 +26,8 @@ public class Covenants {
 		founder.addXP(Abilities.LATIN, 75);
 		founder.addXP(Abilities.ARTES_LIBERALES, 75);
 		founder.setTribunal(tribunal);
+		founder.setRelationship(cofounder, Relationship.FRIEND);
+		cofounder.setRelationship(founder, Relationship.FRIEND);
 	}
 
 	@Test
@@ -267,12 +269,12 @@ public class Covenants {
 		newCov.maintenance();
 		assertEquals(newCov.getBuildPoints(), 150);
 		application = new CovenantApplication(newCov, founder);
-		assertEquals(SocialMeeting.relationshipModifier(founder, cofounder), 0);
+		assertEquals(SocialMeeting.relationshipModifier(founder, cofounder), 5);
 		assertEquals(SocialMeeting.relationshipModifier(founder, applicant), 0);
 		assertEquals(CovenantApplication.getSocialModifier(founder, newCov), -1);	// default of -1 per member
-		assertEquals(CovenantApplication.getSocialModifier(founder, covenant), -2);
-		assertEquals(application.getNetValueToApplicant(), 150 - 123 + 20);		// equal to difference between covenant bp
-																				// +20 from 'overcrowding' at home
+		assertEquals(CovenantApplication.getSocialModifier(founder, covenant), 0);  // -2 from members, and friends with other founder
+		assertEquals(application.getNetValueToApplicant(), 150 - 123);		// equal to difference between covenant bp
+																				// +20 from 'overcrowding' balanced by social modifier
 	}
 
 	@Test
@@ -361,6 +363,7 @@ public class Covenants {
 		applicant.setPresence(0);
 		// base modifier is +3, with additional -2 from social modifier, -4 from build points of 0 (with aim of 100 for 2 members)
 		applicant.addVis(Arts.VIM, 200);
+		assertEquals(CovenantApplication.getSocialModifier(applicant, covenant), -2);
 		CovenantApplication application = new CovenantApplication(covenant, applicant, 7);	
 		// therefore 75 pawns of Vis needed (15 pawns per missing point)
 		assertTrue(application.isSuccessful());

@@ -29,9 +29,12 @@ public class ApprenticesAndTeaching {
 		parens.addSpell(new Spell(Arts.REGO, Arts.CORPUS, 25, "Levitation", parens));
 		parens.addSpell(new Spell(Arts.CREO, Arts.AQUAM, 5, "A quick dram", parens));
 		parens.addXP(Abilities.AREA_LORE, 75);
+		parens.setLongevityRitualEffect(5);
 		parens.setPerception(3);
 		apprentice = new Magus(w);
 		parens.addXP(Abilities.MAGIC_THEORY, 75);
+		parens.addXP(Arts.VIM, 75);
+		parens.addXP(Arts.MUTO, 75);
 		AgentArchive.switchOn(true);
 	}
 	
@@ -170,7 +173,7 @@ public class ApprenticesAndTeaching {
 
 	@Test
 	public void afterFifteenYearsApprenticeBecomeMagusAndTakesOwnActionsIndependently() {
-		parens.setDecider(new HardCodedDecider<Magus>(MagusActions.DISTILL_VIS));
+		parens.setDecider(new HardCodedDecider<>(MagusActions.DISTILL_VIS));
 		parens.addApprentice(apprentice);
 		provide15SeasonsOfTraining(parens);
 		w.setCurrentTime((long) (815 * 52 - 2)); // i.e. two weeks short of 15 years
@@ -346,7 +349,7 @@ public class ApprenticesAndTeaching {
 	
 	private Magus addApprenticeAndMoveForward16Years(Magus parens) {
 		assertFalse(parens.hasApprentice());
-		Magus earlierApprentice = new Magus(parens.getLocation(), new BasicDecider(), parens.getWorld());
+		Magus earlierApprentice = new Magus(parens.getLocation(), new MagusBaseDecider(), parens.getWorld());
 		parens.addApprentice(earlierApprentice);
 		w.setCurrentTime(w.getCurrentTime() + 16 * 52);
 		parens.maintenance();
@@ -358,12 +361,13 @@ public class ApprenticesAndTeaching {
 		Decider<Magus> oldDecider = parens.getDecider();
 		Magus currentApprentice = parens.getApprentice();
 		assertEquals(currentApprentice.getSeasonsTraining(), 0);
-		parens.setDecider(new HardCodedDecider<Magus>(MagusActions.TEACH_APPRENTICE));
+		parens.setDecider(new HardCodedDecider<>(MagusActions.TEACH_APPRENTICE));
 		parens.getActionPlan().purgeActions(true);
 		parens.decide();
 		for (int i = 0; i < 15; i++) {
 			assertTrue(parens.hasApprentice());
 			runNextAction(parens);
+			assertFalse(parens.isDead());
 		}
 		assertEquals(currentApprentice.getSeasonsTraining(), 15);
 		parens.setDecider(oldDecider);

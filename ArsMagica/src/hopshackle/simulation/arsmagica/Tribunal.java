@@ -14,27 +14,25 @@ public class Tribunal extends Location {
     private List<BarterOffer> marketOffers;
     private int lastTribunal;
     private int totalBookSales;
+    private int totalLongevitySales;
     private EntityLog logger;
     private boolean fullDebug = false;
 
     public Tribunal(String name, World world) {
         super(world);
         setName(name);
-        visLevel = Dice.roll(2, 20);
-        populationLevel = Dice.roll(3, 20) - visLevel;
+        visLevel = Dice.roll(2, 15) + 15;
+        populationLevel = Dice.roll(3, 15)  + 15 - visLevel;
         if (populationLevel < 0) populationLevel = 0;
-        marketOffers = new ArrayList<BarterOffer>();
+        marketOffers = new ArrayList<>();
         lastTribunal = world.getYear();
         logger = new EntityLog("Tribunal of " + toString(), world.getCalendar());
         log("Tribunal Founded");
 
-        ActionListener actionListener = new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-                if (arg0.getActionCommand().equals("Death")) {
-                    log("Simulation terminated.");
-                    logger.close();
-                }
+        ActionListener actionListener = arg0 -> {
+            if (arg0.getActionCommand().equals("Death")) {
+                log("Simulation terminated.");
+                logger.close();
             }
         };
         world.addListener(actionListener);
@@ -66,7 +64,7 @@ public class Tribunal extends Location {
     }
 
     public int getVisModifier() {
-        return (int) (visLevel - extantVisSources) / 5;
+        return (visLevel - extantVisSources) / 5;
     }
 
     public void registerApprentice(Agent apprentice) {
@@ -99,7 +97,7 @@ public class Tribunal extends Location {
             // sorts so that the Offers with lowest bids are first
             @Override
             public int compare(BarterOffer o1, BarterOffer o2) {
-                return o1.getBestBid() > o2.getBestBid() ? 1 : (o1.getBestBid() == o2.getBestBid() ? 0 : -1);
+                return Double.compare(o1.getBestBid(), o2.getBestBid());
             }
         });
         return HopshackleUtilities.cloneList(marketOffers);
@@ -109,6 +107,7 @@ public class Tribunal extends Location {
         int totalEconomySize = 0;
         int bookSales = 0;
         int visSales = 0;
+        int longevitySales = 0;
         for (BarterOffer offer : marketOffers) {
 
             double bestPrice = offer.getBestBid();
@@ -117,7 +116,10 @@ public class Tribunal extends Location {
                     log("\tMarket: " + offer.getItem() + " offered by " + offer.getSeller() + " is purchased.");
                 offer.resolve();
                 totalEconomySize += bestPrice;
-                if (offer.getItem() instanceof Book) {
+                if (offer.getItem() instanceof LongevityRitualService) {
+                    longevitySales++;
+                    totalLongevitySales++;
+                } else if (offer.getItem() instanceof Book) {
                     totalBookSales++;
                     bookSales++;
                 } else {
@@ -130,12 +132,15 @@ public class Tribunal extends Location {
 
         marketOffers.clear();
         if (totalEconomySize > 0)
-            log(String.format("\t\tAt %d Tribunal, total of %d books and %d pawns of vis sold for %d notional pawns.", world.getYear(), bookSales, visSales, totalEconomySize));
+            log(String.format("\t\tAt %d Tribunal, total of %d books, %d pawns of vis and %d longevity rituals sold for %d notional pawns.",
+                    world.getYear(), bookSales, visSales, longevitySales, totalEconomySize));
     }
 
     public int getTotalBookSales() {
         return totalBookSales;
     }
+
+    public int getTotalLongevitySales() {return totalLongevitySales;}
 
     public void log(String message) {
         logger.log(message);

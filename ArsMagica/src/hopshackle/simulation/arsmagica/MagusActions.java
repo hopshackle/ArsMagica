@@ -110,7 +110,7 @@ public enum MagusActions implements ActionEnum<Magus> {
                     return false;
             case SEARCH_APPRENTICE:
                 if (magus.hasApprentice()) return false;
-                return magus.getTotalArtLevels() >= 100;
+                return magus.getTotalArtLevels() >= 100 && magus.getWorld().getAgentsIncludingChildLocations().stream().filter(a -> a instanceof Magus).count() < 1000;
             case STUDY_VIS:
                 Arts artToStudy = magus.getTypeOfVisToStudy();
                 if (artToStudy == null) return false;

@@ -24,6 +24,7 @@ public class BasicMagusActionChooseability {
 		magus = new Magus(w);
 		magus.setCovenant(cov);
 		apprentice = new Magus(w);
+		magus.setAge(40);
 		magus.addApprentice(apprentice);
 		magus.setLongevityRitualEffect(10);
 		apprentice.addXP(Abilities.LATIN, 50);
@@ -39,20 +40,32 @@ public class BasicMagusActionChooseability {
 
 	@Test
 	public void studyFromVis() {
-		magus.addVis(Arts.CREO, 1);
+		magus.addVis(Arts.REGO, 1);
 		assertFalse(MagusActions.STUDY_VIS.isChooseable(magus));
 		magus.addXP(Abilities.MAGIC_THEORY, 5);		// may now use up to 2 pawns of vis
-		magus.addXP(Arts.CREO, 16);
+		magus.addXP(Arts.REGO, 16);
 		assertTrue(MagusActions.STUDY_VIS.isChooseable(magus));
-		magus.addXP(Arts.CREO, 5);
-		assertEquals(magus.getLevelOf(Arts.CREO), 6);
+		magus.addXP(Arts.REGO, 5);
+		assertEquals(magus.getLevelOf(Arts.REGO), 6);
 		assertFalse(MagusActions.STUDY_VIS.isChooseable(magus));
-		magus.addVis(Arts.CREO, 1);
+		magus.addVis(Arts.REGO, 1);
 		assertTrue(MagusActions.STUDY_VIS.isChooseable(magus));
-		magus.addXP(Arts.CREO, 44); 	// to one xp shy of Cr 10
+		magus.addXP(Arts.REGO, 44); 	// to one xp shy of Cr 10
 		assertTrue(MagusActions.STUDY_VIS.isChooseable(magus));
-		magus.addXP(Arts.CREO, 1);
+		magus.addXP(Arts.REGO, 1);
 		assertFalse(MagusActions.STUDY_VIS.isChooseable(magus));
+	}
+
+	@Test
+	public void doNotStudyFromVisReservedForLongevityRitual() {
+		magus.addXP(Abilities.MAGIC_THEORY, 5);		// may now use up to 2 pawns of vis
+		magus.addVis(Arts.CREO, 2);
+		assertEquals(InventLongevityRitual.requirementsForRitual(magus).size(), 2);
+		assertFalse(MagusActions.STUDY_VIS.isChooseable(magus));
+		magus.addVis(Arts.VIM, 8);
+		assertEquals(InventLongevityRitual.pawnsNeededForRitual(magus), 8);
+		assertEquals(InventLongevityRitual.requirementsForRitual(magus).size(), 8);
+		assertTrue(MagusActions.STUDY_VIS.isChooseable(magus));
 	}
 
 	@Test

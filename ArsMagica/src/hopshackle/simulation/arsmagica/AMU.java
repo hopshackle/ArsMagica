@@ -44,6 +44,10 @@ public class AMU {
 		return visInventory;
 	}
 
+	public static int pawnsOfVisIn(List<Vis> vis, Arts typeWanted) {
+		return (int) vis.stream().filter(v -> v.getType() == typeWanted).count();
+	}
+
 	public static int getHighestSummaFrom(Learnable skill, List<Book> books) {
 		int highest = 0;
 		for (Book book : books) {

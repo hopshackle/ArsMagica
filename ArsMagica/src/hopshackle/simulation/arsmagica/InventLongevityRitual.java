@@ -73,16 +73,20 @@ public class InventLongevityRitual extends ArsMagicaAction {
     }
 
     public static boolean meetsVisRequirements(Magus magus) {
-		return !requirementsForRitual(magus).isEmpty();
-	}
+        return requirementsForRitual(magus).size() >= pawnsNeededForRitual(magus);
+    }
 
     private static int requiredMagicTheory(int ageOfRecipient) {
         return (int) Math.ceil(Math.ceil(ageOfRecipient / 5.0) / 2.0);
     }
 
+    public static int pawnsNeededForRitual(Magus magus) {
+        return (int) Math.ceil(magus.getAge() / 5.0);
+    }
+
     public static List<Vis> requirementsForRitual(Magus visPayer) {
         List<Vis> retValue = new ArrayList<>();
-        int pawnsRequired = (int) Math.ceil(visPayer.getAge() / 5.0);
+        int pawnsRequired = pawnsNeededForRitual(visPayer);
         int creoPawns = visPayer.getPawnsOf(Arts.CREO);
         int vimPawns = visPayer.getPawnsOf(Arts.VIM);
         int corpusPawns = visPayer.getPawnsOf(Arts.CORPUS);
@@ -108,7 +112,7 @@ public class InventLongevityRitual extends ArsMagicaAction {
                 pawnsSpent++;
                 continue;
             }
-            return retValue;
+            pawnsRequired = 0; // no more vis left
         } while (pawnsRequired > pawnsSpent);
 
         for (int i = 0; i < creo; i++)
