@@ -1,7 +1,13 @@
 # ArsMagica
 A playful season by season AM simulation
 
-There are a couple of ways to try and get this going. Option one is to compile from this project, plus the simulation project (hopshackle/Simulation) that it is built on top of. Option two is to use the jar file that is included in  the repository (arsMagica_0_1.jar). The supplied jar file is compiled to be compatible with Java SE 1.7, so should work on Windows or Linux.
+A set of sample output from a run is available the following [shared directory](https://drive.google.com/drive/folders/1pz3hkxKxRIpuLI3ueD-4OqZbK93Fyc3q?usp=sharing). 
+This includes a full database dump of a MySQL database, with one table for magi, one for covenants, one for books and one for actions (which lists every season for every magus from 700 to 1220).
+Note that this output, apart from the actions table, is a snapshot every ten years. The shared directory also includes some csv files withe current state of the world in 1220 (with 738 living magi, 123 covenants and 60 thousand books in their libraries).
+
+(Also note that this is non-canon in that there is no House Ex Miscellanea, and House Diedne keeps going with no Schism War.)
+
+There are a couple of ways to try and get this going locally. Option one is to compile from this project, plus the simulation project (hopshackle/Simulation) that it is built on top of. Option two is to use the jar file that is included in  the repository (arsMagica_0_1.jar). The supplied jar file is compiled to be compatible with Java SE 1.7, so should work on Windows or Linux.
 
 To run the simulation, you will need a MySQL database set up (see later), plus a few text files. The most important of these is a properties file that includes details of where to find all the other files. When the simulation is run, the location of the properties file needs to be provided as an argument.
 
@@ -54,7 +60,7 @@ Running the simulation
 ----------------------
 Recommended execution is:
 
-  java -Xms1g -Xmx2g -jar arsMagica_0_1.jar --properties fullPathAndNameOfPropertiesFile
+  java -Xms1g -Xmx6g -jar arsMagica_0_1.jar --properties fullPathAndNameOfPropertiesFile
 
 This will reserve sufficient memory for the default simulation run of 520 years from 700 to 1220. Based on my runs, this can occupy up to 1.3GB of RAM at peak usage. The code will work with either Windows or Linux (not tested elsewhere), and the only difference between the two should be changes to the properties file to take account of different file separators.
 
